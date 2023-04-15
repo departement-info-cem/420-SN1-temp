@@ -1,3 +1,4 @@
-# Rencontre 7.2
+# 14 Formatif, révision et aperçu de réseaux de neurones
+
 
 
