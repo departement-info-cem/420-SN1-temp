@@ -1,3 +1,3 @@
-# Rencontre 5.2
+# 10 graphiques et matplotlib
 
 
