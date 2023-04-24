@@ -26,7 +26,8 @@ On peut vite se laisser emporter et construire des expressions assez complexes:
 str( 5 + 8 * (7 + 98 * 6) / 5 / 6.7 * 10 - 4)
 ```
 
-
+Pour évaluer cette expression petit bout par petit bout, on peut utiliser un évaluateur d'expression.
+Il faut placer un point d'arrêt sur la ligne dans le script.
 
 ## type d'une expression
 
