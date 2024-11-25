@@ -1,5 +1,9 @@
 # 1 : Accueil, intro, plan de cours et premiers scripts
 
+- plan de cours
+- premier script et exécution
+- mise en place du repo github pour les exercices et les notes
+
 ## Plan de cours
 
 Nous allons regarder le plan de cours pour voir :
@@ -137,6 +141,8 @@ Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré 
 On va essayer de pointer les termes jargoniques au fur et à mesure.
 
 # Exercices
+
+## Exercice de débogage de la semaine TODO
 
 Parce qu'on apprend jamais aussi bien que par soi-même ...
 

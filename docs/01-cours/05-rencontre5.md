@@ -1,7 +1,8 @@
-
-
-
 # 5 : débogage / exécution et algorithmique
+
+ATTENTION : Tu devras regarder l'examen formatif d'ici au prochain cours si tu veux poser des questions / corriger 
+ton travail.
+
 
 # Algorithmique
 
