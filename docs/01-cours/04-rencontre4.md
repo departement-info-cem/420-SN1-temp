@@ -68,3 +68,47 @@ def racine(nombre, base=2):
   return 1
 ```
 
+
+## Exercice fonction simple
+
+On veut faire une fonction simple qui prend un nombre et qui renvoie son carré.
+
+Définis cette fonction et appelle la avec un nombre de ton choix.
+
+## Exercice sur une variable locale à la méthode
+
+```python
+def minMaxMoyenne(liste):
+    min = liste[0]
+    max = liste[0]
+    somme = 0
+    for element in liste:
+        if element < min:
+        min = element
+        if element > max:
+        max = element
+        somme += element
+
+minMaxMoyenne([1,2,3,4,5])
+a = min   # est-ce que cette ligne est correcte?
+```
+
+TODO lien vers la portée
+
+
+
+## Mais combien vaut x?
+
+```python
+def calculComplexe(a, b, c):
+  x = a**b
+  y = c*(b-a)
+  return a**b + c*(b-a)
+x = 5
+calculComplexe(3,5,7)
+print(x)
+```
+
+Combien vaut x dans calculComplexe? dans le script principal? C'est le même x?
+
+TODO lien vers le shadowing et la pile d'appels dans le débogueur

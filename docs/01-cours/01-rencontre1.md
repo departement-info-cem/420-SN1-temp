@@ -169,3 +169,14 @@ On voudrait savoir quelles sont les valeurs de a au fil de l'exécution du scrip
 - essayer de calculer à la main combien ça vaut
 - poser un point d'arrêt et observer
 
+## Exercice la_sequence.py
+
+Dans un fichier la_sequence.py, écris une dizaine de lignes de commandes Python. Tu peux inclure:
+- des déclarations de variables
+- des calculs avec assignations
+- des affichages avec print
+
+Exécute ton code en mode débogage pour te familiariser avec le débogueur (ce sera l'outil le plus utile de ta vie pour programmer)
+
+
+
