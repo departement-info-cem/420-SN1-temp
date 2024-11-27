@@ -1,4 +1,4 @@
-# 2 : expressions, variables et types
+# expressions, variables et types
 
 ## expression, valeur type
 

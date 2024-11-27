@@ -1,0 +1,49 @@
+# Créer un repo github pour mes notes et exercices de cours
+
+Github.com est sans doute le site le plus courant pour stocker des projets de code.
+
+Il est probable que vous utilisiez ce site quand vous coderez des projets quelque soit votre discipline.
+
+## Se créer un compte sur github
+
+1. Aller sur [github.com](https://github.com)
+2. Créer un compte
+3. Suivre les étapes
+4. IMPORTANT: à un moment il va vous proposer de télécharger des codes de récupération. Faites-le et envoyez-vous un courriel avec les code
+
+## Créer un repo privé pour le cours
+
+1. Aller sur github en étant connecté à votre compte
+2. En haut à droite il y a un bouton "+" cliquer dessus
+3. Choisir "New repository"
+4. Donner un nom à votre repo, par exemple "420-SN1-Dupont" ou encore "Info-Dupont" ou autre
+5. Cocher "Private" pour que vos notes ne soient pas visibles par tout le monde **ATTENTION PLAGIAT** si un autre étudiant copie vos notes publiques vous serez sanctionnés
+6. Cocher "Add a README file" pour ajouter un fichier README.md
+7. Cliquer sur "Create repository"
+
+## Ajouter un fichier de notes directement depuis github
+
+1. Sur la page de votre repo, cliquer sur "Add file" puis "Create new file"
+2. Donner un nom à votre fichier qui finit par **.md**, cela indique qu'il s'agit d'un fichier MarkDown
+3. par exemple "boucles.md" pour tes notes sur les boucles
+
+## Cloner, commit, push
+
+### Cloner le repo
+
+Il s'agit de faire une copie de travail de votre repo sur votre ordinateur. Cela permet de modifier des projets
+avec plusieurs fichiers, de travailler dans votre environnement de développement avant de sauver vos modifications.
+
+1. Cloner le repo sur votre ordinateur, le plus simple est de cliquer sur le bouton vert "Code" puis de choisir "Open with Github Desktop"
+2. Dans Github Desktop, choisir un dossier où cloner le repo
+
+### Commit puis Push
+
+1. Dans Github Desktop, vous verrez les fichiers modifiés
+2. Vous pouvez ajouter un message pour expliquer les modifications
+3. Cliquer sur "Commit to main"
+4. Cliquer sur "Push origin" pour envoyer les modifications sur le serveur github
+5. Vous pouvez vérifier sur le site github que les modifications ont bien été envoyées
+
+**ATTENTION** Dès que tu as complété quelque chose d'utile, tu peux en faire un commit et le pousser sur github. 
+Cela te permettra de ne pas perdre ton travail.

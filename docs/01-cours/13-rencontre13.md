@@ -1,8 +1,8 @@
-# 13 Intégration // librairies, service et autre en Python
+# 13 Intégration // librairies // tests automatiques, service et autre en Python
 
 Pendant une séance d'intégration vous pouvez compléter vos exercices, vos travaux.
 
-
+## Tests automatiques
 
 ## Envoyer un texto ou un courriel
 Utiliser des services en ligne comme Twilio

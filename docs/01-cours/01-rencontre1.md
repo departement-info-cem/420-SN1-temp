@@ -82,12 +82,12 @@ print("bonjour bonjour cher maitre humain")
 print("Ca va aujourd'       hui?")
 print( 4 / 5 *                (9  + 6) )
 ```
-- on sauve le fichier à un endroit où vous saurez le retrouver, par exemple "c:\bonjour.py"
+- on sauve le fichier à un endroit où vous saurez le retrouver, par exemple sur le bureau avec comme nom "bonjour.py"
 - jusqu'ici ça ne fait rien
 - on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres, d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
 - dans le terminal, on va taper
 ```shell
-python3 c:\bonjour.py
+python3 c:\Users\monmatricule\Desktop\bonjour.py
 ```
 - Vous venez d'exécuter un Python, "that's cold"
 - Regardons ce qu'on vient de voir
@@ -102,7 +102,7 @@ python3 c:\bonjour.py
 
 On a gagné, on a perdu
 - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
-- on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi ???
+- on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
 
 On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre ils
 vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain

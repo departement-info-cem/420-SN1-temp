@@ -1,4 +1,4 @@
-# 4 fonctions (définition et utilisation), librairie standard
+# fonctions (définition et utilisation), librairie standard
 
 Quand on approche un problème, on peut le découper en sous-problèmes.
 
