@@ -3,10 +3,7 @@ sidebar_position: 1
 slug: /
 ---
 
-# Accueil (EN CONSTUCTION)
-
-Salut tout le monde! EN CONSTRUCTION EN CONSTRUCTION~~~~
-
+# Accueil (EN CONSTRUCTION)
 
 **SN1** *programmation en sciences*
 

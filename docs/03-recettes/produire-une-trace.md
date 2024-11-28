@@ -1,0 +1,96 @@
+# Comment produire une trace d'exécution, formatée en markdown
+
+
+Si un as un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées. 
+
+Pour cela, on peut utiliser un outil de traçage.
+
+## Principe
+
+On veut accomplir 2 éléments principaux:
+1. indiquer quelles lignes de code s'exécutent dans quel ordre
+2. indiquer les effets de chaque ligne de code
+
+## Exemple simple
+
+Si on a le code suivant:
+```python  line_numbers
+a = 3 + 4
+b = a * 2
+print("salut " + str(b))
+```
+
+### Trace
+On aura la trace suivante:
+
+| ligne exécutée | effet                             |
+|-----------------|-----------------------------------|
+| a = 3 + 4       | a = 7                             |
+| b = a * 2       | a = 7, b = 14                     |
+| print("salut " + str(b)) | a = 7, b = 14, affiche "salut 14" |
+
+Dans le cas d'une séquence d'instructions, on peut voir que les instructions sont exécutées dans
+l'ordre de lecture du code. Simple!
+
+
+
+
+
+## Exemple avec boucle
+
+Si on a le code suivant:
+```python= 
+for i in range(3):
+    if (i % 2 == 0):
+        print("c'est pair " + str(i))
+    else:
+        print("ah ben ah ben, c'est impair " + str(i))
+```
+
+### Trace
+On aura la trace suivante:
+
+| ligne exécutée | effet                         |
+|-----------------|-------------------------------|
+| for i in range(3): | i parcourt l'interval 0, 1, 2 |
+| if (i % 2 == 0): | i = 0, donc i%2 vaut 0        |
+| print("c'est pair " + str(i)) | i = 0, affiche "c'est pair 0" |
+| if (i % 2 == 0): | i = 1, donc i%2 vaut 1        |
+| print("ah ben ah ben, c'est impair " + str(i)) | i = 1, affiche "ah ben ah ben, c'est impair 1" |
+| if (i % 2 == 0): | i = 2, donc i%2 vaut 0        |
+| print("c'est pair " + str(i)) | i = 2, affiche "c'est pair 2" |
+
+On voit que:
+- on n'indique que les lignes qui s'exécutent en vrai
+- certaines lignes s'exécutent plusieurs fois, c'est le principe de la boucle
+
+## Exemple avec une fonction
+
+Si on a le code suivant:
+```python line_numbers
+def ma_fonction(a, b):
+    c = a + b
+    return c
+a = 3
+b = 5
+z = ma_fonction(a, b)
+y = ma_fonction(4, 9)
+print("z vaut " + str(z) + " et y vaut " + str(y))
+```
+
+### Trace
+
+| ligne exécutée           | effet                                                      | pile d'appels |
+|--------------------------|------------------------------------------------------------|---------------|
+| a = 3                    | a = 3,                                                     | __main__      |
+| b = 5                    | a = 3, b = 5                                               | __main__      |
+| z = ma_fonction(a, b) | a = 7, b = 14, appelle ma_fonction avec a->3 et b->5       | __main__      |
+| c = a + b                | a = 3, b = 5, c = 8                                        | __main__ > ma_fonction |
+| return c                 | a = 3, b = 5, c = 8, retourne 8, z = 8                     | __main__ > ma_fonction |
+| y = ma_fonction(4, 9) | a = 3, b = 5, z = 8, appelle ma_fonction avec a->4 et b->9 | __main__      |
+| c = a + b                | a = 4, b = 9, c = 13                                       | __main__ > ma_fonction |
+| return c                 | a = 4, b = 9, c = 13, retourne 13, y = 13                  | __main__ > ma_fonction |
+| print("z vaut " + str(z) + " et y vaut " + str(y)) | a = 4, b = 9, z = 8, y = 13, affiche "z vaut 8 et y vaut 13" | __main__     |
+
+
+Dans ce cas, on doit ajouter la pile d'appels pour indiquer quelles fonctions ont été commencées mais pas finies.
