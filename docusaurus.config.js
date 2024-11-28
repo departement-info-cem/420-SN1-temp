@@ -1,10 +1,11 @@
 // @ts-check
 // Note: type annotations allow type checking and IDEs autocompletion
+import { themes } from 'prism-react-renderer';
 
 const siteConfig = require("./config");
 
-const lightCodeTheme = require("prism-react-renderer/themes/vsLight");
-const darkCodeTheme = require("prism-react-renderer/themes/vsDark");
+const lightCodeTheme = themes.vsLight
+const darkCodeTheme = themes.vsDark
 
 /** @type {import('@docusaurus/types').Config} */
 const config = {
@@ -70,6 +71,17 @@ const config = {
             sidebarId: "tp",
             label: "Travaux Pratiques",
           },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "recettes",
+            label: "Recettes",
+          },
+//          {
+//            label: "Skill Tree",
+//            href: `https://info.cegepmontpetit.ca/4N6-Mobile/file/4N6.html`,
+//            position: "right",
+//          },
         ],
       },
       footer: {
@@ -80,7 +92,7 @@ const config = {
             items: [
               {
                 label: "GitHub",
-                href: `https://github.com/departement-info-cem/${this.url}`,
+                href: `https://github.com/departement-info-cem/${siteConfig.nomUrl}`,
               },
             ],
           },
@@ -100,7 +112,7 @@ const config = {
       prism: {
         theme: lightCodeTheme,
         darkTheme: darkCodeTheme,
-        additionalLanguages: ["csharp"],
+        additionalLanguages: ["csharp", "java", "python"],
       },
       metadata: [
         {
