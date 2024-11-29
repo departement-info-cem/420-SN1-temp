@@ -1,4 +1,4 @@
-# 1 : Accueil, intro, plan de cours et premiers scripts
+# 1 Accueil, intro, plan de cours et premiers scripts
 
 - plan de cours
 - premier script et exécution

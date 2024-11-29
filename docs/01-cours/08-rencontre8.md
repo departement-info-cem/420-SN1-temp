@@ -44,5 +44,15 @@ En utilisant votre script Python, vous devez:
 - afficher les lauréats dont la contribution mentionne le mot <em>intelligence</em>
 
 ### Exercice exo-plot.py
+
+### Exercice absolu-relatif.py
+
+On va explorer les différences entre les chemins absolus et relatifs.
+
+### Exercice ou-monscript-sexecute.py
+
+Si on lance un script et qu'on crée un fichier "ici.txt", où est-ce que ce fichier est créé?
+
+On va voir que "ici.txt" c'est la même chose que "./ici.txt"
                         
 

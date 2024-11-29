@@ -1,4 +1,4 @@
-# 7 intra
+# 7 Examen intra
 
 L'examen se passera en séance
 
