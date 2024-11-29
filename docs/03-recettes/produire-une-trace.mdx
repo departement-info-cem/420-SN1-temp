@@ -1,5 +1,9 @@
-# Comment produire une trace d'exécution, formatée en markdown
+---
+hide_table_of_contents: true
+---
 
+
+# Comment produire une trace d'exécution
 
 Si un as un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées. 
 
@@ -14,7 +18,7 @@ On veut accomplir 2 éléments principaux:
 ## Exemple simple
 
 Si on a le code suivant:
-```python  line_numbers
+```python  showLineNumbers
 a = 3 + 4
 b = a * 2
 print("salut " + str(b))
@@ -39,7 +43,7 @@ l'ordre de lecture du code. Simple!
 ## Exemple avec boucle
 
 Si on a le code suivant:
-```python= 
+```python showLineNumbers
 for i in range(3):
     if (i % 2 == 0):
         print("c'est pair " + str(i))
@@ -67,7 +71,7 @@ On voit que:
 ## Exemple avec une fonction
 
 Si on a le code suivant:
-```python line_numbers
+```python showLineNumbers
 def ma_fonction(a, b):
     c = a + b
     return c
