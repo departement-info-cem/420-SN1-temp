@@ -29,16 +29,12 @@ On aura la trace suivante:
 
 | ligne exécutée | effet                             |
 |-----------------|-----------------------------------|
-| a = 3 + 4       | a = 7                             |
-| b = a * 2       | a = 7, b = 14                     |
-| print("salut " + str(b)) | a = 7, b = 14, affiche "salut 14" |
+| a = 3 + 4       | a: 7                             |
+| b = a * 2       | a: 7, b: 14                     |
+| print("salut " + str(b)) | a: 7, b: 14, affiche "salut 14" |
 
 Dans le cas d'une séquence d'instructions, on peut voir que les instructions sont exécutées dans
 l'ordre de lecture du code. Simple!
-
-
-
-
 
 ## Exemple avec boucle
 
@@ -57,12 +53,12 @@ On aura la trace suivante:
 | ligne exécutée | effet                         |
 |-----------------|-------------------------------|
 | for i in range(3): | i parcourt l'interval 0, 1, 2 |
-| if (i % 2 == 0): | i = 0, donc i%2 vaut 0        |
-| print("c'est pair " + str(i)) | i = 0, affiche "c'est pair 0" |
-| if (i % 2 == 0): | i = 1, donc i%2 vaut 1        |
-| print("ah ben ah ben, c'est impair " + str(i)) | i = 1, affiche "ah ben ah ben, c'est impair 1" |
-| if (i % 2 == 0): | i = 2, donc i%2 vaut 0        |
-| print("c'est pair " + str(i)) | i = 2, affiche "c'est pair 2" |
+| if (i % 2 == 0): | i: 0 <br /> i%2 vaut 0        |
+| print("c'est pair " + str(i)) | i: 0 <br /> affiche "c'est pair 0" |
+| if (i % 2 == 0): | i: 1  <br /> i%2 vaut 1        |
+| print("ah ben ah ben, c'est impair " + str(i)) | i: 1 <br /> affiche "ah ben ah ben, c'est impair 1" |
+| if (i % 2 == 0): | i: 2 <br /> i%2 vaut 0        |
+| print("c'est pair " + str(i)) | i: 2 <br /> affiche "c'est pair 2" |
 
 On voit que:
 - on n'indique que les lignes qui s'exécutent en vrai
@@ -84,17 +80,29 @@ print("z vaut " + str(z) + " et y vaut " + str(y))
 
 ### Trace
 
+S'il y a des fonctions dans le code, on ajouter la pile d'appels pour indiquer quelles fonctions
+ont été commencées mais pas finies.
+
 | ligne exécutée           | effet                                                      | pile d'appels |
 |--------------------------|------------------------------------------------------------|---------------|
-| a = 3                    | a = 3,                                                     | __main__      |
-| b = 5                    | a = 3, b = 5                                               | __main__      |
-| z = ma_fonction(a, b) | a = 7, b = 14, appelle ma_fonction avec a->3 et b->5       | __main__      |
-| c = a + b                | a = 3, b = 5, c = 8                                        | __main__ > ma_fonction |
-| return c                 | a = 3, b = 5, c = 8, retourne 8, z = 8                     | __main__ > ma_fonction |
-| y = ma_fonction(4, 9) | a = 3, b = 5, z = 8, appelle ma_fonction avec a->4 et b->9 | __main__      |
-| c = a + b                | a = 4, b = 9, c = 13                                       | __main__ > ma_fonction |
-| return c                 | a = 4, b = 9, c = 13, retourne 13, y = 13                  | __main__ > ma_fonction |
-| print("z vaut " + str(z) + " et y vaut " + str(y)) | a = 4, b = 9, z = 8, y = 13, affiche "z vaut 8 et y vaut 13" | __main__     |
+| a = 3                    | a: 3                                                    | __main__      |
+| b = 5                    | a: 3 <br /> b: 5                                               | __main__      |
+| z = ma_fonction(a, b) | a: 3 <br /> b: 5 <br /> appelle ma_fonction avec a→3 et b→5       | __main__      |
+| c = a + b                | a: 3 <br /> b: 5 <br /> c: 8                                        | ma_fonction <br /> main |
+| return c                 | a: 3 <br /> b: 5 <br /> c: 8, retourne 8, z = 8                     | ma_fonction <br /> main |
+| y = ma_fonction(4, 9) | a: 3 <br /> b: 5 <br /> z: 8 <br />appelle ma_fonction avec a→4 et b→9 | __main__      |
+| c = a + b                | a: 4 <br /> b: 9 <br /> c: 13                                       | ma_fonction <br /> main |
+| return c                 | a: 4 <br /> b: 9 <br /> c: 13 <br /> retourne 13, y = 13                  | ma_fonction <br /> main |
+| print("z vaut " + str(z) + " et y vaut " + str(y)) | a: 4 <br /> b: 9 <br /> z: 8 <br /> y = 13 <br /> affiche "z vaut 8 et y vaut 13" | __main__     |
 
 
 Dans ce cas, on doit ajouter la pile d'appels pour indiquer quelles fonctions ont été commencées mais pas finies.
+
+## Valider ta trace
+
+Afin de valider ta trace, tu vas utiliser le débogueur de ton IDE préféré.
+1. place un point d'arrêt sur la première ligne qui s'exécute
+2. lance l'exécution en mode débogage
+3. saute d'une ligne en une ligne pour voir si ta trace est correcte
+
+Si tu te rends à la fin de l'exécution et que toutes tes valeurs étaient bonnes, tu as bien compris ce que fait le code.
