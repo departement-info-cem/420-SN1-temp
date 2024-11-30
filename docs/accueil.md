@@ -1,11 +1,13 @@
 ---
 sidebar_position: 1
 slug: /
+hide_table_of_contents: true
 ---
 
-# Accueil (EN CONSTRUCTION)
+# Programmation en sciences (EN CONSTRUCTION)
 
-**SN1** *programmation en sciences*
+<Row>
+<Column>
 
 | Semaine                       | Séquence des cours                          | Travaux pratiques           |
 |-------------------------------|---------------------------------------------|-----------------------------|
@@ -24,3 +26,48 @@ slug: /
 | [13 →](cours/rencontre13) | Performance, optimisation parallélisme      | 50%                         |
 | [14 →](cours/rencontre14) | Formatif/révisions. Aperçu Réseaux neurones | 75%                         |
 | [15 →](cours/rencontre15) | **Examen final**                            | 100%                        |
+
+</Column>
+<Column>
+
+Bienvenue au cours programmation en sciences! Dans ce cours nous allons programmer en Python, utiliser des librairies et outils.
+
+L'onglet Cours contient les séances de cours. L'onglet Travaux contient les travaux pratiques. L'onglet Recettes contient des procédures à suivre.
+
+:::tip Avant chaque séance :
+
+Tu as du travail préparatoire pour découvrir la matière par toi-même. Il s'agira d'une page web à lire, d'une video à suivre et/ou d'exercices à faire. Cela représente environ 2 heures de travail.
+
+:::
+
+:::info Séance
+
+1. Un rappel sur le calendrier et les remises
+2. Une causerie sur ce qui a été vu, sur ce qui n'a pas été compris
+3. Parfois des démos / capsules de contenu supplémentaire
+
+Ensuite, tu travailles sur :
+
+- Compléter et valider les exercices avec le professeur
+- Poser des questions sur les exercices et travaux
+- Avancer / compléter les travaux évalués
+
+:::
+
+:::caution IA - Intelligence artificielle
+
+TODO valider
+
+Ces symboles indiquent si vous avez le droit ou pas d'utiliser l'IA (*ChatGPT*, ...) pour faire un exercice :
+
+| | |
+| --- | --- |
+| <h1>👨‍🎓&nbsp;👨‍🎓</h1> | Vous devriez faire cet exercice sans utiliser l'IA, en réfléchissant par vous-même et en expérimentant. C'est ainsi que vous apprendrez. |
+| <h1>👨‍🎓&nbsp;🤖</h1> | Vous pouvez vous aider de l'IA en posant des questions spécifiques, par exemple : "comment fait-on pour centrer du texte dans un *TextView*?" Mais ne lui donnez pas l'énoncé, sinon aussi bien ne pas faire l'exercice! |
+| <h1>🤖&nbsp;🤖</h1> | Vous pouvez utiliser l'IA sans réserve pour faire cet exercice! |
+
+:::
+
+
+</Column>
+</Row>
