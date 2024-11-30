@@ -78,16 +78,10 @@ x = str(5 - x)
 
 La plupart des langages de programmation on des types de base pour représenter les nombres
 
-### Entier
-
-On commence par 1 2 3 -99 etc.
-
-
-### Nombre à virgule (flottant)
-
-### Nombre à virgule (décimaux)
-
-### Texte
+- Entier : 1 2 3 -99 etc.
+- Flottant : 1.0 2.5 -99.9 etc.
+- Texte : "bonjour" "salut" "123" etc.
+- Booléen : True False
 
 ## types composés
 
@@ -118,7 +112,21 @@ autreCoordonnees = (5.6 , 3.5)
 
 ### dictionnaires
 
+On peut vouloir associer des valeurs à des clés, on utilise un dictionnaire
+```python
+dico = { "cle1" : 4.5 , "cle2" : "salut" }
+```
+
 # Exercices
+
+## Exercices trace_types.md
+
+
+```python
+
+
+```
+
 
 ## Exercice tableau
 TODO faire un exercice qui calcule 
