@@ -19,6 +19,7 @@ On va voir une démarche algorithmique sur quelques exemples
 
 ## Exemple 4 : decider si 2 textes sont des anagrammes
 
+
 # Débogage
 
 On va revenir à travers des exercices sur les:
@@ -29,6 +30,23 @@ On va revenir à travers des exercices sur les:
 
 # Exercices
 
+:::tip
+## Exerice de révision : appel de fonction 
+
+Produis la trace du code suivant dans le fichier **appel-revision.md**:
+```python
+def double(x, y, z):
+  b = 9
+  return x*y + z-x
+
+a = 5
+b = 6
+z = 7
+a = double(z, b, a)
+```
+
+
+:::
 
 ## Exercice Débogue et compte
 
@@ -72,6 +90,17 @@ TODO exemple de
 - a < b
 - a < b
 - a < b
+
+## Exercice islam-chretien.py
+
+Sachant que le calendrier mulsulman commence en 622 du calendrier chrétien mais que ses années sont plus courtes,
+il va y avoir un jour où pour la première fois les musulmans et les chrétiens seront dans la même année.
+
+En 622, le calendrier musulman est en 1.
+
+Écris un programme qui détermine l'année où les deux calendriers se rejoignent pour la première fois.
+- le calendrier musulman s'appelle aussi [calendrier hégirien](https://fr.wikipedia.org/wiki/Calendrier_hégirien)
+- tu peux chercher une librairie de conversion entre dates
 
 
 ## Exercice moyenne.py

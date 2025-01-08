@@ -89,13 +89,14 @@ print( 4 / 5 *                (9  + 6) )
 ```shell
 python3 c:\Users\monmatricule\Desktop\bonjour.py
 ```
-- Vous venez d'exécuter un Python, "that's cold"
+- Vous venez d'exécuter un Python
 - Regardons ce qu'on vient de voir
     - l'interpréteur a affiché trois lignes
     - il exécute dans l'ordre de haut en bas
     - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
-    - les espaces peuvent être importants ou pas
-
+    - les espaces peuvent être importants ou pas: 
+      - en début de ligne c'est important
+      - dans une expression, c'est ignoré
 
 
 ## Demo 3 : bonjour le monde dans un environnement de développement
