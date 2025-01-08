@@ -70,9 +70,9 @@ Si on a le code suivant:
 def ma_fonction(a, b):
     c = a + b
     return c
-a = 3
-b = 5
-z = ma_fonction(a, b)
+mavariable = 3
+tavariable = 5
+z = ma_fonction(mavariable, tavariable)
 y = ma_fonction(4, 9)
 print("z vaut " + str(z) + " et y vaut " + str(y))
 ```
@@ -84,15 +84,15 @@ ont été commencées mais pas finies.
 
 | ligne exécutée           | effet                                                      | pile d'appels |
 |--------------------------|------------------------------------------------------------|---------------|
-| a = 3                    | a: 3                                                    | __main__      |
-| b = 5                    | a: 3 <br /> b: 5                                               | __main__      |
-| z = ma_fonction(a, b) | a: 3 <br /> b: 5 <br /> appelle ma_fonction avec a→3 et b→5       | __main__      |
+| mavariable = 3                    | mavariable: 3                                                    | __main__      |
+| tavariable = 5                    | mavariable: 3 <br /> tavariable: 5                                               | __main__      |
+| z = ma_fonction(a, b) | mavariable: 3 <br /> tavariable: 5 <br /> appelle ma_fonction avec a→3 et b→5       | __main__      |
 | c = a + b                | a: 3 <br /> b: 5 <br /> c: 8                                        | ma_fonction <br /> main |
 | return c                 | a: 3 <br /> b: 5 <br /> c: 8, retourne 8, z = 8                     | ma_fonction <br /> main |
-| y = ma_fonction(4, 9) | a: 3 <br /> b: 5 <br /> z: 8 <br />appelle ma_fonction avec a→4 et b→9 | __main__      |
+| y = ma_fonction(4, 9) | mavariable: 3 <br /> tavariable: 5 <br /> z: 8 <br />appelle ma_fonction avec a→4 et b→9 | __main__      |
 | c = a + b                | a: 4 <br /> b: 9 <br /> c: 13                                       | ma_fonction <br /> main |
 | return c                 | a: 4 <br /> b: 9 <br /> c: 13 <br /> retourne 13, y = 13                  | ma_fonction <br /> main |
-| print("z vaut " + str(z) + " et y vaut " + str(y)) | a: 4 <br /> b: 9 <br /> z: 8 <br /> y = 13 <br /> affiche "z vaut 8 et y vaut 13" | __main__     |
+| print("z vaut " + str(z) + " et y vaut " + str(y)) | mavariable: 3 <br /> tavariable: 5 <br /> z: 8 <br /> y = 13 <br /> affiche "z vaut 8 et y vaut 13" | __main__     |
 
 
 Dans ce cas, on doit ajouter la pile d'appels pour indiquer quelles fonctions ont été commencées mais pas finies.
