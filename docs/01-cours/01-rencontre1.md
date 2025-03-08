@@ -2,7 +2,7 @@
 
 - plan de cours
 - premier script et exécution
-- mise en place du repo github pour les exercices et les notes
+- mise en place du repo github pour les exercices et les notes? OneDrive?
 
 ## Plan de cours
 
@@ -14,9 +14,11 @@ Nous allons regarder le plan de cours pour voir :
 
 ## Ecouteurs
 
-De nombreux éléments de contenus seront disponibles sous la forme de videos pour vous permettre de les ré-écouter autant de fois que nécessaire.
+De nombreux éléments de contenus seront disponibles sous la forme 
+- de videos pour vous permettre de les ré-écouter autant de fois que nécessaire
+- de recettes pour vous permettre de les appliquer autant que nécessaire
 
-Du coup, il est important d'apporter des écouteurs filaires pour les cours.
+Il est utile d'apporter des écouteurs filaires pour les cours.
 
 ## Plagiat
 

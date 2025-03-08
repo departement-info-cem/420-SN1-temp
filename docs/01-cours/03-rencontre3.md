@@ -3,9 +3,8 @@
 ## Retour en classe sur le cours précédent
 
 Questions 
-
-
-
+- Est-ce que **a = a + 1** ça a un sens?
+- **a = a + 1** c'est équivalent à **a + 1 = a**?
 
 ## si ... alors ... sinon
 
@@ -28,9 +27,16 @@ Imaginons qu'on veuille
 ## pour tous les trucs dans ... la boucle dont on sait quand elle s'arrête
 
 
-
-
 # Exercices
+
+Une trace plus facile mais sur une expression complexe
+
+```pyhton
+variable = 2
+resultat = Math.exp(2, variable++) + 5 * Math.Mat.exp(3, variable++)
+```
+
+
 
 :::tip
 
