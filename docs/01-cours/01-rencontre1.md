@@ -12,10 +12,10 @@ Nous allons regarder le plan de cours pour voir :
 - les règles relatives au plagiat
 - les règles relatives aux absences
 
-## Ecouteurs
+## Écouteurs
 
-De nombreux éléments de contenus seront disponibles sous la forme 
-- de videos pour vous permettre de les ré-écouter autant de fois que nécessaire
+De nombreux éléments de contenus seront disponibles sous la forme :
+- de videos pour vous permettre de les réécouter autant de fois que nécessaire
 - de recettes pour vous permettre de les appliquer autant que nécessaire
 
 Il est utile d'apporter des écouteurs filaires pour les cours.
@@ -25,17 +25,17 @@ Il est utile d'apporter des écouteurs filaires pour les cours.
 En programmation, c'est difficile de distinguer "s'aider" et "copier", "travailler ensemble" et
 "un qui travaille, l'autre qui recopie".
 
-Voici quelques règles pour vous aider:
+Voici quelques règles pour vous aider :
 - ne jamais partager un fichier de code ou un fragment de code, en général le copain le recopie sans réfléchir
-- vous pouvez expliquer dessiner, reformuler mais n'écrivez pas le code pour un ami
-- vous pouvez utiliser du code trouvé en ligne, juste mettre un petit commentaire au dessus avec l'URL où vous l'avez trouvé
+- vous pouvez expliquer, dessiner, reformuler, mais n'écrivez pas le code pour un ami
+- vous pouvez utiliser du code trouvé en ligne, juste mettre un petit commentaire au-dessus avec l'URL où vous l'avez trouvé
 - si vous avez un doute, demandez à votre prof
 
 ## Demo 1 : bonjour le monde, interactif
 
 On va ouvrir un terminal Powershell:
-- un terminal c'est une fenêtre qui nous invite à taper des commandes pour l'ordinateur
-- Powershell, c'est le terminal à la mode pour une ordinateur qui roule Windows
+- un terminal, c'est une fenêtre qui nous invite à taper des commandes pour l'ordinateur
+- Powershell, c'est le terminal à la mode pour un ordinateur qui roule Windows
 - l'ordinateur attend nos instructions, on va partir python en tapant "python3"
 - si l'ordinateur n'a pas l'air content, qu'il dit que Python n'est pas installé se référer à TODO
 - si tout va bien on va pouvoir taper des trucs, vous devriez voir quelque chose qui ressemble à
@@ -66,15 +66,15 @@ Type "help", "copyright", "credits" or "license" for more information.
 
 On va vite vouloir donner plein d'ordres à l'ordinateur en lui parlant en Python.
 
-Ca devient pénible de les écrire les uns après les autres en mode interactif. Alors on a
-pensé à écrire les ordres les uns après les autres dans fichier.
+Ça devient pénible de les écrire les uns après les autres en mode interactif. Alors, on a
+pensé à écrire les ordres les uns après les autres dans un fichier.
 
 On va appeler ça un "programme Python" ou un "script Python". Concrètement, c'est un
 fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
 le mélanger avec les ".pdf" et les ".jpg".
 
-On ouvre un éditeur de texte. Il y en a plein, nous on va partir Notepad++.
-- on ouvre le menu démarrer de Windows
+On ouvre un éditeur de texte. Il y en a plein, nous, on va partir Notepad++.
+- on ouvre le menu **Démarrer** de Windows
 - on tape "not" et il devrait apparaitre une liste avec Notepad++
 - on va taper dans la zone du fichier les instructions, une par ligne
 ```python
@@ -96,7 +96,7 @@ python3 c:\Users\monmatricule\Desktop\bonjour.py
     - l'interpréteur a affiché trois lignes
     - il exécute dans l'ordre de haut en bas
     - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
-    - les espaces peuvent être importants ou pas: 
+    - les espaces peuvent être importants ou pas : 
       - en début de ligne c'est important
       - dans une expression, c'est ignoré
 
@@ -107,15 +107,15 @@ On a gagné, on a perdu
 - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
 - on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
 
-On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre ils
+On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre, ils
 vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain
 je me suis mal exprimé.
 
-On va alors utiliser un environnement de développement pour se doter des pouvoirs super:
+On va alors utiliser un environnement de développement pour se doter des pouvoirs super :
 - on va pouvoir arrêter le temps
 - on va pouvoir voir à l'intérieur de l'ordinateur
 
-On va partir PyCharm pour exécuter notre script en mode super développeur:
+On va partir PyCharm pour exécuter notre script en mode super développeur :
 - partir l'application PyCharm, on appelle ça un IDE
 - Integrated Developpement Environment, un environnement intégré pour programmer
 - créer un fichier test_ide.py avec le contenu suivant
@@ -127,7 +127,7 @@ print("Ca va aujourd'       hui?")          # les espaces entre "" sont pris en 
 print( 4 / 5 *                (9  + 6) )    # les espaces dans une expression sont ignorés
 ```
 - l'exécuter en cliquant sur le triangle vert
-- on devrait voir
+- on devrait voir.
 
 ### le point d'arrêt : arrêter le temps
 
@@ -137,7 +137,7 @@ print( 4 / 5 *                (9  + 6) )    # les espaces dans une expression so
 
 ## Jargon
 
-Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs
+Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs :
 - "print" ("imprimer") qui veut dire affiche à l'écran au lieu d'imprimer du papier
 - "exécuter" un programme !?
 
@@ -147,20 +147,20 @@ On va essayer de pointer les termes jargoniques au fur et à mesure.
 
 ## Exercice de débogage de la semaine TODO
 
-Parce qu'on apprend jamais aussi bien que par soi-même ...
+Parce qu'on apprend jamais aussi bien que par soi-même…
 
 ## Exercice refaire_les_demos.py
 
-Refaire les étapes des 3 démos par vous même. S'assurer qu'on comprend un
+Refaire les étapes des 3 démos par vous-même. S'assurer qu'on comprend un
 peu ce qui se passe. Ne pas hésiter à poser des questions si certains points
 sont moins clairs.
 
 ## Exercice points_arrets.py
 
 On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
-est de familiariser avec le débogueur.
+est de se familiariser avec le débogueur.
 
-Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant:
+Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
 
 ```python
 # ceci est une fonction, on va en parler en semaine 4
@@ -174,18 +174,18 @@ a = calculComplexe(a,a,a)
 print("le resultat est ", calculComplexe(a, b, c))  
 ```
 
-On voudrait savoir quelles sont les valeurs de a au fil de l'exécution du script. Tu peux soit:
+On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
 - essayer de calculer à la main combien ça vaut
 - poser un point d'arrêt et observer
 
 ## Exercice la_sequence.py
 
-Dans un fichier la_sequence.py, écris une dizaine de lignes de commandes Python. Tu peux inclure:
+Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
 - des déclarations de variables
 - des calculs avec assignations
 - des affichages avec print
 
-Exécute ton code en mode débogage pour te familiariser avec le débogueur (ce sera l'outil le plus utile de ta vie pour programmer)
+Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de votre vie pour programmer)
 
 
 

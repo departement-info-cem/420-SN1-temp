@@ -30,13 +30,18 @@ hide_table_of_contents: true
 </Column>
 <Column>
 
-Bienvenue au cours programmation en sciences! Dans ce cours nous allons programmer en Python, utiliser des librairies et outils.
+Bienvenue au cours programmation en sciences!  
+Dans ce cours, nous allons programmer en Python et utiliser des librairies et des outils.
 
-L'onglet Cours contient les séances de cours. L'onglet Travaux contient les travaux pratiques. L'onglet Recettes contient des procédures à suivre.
+L'onglet **Cours** contient les séances de cours.  
+L'onglet **Travaux** contient les travaux pratiques.  
+L'onglet **Recettes** contient des procédures à suivre.
 
 :::tip Avant chaque séance :
 
-Tu as du travail préparatoire pour découvrir la matière par toi-même. Il s'agira d'une page web à lire, d'une video à suivre et/ou d'exercices à faire. Cela représente environ 2 heures de travail.
+Vous avez du travail préparatoire pour découvrir la matière par vous-même.  
+Il s'agira d'une page web à lire, d'une video à suivre et/ou d'exercices à faire.  
+Cela représente environ 2 heures de travail.
 
 :::
 
@@ -44,9 +49,9 @@ Tu as du travail préparatoire pour découvrir la matière par toi-même. Il s'a
 
 1. Un rappel sur le calendrier et les remises
 2. Une causerie sur ce qui a été vu, sur ce qui n'a pas été compris
-3. Parfois des démos / capsules de contenu supplémentaire
+3. Parfois des démos/capsules de contenu supplémentaire
 
-Ensuite, tu travailles sur :
+Ensuite, vous travaillez à :
 
 - Compléter et valider les exercices avec le professeur
 - Poser des questions sur les exercices et travaux
