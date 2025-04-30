@@ -44,6 +44,14 @@ const config = {
         theme: {
           customCss: [require.resolve("./src/css/custom.css")],
         },
+        blog: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
+        pages: {
+          remarkPlugins: [remarkMath],
+          rehypePlugins: [rehypeKatex],
+        },
       }),
     ],
   ],
@@ -125,13 +133,12 @@ const config = {
         },
       ],
       stylesheets: [
-        {
-          href: 'https://cdn.jsdelivr.net/npm/katex@0.13.24/dist/katex.min.css',
-          type: 'text/css',
-          integrity:
-            'sha384-odtC+0UGzzFL/6PNoE8rX/SPcQDXBJ+uRepguP4QkPCm2LBxH3FA3y+fKSiJ+AmM',
-          crossorigin: 'anonymous',
-        },
+          {
+            href: 'https://cdn.jsdelivr.net/npm/katex@0.16.9/dist/katex.min.css',
+            type: 'text/css',
+            integrity: 'sha384-mll67QQZFKtJkHv4dNUNz6EDuJeayQMZT6X0hgqP/d9vyvyehZ9UUuqbB6+L1tWg',
+            crossorigin: 'anonymous',
+          },
       ],
     }),
 };
