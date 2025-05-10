@@ -1,4 +1,4 @@
-# 12 classes et objets
+# classes et objets
 
 ## Introduction
 

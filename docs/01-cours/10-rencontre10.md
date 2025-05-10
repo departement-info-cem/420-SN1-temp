@@ -1,3 +1,3 @@
-# 10 Graphiques et matplotlib
+# Graphiques et matplotlib
 
 

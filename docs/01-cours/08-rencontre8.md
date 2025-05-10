@@ -1,4 +1,4 @@
-# 8 Fichiers, fichiers CSV
+# Fichiers, fichiers CSV
 
 Aujourd'hui nous allons voir comment manipuler des fichiers texte.
 

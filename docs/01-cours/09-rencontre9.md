@@ -1,4 +1,4 @@
-# 9 numpy, polynômes, calcul
+# numpy, polynômes, calcul
 
 ## 
 
