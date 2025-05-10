@@ -1,12 +1,79 @@
 # Ajouter une librairie
 
-La plupart des librairies Python sont disponibles sur le site [PyPi](https://pypi.org/). 
+# TODO: à vérifier
 
-## Si on est en ligne de commandes
+La plupart des librairies Python sont disponibles sur le site [PyPi](https://pypi.org/).
+Une *librairie* (ou *package*) contient du code Python qu'on peut réutiliser dans nos projets pour éviter
+de tout programmer soi-même.
 
-Pour ajouter une librairie à votre projet, vous pouvez utiliser la commande `pip install` suivie du nom de la librairie.
+---
 
-## Dans PyCharm
+## Ajouter une librairie dans PyCharm
 
-Dans PyCharm, vous pouvez ajouter une librairie en cliquant sur le nom de votre projet dans l'arborescence, 
-puis en cliquant sur le bouton `+` à droite de `Project Interpreter`.
+1. Ouvrir le projet dans PyCharm.
+2. Aller dans le menu **File > Settings > Project > Python Interpreter**.
+3. Cliquer sur l’icône ⚙️ en haut à droite, puis choisir **Add...** ou **Show All…**.
+4. Chercher la librairie désirée (ex. : `numpy`) dans le champ de recherche.
+5. Sélectionner la librairie dans la liste, puis cliquer sur **Install Package**.
+6. Attendre que l’installation se termine (un message apparaîtra en bas à gauche).
+7. Fermer la fenêtre — la librairie est maintenant prête à être utilisée dans votre code.
+
+---
+
+## Vérifier l'installation
+
+1. Ouvrir un fichier `.py` ou un notebook.
+2. Taper une ligne comme :
+
+```python
+import numpy
+```
+
+3. Aucune erreur rouge ne devrait s'afficher. Sinon, redémarrer PyCharm ou revérifier l'installation.
+
+---
+
+:::tip Installer via terminal
+
+On peut aussi installer une librairie en ligne de commande, dans le terminal intégré :
+
+```bash
+pip install nom-de-la-librairie
+```
+
+Exemple :
+
+```bash
+pip install matplotlib
+```
+
+:::
+
+---
+
+## Utiliser la librairie dans un fichier Python
+
+```python
+import matplotlib.pyplot as plt
+
+plt.plot([1, 2, 3], [4, 5, 6])
+plt.show()
+```
+
+---
+
+:::tip Versions de librairies
+
+On peut spécifier une version précise lors de l’installation :
+
+```bash
+pip install pandas==1.5.3
+```
+
+Ou mettre à jour une librairie existante :
+
+```bash
+pip install --upgrade pandas
+```
+
+:::

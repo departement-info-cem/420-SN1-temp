@@ -58,7 +58,7 @@ def salut():
 
 #### Résultat affiché :
 
-:::tip
+:::tip .
 
 # Titre principal
 
@@ -126,5 +126,50 @@ bonjour('Marie')
 ```
 Bonjour, Marie!
 ```
+
+---
+
+## Astuces
+
+- Tu peux déplacer une cellule vers le haut ou le bas à l’aide des flèches ↑ ↓ dans la barre d’outils.
+- Pour insérer une cellule au-dessus ou au-dessous, utiliser les boutons **＋** ou **Insert Cell Below/Above**.
+- Les fichiers `.ipynb` peuvent être ouverts dans d’autres outils comme **JupyterLab** ou **VS Code**.
+- Les cellules Markdown peuvent contenir des titres, des listes, des images, des liens, et même des équations
+mathématiques en format TeX :
+
+### Écrire des équations mathématiques (TeX)
+
+1. Cliquer sur une cellule existante ou en créer une nouvelle.
+2. Changer son type en **Markdown**.
+3. Insérer l’équation LaTeX entre `$$ ... $$` pour une formule centrée,
+   ou entre `$ ... $` pour une formule en ligne.
+4. Appuyer sur `Shift` ⏎ pour afficher le rendu.
+
+#### Exemple (formule centrée) :
+
+````markdown
+La formule quadratique est :
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+````
+
+#### Exemple (formule en ligne) :
+
+````markdown
+La solution est donnée par $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+````
+
+#### Résultat affiché :
+
+:::tip .
+
+La formule quadratique est :
+
+$$x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$$
+
+La solution est donnée par $x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}$.
+
+:::
+
 
 ---

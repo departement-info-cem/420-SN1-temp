@@ -1,5 +1,57 @@
-# Déboguer
+# Déboguer 🪲
+
+# TODO: à vérifier
+
+Déboguer signifie observer l’exécution de notre programme étape par étape pour comprendre son comportement, trouver des erreurs (bugs), ou vérifier l’état des variables.
+
+PyCharm offre un excellent environnement de débogage avec des outils visuels intégrés.
+
+---
 
 ## Point d'arrêt
 
-## Evaluer une expression
+Un **point d’arrêt** (breakpoint) permet de dire à PyCharm : "Arrête ici quand tu exécutes le programme."
+
+1. Ouvrir un fichier `.py`.
+2. Cliquer dans la marge gauche à côté d’une ligne de code pour y placer un point rouge (le point d’arrêt).
+3. Cliquer sur le bouton 🪲 **Debug** (à côté du bouton ▶ Run).
+4. Le programme s’arrêtera à cette ligne, et PyCharm affichera la fenêtre de débogage avec les variables, la pile d’appels, etc.
+
+```python
+def carre(x):
+    return x * x
+
+resultat = carre(5)
+print(f"Résultat : {resultat}")
+```
+
+---
+
+## Évaluer une expression
+
+Quand l'exécution est arrêtée à un point d’arrêt, on peut **évaluer** une expression, c'est-à-dire voir le résultat d’un calcul ou le contenu d’une variable.
+
+1. Cliquer sur le bouton **Evaluate Expression** dans la fenêtre de débogage (ou utiliser le raccourci `Alt + F8`).
+2. Taper une expression Python (par ex. `x * x` ou `len(ma_liste)`).
+3. Le résultat s’affiche immédiatement, sans modifier le programme.
+
+---
+
+:::tip Supprimer un point d’arrêt
+
+Pour retirer un point d’arrêt, cliquer à nouveau dessus dans la marge gauche.
+
+:::
+
+---
+
+:::tip Exécution pas à pas
+
+Lorsqu’un point d’arrêt est atteint, on peut faire :
+
+- ▶️ **Resume** : continuer jusqu’au prochain point d’arrêt.
+- ⏭ **Step Over** : exécuter la ligne actuelle sans entrer dans les fonctions appelées.
+- 🔽 **Step Into** : entrer dans la fonction appelée pour voir ce qu’elle fait.
+- ⏹ **Stop** : arrêter l’exécution.
+
+:::
