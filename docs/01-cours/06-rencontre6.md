@@ -1,4 +1,4 @@
-# 6 Intégration révisions et formatif
+# Intégration révisions et formatif
 
 Le but de la séance d'aujourd'hui est de 
 - s'exercer sur des exercices similaires à un examen

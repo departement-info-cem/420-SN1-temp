@@ -1,4 +1,4 @@
-# 3 Structures de contrôle
+# Structures de contrôle
 
 ## Retour en classe sur le cours précédent
 

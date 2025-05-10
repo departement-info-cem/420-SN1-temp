@@ -1,4 +1,4 @@
-# 11 Algorithmique prise 2
+# Algorithmique prise 2
 
 ## 
 
