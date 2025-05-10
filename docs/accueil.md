@@ -9,9 +9,9 @@ hide_table_of_contents: true
 <Row>
 <Column>
 
-| Semaine                       | Séquence des cours                          | Travaux pratiques           |
-|-------------------------------|---------------------------------------------|-----------------------------|
-| [1 →](cours/rencontre1)       | Intro, plan de cours, premier script        | TP1 : calcul "à la dumb"    |
+| Semaine                   | Séquence des cours                          | Travaux pratiques           |
+|---------------------------|---------------------------------------------|-----------------------------|
+| [1 →](cours/rencontre1)   | Intro, plan de cours, premier script        | TP1 : calcul "à la dumb"    |
 | [2 →](cours/rencontre2)   | Valeurs, expressions, types                 | cible 25% fini              |
 | [3 →](cours/rencontre3)   | Structures contrôles                        | cible 50%                   |
 | [4 →](cours/rencontre4)   | Fonctions                                   | 75%                         |
