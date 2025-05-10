@@ -1,2 +1,87 @@
-# Créer un fichier markdown
+# Fichier Markdown
 
+Les fichiers **Markdown** (`.md`) permettent d’écrire du texte structuré, lisible à la fois par les humains et les machines.
+Ils sont souvent utilisés pour la documentation, les notes, ou les fichiers `README`.
+
+---
+
+## Créer un fichier Markdown dans PyCharm
+
+1. Ouvrir un projet dans PyCharm (ou en [créer un nouveau](creer-projet)).
+2. Dans l’arborescence à gauche, cliquer-droit sur le dossier où créer le fichier.
+3. Choisir **New > File**.
+4. Nommer le fichier avec l’extension `.md`, par exemple `notes.md`, puis appuyer sur ⏎.
+5. Un nouvel onglet s’ouvre avec un éditeur Markdown.
+
+---
+
+## Prévisualiser le fichier Markdown
+
+1. Dans la barre d’outils du haut, cliquer sur l’icône de `Editor and Preview` (des lignes et un rectangle)
+dans la barre d’outils en haut.
+2. PyCharm affiche à gauche le texte brut (code source), et à droite le rendu visuel.
+
+---
+
+## Écrire du contenu Markdown
+
+1. Taper du texte dans le fichier (à gauche) en utilisant la syntaxe [Markdown](https://www.markdownguide.org/basic-syntax/).
+2. Ajouter des titres, des listes, des liens, des images ou des blocs de code (voir exemples ci-dessous).
+3. Le rendu visuel à droite se met à jour automatiquement.
+
+#### Exemple de contenu Markdown :
+
+````markdown
+# Mes notes
+
+Voici une **liste de tâches** :
+
+- Lire la documentation
+- Écrire un `README.md`
+- Apprendre Markdown
+
+## Exemple de lien
+
+[Documentation Markdown](https://www.markdownguide.org)
+
+## Exemple de code
+
+```python
+def dire_bonjour(nom):
+    print(f"Bonjour, {nom}!")
+```
+````
+
+#### Résultat affiché :
+
+:::tip
+
+# Mes notes
+
+Voici une **liste de tâches** :
+
+- Lire la documentation
+- Écrire un `README.md`
+- Apprendre Markdown
+
+## Exemple de lien
+
+[Documentation Markdown](https://www.markdownguide.org)
+
+## Exemple de code
+
+```python
+def dire_bonjour(nom):
+    print(f"Bonjour, {nom}!")
+```
+
+:::
+
+---
+
+## Astuces
+
+- Utiliser `README.md` dans un projet GitHub permet d'afficher automatiquement la description du projet sur la page principale.
+- Pour insérer des images locales, utiliser la syntaxe `![texte alternatif](chemin/vers/image.png)`.
+
+---
