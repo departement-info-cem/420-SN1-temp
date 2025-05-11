@@ -1,20 +1,22 @@
 # Produire une trace d'exécution
 
-# TODO : à mettre en onglets comme 4N6
-
-Si un as un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées. 
+Lorsqu'on a un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées.
 
 Pour cela, on peut utiliser un outil de traçage.
 
 ## Principe
 
-On veut accomplir 2 éléments principaux:
-1. indiquer quelles lignes de code s'exécutent dans quel ordre
-2. indiquer les effets de chaque ligne de code
+On veut accomplir 2 éléments principaux :
+1. Indiquer quelles lignes de code s'exécutent dans quel ordre.
+2. Indiquer les effets de chaque ligne de code.
+
+<Tabs queryString="recette-activite">
+<TabItem value="Exemple simple" label="Exemple simple">
 
 ## Exemple simple
 
-Si on a le code suivant:
+Si on a le code suivant :
+
 ```python  showLineNumbers
 a = 3 + 4
 b = a * 2
@@ -22,7 +24,7 @@ print("salut " + str(b))
 ```
 
 ### Trace
-On aura la trace suivante:
+On aura la trace suivante :
 
 | ligne exécutée | effet                             |
 |-----------------|-----------------------------------|
@@ -33,9 +35,13 @@ On aura la trace suivante:
 Dans le cas d'une séquence d'instructions, on peut voir que les instructions sont exécutées dans
 l'ordre de lecture du code. Simple!
 
+</TabItem>
+<TabItem value="Avec boucle" label="Avec boucle">
+
 ## Exemple avec boucle
 
-Si on a le code suivant:
+Si on a le code suivant :
+
 ```python showLineNumbers
 for i in range(3):
     if (i % 2 == 0):
@@ -45,7 +51,7 @@ for i in range(3):
 ```
 
 ### Trace
-On aura la trace suivante:
+On aura la trace suivante :
 
 | ligne exécutée | effet                         |
 |-----------------|-------------------------------|
@@ -57,9 +63,12 @@ On aura la trace suivante:
 | if (i % 2 == 0): | i: 2 <br /> i%2 vaut 0        |
 | print("c'est pair " + str(i)) | i: 2 <br /> affiche "c'est pair 2" |
 
-On voit que:
-- on n'indique que les lignes qui s'exécutent en vrai
-- certaines lignes s'exécutent plusieurs fois, c'est le principe de la boucle
+On voit que :
+- On indique seulement les lignes qui s'exécutent en vrai.
+- Certaines lignes s'exécutent plusieurs fois, c'est le principe de la boucle!
+
+</TabItem>
+<TabItem value="Avec fonction" label="Avec fonction">
 
 ## Exemple avec une fonction
 
@@ -95,11 +104,16 @@ ont été commencées mais pas finies.
 
 Dans ce cas, on doit ajouter la pile d'appels pour indiquer quelles fonctions ont été commencées mais pas finies.
 
-## Valider ta trace
+</TabItem>
+<TabItem value="valider-une-trace" label="Valider une trace">
 
-Afin de valider ta trace, tu vas utiliser le débogueur de ton IDE préféré.
-1. place un point d'arrêt sur la première ligne qui s'exécute
-2. lance l'exécution en mode débogage
-3. saute d'une ligne en une ligne pour voir si ta trace est correcte
+Afin de valider une trace :
+1. Placer un point d'arrêt sur la première ligne qui s'exécute.
+2. Lancer l'exécution en mode débogage.
+3. Sauter de ligne en ligne pour voir si la trace est correcte.
 
-Si tu te rends à la fin de l'exécution et que toutes tes valeurs étaient bonnes, tu as bien compris ce que fait le code.
+Si on se rend à la fin de l'exécution et que toutes tes valeurs étaient bonnes,
+on a bien compris ce que fait le code.
+
+</TabItem>
+</Tabs>
