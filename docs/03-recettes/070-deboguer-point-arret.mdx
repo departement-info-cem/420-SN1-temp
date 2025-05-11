@@ -1,7 +1,5 @@
 # Déboguer 🪲
 
-# TODO: à vérifier
-
 Déboguer signifie observer l’exécution de notre programme étape par étape pour comprendre son comportement, trouver des erreurs (bugs), ou vérifier l’état des variables.
 
 PyCharm offre un excellent environnement de débogage avec des outils visuels intégrés.
@@ -10,7 +8,7 @@ PyCharm offre un excellent environnement de débogage avec des outils visuels in
 
 ## Point d'arrêt
 
-Un **point d’arrêt** (breakpoint) permet de dire à PyCharm : "Arrête ici quand tu exécutes le programme."
+Un **point d’arrêt** (*breakpoint*) permet de dire à PyCharm : "Arrête ici quand tu exécutes le programme."
 
 1. Ouvrir un fichier `.py`.
 2. Cliquer dans la marge gauche à côté d’une ligne de code pour y placer un point rouge (le point d’arrêt).
@@ -18,12 +16,16 @@ Un **point d’arrêt** (breakpoint) permet de dire à PyCharm : "Arrête ici qu
 4. Le programme s’arrêtera à cette ligne, et PyCharm affichera la fenêtre de débogage avec les variables, la pile d’appels, etc.
 
 ```python
-def carre(x):
-    return x * x
-
-resultat = carre(5)
-print(f"Résultat : {resultat}")
+i = 0
+while i < 5:
+    carre = i * i
+    print(f"{i}² = {carre}")
+    i += 1
 ```
+
+TODO: Ajouter un screenshot avec un point d'arrêt
+
+TODO: Ajouter un screenshot des variables et de la pile d'appels
 
 ---
 
@@ -32,10 +34,21 @@ print(f"Résultat : {resultat}")
 Quand l'exécution est arrêtée à un point d’arrêt, on peut **évaluer** une expression, c'est-à-dire voir le résultat d’un calcul ou le contenu d’une variable.
 
 1. Cliquer sur le bouton **Evaluate Expression** dans la fenêtre de débogage (ou utiliser le raccourci `Alt + F8`).
-2. Taper une expression Python (par ex. `x * x` ou `len(ma_liste)`).
+2. Taper une expression Python (par ex. `i + 1`, `carre`, ou `i * i`).
 3. Le résultat s’affiche immédiatement, sans modifier le programme.
 
 ---
+
+:::note Exécution pas à pas
+
+Lorsqu’un point d’arrêt est atteint, on peut faire :
+
+- <img src={require('/static/img/icons/stop.png').default} alt="Stop" width="24" style={{ verticalAlign: 'middle' }} /> **Stop** : arrêter l’exécution.
+- <img src={require('/static/img/icons/resume.png').default} alt="Resume" width="24" style={{ verticalAlign: 'middle' }} /> **Resume** : continuer l’exécution jusqu’au prochain point d’arrêt.
+- <img src={require('/static/img/icons/stepover.png').default} alt="Step Over" width="24" style={{ verticalAlign: 'middle' }} /> **Step Over** : exécuter la ligne actuelle (mais sans entrer dans les fonctions appelées).
+- <img src={require('/static/img/icons/stepinto.png').default} alt="Step Into" width="24" style={{ verticalAlign: 'middle' }} /> **Step Into** : entrer dans la fonction appelée pour voir ce qu’elle fait.
+
+:::
 
 :::tip Supprimer un point d’arrêt
 
@@ -43,15 +56,3 @@ Pour retirer un point d’arrêt, cliquer à nouveau dessus dans la marge gauche
 
 :::
 
----
-
-:::tip Exécution pas à pas
-
-Lorsqu’un point d’arrêt est atteint, on peut faire :
-
-- ▶️ **Resume** : continuer jusqu’au prochain point d’arrêt.
-- ⏭ **Step Over** : exécuter la ligne actuelle sans entrer dans les fonctions appelées.
-- 🔽 **Step Into** : entrer dans la fonction appelée pour voir ce qu’elle fait.
-- ⏹ **Stop** : arrêter l’exécution.
-
-:::
