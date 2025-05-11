@@ -26,12 +26,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "5 - 🧮 Algorithmique et 🐞 débogage",
+      label: "5 - 🧮 Algorithmique (1)",
       id: "cours/rencontre5",
     },
     {
       type: "doc",
-      label: "6 - 🔨 Intégration",
+      label: "6 - 🔨 Intégration (TP/révision)",
       id: "cours/rencontre6",
     },
     {
@@ -61,17 +61,17 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "12 - Classes et objets",
+      label: "12 - (à déterminer)",
       id: "cours/rencontre12",
     },
     {
       type: "doc",
-      label: "13 - 🔨 Intégration",
+      label: "13 - (à déterminer)",
       id: "cours/rencontre13",
     },
     {
       type: "doc",
-      label: "14 - 🧠 Réseaux de neurones",
+      label: "14 - 🔨 Intégration (TP/révision)",
       id: "cours/rencontre14",
     },
     {

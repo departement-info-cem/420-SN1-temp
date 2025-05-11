@@ -1,4 +1,8 @@
-# Formatif, révision et aperçu de réseaux de neurones
+# Intégration
+
+- ## Terminer TP2
+- ## Formatif / révision
+- ## Aperçu des réseaux de neurones
 
 
 
