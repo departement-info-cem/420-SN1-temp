@@ -1,32 +1,33 @@
 # Ajouter une librairie
 
-# TODO: à vérifier
-
 La plupart des librairies Python sont disponibles sur le site [PyPi](https://pypi.org/).
 Une *librairie* (ou *package*) contient du code Python qu'on peut réutiliser dans nos projets pour éviter
 de tout programmer soi-même.
 
 ---
 
-## Ajouter une librairie dans PyCharm
+## Ajouter une librairie à votre projet
 
 1. Ouvrir le projet dans PyCharm.
-2. Aller dans le menu **File > Settings > Project > Python Interpreter**.
-3. Cliquer sur l’icône ⚙️ en haut à droite, puis choisir **Add...** ou **Show All…**.
-4. Chercher la librairie désirée (ex. : `numpy`) dans le champ de recherche.
-5. Sélectionner la librairie dans la liste, puis cliquer sur **Install Package**.
-6. Attendre que l’installation se termine (un message apparaîtra en bas à gauche).
-7. Fermer la fenêtre — la librairie est maintenant prête à être utilisée dans votre code.
+2. Allez dans **File > Settings**.
+3. Dans la section **Project**, sélectionnez **Python Interpreter**.
+4. Cliquez sur l'icône + pour ajouter une nouvelle librairie.
+5. Recherchez la librairie souhaitée (par exemple, `matplotlib`) dans la barre de recherche.
+6. Sélectionnez-la dans la liste et cliquez sur **Install Package**.
+7. Attendre que l’installation se termine (un message apparaîtra en bas à gauche).
+8. Fermer la fenêtre — la librairie est maintenant prête à être utilisée dans votre code.
+
+Cela installera la librairie dans l'interpréteur Python de votre projet.
 
 ---
 
 ## Vérifier l'installation
 
 1. Ouvrir un fichier `.py` ou un notebook.
-2. Taper une ligne comme :
+2. Importer la librairie, par exemple :
 
 ```python
-import numpy
+import matplotlib
 ```
 
 3. Aucune erreur rouge ne devrait s'afficher. Sinon, redémarrer PyCharm ou revérifier l'installation.
@@ -56,9 +57,11 @@ pip install matplotlib
 ```python
 import matplotlib.pyplot as plt
 
-plt.plot([1, 2, 3], [4, 5, 6])
+plt.plot(range(-10, 11), [x**2 for x in range(-10, 11)])
 plt.show()
 ```
+
+<img src={require('../../static/img/plot1.png').default} width="50%" alt="plot 1" />
 
 ---
 
