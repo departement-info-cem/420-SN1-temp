@@ -128,16 +128,16 @@ On peut donc visualiser la pile d'appels comme un empilement temporaire :
 
 | ligne exécutée             | effet                                     | pile d'appels                 |
 |----------------------------|-------------------------------------------|-------------------------------|
-| affiche_resultat()         | appelle `affiche_resultat()`              | `__main__` |
-| a = 2                      | a: 2                                      | `affiche_resultat` <br /> `__main__` |
-| b = 3                      | a: 2, b: 3                                | `affiche_resultat` <br /> `__main__` |
-| total = somme_carres(a, b) | a: 2, b: 3 <br /> appelle `somme_carres` avec 2→x, 3→y    | `affiche_resultat` <br /> `__main__` |
-| return carre(x) + carre(y) | x: 2, y: 3 <br /> appelle `carre` avec 2→n                | `somme_carres` <br /> `affiche_resultat` <br /> `__main__` |
-| return n * n               | n: 2 <br /> retourne 4                    | `carre` <br /> `somme_carres` <br /> `affiche_resultat` <br /> `__main__` |
-| return carre(x) + carre(y) | x: 2, y: 3 <br /> appelle `carre` avec 3→n                | `somme_carres` <br /> `affiche_resultat` <br /> `__main__` |
-| return n * n               | n: 3 <br /> retourne 9                    | `carre` <br /> `somme_carres` <br /> `affiche_resultat` <br /> `__main__` |
-| return carre(x) + carre(y) | retourne 13                               | `somme_carres` <br /> `affiche_resultat` <br /> `__main__` |
-| print(...)                 | affiche "La somme des carrés est : 13"    | `affiche_resultat` <br /> `__main__` |
+| affiche_resultat()         | appelle affiche_resultat()              | \_\_main__ |
+| a = 2                      | a: 2                                      | affiche_resultat <br /> \_\_main__ |
+| b = 3                      | a: 2, b: 3                                | affiche_resultat <br /> \_\_main__ |
+| total = somme_carres(a, b) | a: 2, b: 3 <br /> appelle somme_carres avec 2→x, 3→y    | affiche_resultat <br /> \_\_main__ |
+| return carre(x) + carre(y) | x: 2, y: 3 <br /> appelle carre avec 2→n                | somme_carres <br /> affiche_resultat <br /> \_\_main__ |
+| return n * n               | n: 2 <br /> retourne 4                    | carre <br /> somme_carres <br /> affiche_resultat <br /> \_\_main__ |
+| return carre(x) + carre(y) | x: 2, y: 3 <br /> appelle carre avec 3→n                | somme_carres <br /> affiche_resultat <br /> \_\_main__ |
+| return n * n               | n: 3 <br /> retourne 9                    | carre <br /> somme_carres <br /> affiche_resultat <br /> \_\_main__ |
+| return carre(x) + carre(y) | retourne 13                               | somme_carres <br /> affiche_resultat <br /> \_\_main__ |
+| print(...)                 | affiche "La somme des carrés est : 13"    | affiche_resultat <br /> \_\_main__ |
 
 [//]: # (</Column>)
 
