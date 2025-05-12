@@ -1,20 +1,25 @@
+---
+hide_table_of_contents: true
+---
+
 # Produire une trace d'exécution
 
 Lorsqu'on a un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées.
-
-Pour cela, on peut utiliser un outil de traçage.
 
 ## Principe
 
 On veut accomplir 2 éléments principaux :
 1. Indiquer quelles lignes de code s'exécutent dans quel ordre.
 2. Indiquer les effets de chaque ligne de code.
+3. Indiquer la pile d'appels (si on a des fonctions).
 
 <Tabs queryString="recette-activite">
 <TabItem value="Exemple simple" label="Exemple simple">
 
-## Exemple simple
+<Row>
+<Column>
 
+### Code
 Si on a le code suivant :
 
 ```python  showLineNumbers
@@ -23,6 +28,9 @@ b = a * 2
 print("salut " + str(b))
 ```
 
+</Column>
+<Column>
+
 ### Trace
 On aura la trace suivante :
 
@@ -30,7 +38,10 @@ On aura la trace suivante :
 |-----------------|-----------------------------------|
 | a = 3 + 4       | a: 7                             |
 | b = a * 2       | a: 7, b: 14                     |
-| print("salut " + str(b)) | a: 7, b: 14, affiche "salut 14" |
+| print("salut " + str(b)) | a: 7, b: 14 <br /> affiche "salut 14" |
+
+</Column>
+</Row>
 
 Dans le cas d'une séquence d'instructions, on peut voir que les instructions sont exécutées dans
 l'ordre de lecture du code. Simple!
@@ -38,41 +49,53 @@ l'ordre de lecture du code. Simple!
 </TabItem>
 <TabItem value="Avec boucle" label="Avec boucle">
 
-## Exemple avec boucle
+<Row>
+<Column>
 
+### Code
 Si on a le code suivant :
 
 ```python showLineNumbers
-for i in range(3):
-    if (i % 2 == 0):
-        print("c'est pair " + str(i))
-    else:
-        print("ah ben ah ben, c'est impair " + str(i))
+i = 0
+while i < 2:
+    print("i vaut " + str(i))
+    i = i + 1
 ```
+
+</Column>
+<Column>
 
 ### Trace
 On aura la trace suivante :
 
 | ligne exécutée | effet                         |
-|-----------------|-------------------------------|
-| for i in range(3): | i parcourt l'interval 0, 1, 2 |
-| if (i % 2 == 0): | i: 0 <br /> i%2 vaut 0        |
-| print("c'est pair " + str(i)) | i: 0 <br /> affiche "c'est pair 0" |
-| if (i % 2 == 0): | i: 1  <br /> i%2 vaut 1        |
-| print("ah ben ah ben, c'est impair " + str(i)) | i: 1 <br /> affiche "ah ben ah ben, c'est impair 1" |
-| if (i % 2 == 0): | i: 2 <br /> i%2 vaut 0        |
-| print("c'est pair " + str(i)) | i: 2 <br /> affiche "c'est pair 2" |
+|----------------|-------------------------------|
+| i = 0          | i vaut 0                       |
+| while i < 3:   | i: 0 → condition vraie         |
+| print(...)     | i: 0 <br /> affiche "i vaut 0" |
+| i = i + 1      | i devient 1                    |
+| while i < 3:   | i: 1 → condition vraie         |
+| print(...)     | i: 1 <br /> affiche "i vaut 1" |
+| i = i + 1      | i devient 2                    |
+| while i < 3:   | i: 2 → condition fausse        |
+
+</Column>
+</Row>
 
 On voit que :
 - On indique seulement les lignes qui s'exécutent en vrai.
 - Certaines lignes s'exécutent plusieurs fois, c'est le principe de la boucle!
+- On appelle ce cheminement le flot de contrôle.
 
 </TabItem>
 <TabItem value="Avec fonction" label="Avec fonction">
 
-## Exemple avec une fonction
+<Row>
+<Column>
 
-Si on a le code suivant:
+### Code
+Si on a le code suivant :
+
 ```python showLineNumbers
 def ma_fonction(a, b):
     c = a + b
@@ -85,8 +108,10 @@ y = ma_fonction(4, 9)
 print("z vaut " + str(z) + " et y vaut " + str(y))
 ```
 
-### Trace
+</Column>
+<Column>
 
+### Trace
 S'il y a des fonctions dans le code, on ajouter la pile d'appels pour indiquer quelles fonctions
 ont été commencées mais pas finies.
 
@@ -102,6 +127,8 @@ ont été commencées mais pas finies.
 | return c                 | a: 4 <br /> b: 9 <br /> c: 13 <br /> retourne 13, y = 13                  | ma_fonction <br /> main |
 | print("z vaut " + str(z) + " et y vaut " + str(y)) | mavariable: 3 <br /> tavariable: 5 <br /> z: 8 <br /> y = 13 <br /> affiche "z vaut 8 et y vaut 13" | __main__     |
 
+</Column>
+</Row>
 
 Dans ce cas, on doit ajouter la pile d'appels pour indiquer quelles fonctions ont été commencées mais pas finies.
 
