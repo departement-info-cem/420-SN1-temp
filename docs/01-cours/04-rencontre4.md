@@ -10,7 +10,7 @@ DEMO SUR LA SEQUENCE DE 1 11 21 etc
 
 ```python
 def double(x):
-  return x*x
+    return x*x
 ```
 
 Définir une fonction ne fait rien, on se donne juste un outil qu'on
@@ -22,7 +22,8 @@ rien à manger mais on pourra suivre la recette plus tard.
 On va regarder ce qui se passe sur un exemple simple
 ```python
 def double(x):
-  return x*x
+    return x*x
+
 a = double(4)
 print(a)
 ```
@@ -41,7 +42,8 @@ Lors d'un appel d'une fonction, on évalue le paramètre fourni avant de le
 passer à la fonction. Sur un exemple un peu plus complexe:
 ```python
 def double(x):
-  return x*x
+    return x*x
+
 a = 25
 print( double( double(4) + double( 5 + double(a) ) ) )
 ```
@@ -54,7 +56,8 @@ meilleur ami pour ne pas abandonner.
 
 ```python
 def double(*x, ):
-  return x*x
+    return x*x
+
 a = 25
 print( double( double(4) + double( 5 + double(a) ) ) )
 ```
@@ -64,8 +67,8 @@ print( double( double(4) + double( 5 + double(a) ) ) )
 
 ```python
 def racine(nombre, base=2):
-  # ton code ici
-  return 1
+    # ton code ici
+    return 1
 ```
 
 
@@ -84,10 +87,10 @@ def minMaxMoyenne(liste):
     somme = 0
     for element in liste:
         if element < min:
-        min = element
+            min = element
         if element > max:
-        max = element
-        somme += element
+            max = element
+            somme += element
 
 minMaxMoyenne([1,2,3,4,5])
 a = min   # est-ce que cette ligne est correcte?
@@ -101,9 +104,10 @@ TODO lien vers la portée
 
 ```python
 def calculComplexe(a, b, c):
-  x = a**b
-  y = c*(b-a)
-  return a**b + c*(b-a)
+    x = a**b
+    y = c*(b-a)
+    return a**b + c*(b-a)
+
 x = 5
 calculComplexe(3,5,7)
 print(x)

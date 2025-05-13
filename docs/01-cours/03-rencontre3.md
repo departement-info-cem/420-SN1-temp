@@ -45,15 +45,15 @@ resultat = Math.exp(2, variable++) + 5 * Math.Mat.exp(3, variable++)
 Donne la trace d'exécution du code suivant dans le fichier **str-plus.md** :
 ```python
 for i in range(1, 5):
-  for j in range(4, 6):
-    print(str(i) + str(j))
+    for j in range(4, 6):
+        print(str(i) + str(j))
 ```
 
 Donne la trace d'exécution du code suivant dans le fichier **plus-str.md** :
 ```python
 for i in range(1, 5):
-  for j in range(4, 6):
-    print(str(i + j))
+    for j in range(4, 6):
+        print(str(i + j))
 ```
 
 :::

@@ -36,8 +36,8 @@ On va revenir à travers des exercices sur les:
 Produis la trace du code suivant dans le fichier **appel-revision.md**:
 ```python
 def double(x, y, z):
-  b = 9
-  return x*y + z-x
+    b = 9
+    return x*y + z-x
 
 a = 5
 b = 6
@@ -72,9 +72,9 @@ b = "gna"
 c = 9.7
 d = True
 while (a < 999):
-  a += c * 3
-  c = c * (a / c)
-  b = str(c) + b
+    a += c * 3
+    c = c * (a / c)
+    b = str(c) + b
 ```
 
 Sans modifier le code, donne la valeur des expressions suivantes quand le code est arrété à la ligne
