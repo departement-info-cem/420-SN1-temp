@@ -1,111 +1,154 @@
-import KaTeX from '@site/src/components/KaTeX';
+---
+hide_table_of_contents: true
+---
 
-# Travail 1 : Calcul de la racine d'un nombre, stupide et brutale
+# TP1 – Calcul de racines
 
-L'ordinateur est stupide, mais très rapide. On va calculer la racine
-avec une méthode très lente et stupide, ce qui est parfait pour un ordinateur.
+<Row>
+    <Column>
+        :::tip 🎯 Objectifs pédagogiques
+            À la fin de ce travail, vous serez capable de :
 
-### méthode 1, chiffre par chiffre, par en dessous
+            - Utiliser des **variables**, **types de base**, **opérateurs** et **fonctions**
+            - Utiliser des **structures conditionnelles** et **expressions logiques**
+            - Travailler avec des **boucles**, **listes**, **tuples** et **dictionnaires**
+            - **Décomposer** un algorithme en **fonctions réutilisables**
+            - Évaluer la **performance** d’un algorithme avec des mesures de temps
+            - Appliquer la logique pour résoudre un problème **numérique complexe** sans bibliothèque
+        :::
+    </Column>
+    <Column>
+        :::info 🧠 Contexte
+            Un ordinateur, c’est très rapide, mais pas très intelligent. On va en profiter pour lui faire calculer la racine carrée… de façon très bête.
 
-Un exemple sur la racine carrée de 8:
+            Vous devez implémenter deux méthodes de calcul « brutales » d’une racine carrée :
+            1. Une méthode **chiffre par chiffre**, par essais successifs
+            2. Une méthode **par dichotomie** (recherche binaire)
 
-**unité :**
-- 0 : 0 * 0 = 0
-- 1 : 1 * 1 = 1
-- 2 : 2 * 2 = 4
-- 3 : 3 * 3 = 9
+            Puis vous devrez :
+            - Comparer ces méthodes à la fonction standard `math.sqrt`
+            - Étendre le calcul à une racine n-ième
+            - Effectuer une extension vers le **logarithme**
+        :::
+    </Column>
+</Row>
 
-Comme **8** est entre 4 et 9, on sait que la racine de 8
-est entre 2 et 3: 2,...
+:::note Créer le projet
+    Pour faire ce TP, vous devez créer un projet PyCharm dans le répertoire GitHub Classroom créé pour vous par le prof.
+:::
 
-On valide 2 comme chiffe des unités.
+:::warning <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> Répertoire Git
+    Un minimum de 5 commits de tailles comparables.\
+    Il n'y a pas un commit avec tout dedans et les autres vides.\
+    Au moins un commit par semaine.\
+    Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git).
+:::
 
-**première décimale**
-- 2,0 * 2,0 = 4
-- 2,1<sup>2</sup> = 4,41
-- 2,2<sup>2</sup> = 4,84
-- 2,3<sup>2</sup> = 5,29
-- 2,4<sup>2</sup> = 5,76
-- 2,5<sup>2</sup> = 6,25
-- 2,6<sup>2</sup> = 6,76
-- 2,7<sup>2</sup> = 7,29
-- 2,8<sup>2</sup> = 7,84
-- 2,9<sup>2</sup> = 8,41
+::::note <Highlight color="tip"><span style={{color: 'white'}}>4 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
+Voici 2 méthodes brutes pour calculer la racine carrée d'un nombre.\
+Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 
-La racine de 8 ressemble à 2,8.... 8 sera le chiffre des dixième.
+<Row>
+    <Column>
+        :::info ➤ Méthode 1 : Chiffre par chiffre
+            On construit le résultat décimale par décimale, en commençant par la plus grande.
 
-**2ème décimale**
-- 2,80<sup>2</sup> = 7,84
-- 2,81<sup>2</sup> = 7,8961
-- 2,82<sup>2</sup> = 7,9524
-- 2,83<sup>2</sup> = 8,0089
+            Pour 8, on commence donc par l'unité :
+            - 0² = 0
+            - 1² = 1
+            - 2² = 4
+            - 3² = 9
 
-Racine de 8 est de la forme 2,82...
+            Comme **8** est entre 4 et 9, on sait que la racine de 8 est entre 2 et 3.
+            Donc, la racine de 8 ressemble à 2.8...
 
-### méthode 2 : dichotomie (couper en 2)
-On commence avec racine carrée de 8 doit être entre 0 et 8, on va essayer de resserrer cet interval jusqu'à trouver la racine
-- [0 .. 8] le milieu est : 4 * 4 = 16
-- on doit décider si la racine de 8 est dans [0 .. 4] ou [4 .. 8], comme 16 est au dessus de 8, la racine de 8 doit être entre 0 et 4
-- [0 .. 4] le milieu est 2 : 2 * 2 = 4
-- Comme 4 est en dessous de 8, le résultat est dans la moitié haute [2 .. 4]
-- [2 .. 4] 3<sup>2</sup> = 9 donc [2 .. 3]
-- [2 .. 3] 2,5<sup>2</sup> = 6,25 donc [2,5 .. 3]
-- [2,5 .. 3] 2,75<sup>2</sup> = 7,5625 donc [2,75 .. 3]
-- [2,75 .. 3] 2,875<sup>2</sup> = 8.265625 donc [2,75 .. 2,875]
-- etc.
+            On passe à la première décimale :
+            - 2.0² = 4
+            - 2.1² = 4.41
+            - 2.2² = 4.84
+            - 2.3² = 5.29
+            - 2.4² = 5.76
+            - 2.5² = 6.25
+            - 2.6² = 6.76
+            - 2.7² = 7.29
+            - 2.8² = 7.84
+            - 2.9² = 8.41
 
-## Calcul de la racine carrée
+            La racine de 8 ressemble donc à 2.8....
 
-En utilisant le principe de ton choix, tu dois produire un script
-appelé racineCarree*NomDeFamille*.py dans lequel on trouvera une fonction
-```python
-def racineCarre(nombre: float) -> float:
-  #ton code ici
-  return racine
-```
-Vous devrez aussi montrer les appels de cette méthode sur les nombre 0 0,1 0,2 0,9 8 9 81 123 et -3.
+            Et ainsi de suite pour les décimales suivantes.\
+            On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
+        :::
+    </Column>
+    <Column>
+        :::info ➤ Méthode 2 : Dichotomie
+            On cherche dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
 
-- **1 point** le fichier existe, son nom respecte la consigne, il contient la fonction demandée et n'a pas d'erreur de syntaxe
-- **2 points** les racines carrées affichées pour 0 0,1 0,2 0,9 8 9 81 123 sont bonnes à 0,001 près.
-- **1 point** l'appel pour le nombre négatif lance une exception
+            Début : [0, 8] → milieu = 4 → 4² = 16 → trop grand \
+            → nouvel intervalle [0, 4] → milieu = 2 → 2² = 4 → trop petit \
+            → nouvel intervalle [2, 4] → etc.
 
-## Comparaison de performance
+            On continue ainsi jusqu'à la précision désirée.
+        :::
 
-FAIRE FAIRE UN TRUC POUR COMPARER LES TEMPS EXECUTION VERSUS sqrt DE LIB STD
-- générer un tableau de 10000 nombres tirés au pseudo hasard entre 10 et 1000, tu devrais choisir une graine pour t'assurer que ta solution est reproductible (tu peux prendre ton matricule)
-- calculer le temps nécessaire pour calculer les racines carrées de ces nombres avec votre méthode
-- calculer le temps nécessaire pour calculer les racines carrées avec la méthode fournie dans python
-- afficher les 2 durées avec un print en millisecondes et le temps moyen en millisecondes pour les 2 méthodes
+        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prendra un nombre en paramètre et renverra la racine
+        carrée de ce nombre en utilisant cette méthode, avec une précision de 0.001.
 
-## Généralisation à la racine nième de x
+        :::tip ✅ Tests attendus
 
-Encore une fois, tu peux utiliser copilot pour t'aider à produire ton code.
+            Pour chacune des 2 méthodes, affichez le résultat des appels suivants :
 
-```python
-def racineCarre(base: int, nombre: float) -> float:
-  #ton code ici
-  return racine
-```
+            ```python
+            print(nom_de_la_fonction(0))
+            print(nom_de_la_fonction(0.1))
+            print(nom_de_la_fonction(0.2))
+            print(nom_de_la_fonction(0.9))
+            print(nom_de_la_fonction(8))
+            print(nom_de_la_fonction(9))
+            print(nom_de_la_fonction(81))
+            print(nom_de_la_fonction(123))
+            print(nom_de_la_fonction(-3))  # Doit lever une exception
+            ```
+        :::
+    </Column>
+</Row>
+::::
+<Row>
+    <Column>
+        :::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des performances
+            Vous allez comparer vos méthodes avec `math.sqrt` sur 10 000 nombres pseudo-aléatoires.\
+            Pour y parvenir, vous devez :
 
-Pour un **n** entier positif, faire une fonction qui permet de calculer la racine $\sqrt[n]{x}$.
+            1. Générer une liste de **10 000 nombres flottants** aléatoires entre 10 et 1000.
+            2. Chronométrer le temps pour :
+                - Calculer toutes les racines avec **votre première fonction**
+                - Calculer les racines avec **votre deuxième fonction**
+                - Calculer les racines avec **`math.sqrt()`**
+            3. Afficher :
+               - Le **temps total (ms)** pour chaque méthode
+               - Le **temps moyen** par appel de fonction pour chaque méthode
+        :::
+    </Column>
+    <Column>
+        :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une racine n-ième
+            Pour chacune de vos 2 fonctions, faites-en une copie et généralisez-la pour qu'elle calcule la
+            racine n-ième d'un nombre, en prenant `base` et `nombre` comme paramètres.
+
+            Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et quatrième de 8, 9, 81 et 123.
+        :::
+    </Column>
+</Row>
+
+:::danger Fonctionnement global <Highlight color="danger"><span style={{color: 'white'}}>2 points négatifs</span></Highlight>
+Le projet fonctionne sans plantage et correctement, et le code est clair et facile à lire.
+Ce pointage fonctionne en négatif.
+Si le projet fonctionne correctement en tout temps, vous conservez votre note.
+Dans le cas contraire, vous perdez des points avec un maximum de 2.
+
+- Plantage <Highlight color="danger"><span style={{color: 'white'}}>-1 point</span></Highlight>
+- Code illisible <Highlight color="danger"><span style={{color: 'white'}}>-1 point</span></Highlight>
+- Information affichée incohérente <Highlight color="danger"><span style={{color: 'white'}}>-1 point</span></Highlight>
+- Autre cas...
+:::
 
 
-## Les 10 derniers pourcents
-
-Dans chaque TP, nous allons avoir les 10% de la fin pour une partie plus difficile.
-
-Ici nous allons tenter de faire le calcul du logarithme d'un nombre dans une base non entière.
-
-Si on y pense on peut appliquer la même recette:
-- si on part avec le <KaTeX>{"\\log_{2}{64}"}</KaTeX> on trouve 6, car <KaTeX>{"2^6=64"}</KaTeX>
-- si on prend le <KaTeX>{"\\log_{2}{2^x}"}</KaTeX> cela donne toujours 1
-- on peut donc chercher le nombre tel que
-- ensuite il faut qu'on trouve une technique
-
-https://www.quora.com/What-does-it-mean-to-raise-a-number-to-a-non-integer-power
-
-Possibilité de chercher l'inverse de
-```python
-def funkyFonction(x):
-    return x**x
-```
