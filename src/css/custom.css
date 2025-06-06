@@ -31,41 +31,25 @@
 }
 
 .examen {
-  background-color: #ff6e75;
+  background: orangered;
 }
 
 .remise-tp1::after {
-  content: "Remise TP1 (15%)";
+  content: "Remise TP1 (20%)";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
+  background: blue;
+  color: white;
   font-size: 0.75em;
 }
 
 .remise-tp2::after {
-  content: "Remise TP2 (20%)";
+  content: "Remise TP2 (30%)";
   text-align: center;
   width: 100%;
   display: block;
-  background: #8787ff;
-  font-size: 0.75em;
-}
-
-.remise-tp3::after {
-  content: "Remise TP3 (15%)";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: #8787ff;
-  font-size: 0.75em;
-}
-
-.remise-tp4::after {
-  content: "Remise TP4";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: #8787ff;
+  background: blue;
+  color: white;
   font-size: 0.75em;
 }
