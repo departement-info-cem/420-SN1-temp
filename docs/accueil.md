@@ -41,7 +41,7 @@ L'onglet **Recettes** contient des procédures à suivre.
 
 Vous avez du travail préparatoire pour découvrir la matière par vous-même.  
 Il s'agira d'une page web à lire, d'une video à suivre et/ou d'exercices à faire.  
-Cela représente environ 2 heures de travail.
+Cela représente environ 3 heures de travail.
 
 :::
 
