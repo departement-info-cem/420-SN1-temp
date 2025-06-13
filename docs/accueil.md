@@ -11,7 +11,7 @@ hide_table_of_contents: true
 
 | Semaine                   | Séquence des cours                          | Travaux pratiques           |
 |---------------------------|---------------------------------------------|-----------------------------|
-| [1 →](cours/rencontre1)   | Intro, plan de cours, premier script        | TP1 : calcul "à la dumb"    |
+| [1 →](cours/rencontre1)   | Intro, aperçu, premier code                 | TP1 : calcul de racines     |
 | [2 →](cours/rencontre2)   | Valeurs, expressions, types                 | cible 20% terminé           |
 | [3 →](cours/rencontre3)   | Structures contrôles                        | cible 40%                   |
 | [4 →](cours/rencontre4)   | Fonctions                                   | 60%                         |
