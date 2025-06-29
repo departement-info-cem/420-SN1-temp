@@ -89,11 +89,12 @@ const config = {
             sidebarId: "recettes",
             label: "Recettes",
           },
-//          {
-//            label: "Skill Tree",
-//            href: `https://info.cegepmontpetit.ca/4N6-Mobile/file/4N6.html`,
-//            position: "right",
-//          },
+          {
+            type: "docSidebar",
+            position: "left",
+            sidebarId: "aidememoire",
+            label: "Aide-mémoire",
+          },
         ],
       },
       footer: {

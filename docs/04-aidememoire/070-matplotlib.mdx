@@ -1,0 +1,103 @@
+---
+hide_table_of_contents: true
+---
+
+# 📊 Matplotlib
+
+**Matplotlib** permet de générer facilement des graphiques en Python.
+
+## 🔹 Importation de base
+
+```python
+import matplotlib.pyplot as plt
+```
+
+---
+
+## 🔹 Courbe simple
+
+```python
+x = [0, 1, 2, 3, 4]
+y = [0, 1, 4, 9, 16]
+
+plt.plot(x, y)
+plt.show()
+```
+
+---
+
+## 🔹 Ajouter un titre et des étiquettes
+
+```python
+plt.plot(x, y)
+plt.title("Courbe quadratique")
+plt.xlabel("x")
+plt.ylabel("y")
+plt.show()
+```
+
+---
+
+## 🔹 Plusieurs courbes
+
+```python
+plt.plot(x, y, label="x²")
+plt.plot(x, [i**3 for i in x], label="x³")
+plt.legend()
+plt.show()
+```
+
+---
+
+## 🔹 Personnalisation rapide
+
+```python
+plt.plot(x, y, color="red", linestyle="--", marker="o")
+plt.show()
+```
+
+---
+
+## 🔹 Diagramme en barres
+
+```python
+categories = ["A", "B", "C"]
+valeurs = [10, 20, 15]
+
+plt.bar(categories, valeurs)
+plt.show()
+```
+
+---
+
+## 🔹 Histogramme
+
+```python
+import random
+
+donnees = [random.gauss(0, 1) for _ in range(1000)]
+plt.hist(donnees, bins=30)
+plt.show()
+```
+
+---
+
+## 🔹 Nuage de points
+
+```python
+plt.scatter([1, 2, 3], [4, 5, 6])
+plt.show()
+```
+
+---
+
+## 🔹 Sauvegarder le graphique
+
+```python
+plt.plot(x, y)
+plt.savefig("graphique.png")
+```
+
+---
+
+💡 Il existe de nombreuses options avancées : couleurs, transparence, sous-graphes… Explore la [documentation officielle](https://matplotlib.org/stable/gallery/index.html) pour aller plus loin.
