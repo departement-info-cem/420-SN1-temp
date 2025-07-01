@@ -98,375 +98,70 @@ Une fois l’installation faite, [ce second guide](/recettes/creer-projet) vous 
 
 
   </TabItem>
-  <TabItem value="apercu" label="Aperçu du cours">
-
-      ## TODO : Mettre à jour ce qui suit
-
-## Variables, expressions et types
-
-***Rôle***
-Les variables servent à stocker des informations manipulées par une application.
-Elles vont être stockées temporairement dans la mémoire de l'ordinateur (la RAM).
 
-***Synthaxe pour créer une variable***
-Il faut écrire le nom qu'on souhaite donné à notre variable, suivi du symbole d'assignation (le égale), suivi d'une expression.
+    <TabItem value="apercu" label="Aperçu du cours">
 
+# 🚀 Ce que vous allez pouvoir faire avec Python après ce cours
 
+Plutôt que de simplement parler de variables ou de graphiques de façon abstraite, voici quelques exemples concrets et motivants d'applications que vous serez en mesure de réaliser en Python, en combinant les notions vues dans le cours :
 
+:::note
+Ne vous inquiétez pas si certaines notions vous semblent encore mystérieuses! Nous apprendrons plus tard en détail comment créer et utiliser des *notebooks* Python. D'ici là, vous pouvez tout de même télécharger, ouvrir dans PyCharm et essayer d'exécuter les exemples ci-dessous. Sinon, le ou la professeur fera la démonstration avec vous en classe. Ces exemples illustrent concrètement ce que vous serez capables de faire après ce cours.
+:::
 
-```python
-#Variable initialiser avec une constante
-temperature_a = 36
+---
 
-#Variable initialiser à l'aide d'une expression (constate - constate)
-temperature_b = 36 - 5
+<Row>
 
-#Variable initialiser à l'aide d'une expression (variable + constate)
-temperature_hier = 25
-temperature_courante = temperature_hier + 5
-```
+<Column>
 
-***Nom des variables***
-Chaque variable possède un *nom unique* permettant de l'identifier.
-En mathématique, nous sommes habituer d'utiliser comme nom de variable X ou Y.
-En programmation, nous tentons d'avoir des noms plus significatifs en fonction de ce qu'on tentons de conserver comme information. Les noms de variable doivent être en minuscule, nous utilisons le symbole _ pour faire des noms composés (ex : fleure_prefere) et nous évitons les accents dans les noms. Lorsqu'une variable contient une valeur qui ne devrait jamais être modifié au cours de l'application, on nomme la variable en MAJUSCULES pour indiquer que cette valeur ne devrait pas être modifié (ex : PI)
+:::tip 🔬
+    ## 🔬 Analyse de séquences génétiques (Bio-informatique)
+Vous pourrez lire des séquences d'ADN ou d'ARNm, en extraire des statistiques utiles et produire des graphiques professionnels, comme ceux-ci :
 
-***Type de base***
-En mathématique, les variables sont uniquement de type numérique.
-En Python, les variables peuvent être de différents types selon nos besoins :
-- int (un nombre entier)
-- float (un nombre à virgule)
-- str (une châine de caractères)
-- bool (une valeur logique)
-- list (une collection de valeurs)
-- dict (une collection de valeurs sous la forme de clé-valeur)
-- tuple (des données toujours regroupées ensemble)
+[👉 Télécharger le notebook](/ressources/notebooks/01-1_bioinfo_analyse_sequences_ARN.ipynb)
+:::
 
+</Column>
 
+<Column>
 
-```python
-#Instructions pour créer différents types de variables
+:::info 🌀
+    ## 🌀 Génération de fractales
+Grâce aux mathématiques et à la visualisation en Python, vous serez capables de créer des images fascinantes et colorées comme celle-ci :
 
-rayon_cercle = 20                                       #variable de type int
-PI = 3.1416                                             #variable (constate) de type float
-nom_element_chimique = "Hydrogène"                      #variable de type str, les guillemets sont importants !
-est_un_element_halogene = True                          #variable de type bool
-liste_nom_elements = ["Hydrogène", "Cobalt", "Fer"]     #variable de type list (de str)
-liste_numero_elements = [1, 27, 26]                     #variable de type list (de int)
-element = {"nom": "Hydrogène", "numero_atomique": 1}    #variable de type dict
-coordonnees_mont_everest = (27.9881, 86.9250)           #variable de type tuple
-circonference_circle = rayon_cercle * PI                #variable de type float contenant le résultat d'une expression
-                                                        #le symbole * est un opérateur de multiplication
+[👉 Télécharger le notebook](/ressources/notebooks/01-2_generation_fractales.ipynb)
+:::
 
-#Instructions pour afficher les variables à l'aide de la fonction "print"
-print("*** VALEURS DES VARIABLES : ***")
-print("rayon_cercle :", rayon_cercle)
-print("PI :", PI)
-print("nom_element_chimique :", nom_element_chimique)
-print("est_halogene :", est_halogene)
-print("liste_nom_elements :", liste_nom_elements)
-print("\t1er élément :", liste_nom_elements[0])
-print("\t2ème élément :", liste_nom_elements[1])
-print("\t3ème élément :", liste_nom_elements[2])
-print("liste_numero_elements :", liste_numero_elements)
-print("\t1er élément :", liste_numero_elements[0])
-print("\t2ème élément :", liste_numero_elements[1])
-print("\t3ème élément :", liste_numero_elements[2])
-print("element :", element)
-print("element.nom :", element["nom"])
-print("element.numero_atomique :", element["numero_atomique"])
-print("coordonnees_mont_everest :", coordonnees_mont_everest)
-print("coordonnees_mont_everest[0] :", coordonnees_mont_everest[0])
-print("coordonnees_mont_everest[1] :", coordonnees_mont_everest[1])
-print("circonference_circle :", circonference_circle)
-```
+</Column>
 
+<Column>
 
+:::caution 🤖
+    ## 🤖 Reconnaissance automatisée d'images (intelligence artificielle)
+Vous découvrirez comment les algorithmes peuvent analyser des données et reconnaître des motifs, comme identifier automatiquement des chiffres manuscrits :
 
+[👉 Télécharger le notebook](/ressources/notebooks/01-3_reconnaissance_chiffres.ipynb)
+:::
 
+</Column>
 
-## Les opérateurs arithmétiques
+</Row>
 
-Les expressions en python peuvent contenir les opérateurs arithmétiques suivants en plus de parenthèses.
-Les opérandes peuvent être des constantes (comme les exemples), mais pourrait être une variable, un élément d'un tableau, etc.
+---
 
-| Opérateur | Description | Exemple | Résultat |
-|-----------|------------|---------|----------|
-| `+`      | Addition | `5 + 3`  | `8` |
-| `-`      | Soustraction | `10 - 4`  | `6` |
-| `*`      | Multiplication | `6 * 7`  | `42` |
-| `/`      | Division (résultat flottant) | `10 / 2`  | `5.0` |
-| `%`      | Modulo (reste de la division) | `10 % 3`  | `1` |
-| `**`     | Puissance | `2 ** 3`  | `8` (équivaut à 2³) |
-| `//`     | Division entière (quotient sans décimales) | `10 // 3` | `3` |
+## 🛠️ Les outils que vous apprendrez à maîtriser
 
-Le résultat est de type int ou float selon l'opérateur ET selon les opérandes
+Pour réaliser ces applications et bien d'autres, vous apprendrez à utiliser :
 
-TODO : Mettre beaucoup d'exemples
+- ✅ Le langage Python
+- ✅ Des outils de développement modernes : PyCharm, GitHub
+- ✅ Des bibliothèques scientifiques : NumPy, Matplotlib, Pandas, Scikit-learn
+- ✅ Les bases de la programmation scientifique
 
-## Les variables peuvent... variées!
+⚡ **Tout cela sans avoir à utiliser Excel ni d'interface compliquée : vos données, vos analyses, vos graphiques, directement dans votre code Python!**
 
-Le contenu d'une variable peut être modifié au fur et à mesure de l'exécution des instructions à l'aide de l'opérateur d'assignation (=).
-Dans l'exemple ci-dessous, la variable "resultat" est modifiée 3 fois.
-
-
-```python
-nombre1 = 10
-nombre2 = 20
-nombre3 = 30
-resultat = nombre1 + nombre2
-resultat = resultat + nombre3
-resultat = resultat / 3 # le / est un opérateur de division
-print("resultat :", resultat)
-```
-
-Est-ce que vous pourriez prédire le résultat et identifier il correspond à quel calcul mathématique?
-
-## Les fonctions
-
-Une fonction correspond à un ensemble d'instructions réutilisables pour lesquelles un nom leur a été attribué. Le nom de la fonction est généralement choisi en conséquence pour être significatif afin d'aider les personnes développeuses. Par exemple, on peut se douter avec le nom de la fonction "print" que quelque chose va être imprimer/afficher à quelque part. Si on regarde la documentation de la fonction "print" on peut apprendre qu'elle permet d'écrire du contenu dans le terminal.
-
-
-***Comprendre le fonctionnement d'une fonction avant son utilisation***
-Quand on fait appel à une fonction, il n'est pas toujours important de comprendre les instructions derrières et d'aller inspecter son code.
-Il faut simplement s'assurer de comprendre comment l'utiliser. Il faut se poser par exemple comme question :
- - la fonction nécessite quoi comme information être utilisée? (on nomme ces informations attendues par une fonction des paramètres)
- - la fonction retourne telle une valeur qu'on pourrait par la suite stocker dans une variable pour la réutiliser?
- - est-ce qu'il y a des cas limites que la fonction ne peut pas gérée ou pouvant causer des erreurs (on va alors parler d'exceptions)
-
-***Les paramètres***
-Pour exécuter (on dit également appeler) une fonction, il faut écrire le nom de la fonction suivi de parenthèse ()
-Entre les parathèses, si la fonction nécessite des paramètres, ils doivent entre fournies séparés par une virgule.
-Le nombre de paramètres et l'ordre sont importants comme nous allons le voir avec des exemples.
-
-
-***Conserver la valeur de retour d'un appel d'une fonction***
-Si le résultat d'un appel de fonction doit être réutilisé plus tard, vous pouvez le conserver dans une variable
-
-
-
-```python
-#Exemple d'une fonction pouvant recevoir aucun paramètre en entrée
-saisie_utilisateur = input() #permet de demander à l'utilisateur de saisir une entrée,
-                             #la fonction retourne une str avec la valeur saisie
-print(saisie_utilisateur)
-
-#Exemple d'une variante de la même fonction, mais acceptant un paramètre en entrée
-saisie_utilisateur = input("Veuillez saisir votre prénom:")
-print(saisie_utilisateur)
-
-#Exemple de fonction pouvant recevoir un nombre précis de paramètres :
-longueur = len(saisie_utilisateur)               #permet d'obtenir le nombre de caractères d'une str
-valeur_convertir_en_entier = int("3")            #permet d'obtenir un nombre entier à partir d'une str
-valeur_convertir_en_float = float("3.41")        #permet d'obtenir un nombre à virgule entier à partir d'une str
-valeur_puissance = pow(2,3)                      #permet d'obtenir le résultat de 2 à la puissance 3 (l'ordre des paramètres est important)
-valeur_arrondie = round(3.14159, 2)              #permet d'arrondir un float à la deuxième position après la virgule
-type_variable = type(longueur)                   #permet d'obtenir le type d'une variable
-nombre1_en_str = input("Entrée un nombre")       #obtenir un nombre (en 2 étapes)
-nombre1 = int(nombre1_en_str)
-nombre2 = int(input("Entrée un second nombre"))  #obtenir un nombre (en 1 étape), l'expression combine les 2 fonctions
-
-#Exemple de fonction pouvant recevoir un nombre infini de paramètres :
-print("le résultat de ", nombre1, " multiplié par ", nombre2, " est :", nombre1 * nombre2)
-
-#Exemple de création d'une str à partir d'éléments variables et constants (f-strings)
-message = f"Le résultat de {nombre1} multiplié par {nombre2} est : {nombre1 * nombre2}"
-print(message)
-```
-
-    Mat
-    Mattt
-    le résultat de  42  multiplié par  44  est : 1848
-    Le résultat de 42 multiplié par 44 est : 1848
-
-
-## Créer nos propres fonctions (aperçu)
-
-Il arrive parfois qu'on va souhaiter créer nos propres fonctions réutilisables pour représenter des instructions qu'on aimerait pouvoir réutiliser facilement sans avoir à les répéter à chaque fois. Pour définir une fonction, il faut le mot clée "def" suivi du nom qu'on souhaite donné à la fonction. Par la suite, entre parenthèses, nous mettons des noms des paramètres que la valeur s'attends à recevoir. Les instructions de la fonction doivent être intenter (touche TAB). Si la fonction retourne une valeur, il faut utiliser le mot clée "return" suivi de l'expression représentant la valeur retourné. La définition de la fonction doit être avant sa première utilisation. Il est possible de mettre en commentaire à l'aide du symbole """ des indications concernant l'utilisation de la fonction.
-
-
-```python
-# Définition de la fonction énergie-cinétique
-def energie_cinetique(masse, vitesse):
-    """
-    Calcule l'énergie cinétique d'un objet en mouvement.
-
-    Formule :
-        E_c = 0.5 * m * v^2
-
-    Paramètres :
-        masse (float): Masse de l'objet en kilogrammes (kg)
-        vitesse (float): Vitesse de l'objet en mètres par seconde (m/s)
-
-    Retourne :
-        float : Énergie cinétique en Joules (J)
-
-    Exemple d'utilisation :
-        >>> energie_cinetique(10, 5)
-        125.0
-    """
-    nb_joute =  0.5 * masse * pow(vitesse,2)
-    return nb_joute
-
-# Exemple avec différentes valeurs
-objet1 = energie_cinetique(2, 3)  # Masse de 2 kg, vitesse de 3 m/s
-objet2 = energie_cinetique(5, 7)  # Masse de 5 kg, vitesse de 7 m/s
-
-# Affichage des résultats
-print("Énergie cinétique de l'objet 1 :", objet1, "Joules")
-print("Énergie cinétique de l'objet 2 :", objet2, "Joules")
-
-```
-
-
-Dans l'exemple ci-haut, la fonction "energie_cinetique" est appelé à la ligne #7 et à la ligne #8.
-Lors du premier appel, la valeur de "masse" sera de 2 et la valeur de "vitesse" sera de 3.
-Lors du second appel, la valeur de "masse" sera de 5 et la valeur de "vitesse" sera de 7.
-
-### Les opérateurs de comparaison et les expressions booléennes
-
-Une expression contenant un opérateur de comparaison est nommé une expression booléenne.
-Le résultat d'une expression booléenne est toujours une valeur booléenne True ou False.
-
-| Opérateur | Description | Exemple | Résultat |
-|-----------|------------|---------|----------|
-| `==`      | Égal à | `5 == 5` | `True` |
-| `!=`      | Différent de | `5 != 3` | `True` |
-| `>`       | Supérieur à | `7 > 4` | `True` |
-| `<`       | Inférieur à | `2 < 6` | `True` |
-| `>=`      | Supérieur ou égal à | `5 >= 5` | `True` |
-| `<=`      | Inférieur ou égal à | `3 <= 7` | `True` |
-
-
-## Exécution de code sous-condition (aperçu)
-
-Il est possible de rendre des instructions exécutables uniquement si une expression booléenne donne True.
-Dans l'exemple ci-dessous avec des "if/elif/else" (si/sinon si/sinon). Un seul des 3 print va être exécuté.
-- L'ordinateur testera en premier l'expression booléenne sur le "if", si le résultat est True, le 1er print sera exécutée
-- Si le résultat est False, il va tester l'expression booléenne sur le "elif", si le résultat est True, le 2ème print sera exécutée
-- Si le résultat est False, ça sera le 3ème print qui sera exécuté
-
-
-```python
-nombre = int(input("Entrez un nombre : "))
-
-if nombre > 0: #Si le nombre est supérieur à 0
-    print("Le nombre est positif.")
-elif nombre < 0:
-    print("Le nombre est négatif.")
-else:
-    print("Le nombre est zéro.")
-
-print("reprise normale de l'exécution à partir de ce point")
-```
-
-Seul le "if" est obligatoire, les sections "elif" et "else" sont facultatives.
-Nous étudierons différentes variantes et des situations plus complexes dans des cours à venir.
-Nous étudirons également les opérateurs logiciels (and, or, not) qui nous permettrons de combiner des expressions conditionnelles ensembles.
-
-
-```python
-
-```
-
-## Modules et bibliothèques
-
-
-
-
-***Modules***
-Certaines fonctions qui ne sont pas disponible par défaut. Pour être en mesure d'utiliser ces fonctions, nous devons préalablement ajouter une instruction dans notre fichier Python qui va servir à charger le fichier contenant ces fonctions (on nommera ce fichier un Module). Généralement, ces instructions sont placée au début du fichier. Par la suite, pour utiliser/appeler une fonction du module, il faut simplement précéder le nom de la fonction par le nom de son module.
-
-
-```python
-import math #Importer le module "math"
-print(math.sqrt(16))  # Résultat : 4.0
-```
-
-Vous allez découvrir les modules suivants :
-- math : ensemble de fonctions mathématiques avancées comme les logarithmes, les exposants, les racines carrées et les fonctions trigonométriques
-- random : permet de générer des nombres aléatoires, de sélectionner des éléments au hasard et de simuler des événements probabilistiques
-- os : ensemble de fonctionnalités pour intéragir avec le système d'exploitation (ex : Windows). Par exemple permettre de pouvoir manipuler des fichiers ou des répertoires.
-- sys : permet d'accéder à des informations sur l'environnement du programme et manipuler les entrées et sorties
-- time : contient des fonctions pour manipuler le temps et les dates, comme la mesure du temps écoulé et les conversions de format
-- csv : facilite la lecture et l'écriture de fichiers CSV qui est un format couramment utilisés pour stocker des données tabulaires
-
-
-***Bibliothèques*** Parfois plusieurs modules sont regroupées ensemble pour former un tout réutilisable et partageable facilement. Nous appelons ce regroupement une bibliothèque. Afin de pouvoir utiliser des fonctionnalités des modules d'une bibliothèque, il faut préalablement avoir installé la bibliothèque a l'aide de l'utilitaire "pip install" que nous verrons éventuellement. Par la suite, dans notre code, une bibliothèque s'utilise relativement de la même manière qu'un simple module.
-
-### Matplotlib - Générer des Graphiques (aperçu)
-
-Nous allons utilisez dans le cadre du cours la bibliothèque Matplotlib servant à la visualisation des données en Python. Cette bibliothèque est TRÈS flexible et permet de réaliser des graphiques autant simples que complexes. La bibliothèque permet de personnaliser pratiquement tous les éléments et permet de réaliser autant des graphiques à lignes, à barres, des histogrammes ou des nuages de points. La bibliothèque permet même de superposer plusieurs graphes sur une seule figure. Un autre avantage de Matplotlib est compatible avec d'autres bibliothèques à caractère scientifique comme NumPy, Pandas ou SciPy.
-
-Nous aurons un cours complet dédié à l'utilisation de celle-ci.
-Nous aborderons également l'existante d'autres bibliothèques (Seaborn, Ggplot2).
-Voici un exemple
-
-
-```python
-import matplotlib.pyplot as plt
-
-# Âge en années
-age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
-
-# Taille correspondante en cm (exemple fictif)
-taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140]
-
-# Création du graphique
-plt.plot(age, taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")
-
-# Ajout de titres et labels
-plt.xlabel("Âge (années)")
-plt.ylabel("Taille (cm)")
-plt.title("Courbe de Croissance de l'Enfant")
-plt.legend()
-
-# Affichage du graphique
-plt.show()
-```
-
-### Pandas - Manipulation et analyse de données (aperçu)
-
-La bibliothèque Pandas permet de travailler avec des grands volumes de données de manière rapide et efficace d'afin d'en faire de l'analyse et des manipulations. Il est rapide de pouvoir filtrer, trier et transformer des données et d'en générer des statistiques. La bibliothèque support les données dans différents formats comme Excel, CSV et s'intègre bien avec Matplotlib (pour générer des graphiques) et Scikit-learn (pour l'apprentissage automatique).
-
-
-```python
-import pandas as pd
-
-# Création d'un DataFrame avec des données météorologiques sur 7 jours
-data = {
-    "Jour": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-    "Température (°C)": [22, 24, 19, 21, 23, 25, 20],
-    "Humidité (%)": [60, 55, 70, 65, 58, 50, 72],
-    "Vitesse du vent (km/h)": [15, 10, 20, 12, 14, 9, 22]
-}
-
-df = pd.DataFrame(data)
-
-# Affichage des premières lignes du DataFrame
-print("Données météorologiques :")
-print(df)
-
-# Analyses des données
-moyenne_temp = df["Température (°C)"].mean()
-moyenne_humidite = df["Humidité (%)"].mean()
-moyenne_vent = df["Vitesse du vent (km/h)"].mean()
-
-print(f"\nTempérature moyenne sur 10 jours : {moyenne_temp:.2f}°C")
-print(f"Humidité moyenne sur 10 jours : {moyenne_humidite:.2f}%")
-print(f"Vitesse moyenne du vent : {moyenne_vent:.2f} km/h")
-```
-
-
-```python
-
-```
-
-### Scikit-Learn - Apprentissage automatique (aperçu)
-
-TODO
-
-  </TabItem>
+</TabItem>
 
   <TabItem value="code" label="Premiers bouts de code!">
     TODO : les faire jouer dans le shell : taper des instructions
