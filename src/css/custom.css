@@ -97,3 +97,19 @@ html[data-theme="dark"] .examen {
   border-color: #ff4d4d;
   color: #ffe6e6;
 }
+
+
+/* Pour que toutes les colonnes d'un Row aient la même hauteur */
+.row {
+  align-items: stretch;
+}
+
+.col {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Faire en sorte que les boîtes ::: prennent toute la hauteur */
+.col > div {
+  flex: 1;
+}
