@@ -164,8 +164,119 @@ Pour réaliser ces applications et bien d'autres, vous apprendrez à utiliser :
 </TabItem>
 
   <TabItem value="code" label="Premiers bouts de code!">
-    TODO : les faire jouer dans le shell : taper des instructions
-  </TabItem>
+
+:::info 🎉 Vous allez coder dès maintenant!
+Suivez pas à pas les instructions ci-dessous pour écrire et exécuter votre **premier code Python**.
+:::
+
+---
+
+:::tip 🖥️ Écrire et exécuter ses premières commandes Python
+
+Dans le **Terminal**
+<img src={require('/img/icons/terminal.png').default} alt="Terminal" width="20" style={{ verticalAlign: 'middle' }} />, vous pouvez écrire et exécuter directement des commandes Python grâce au mode interactif.
+
+Tapez simplement :
+
+```bash
+python
+```
+
+Vous verrez :
+
+```
+Python 3.12.1 (tags...)
+>>>
+```
+
+Essayez quelques commandes :
+
+```python
+print("Bonjour!")
+```
+
+```python
+2 + 3
+```
+
+```python
+type(42)
+```
+
+:::
+
+---
+
+:::caution Attention : rien n'est sauvegardé!
+
+Le mode interactif est pratique pour tester des idées, mais :
+
+- Tout disparaît dès que vous fermez le Terminal.
+- Vous ne pouvez pas conserver votre code.
+- Vous devez tout retaper à chaque fois.
+
+C'est pourquoi nous allons maintenant créer des **scripts Python**, c'est-à-dire des fichiers `.py` où écrire votre code.
+:::
+
+---
+
+      :::tip
+
+## 📝 Écrire et exécuter son premier script Python
+
+### Étape 1 : Créer un fichier
+
+Dans PyCharm :
+
+1. Clic droit sur votre projet dans la colonne de gauche.
+2. Sélectionnez **New → Python File**.
+3. Nommez le fichier `mon_premier_programme`.
+4. PyCharm va automatiquement ajouter `.py` à la fin.
+
+---
+
+### Étape 2 : Écrire du code
+
+Dans le fichier, écrivez :
+
+```python
+print("Bonjour le monde!")
+```
+
+---
+
+### Étape 3 : Exécuter le fichier
+
+Dans le Terminal de PyCharm, tapez :
+
+```bash
+python mon_premier_programme.py
+```
+
+Vous devriez voir s'afficher :
+
+```
+Bonjour le monde!
+```
+
+Félicitations, vous avez exécuté votre premier **script Python**!
+
+      :::
+
+---
+
+:::info 🚀 Pourquoi écrire des scripts?
+
+Écrire son code dans des fichiers `.py` permet :
+
+- ✅ De conserver vos programmes
+- ✅ De pouvoir les exécuter autant de fois que vous voulez
+- ✅ De pouvoir les améliorer petit à petit
+- ✅ De les partager facilement avec d'autres personnes
+:::
+
+</TabItem>
+
   <TabItem value="exercices" label="Exercices">
 
       :::info Exercice - Python en ligne de commande

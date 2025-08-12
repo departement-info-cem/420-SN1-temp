@@ -30,26 +30,70 @@
   --docusaurus-highlighted-code-line-bg: rgba(0, 0, 0, 0.3);
 }
 
-.examen {
-  background: orangered;
+
+
+
+
+
+
+
+
+
+
+
+/*.remise-tp1::after {*/
+/*  content: "Remise TP1 (20%)";*/
+/*  text-align: center;*/
+/*  width: 100%;*/
+/*  display: block;*/
+/*  background: blue;*/
+/*  color: white;*/
+/*  font-size: 0.75em;*/
+/*}*/
+
+/*.remise-tp2::after {*/
+/*  content: "Remise TP2 (30%)";*/
+/*  text-align: center;*/
+/*  width: 100%;*/
+/*  display: block;*/
+/*  background: blue;*/
+/*  color: white;*/
+/*  font-size: 0.75em;*/
+/*}*/
+
+
+
+/* Style commun pour TP et examens */
+.tp, .examen {
+  font-weight: bold;
+  border-radius: 6px;
+  border: 1px solid transparent;
 }
 
-.remise-tp1::after {
-  content: "Remise TP1 (20%)";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: blue;
-  color: white;
-  font-size: 0.75em;
+/* TP - Bleu */
+/* Mode clair */
+html[data-theme="light"] .tp {
+  background-color: #e6f0ff; /* bleu pâle */
+  border-color: #99c2ff;
+  color: #003366;
+}
+/* Mode sombre */
+html[data-theme="dark"] .tp {
+  background-color: #00264d; /* bleu foncé */
+  border-color: #66a3ff;
+  color: #cce0ff;
 }
 
-.remise-tp2::after {
-  content: "Remise TP2 (30%)";
-  text-align: center;
-  width: 100%;
-  display: block;
-  background: blue;
-  color: white;
-  font-size: 0.75em;
+/* Examens - Rouge */
+/* Mode clair */
+html[data-theme="light"] .examen {
+  background-color: #ffe6e6; /* rouge pâle */
+  border-color: #ff9999;
+  color: #660000;
+}
+/* Mode sombre */
+html[data-theme="dark"] .examen {
+  background-color: #660000; /* rouge foncé */
+  border-color: #ff4d4d;
+  color: #ffe6e6;
 }
