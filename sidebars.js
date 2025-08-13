@@ -68,7 +68,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "13 - 🛠️ TP2",
+      label: "13 - 🛠️TP2",
       id: "cours/rencontre13",
     },
     {
