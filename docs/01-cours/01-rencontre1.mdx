@@ -11,495 +11,579 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-  <TabItem value="intro" label="Introduction" default>
+    <TabItem value="admin" label="Plan de cours, etc." default>
 
-:::info Introduction
+        Nous allons regarder le plan de cours pour voir :
+        - la planification des 15 semaines de cours
+        - les évaluations, leurs dates et les pondérations
+        - les règles relatives au plagiat
 
-💡 La programmation, c’est l’art de donner des instructions précises à une machine pour qu’elle accomplisse une tâche. Contrairement à un humain, qui peut comprendre le contexte ou improviser, un ordinateur est totalement logique. Il exécute les instructions exactement comme elles sont écrites, sans les interpréter, et toujours dans l’ordre prévu.
+        ## Écouteurs
 
-💬 Il existe de nombreux langages de programmation, chacun avec ses forces et ses usages. Certains sont conçus pour la performance (comme **C** ou **C++**), d’autres pour la simplicité et la lisibilité. C’est le cas de **Python**, un langage très apprécié des débutants. Sa syntaxe claire permet de se concentrer sur les concepts sans être ralenti par des règles complexes.
+        Des éléments de contenu peuvent être disponibles sous la forme de videos pour vous permettre de les réécouter autant de fois que nécessaire. <br />
+        Il peut donc être utile d'apporter des écouteurs pour les cours.
 
-🤖 Python est aussi largement utilisé dans des domaines comme l’**intelligence artificielle**, l’**analyse de données** et la **modélisation scientifique**, grâce à un vaste écosystème de bibliothèques.
+        ## Plagiat
 
-🚫 Mais attention : il n’existe pas un langage unique pour tout faire. Par exemple :
-- ⚙️ **C/C++** : idéals pour les logiciels qui doivent être rapides et proches du matériel.
-- 🌐 **JavaScript** : incontournable pour le développement web.
-- 📱 **Kotlin** et **Swift** : spécialisés dans les applications mobiles.
-- 📊 **R** et **Python** : très utilisés pour les statistiques, l’analyse de données et la recherche scientifique.
+        En programmation, c'est difficile de distinguer "s'aider" et "copier", "travailler ensemble" et
+        "un qui travaille, l'autre qui recopie".
 
-:::
+        Voici quelques règles pour vous aider :
+        - ne jamais partager un fichier de code ou un fragment de code, en général le copain le recopie sans réfléchir
+        - vous pouvez expliquer, dessiner, reformuler, mais n'écrivez pas le code pour un ami
+        - si vous avez un doute, demandez à votre prof
 
-:::tip Pourquoi apprendre à programmer en sciences?
+    </TabItem>
 
-🔬 En sciences, savoir programmer est souvent **un atout majeur**, voire **une nécessité**. Que ce soit en biologie, en physique ou en chimie, la programmation permet de :
-- 🔄 Modéliser des phénomènes complexes ;
-- 📈 Analyser des données expérimentales ;
-- 🧪 Créer des simulations de processus naturels.
+    <TabItem value="intro" label="Introduction">
 
-📚 Quelques exemples :
-- 🧬 **Biologie** : analyser des génomes ou modéliser l’évolution d’une population ;
-- 📐 **Mathématiques** : résoudre numériquement des équations différentielles ou visualiser des fonctions en 3D ;
-- ⚗️ **Chimie** : étudier des réactions chimiques ou manipuler des structures moléculaires ;
-- 🌍 **Géologie** : analyser des relevés sismiques ou modéliser l’érosion d’un terrain au fil du temps ;
-- 🪐 **Physique** : simuler la trajectoire d’un objet ou l’interaction entre particules.
+        :::info Introduction
 
-🧠 Mais ce n’est pas tout : programmer renforce aussi des compétences générales comme la **pensée logique**, la **résolution de problèmes** et la **rigueur** — des qualités essentielles pour tout scientifique.
+        💡 La programmation, c’est l’art de donner des instructions précises à une machine pour qu’elle accomplisse une
+        tâche. Contrairement à un humain, qui peut comprendre le contexte ou improviser, un ordinateur est totalement
+        logique. Il exécute les instructions exactement comme elles sont écrites, sans les interpréter, et toujours dans
+        l’ordre prévu.
 
-🚀 Enfin, la maîtrise de Python (ou d’un autre langage) ouvre la porte à des domaines en forte croissance, comme la **science des données** ou l’**intelligence artificielle**, très présents dans la recherche et l’industrie.
+        💬 Il existe de nombreux langages de programmation, chacun avec ses forces et ses usages. Certains sont conçus
+        pour la performance (comme **C** ou **C++**), d’autres pour la simplicité et la lisibilité. C’est le cas de
+        **Python**, un langage très apprécié des débutants. Sa syntaxe claire permet de se concentrer sur les concepts
+        sans être ralenti par des règles complexes.
 
-> ✅ En résumé : apprendre à programmer, ce n’est pas juste utile — c’est souvent indispensable pour comprendre, modéliser et explorer le monde scientifique.
+        🤖 Python est aussi largement utilisé dans des domaines comme l’**intelligence artificielle**, l’**analyse de
+        données** et la **modélisation scientifique**, grâce à un vaste écosystème de bibliothèques.
 
-:::
+        🚫 Mais attention : il n’existe pas un langage unique pour tout faire. Par exemple :
+        - ⚙️ **C/C++** : idéals pour les logiciels qui doivent être rapides et proches du matériel.
+        - 🌐 **JavaScript** : incontournable pour le développement web.
+        - 📱 **Kotlin** et **Swift** : spécialisés dans les applications mobiles.
+        - 📊 **R** et **Python** : très utilisés pour les statistiques, l’analyse de données et la recherche
+        scientifique.
 
-:::info Fonctionnement de Python et outils de développement
+        :::
 
-⚙️ Python est un **langage interprété**, ce qui signifie que le code n’est pas compilé en un fichier exécutable, mais **lu et exécuté ligne par ligne** par un interpréteur Python installé sur votre ordinateur.
+        :::tip Pourquoi apprendre à programmer en sciences?
 
-💻 Peu importe le système d’exploitation (Windows, macOS ou Linux), tant que l’interpréteur Python est présent, il peut comprendre et exécuter les instructions écrites dans un fichier `.py`.
+        🔬 En sciences, savoir programmer est souvent **un atout majeur**, voire **une nécessité**. Que ce soit en
+        biologie, en physique ou en chimie, la programmation permet de :
+        - 🔄 Modéliser des phénomènes complexes ;
+        - 📈 Analyser des données expérimentales ;
+        - 🧪 Créer des simulations de processus naturels.
 
-🧱 La machine ne fait **aucune déduction** : elle suit les instructions exactement comme elles sont écrites, dans l’ordre, sans se poser de questions.
+        📚 Quelques exemples :
+        - 🧬 **Biologie** : analyser des génomes ou modéliser l’évolution d’une population ;
+        - 📐 **Mathématiques** : résoudre numériquement des équations différentielles ou visualiser des fonctions en 3D ;
+        - ⚗️ **Chimie** : étudier des réactions chimiques ou manipuler des structures moléculaires ;
+        - 🌍 **Géologie** : analyser des relevés sismiques ou modéliser l’érosion d’un terrain au fil du temps ;
+        - 🪐 **Physique** : simuler la trajectoire d’un objet ou l’interaction entre particules.
 
-<p align="center">
-    <img src={require('/img/cours/resizecom-Python-interpreteur.png').default} width="40%" />
-</p>
+        🧠 Mais ce n’est pas tout : programmer renforce aussi des compétences générales comme la **pensée logique**, la
+        **résolution de problèmes** et la **rigueur** — des qualités essentielles pour tout scientifique.
 
----
+        🚀 Enfin, la maîtrise de Python (ou d’un autre langage) ouvre la porte à des domaines en forte croissance, comme
+        la **science des données** ou l’**intelligence artificielle**, très présents dans la recherche et l’industrie.
 
-### 🛠️ Éditeurs et environnements de développement (IDE)
+        > ✅ En résumé : apprendre à programmer, ce n’est pas juste utile — c’est souvent indispensable pour comprendre,
+        modéliser et explorer le monde scientifique.
 
-📝 En théorie, on pourrait écrire du code Python avec un simple Bloc-notes ou TextEdit, puis l’exécuter via un terminal. Mais dans la pratique, cela devient vite fastidieux et source d’erreurs.
+        :::
 
-💡 C’est pourquoi les programmeurs utilisent des outils appelés **environnements de développement** ou **IDE (Integrated Development Environments)**, qui facilitent grandement le travail.
+        :::info Fonctionnement de Python et outils de développement
 
-🔧 Un bon IDE ou éditeur de code propose :
-- 🎨 La **coloration syntaxique** pour une meilleure lisibilité ;
-- ✍️ L’**autocomplétion** pour écrire plus vite ;
-- 🚨 La **détection d’erreurs** avant même d’exécuter le programme ;
-- 🐞 Des outils de **débogage** pour corriger plus facilement les problèmes.
+        ⚙️ Python est un **langage interprété**, ce qui signifie que le code n’est pas compilé en un fichier exécutable,
+        mais **lu et exécuté ligne par ligne** par un interpréteur Python installé sur votre ordinateur.
 
----
+        💻 Peu importe le système d’exploitation (Windows, macOS ou Linux), tant que l’interpréteur Python est présent,
+        il peut comprendre et exécuter les instructions écrites dans un fichier `.py`.
 
-### 🧰 Exemples d’outils populaires
+        🧱 La machine ne fait **aucune déduction** : elle suit les instructions exactement comme elles sont écrites, dans
+        l’ordre, sans se poser de questions.
 
-Voici deux outils très utilisés pour programmer en Python :
+        <p align="center">
+            <img src={require('/img/cours/resizecom-Python-interpreteur.png').default} width="40%"/>
+        </p>
 
-- 🐍 **PyCharm** : conçu spécifiquement pour Python, avec une interface conviviale et des fonctionnalités intégrées comme la gestion automatique des environnements virtuels. Idéal pour les débutants.
-- 🪶 **VS Code** : léger, rapide, hautement personnalisable grâce à des extensions. Parfait si vous aimez ajuster votre environnement.
+        ---
 
-> ✅ En résumé : bien que Python soit simple à apprendre, utiliser un bon environnement de développement rend l’apprentissage plus efficace, plus agréable… et moins frustrant !
+        ### 🛠️ Éditeurs et environnements de développement (IDE)
 
-:::
+        📝 En théorie, on pourrait écrire du code Python avec un simple Bloc-notes ou TextEdit, puis l’exécuter via un
+        terminal. Mais dans la pratique, cela devient vite fastidieux et source d’erreurs.
 
-:::warning Installation de Python et de PyCharm
+        💡 C’est pourquoi les programmeurs utilisent des outils appelés **environnements de développement** ou **IDE
+        (Integrated Development Environments)**, qui facilitent grandement le travail.
 
-Pour installer PyCharm à la maison avec la même configuration qu’au cégep, suivez [ce guide pas à pas](/recettes/installer-pyCharm) (prévoir environ 20 minutes).
+        🔧 Un bon IDE ou éditeur de code propose :
+        - 🎨 La **coloration syntaxique** pour une meilleure lisibilité ;
+        - ✍️ L’**autocomplétion** pour écrire plus vite ;
+        - 🚨 La **détection d’erreurs** avant même d’exécuter le programme ;
+        - 🐞 Des outils de **débogage** pour corriger plus facilement les problèmes.
 
-Une fois l’installation faite, [ce second guide](/recettes/creer-projet) vous montre comment créer votre tout premier projet Python dans PyCharm.
+        ---
 
-:::
+        ### 🧰 Exemples d’outils populaires
 
+        Voici deux outils très utilisés pour programmer en Python :
 
-  </TabItem>
+        - 🐍 **PyCharm** : conçu spécifiquement pour Python, avec une interface conviviale et des fonctionnalités
+        intégrées comme la gestion automatique des environnements virtuels. Idéal pour les débutants.
+        - 🪶 **VS Code** : léger, rapide, hautement personnalisable grâce à des extensions. Parfait si vous aimez ajuster
+        votre environnement.
+
+        > ✅ En résumé : bien que Python soit simple à apprendre, utiliser un bon environnement de développement rend
+        l’apprentissage plus efficace, plus agréable… et moins frustrant !
+
+        :::
+
+        :::warning Installation de Python et de PyCharm
+
+        Pour installer PyCharm à la maison avec la même configuration qu’au cégep, suivez [ce guide pas à
+        pas](/recettes/installer-pyCharm) (prévoir environ 20 minutes).
+
+        Une fois l’installation faite, [ce second guide](/recettes/creer-projet) vous montre comment créer votre tout
+        premier projet Python dans PyCharm.
+
+        :::
+
+    </TabItem>
 
     <TabItem value="apercu" label="Aperçu du cours">
 
-# 🚀 Ce que vous allez pouvoir faire avec Python après ce cours
+        ## 🚀 Ce que vous allez pouvoir faire avec Python après ce cours
 
-Plutôt que de simplement parler de variables ou de graphiques de façon abstraite, voici quelques exemples concrets et motivants d'applications que vous serez en mesure de réaliser en Python, en combinant les notions vues dans le cours :
+        Plutôt que de simplement parler de variables ou de graphiques de façon abstraite, voici quelques exemples
+        concrets et motivants d'applications que vous serez en mesure de réaliser en Python, en combinant les notions
+        vues dans le cours :
 
-:::note
-Ne vous inquiétez pas si certaines notions vous semblent encore mystérieuses! Nous apprendrons plus tard en détail comment créer et utiliser des *notebooks* Python. D'ici là, vous pouvez tout de même télécharger, ouvrir dans PyCharm et essayer d'exécuter les exemples ci-dessous. Sinon, le ou la professeur fera la démonstration avec vous en classe. Ces exemples illustrent concrètement ce que vous serez capables de faire après ce cours.
-:::
+        :::note
+        Ne vous inquiétez pas si certaines notions vous semblent encore mystérieuses! Nous apprendrons plus tard en
+        détail comment créer et utiliser des *notebooks* Python. D'ici là, vous pouvez tout de même télécharger, ouvrir
+        dans PyCharm et essayer d'exécuter les exemples ci-dessous. Sinon, le ou la professeur fera la démonstration
+        avec vous en classe. Ces exemples illustrent concrètement ce que vous serez capables de faire après ce cours.
+        :::
 
----
+        ---
 
-<Row>
+        <Row>
 
-<Column>
+            <Column>
 
-:::tip 🔬
-    ## 🔬 Analyse de séquences génétiques (Bio-informatique)
-Vous pourrez lire des séquences d'ADN ou d'ARNm, en extraire des statistiques utiles et produire des graphiques professionnels, comme ceux-ci :
+                :::tip 🔬
+                ## 🔬 Analyse de séquences génétiques (Bio-informatique)
+                Vous pourrez lire des séquences d'ADN ou d'ARNm, en extraire des statistiques utiles et produire des
+                graphiques professionnels, comme ceux-ci :
 
-[👉 Télécharger le notebook](/ressources/notebooks/01-1_bioinfo_analyse_sequences_ARN.ipynb.zip)
-:::
+                [👉 Télécharger le notebook](/ressources/notebooks/01-1_bioinfo_analyse_sequences_ARN.ipynb.zip)
+                :::
 
-</Column>
+            </Column>
 
-<Column>
+            <Column>
 
-:::info 🌀
-    ## 🌀 Génération de fractales
-Grâce aux mathématiques et à la visualisation en Python, vous serez capables de créer des images fascinantes et colorées comme celle-ci :
+                :::info 🌀
+                ## 🌀 Génération de fractales
+                Grâce aux mathématiques et à la visualisation en Python, vous serez capables de créer des images
+                fascinantes et colorées comme celle-ci :
 
-[👉 Télécharger le notebook](/ressources/notebooks/01-2_generation_fractales.ipynb.zip)
-:::
+                [👉 Télécharger le notebook](/ressources/notebooks/01-2_generation_fractales.ipynb.zip)
+                :::
 
-</Column>
+            </Column>
 
-<Column>
+            <Column>
 
-:::caution 🤖
-    ## 🤖 Reconnaissance automatisée d'images (intelligence artificielle)
-Vous découvrirez comment les algorithmes peuvent analyser des données et reconnaître des motifs, comme identifier automatiquement des chiffres manuscrits :
+                :::caution 🤖
+                ## 🤖 Reconnaissance automatisée d'images (intelligence artificielle)
+                Vous découvrirez comment les algorithmes peuvent analyser des données et reconnaître des motifs, comme
+                identifier automatiquement des chiffres manuscrits :
 
-[👉 Télécharger le notebook](/ressources/notebooks/01-3_reconnaissance_chiffres.ipynb.zip)
-:::
+                [👉 Télécharger le notebook](/ressources/notebooks/01-3_reconnaissance_chiffres.ipynb.zip)
+                :::
 
-</Column>
+            </Column>
 
-</Row>
+        </Row>
 
----
+        ---
 
-## 🛠️ Les outils que vous apprendrez à maîtriser
+        ## 🛠️ Les outils que vous apprendrez à maîtriser
 
-Pour réaliser ces applications et bien d'autres, vous apprendrez à utiliser :
+        Pour réaliser ces applications et bien d'autres, vous apprendrez à utiliser :
 
-- 🐍 Le langage Python
-- 🛠️ Des outils de développement modernes : PyCharm, GitHub
-- 📊 Des bibliothèques scientifiques : NumPy, Matplotlib, Pandas, Scikit-learn
-- 🧠 Les bases de la programmation scientifique
+        - 🐍 Le langage Python
+        - 🛠️ Des outils de développement modernes : PyCharm, GitHub
+        - 📊 Des bibliothèques scientifiques : NumPy, Matplotlib, Pandas, Scikit-learn
+        - 🧠 Les bases de la programmation scientifique
 
-⚡ **Tout cela sans avoir à utiliser Excel ni d'interface compliquée : vos données, vos analyses, vos graphiques, directement dans votre code Python!**
+        ⚡ **Tout cela sans avoir à utiliser Excel ni d'interface compliquée : vos données, vos analyses, vos graphiques,
+        directement dans votre code Python!**
 
-</TabItem>
+    </TabItem>
 
-  <TabItem value="code" label="Premiers bouts de code!">
+    <TabItem value="code" label="Premiers bouts de code!">
 
-:::info 🎉 Vous allez coder dès maintenant!
-Suivez pas à pas les instructions ci-dessous pour écrire et exécuter votre **premier code Python**.
-:::
+        :::info 🎉 Vous allez coder dès maintenant!
+        Suivez pas à pas les instructions ci-dessous pour écrire et exécuter votre **premier code Python**.
+        :::
 
----
+        ---
 
-:::tip 🖥️ Écrire et exécuter ses premières commandes Python
+        :::tip 🖥️ Écrire et exécuter ses premières commandes Python
 
-Dans le **Terminal**
-<img src={require('/img/icons/terminal.png').default} alt="Terminal" width="20" style={{ verticalAlign: 'middle' }} />, vous pouvez écrire et exécuter directement des commandes Python grâce au mode interactif.
+        Dans le **Terminal**
+        <img src={require('/img/icons/terminal.png').default} alt="Terminal" width="20"
+             style={{verticalAlign: 'middle'}}/>, vous pouvez écrire et exécuter directement des commandes Python grâce
+        au mode interactif.
 
-Tapez simplement :
+        Tapez simplement :
 
-```bash
-python
-```
+        ```bash
+        python
+        ```
 
-Vous verrez :
+        Vous verrez :
 
-```
-Python 3.12.1 (tags...)
->>>
-```
+        ```
+        Python 3.12.1 (tags...)
+        >>>
+        ```
 
-Essayez quelques commandes :
+        Essayez quelques commandes :
 
-```python
-print("Bonjour!")
-```
+        ```python
+        print("Bonjour!")
+        ```
 
-```python
-2 + 3
-```
+        ```python
+        2 + 3
+        ```
 
-```python
-type(42)
-```
+        ```python
+        type(42)
+        ```
 
-:::
+        :::
 
----
+        ---
 
-:::caution Attention : rien n'est sauvegardé!
+        :::caution Attention : rien n'est sauvegardé!
 
-Le mode interactif est pratique pour tester des idées, mais :
+        Le mode interactif est pratique pour tester des idées, mais :
 
-- Tout disparaît dès que vous fermez le Terminal.
-- Vous ne pouvez pas conserver votre code.
-- Vous devez tout retaper à chaque fois.
+        - Tout disparaît dès que vous fermez le Terminal.
+        - Vous ne pouvez pas conserver votre code.
+        - Vous devez tout retaper à chaque fois.
 
-C'est pourquoi nous allons maintenant créer des **scripts Python**, c'est-à-dire des fichiers `.py` où écrire votre code.
-:::
+        C'est pourquoi nous allons maintenant créer des **scripts Python**, c'est-à-dire des fichiers `.py` où écrire
+        votre code.
+        :::
 
----
+        ---
 
-      :::tip
+        :::tip
 
-## 📝 Écrire et exécuter son premier script Python
+        ## 📝 Écrire et exécuter son premier script Python
 
-### Étape 1 : Créer un fichier
+        ### Étape 1 : Créer un fichier
 
-Dans PyCharm :
+        Dans PyCharm :
 
-1. Clic droit sur votre projet dans la colonne de gauche.
-2. Sélectionnez **New → Python File**.
-3. Nommez le fichier `mon_premier_programme`.
-4. PyCharm va automatiquement ajouter `.py` à la fin.
+        1. Clic droit sur votre projet dans la colonne de gauche.
+        2. Sélectionnez **New → Python File**.
+        3. Nommez le fichier `mon_premier_programme`.
+        4. PyCharm va automatiquement ajouter `.py` à la fin.
 
----
+        ---
 
-### Étape 2 : Écrire du code
+        ### Étape 2 : Écrire du code
 
-Dans le fichier, écrivez :
+        Dans le fichier, écrivez :
 
-```python
-print("Bonjour le monde!")
-```
+        ```python
+        print("Bonjour le monde!")
+        ```
+
+        ---
+
+        ### Étape 3 : Exécuter le fichier
+
+        Dans le Terminal de PyCharm, tapez :
 
----
+        ```bash
+        python mon_premier_programme.py
+        ```
 
-### Étape 3 : Exécuter le fichier
+        Vous devriez voir s'afficher :
 
-Dans le Terminal de PyCharm, tapez :
+        ```
+        Bonjour le monde!
+        ```
 
-```bash
-python mon_premier_programme.py
-```
+        Félicitations, vous avez exécuté votre premier **script Python**!
 
-Vous devriez voir s'afficher :
+        :::
 
-```
-Bonjour le monde!
-```
+        ---
 
-Félicitations, vous avez exécuté votre premier **script Python**!
+        :::info 🚀 Pourquoi écrire des scripts?
+
+        Écrire son code dans des fichiers `.py` permet :
+
+        - ✅ De conserver vos programmes
+        - ✅ De pouvoir les exécuter autant de fois que vous voulez
+        - ✅ De pouvoir les améliorer petit à petit
+        - ✅ De les partager facilement avec d'autres personnes
+        :::
+
+        ## Demo 1 : bonjour le monde, interactif
+
+        On va ouvrir un terminal Powershell:
+        - un terminal, c'est une fenêtre qui nous invite à taper des commandes pour l'ordinateur
+        - Powershell, c'est le terminal à la mode pour un ordinateur qui roule Windows
+        - l'ordinateur attend nos instructions, on va partir python en tapant "python3"
+        - si l'ordinateur n'a pas l'air content, qu'il dit que Python n'est pas installé se référer à TODO
+        - si tout va bien on va pouvoir taper des trucs, vous devriez voir quelque chose qui ressemble à
+        ```
+        Python 3.10.0 (v3.10.0:b494f5935c, Oct 4 2021, 14:59:19) [Clang 12.0.5 (clang-1205.0.22.11)] on darwin
+        Type "help", "copyright", "credits" or "license" for more information.
+        >>>
+        ```
+        - on peut maintenant donner des instructions à l'ordinateur
+        - on va taper (enfin il ne faut pas taper les ">>>"), vous pouvez même copier/coller
+        ```
+        >>> print("bonjour bonjour cher maitre humain")
+        ```
+        - l'interpréteur Python3 comprend alors
+        - l'ordre d'imprimer parce qu'on lui a dit "print", ici imprimer veut dire afficher dans notre terminal
+        - le truc à imprimer est fourni entre les parenthèses, c'est un paramètre
+        - ici on veut imprimer un bout de texte
+        - l'interpréteur comprend que c'est du texte à afficher et pas d'autres instructions parce que c'est entre
+        guillements.
+        - un dernier petit test en mode interactif et promis on arrête
+        - taper
+        ```
+        >>> 6/2*(1+2)
+        ```
+        - trop puissant !! il nous affiche la réponse
+        - pour quitter l'interpréteur Python, on peut fermer la fenêtre Powershell au complet ou faire **CONTROL+D**
 
-      :::
+        ## Demo 2 : bonjour le monde en python, dans un fichier texte
 
----
+        On va vite vouloir donner plein d'ordres à l'ordinateur en lui parlant en Python.
 
-:::info 🚀 Pourquoi écrire des scripts?
+        Ça devient pénible de les écrire les uns après les autres en mode interactif. Alors, on a
+        pensé à écrire les ordres les uns après les autres dans un fichier.
 
-Écrire son code dans des fichiers `.py` permet :
+        On va appeler ça un "programme Python" ou un "script Python". Concrètement, c'est un
+        fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
+        le mélanger avec les ".pdf" et les ".jpg".
 
-- ✅ De conserver vos programmes
-- ✅ De pouvoir les exécuter autant de fois que vous voulez
-- ✅ De pouvoir les améliorer petit à petit
-- ✅ De les partager facilement avec d'autres personnes
-:::
+        On ouvre un éditeur de texte. Il y en a plein, nous, on va partir Notepad++.
+        - on ouvre le menu **Démarrer** de Windows
+        - on tape "not" et il devrait apparaitre une liste avec Notepad++
+        - on va taper dans la zone du fichier les instructions, une par ligne
+        ```python
+        # ceci est un commentaire, cette ligne est pour les humains, l'ordinateur va l'ignorer
+        print("bonjour bonjour cher maitre humain")
+        6/2*(1+2)
+        print("Ca va aujourd' hui?")
+        print( 4 / 5 * (9 + 6) )
+        ```
+        - on sauve le fichier à un endroit où vous saurez le retrouver, par exemple sur le bureau avec comme nom
+        "bonjour.py"
+        - jusqu'ici ça ne fait rien
+        - on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres,
+        d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
+        - dans le terminal, on va taper
+        ```shell
+        python3 c:\Users\monmatricule\Desktop\bonjour.py
+        ```
+        - Vous venez d'exécuter un Python
+        - Regardons ce qu'on vient de voir
+        - l'interpréteur a affiché trois lignes
+        - il exécute dans l'ordre de haut en bas
+        - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
+        - les espaces peuvent être importants ou pas :
+        - en début de ligne c'est important
+        - dans une expression, c'est ignoré
 
-</TabItem>
 
-  <TabItem value="exercices" label="Exercices">
+        ## Demo 3 : bonjour le monde dans un environnement de développement
 
-      :::info Exercice - Python en ligne de commande
+        On a gagné, on a perdu
+        - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
+        - on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
 
-      TODO
+        On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre, ils
+        vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain
+        je me suis mal exprimé.
 
-      :::
+        On va alors utiliser un environnement de développement pour se doter des pouvoirs super :
+        - on va pouvoir arrêter le temps
+        - on va pouvoir voir à l'intérieur de l'ordinateur
 
-      :::info Exercice - Répertoire GitHub
+        On va partir PyCharm pour exécuter notre script en mode super développeur :
+        - partir l'application PyCharm, on appelle ça un IDE
+        - Integrated Developpement Environment, un environnement intégré pour programmer
+        - créer un fichier test_ide.py avec le contenu suivant
+        ```python
+        # commentaire : une ligne pour le programmeur qui est ignorée par l'ordi, commence par un "#"
+        print("bonjour bonjour cher maitre humain")
+        6/2*(1+2)
+        print("Ca va aujourd' hui?") # les espaces entre "" sont pris en compte
+        print( 4 / 5 * (9 + 6) ) # les espaces dans une expression sont ignorés
+        ```
+        - l'exécuter en cliquant sur le triangle vert
+        - on devrait voir.
 
-      En suivante [cette recette](/recettes/creer-repo-github), créez-vous un répertoire GitHub pour y déposer vos exercices.
+        ### le point d'arrêt : arrêter le temps
 
-      :::
+        - en cliquant dans la marge du code, on va mettre un point d'arrêt
+        - on va maintenit partir notre code en mode débogage en cliquant sur la bestiole, sur le bug
+        - l'exécution s'arrête sur le point d'arrêt
 
-      :::info Exercice - Premier projet PyCharm!
+        ## Jargon
 
-      En suivante [cette recette](/recettes/creer-projet), créez un projet PyCharm dans votre répertoire GitHub cloné sur le bureau de votre poste.
+        Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs :
+        - "print" ("imprimer") qui veut dire affiche à l'écran au lieu d'imprimer du papier
+        - "exécuter" un programme !?
 
-      TODO
+        On va essayer de pointer les termes jargoniques au fur et à mesure.
 
-      :::
+        # Exercices
 
-      :::info Exercice - Calcul du périmètre d'un rectangle
+        ## Exercice de débogage de la semaine TODO
 
-Demande à l'utilisateur la longueur et la largeur de son rectangle et affiche ensuite le périmètre.
+        Parce qu'on apprend jamais aussi bien que par soi-même…
 
-      TODO
+        ## Exercice refaire_les_demos.py
 
-      :::
+        Refaire les étapes des 3 démos par vous-même. S'assurer qu'on comprend un
+        peu ce qui se passe. Ne pas hésiter à poser des questions si certains points
+        sont moins clairs.
 
-  </TabItem>
+        ## Exercice points_arrets.py
 
-    <TabItem value="archives" label="(archives)">
-        # Accueil, intro, plan de cours et premiers scripts
+        On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
+        est de se familiariser avec le débogueur.
 
-- plan de cours
-- premier script et exécution
-- mise en place du repo github pour les exercices et les notes? OneDrive?
+        Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
 
-## Plan de cours
+        ```python
+        # ceci est une fonction, on va en parler en semaine 4
+        def calculComplexe(a, b, c):
+        return a**b + c*(b-a)
+        print("Arreter le temps, c'est impossible Marty")
+        a = calculComplexe(3,5,7)
+        b = calculComplexe(a,6,9)
+        c = calculComplexe(b,a,b)
+        a = calculComplexe(a,a,a)
+        print("le resultat est ", calculComplexe(a, b, c))
+        ```
 
-Nous allons regarder le plan de cours pour voir :
-- la planification des 15 semaines de cours
-- les évaluations, leurs dates et les pondérations
-- les règles relatives au plagiat
-- les règles relatives aux absences
+        On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
+        - essayer de calculer à la main combien ça vaut
+        - poser un point d'arrêt et observer
 
-## Écouteurs
+        ## Exercice la_sequence.py
 
-De nombreux éléments de contenus seront disponibles sous la forme :
-- de videos pour vous permettre de les réécouter autant de fois que nécessaire
-- de recettes pour vous permettre de les appliquer autant que nécessaire
+        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
+        - des déclarations de variables
+        - des calculs avec assignations
+        - des affichages avec print
 
-Il est utile d'apporter des écouteurs filaires pour les cours.
+        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
+        votre vie pour programmer)
 
-## Plagiat
+    </TabItem>
 
-En programmation, c'est difficile de distinguer "s'aider" et "copier", "travailler ensemble" et
-"un qui travaille, l'autre qui recopie".
+    <TabItem value="exercices" label="Exercices">
 
-Voici quelques règles pour vous aider :
-- ne jamais partager un fichier de code ou un fragment de code, en général le copain le recopie sans réfléchir
-- vous pouvez expliquer, dessiner, reformuler, mais n'écrivez pas le code pour un ami
-- vous pouvez utiliser du code trouvé en ligne, juste mettre un petit commentaire au-dessus avec l'URL où vous l'avez trouvé
-- si vous avez un doute, demandez à votre prof
+        :::info Exercice - AFFICHAGE #1
+        Sans exécuter le code, qu'affichera le programme ci-dessous?<br/>
+        En situation d'examen, ce type de question serait à faire sans l'ordinateur.
 
-## Demo 1 : bonjour le monde, interactif
+        ```python
+        nombre1 = 10
+        nombre2 = nombre1 * nombre1
+        nombre1 = 40
+        nombre3 = nombre2 - nombre1 - 10
+        print(nombre1, nombre2, nombre3)
+        ```
+        :::
 
-On va ouvrir un terminal Powershell:
-- un terminal, c'est une fenêtre qui nous invite à taper des commandes pour l'ordinateur
-- Powershell, c'est le terminal à la mode pour un ordinateur qui roule Windows
-- l'ordinateur attend nos instructions, on va partir python en tapant "python3"
-- si l'ordinateur n'a pas l'air content, qu'il dit que Python n'est pas installé se référer à TODO
-- si tout va bien on va pouvoir taper des trucs, vous devriez voir quelque chose qui ressemble à
-```
-Python 3.10.0 (v3.10.0:b494f5935c, Oct  4 2021, 14:59:19) [Clang 12.0.5 (clang-1205.0.22.11)] on darwin
-Type "help", "copyright", "credits" or "license" for more information.
->>>
-```
-- on peut maintenant donner des instructions à l'ordinateur
-- on va taper (enfin il ne faut pas taper les ">>>"), vous pouvez même copier/coller
-```
->>> print("bonjour bonjour cher maitre humain")
-```
-- l'interpréteur Python3 comprend alors
-    - l'ordre d'imprimer parce qu'on lui a dit "print", ici imprimer veut dire afficher dans notre terminal
-    - le truc à imprimer est fourni entre les parenthèses, c'est un paramètre
-    - ici on veut imprimer un bout de texte
-    - l'interpréteur comprend que c'est du texte à afficher et pas d'autres instructions parce que c'est entre guillements.
-- un dernier petit test en mode interactif et promis on arrête
-- taper
-```
->>> 6/2*(1+2)
-```
-- trop puissant !! il nous affiche la réponse
-- pour quitter l'interpréteur Python, on peut fermer la fenêtre Powershell au complet ou faire **CONTROL+D**
+        :::info Exercice - AFFICHAGE #2
+        Sans exécuter le code, qu'affichera le programme ci-dessous?<br/>
+        Que s'est-il passé avec le contenu des variables `x` et `y`?
 
-## Demo 2 : bonjour le monde en python, dans un fichier texte
+        ```python
+        x = 50
+        y = 100
+        temporaire = y
+        y = x
+        x = temporaire
+        print(x, y)
+        ```
+        :::
 
-On va vite vouloir donner plein d'ordres à l'ordinateur en lui parlant en Python.
+        :::info Exercice -
 
-Ça devient pénible de les écrire les uns après les autres en mode interactif. Alors, on a
-pensé à écrire les ordres les uns après les autres dans un fichier.
 
-On va appeler ça un "programme Python" ou un "script Python". Concrètement, c'est un
-fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
-le mélanger avec les ".pdf" et les ".jpg".
+        :::
 
-On ouvre un éditeur de texte. Il y en a plein, nous, on va partir Notepad++.
-- on ouvre le menu **Démarrer** de Windows
-- on tape "not" et il devrait apparaitre une liste avec Notepad++
-- on va taper dans la zone du fichier les instructions, une par ligne
-```python
-# ceci est un commentaire, cette ligne est pour les humains, l'ordinateur va l'ignorer
-print("bonjour bonjour cher maitre humain")
-6/2*(1+2)
-print("Ca va aujourd'       hui?")
-print( 4 / 5 *                (9  + 6) )
-```
-- on sauve le fichier à un endroit où vous saurez le retrouver, par exemple sur le bureau avec comme nom "bonjour.py"
-- jusqu'ici ça ne fait rien
-- on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres, d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
-- dans le terminal, on va taper
-```shell
-python3 c:\Users\monmatricule\Desktop\bonjour.py
-```
-- Vous venez d'exécuter un Python
-- Regardons ce qu'on vient de voir
-    - l'interpréteur a affiché trois lignes
-    - il exécute dans l'ordre de haut en bas
-    - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
-    - les espaces peuvent être importants ou pas :
-      - en début de ligne c'est important
-      - dans une expression, c'est ignoré
+        :::info Exercice -
 
 
-## Demo 3 : bonjour le monde dans un environnement de développement
+        :::
 
-On a gagné, on a perdu
-- on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
-- on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
+        :::info Exercice -
 
-On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre, ils
-vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain
-je me suis mal exprimé.
 
-On va alors utiliser un environnement de développement pour se doter des pouvoirs super :
-- on va pouvoir arrêter le temps
-- on va pouvoir voir à l'intérieur de l'ordinateur
+        :::
 
-On va partir PyCharm pour exécuter notre script en mode super développeur :
-- partir l'application PyCharm, on appelle ça un IDE
-- Integrated Developpement Environment, un environnement intégré pour programmer
-- créer un fichier test_ide.py avec le contenu suivant
-```python
-# commentaire : une ligne pour le programmeur qui est ignorée par l'ordi, commence par un "#"
-print("bonjour bonjour cher maitre humain")
-6/2*(1+2)
-print("Ca va aujourd'       hui?")          # les espaces entre "" sont pris en compte
-print( 4 / 5 *                (9  + 6) )    # les espaces dans une expression sont ignorés
-```
-- l'exécuter en cliquant sur le triangle vert
-- on devrait voir.
+        :::info Exercice -
 
-### le point d'arrêt : arrêter le temps
 
-- en cliquant dans la marge du code, on va mettre un point d'arrêt
-- on va maintenit partir notre code en mode débogage en cliquant sur la bestiole, sur le bug
-- l'exécution s'arrête sur le point d'arrêt
+        :::
 
-## Jargon
+        :::info Exercice -
 
-Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs :
-- "print" ("imprimer") qui veut dire affiche à l'écran au lieu d'imprimer du papier
-- "exécuter" un programme !?
 
-On va essayer de pointer les termes jargoniques au fur et à mesure.
+        :::
 
-# Exercices
+        :::info Exercice -
 
-## Exercice de débogage de la semaine TODO
 
-Parce qu'on apprend jamais aussi bien que par soi-même…
+        :::
 
-## Exercice refaire_les_demos.py
+        :::info Exercice - Python en ligne de commande
 
-Refaire les étapes des 3 démos par vous-même. S'assurer qu'on comprend un
-peu ce qui se passe. Ne pas hésiter à poser des questions si certains points
-sont moins clairs.
+        TODO
 
-## Exercice points_arrets.py
+        :::
 
-On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
-est de se familiariser avec le débogueur.
+        :::info Exercice - Répertoire GitHub
 
-Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
+        En suivante [cette recette](/recettes/creer-repo-github), créez-vous un répertoire GitHub pour y déposer vos
+        exercices.
 
-```python
-# ceci est une fonction, on va en parler en semaine 4
-def calculComplexe(a, b, c):
-  return a**b + c*(b-a)
-print("Arreter le temps, c'est impossible Marty")
-a = calculComplexe(3,5,7)
-b = calculComplexe(a,6,9)
-c = calculComplexe(b,a,b)
-a = calculComplexe(a,a,a)
-print("le resultat est ", calculComplexe(a, b, c))
-```
+        :::
 
-On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
-- essayer de calculer à la main combien ça vaut
-- poser un point d'arrêt et observer
+        :::info Exercice - Premier projet PyCharm!
 
-## Exercice la_sequence.py
+        En suivante [cette recette](/recettes/creer-projet), créez un projet PyCharm dans votre répertoire GitHub cloné
+        sur le bureau de votre poste.
 
-Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
-- des déclarations de variables
-- des calculs avec assignations
-- des affichages avec print
+        TODO
 
-Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de votre vie pour programmer)
+        :::
+
+        :::info Exercice - Calcul du périmètre d'un rectangle
+
+        Demande à l'utilisateur la longueur et la largeur de son rectangle et affiche ensuite le périmètre.
+
+        TODO
+
+        :::
 
     </TabItem>
 </Tabs>
