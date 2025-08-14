@@ -11,12 +11,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "2 - 🧮 Variables et opérateurs",
+      label: "2 - 🧮 Variables et fonctions",
       id: "cours/rencontre2",
     },
     {
       type: "doc",
-      label: "3 - ⚙️ Fonctions",
+      label: "3 - ⚙️ Création de fonctions",
       id: "cours/rencontre3",
     },
     {
@@ -31,14 +31,14 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "6 - 📥 TP1 - Remise (20%)",
+      label: "6 - 🧩 Struct. combinées, TP1",
       id: "cours/rencontre6",
-      className: "tp",
     },
     {
       type: "doc",
-      label: "7 - 📝 Examen intra formatif",
+      label: "7 - Formatif / Remise TP1 (20%)",
       id: "cours/rencontre7",
+      className: "tp",
     },
     {
       type: "doc",
@@ -48,22 +48,22 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9 - 🔡 String, List et Dict",
+      label: "9 - 📦 List, Set, Tuple, Dict",
       id: "cours/rencontre9",
     },
     {
       type: "doc",
-      label: "10 - 🗂 Fichiers",
+      label: "10 - 🗂 Fichiers, Listes 2D, 3D...",
       id: "cours/rencontre10",
     },
     {
       type: "doc",
-      label: "11 - 🐼 Numpy et Pandas",
+      label: "11 - 🔢 Numpy",
       id: "cours/rencontre11",
     },
     {
       type: "doc",
-      label: "12 - 🤖 Graphiques, Scikit-learn",
+      label: "12 - 🤖 IA, Graphiques",
       id: "cours/rencontre12",
     },
     {
@@ -73,7 +73,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "14 - 📥 TP2 - Remise (30%)",
+      label: "14 - Formatif / Remise TP2 (20%)",
       id: "cours/rencontre14",
       className: "tp",
     },
