@@ -5,7 +5,7 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 🧮 Expressions, Opérateurs, Variables, Types
+# 🧮 Expressions, Opérateurs, Types, Variables
 
 # 🏗️ en construction 🏗
 
@@ -14,13 +14,71 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="expressions" label="Expressions" default>
 
-        Une expression est un bout de code qui a une valeur et un type.
-        - *5* est une expression qui vaut 5 et de type entier
-        - *"5"* est une expression de type texte
+        Une expression est un bout de code qui a une valeur et un type.<br/>
+        Par exemple :
+        - `5` est une expression qui vaut 5 et de type entier (int).
+        - `"5"` est une expression de type texte.
+        - `5 + 3` est une expression de type entier qui vaut 8.
 
     </TabItem>
 
     <TabItem value="operateurs" label="Opérateurs" default>
+
+        Il existe plusieurs opérateurs qui permettent de construire des expressions à partir d'autres expressions.<br/>
+        Plusieurs sont répertoriés dans l'[aide-mémoire](../aidememoire/operateurs), mais nous commencerons avec ceux-ci
+        :
+
+        ## Opérateurs arithmétiques
+
+        | Opérateur | Description | Exemple |
+        |------------|------------------|-----------------------------|
+        | `+` | Addition | `10 + 3` (vaut `13`) |
+        | `-` | Soustraction | `10 - 3` (vaut `7`) |
+        | `*` | Multiplication | `10 * 3` (vaut `30`) |
+        | `/` | Division (float) | `10 / 3` (vaut `3.333...`) |
+        | `//` | Division entière | `10 // 3` (vaut `3`) |
+        | `%` | Modulo (reste) | `10 % 3` (vaut `1`) |
+        | `**` | Puissance | `10 ** 3` (vaut `1000`) |
+
+        ## Opérateurs d'affectation
+
+        | Opérateur | Description | Exemple |
+        |------------|------------------------------------|---------|
+        | `=` | Affectation simple | `x = 5` |
+
+    </TabItem>
+
+    <TabItem value="types" label="Types" default>
+
+        En programmation, on veut stocker des valeurs dans des variables, mais ces valeurs ont un type.<br/>
+        Le type d'une valeur détermine comment on peut l'utiliser et quelles opérations sont possibles
+        avec cette valeur.
+
+        Voici les [types de données](../aidememoire/types) de base pour débuter en Python :
+
+        ## Types de base
+
+        | Type | Description | Exemple |
+        |-----------|------------------------|--------------------|
+        | **int** | Nombre entier | `42` |
+        | **float** | Nombre décimal | `3.14` |
+        | **str** | Chaîne de caractères | `"Alice"` |
+        | **bool** | Booléen (vrai ou faux) | `True` |
+
+        Python contient une fonction permettant de connaître le type d'une expression:
+
+        ```python
+        truc = ...
+        print( type(truc) )
+        ```
+
+
+        La plupart des langages de programmation on des types de base pour représenter les nombres
+
+        - Entier : 1 2 3 -99 etc.
+        - Flottant : 1.0 2.5 -99.9 etc.
+        - Texte : "bonjour" "salut" "123" etc.
+        - Booléen : True False
 
         - *5 + 3* est une expression de type entier qui vaut 8
         - *"coucou " + str(81)* est une expression de type texte qui vaut "coucou 8"
@@ -42,6 +100,10 @@ import TabItem from '@theme/TabItem';
 
         Pour évaluer cette expression petit bout par petit bout, on peut utiliser un évaluateur d'expression.
         Il faut placer un point d'arrêt sur la ligne dans le script.
+
+        ## Types composés
+
+        Il existe aussi des [structures de données](../aidememoire/structuresdonnes) plus complexes pour stocker des données, que nous verrons plus tard.
 
     </TabItem>
 
@@ -71,72 +133,58 @@ import TabItem from '@theme/TabItem';
         x = str(5 - x)
         ```
         - si on était en maths, y devrait toujours valoir le double de x
-            - si x évolue dans le temps
-            - comme on a posé y qui est 2*x
-            - on devrait avoir y qui évolue avec le temps
+        - si x évolue dans le temps
+        - comme on a posé y qui est 2*x
+        - on devrait avoir y qui évolue avec le temps
         - en programmation le **=** n'est pas une équation, c'est une **assignation**
-            - on évalue l'expression en partie droite *2 * x*
-            - comme x vaut 30 à ce moment là, ça donne 60
-            - on assigne cette valeur dans la variable y
-            - si on veut assigner une nouvelle valeur, il faut un autre *y = ...*
-
-    </TabItem>
-
-    <TabItem value="types" label="Types" default>
-
-        Python contient une fonction permettant de connaître le type d'une expression:
-
-        ```python
-        truc = ...
-        print( type(truc) )
-        ```
-
-        ## types de base
-
-        La plupart des langages de programmation on des types de base pour représenter les nombres
-
-        - Entier : 1 2 3 -99 etc.
-        - Flottant : 1.0 2.5 -99.9 etc.
-        - Texte : "bonjour" "salut" "123" etc.
-        - Booléen : True False
-
-        ## types composés
-
-
-        ### tableaux
-
-        On peut vouloir représenter une séquence de plusieurs valeurs d'un même type
-
-
-        ### tuples
-        On peut regrouper plusieurs valeurs de types différents dans un tuple, la syntaxe est des parenthèses et des virgules pour séparer les valeurs
-        ```python
-        (4.5 , "salut")
-        ```
-        On accède à chaque valeur par un index
-        ```python
-        (4.5 , "salut")[0]  # vaut 4.5
-        (4.5 , "salut")[1]  # vaut salut
-        ```
-
-        Cela permet de garder plusieurs valeurs dans une seule variable
-
-        ```python
-        coordonnees = (4.5 , 10.5)              # coordonnées d'un point dans un plan cartésien par exemple
-        print(type(coordonnees))
-        autreCoordonnees = (5.6 , 3.5)
-        ```
-
-        ### dictionnaires
-
-        On peut vouloir associer des valeurs à des clés, on utilise un dictionnaire
-        ```python
-        dico = { "cle1" : 4.5 , "cle2" : "salut" }
-        ```
+        - on évalue l'expression en partie droite *2 * x*
+        - comme x vaut 30 à ce moment là, ça donne 60
+        - on assigne cette valeur dans la variable y
+        - si on veut assigner une nouvelle valeur, il faut un autre *y = ...*
 
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
+
+        ::::warning Exercices de compréhension
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        ::::
+
+        ::::tip Exercices en script
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        ::::
 
     </TabItem>
 

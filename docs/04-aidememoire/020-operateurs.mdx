@@ -1,6 +1,11 @@
+---
+hide_table_of_contents: true
+---
+
 # 🧮 Opérateurs
 
-Voici un résumé des principaux opérateurs que vous utiliserez en Python. Les opérateurs permettent de faire des calculs, des comparaisons et des opérations logiques.
+Voici un résumé des principaux opérateurs que vous utiliserez en Python.<br />
+Les opérateurs permettent de faire des calculs, des comparaisons et des opérations logiques.
 
 <Tabs>
 
@@ -61,8 +66,26 @@ Voici un résumé des principaux opérateurs que vous utiliserez en Python. Les 
 | Opérateur | Description                   | Exemple |
 |------------|-------------------------------|---------|
 | `in`       | Appartenance (contenu dans)   | `"a" in "chat"` → `True` |
+| `not in`   | Non-appartenance (pas dans)   | `"b" not in "chat"` → `True` |
 | `is`       | Identité d'objet (même objet) | `x is y` |
 | `is not`   | Objet différent               | `x is not y` |
+
+</TabItem>
+
+<TabItem value="priorite" label="Priorité des opérateurs">
+
+| Priorité (haut → bas) | Opérateur(s) | Description |
+|-----------------------|--------------|-------------|
+| 1 | `()` | Parenthèses (groupement, appels de fonction, tuples, etc.) |
+| 2 | `**` | Puissance |
+| 3 | `*`, `/`, `//`, `%` | Multiplication, division, division entière, modulo |
+| 4 | `+`, `-` | Addition, soustraction |
+| 5 | `==`, `!=`, `<`, `<=`, `>`, `>=`,<br />`in`, `not in`, `is`, `is not` | Comparaisons et tests d’appartenance/identité |
+| 6 | `not` | Négation logique |
+| 7 | `and` | ET logique |
+| 8 | `or` | OU logique |
+| 9 | `=`, `+=`, `-=`, `*=`, `/=`, `//=`, `%=` ... | Affectations |
+
 
 </TabItem>
 

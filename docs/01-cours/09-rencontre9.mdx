@@ -2,3 +2,46 @@
 
 # 🏗️ en construction 🏗
 
+### listes
+
+        On peut vouloir représenter une séquence de plusieurs valeurs d'un même type
+
+
+        ### tuples
+        On peut regrouper plusieurs valeurs de types différents dans un tuple, la syntaxe est des parenthèses et des
+        virgules pour séparer les valeurs
+        ```python
+        (4.5 , "salut")
+        ```
+        On accède à chaque valeur par un index
+        ```python
+        (4.5 , "salut")[0] # vaut 4.5
+        (4.5 , "salut")[1] # vaut salut
+        ```
+
+        Cela permet de garder plusieurs valeurs dans une seule variable
+
+        ```python
+        coordonnees = (4.5 , 10.5) # coordonnées d'un point dans un plan cartésien par exemple
+        print(type(coordonnees))
+        autreCoordonnees = (5.6 , 3.5)
+        ```
+
+        ### dictionnaires
+
+        On peut vouloir associer des valeurs à des clés, on utilise un dictionnaire
+        ```python
+        dico = {"cle1" : 4.5 , "cle2" : "salut"}
+        ```
+
+### ensembles
+
+        On peut vouloir représenter un ensemble de valeurs sans doublons, on utilise un ensemble
+        ```python
+        monEnsemble = {1, 2, 3, 4}
+        ```
+        On peut ajouter des éléments avec `add` et supprimer avec `remove` ou `discard`
+        ```python
+        monEnsemble.add(5)
+        monEnsemble.remove(2)
+        ```
