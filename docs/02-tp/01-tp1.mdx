@@ -7,40 +7,51 @@ hide_table_of_contents: true
 <Row>
     <Column>
         :::tip 🎯 Objectifs pédagogiques
-            À la fin de ce travail, vous serez capable de :
+        À la fin de ce travail, vous serez capable de :
 
-            - Utiliser des **variables**, **types de base**, **opérateurs** et **fonctions**
-            - Utiliser des **structures conditionnelles** et **expressions logiques**
-            - Travailler avec des **boucles**, **listes**, **tuples** et **dictionnaires**
-            - **Décomposer** un algorithme en **fonctions réutilisables**
-            - Évaluer la **performance** d’un algorithme avec des mesures de temps
-            - Appliquer la logique pour résoudre un problème **numérique complexe** sans bibliothèque
+        - Utiliser des **variables**, **types de base**, **opérateurs** et **fonctions**
+        - Utiliser des **structures conditionnelles** et **expressions logiques**
+        - Travailler avec des **boucles**, **listes**, **tuples** et **dictionnaires**
+        - **Décomposer** un algorithme en **fonctions réutilisables**
+        - Évaluer la **performance** d’un algorithme avec des mesures de temps
+        - Appliquer la logique pour résoudre un problème **numérique complexe** sans bibliothèque
         :::
     </Column>
     <Column>
         :::info 🧠 Contexte
-            Un ordinateur, c’est très rapide, mais pas très intelligent. On va en profiter pour lui faire calculer la racine carrée… de façon très bête.
+        Un ordinateur, c’est très rapide, mais pas très intelligent. On va en profiter pour lui faire calculer la racine
+        carrée… de façon très bête.
 
-            Vous devez implémenter deux méthodes de calcul « brutales » d’une racine carrée :
-            1. Une méthode **chiffre par chiffre**, par essais successifs
-            2. Une méthode **par dichotomie** (recherche binaire)
+        Vous devez implémenter deux méthodes de calcul « brutales » d’une racine carrée :
+        1. Une méthode **chiffre par chiffre**, par essais successifs
+        2. Une méthode **par dichotomie** (recherche binaire)
 
-            Puis vous devrez :
-            - Comparer ces méthodes à la fonction standard `math.sqrt`
-            - Étendre le calcul à une racine n-ième
-            - Effectuer une extension vers le **logarithme**
+        Puis vous devrez :
+        - Comparer ces méthodes à la fonction standard `math.sqrt`
+        - Étendre le calcul à une racine n-ième
+        - Effectuer une extension vers le **logarithme**
         :::
     </Column>
 </Row>
 
 :::note Créer le projet
-    Pour faire ce TP, vous devez créer un projet PyCharm dans le répertoire GitHub Classroom créé pour vous par le prof.
+Pour faire ce TP, vous devez créer un projet PyCharm dans le répertoire GitHub Classroom créé pour vous par le prof.
+:::
+
+:::danger Plagiat
+Si votre travail est suspecté de plagiat (code copié d'un(e) autre étudiant(e), code généré par IA, notions non
+abordées en classe, etc.), deux choses peuvent se produire :
+        * Le plagiat est prouvé par nos outils : note de 0, automatiquement.
+        * Le plagiat est plutôt évident, mais une validation est requise : vous serez convoqué(e) au bureau de votre
+enseignant(e). Vous devrez répondre à certaines questions pour prouver que vous comprenez et maîtrisez le code
+qui a été utilisé. Si vous ne réussissez pas à répondre à certaines questions, vous aurez la note
+de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d'une manière ou d'une autre).
 :::
 
 :::warning <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> Répertoire Git
-    - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
-    - Au moins 1 commit par semaine
-    - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
+- Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
+- Au moins 1 commit par semaine
+- Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
 :::
 
 ::::note <Highlight color="tip"><span style={{color: 'white'}}>4 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
@@ -50,90 +61,94 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 <Row>
     <Column>
         :::info ➤ Méthode 1 : Chiffre par chiffre
-            On construit le résultat décimale par décimale, en commençant par la plus grande.
+        On construit le résultat décimale par décimale, en commençant par la plus grande.
 
-            Pour 8, on commence donc par l'unité :
-            - 0² = 0
-            - 1² = 1
-            - 2² = 4
-            - 3² = 9
+        Pour 8, on commence donc par l'unité :
+        - 0² = 0
+        - 1² = 1
+        - 2² = 4
+        - 3² = 9
 
-            Comme **8** est entre 4 et 9, on sait que la racine de 8 est entre 2 et 3.
-            Donc, la racine de 8 ressemble à 2.8...
+        Comme **8** est entre 4 et 9, on sait que la racine de 8 est entre 2 et 3.
+        Donc, la racine de 8 ressemble à 2.8...
 
-            On passe à la première décimale :
-            - 2.0² = 4
-            - 2.1² = 4.41
-            - 2.2² = 4.84
-            - 2.3² = 5.29
-            - 2.4² = 5.76
-            - 2.5² = 6.25
-            - 2.6² = 6.76
-            - 2.7² = 7.29
-            - 2.8² = 7.84
-            - 2.9² = 8.41
+        On passe à la première décimale :
+        - 2.0² = 4
+        - 2.1² = 4.41
+        - 2.2² = 4.84
+        - 2.3² = 5.29
+        - 2.4² = 5.76
+        - 2.5² = 6.25
+        - 2.6² = 6.76
+        - 2.7² = 7.29
+        - 2.8² = 7.84
+        - 2.9² = 8.41
 
-            La racine de 8 ressemble donc à 2.8....
+        La racine de 8 ressemble donc à 2.8....
 
-            Et ainsi de suite pour les décimales suivantes.\
-            On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
+        Et ainsi de suite pour les décimales suivantes.\
+        On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
         :::
     </Column>
     <Column>
         :::info ➤ Méthode 2 : Dichotomie
-            On cherche dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
+        On cherche dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
 
-            Début : [0, 8] → milieu = 4 → 4² = 16 → trop grand \
-            → nouvel intervalle [0, 4] → milieu = 2 → 2² = 4 → trop petit \
-            → nouvel intervalle [2, 4] → etc.
+        Début : [0, 8] → milieu = 4 → 4² = 16 → trop grand \
+        → nouvel intervalle [0, 4] → milieu = 2 → 2² = 4 → trop petit \
+        → nouvel intervalle [2, 4] → etc.
 
-            On continue ainsi jusqu'à la précision désirée.
+        On continue ainsi jusqu'à la précision désirée.
         :::
 
-        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prendra un nombre en paramètre et renverra la racine
+        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prendra un nombre en paramètre et renverra
+        la racine
         carrée de ce nombre en utilisant cette méthode, avec une précision de 0.001.
 
         :::tip ✅ Tests attendus
 
-            Pour chacune des 2 méthodes, affichez le résultat des appels suivants :
+        Pour chacune des 2 méthodes, affichez le résultat des appels suivants :
 
-            ```python
-            print(nom_de_la_fonction(0))
-            print(nom_de_la_fonction(0.1))
-            print(nom_de_la_fonction(0.2))
-            print(nom_de_la_fonction(0.9))
-            print(nom_de_la_fonction(8))
-            print(nom_de_la_fonction(9))
-            print(nom_de_la_fonction(81))
-            print(nom_de_la_fonction(123))
-            print(nom_de_la_fonction(-3))  # Doit lever une exception
-            ```
+        ```python
+        print(nom_de_la_fonction(0))
+        print(nom_de_la_fonction(0.1))
+        print(nom_de_la_fonction(0.2))
+        print(nom_de_la_fonction(0.9))
+        print(nom_de_la_fonction(8))
+        print(nom_de_la_fonction(9))
+        print(nom_de_la_fonction(81))
+        print(nom_de_la_fonction(123))
+        print(nom_de_la_fonction(-3)) # Doit lever une exception
+        ```
         :::
     </Column>
 </Row>
 ::::
 <Row>
     <Column>
-        :::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des performances
-            Vous allez comparer vos méthodes avec `math.sqrt` sur 10 000 nombres pseudo-aléatoires.\
-            Pour y parvenir, vous devez :
+        :::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des
+        performances
+        Vous allez comparer vos méthodes avec `math.sqrt` sur 10 000 nombres pseudo-aléatoires.\
+        Pour y parvenir, vous devez :
 
-            1. Générer une liste de **10 000 nombres flottants** aléatoires entre 10 et 1000.
-            2. Chronométrer le temps pour :
-                - Calculer toutes les racines avec **votre première fonction**
-                - Calculer les racines avec **votre deuxième fonction**
-                - Calculer les racines avec **`math.sqrt()`**
-            3. Afficher :
-               - Le **temps total (ms)** pour chaque méthode
-               - Le **temps moyen** par appel de fonction pour chaque méthode
+        1. Générer une liste de **10 000 nombres flottants** aléatoires entre 10 et 1000.
+        2. Chronométrer le temps pour :
+        - Calculer toutes les racines avec **votre première fonction**
+        - Calculer les racines avec **votre deuxième fonction**
+        - Calculer les racines avec **`math.sqrt()`**
+        3. Afficher :
+        - Le **temps total (ms)** pour chaque méthode
+        - Le **temps moyen** par appel de fonction pour chaque méthode
         :::
     </Column>
     <Column>
-        :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une racine n-ième
-            Pour chacune de vos 2 fonctions, faites-en une copie et généralisez-la pour qu'elle calcule la
-            racine n-ième d'un nombre, en prenant `base` et `nombre` comme paramètres.
+        :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une
+        racine n-ième
+        Pour chacune de vos 2 fonctions, faites-en une copie et généralisez-la pour qu'elle calcule la
+        racine n-ième d'un nombre, en prenant `base` et `nombre` comme paramètres.
 
-            Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et quatrième de 8, 9, 81 et 123.
+        Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et
+        quatrième de 8, 9, 81 et 123.
         :::
     </Column>
 </Row>
