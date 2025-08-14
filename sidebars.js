@@ -68,12 +68,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "13 - 🛠️TP2",
+      label: "13 - 🛠️ TP2",
       id: "cours/rencontre13",
     },
     {
       type: "doc",
-      label: "14 - Formatif / Remise TP2 (20%)",
+      label: "14 - Formatif / Remise TP2 (30%)",
       id: "cours/rencontre14",
       className: "tp",
     },
