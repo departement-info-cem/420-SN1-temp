@@ -7,6 +7,8 @@ import TabItem from '@theme/TabItem';
 
 # Intro - aperçu - premier code
 
+## 🧮 Expressions, Opérateurs, Types, Variables
+
 # 🏗️ en construction 🏗
 
 <Tabs queryString="onglet">
@@ -231,7 +233,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="code" label="Premiers bouts de code!">
+    <TabItem value="code" label="C'est parti!">
 
         :::info 🎉 Vous allez coder dès maintenant!
         Suivez pas à pas les instructions ci-dessous pour écrire et exécuter votre **premier code Python**.
@@ -291,9 +293,7 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::tip
-
-        ## 📝 Écrire et exécuter son premier script Python
+        :::tip 📝 Écrire et exécuter son premier script Python
 
         ### Étape 1 : Créer un fichier
 
@@ -345,6 +345,247 @@ import TabItem from '@theme/TabItem';
         - ✅ De pouvoir les améliorer petit à petit
         - ✅ De les partager facilement avec d'autres personnes
         :::
+
+        ---
+
+
+        TODO
+
+        :::note Variables, expressions et types
+
+        ***Rôle***
+        Les variables servent à stocker des informations manipulées par une application.
+        Elles vont être stockées temporairement dans la mémoire de l'ordinateur (la RAM).
+
+        ***Synthaxe pour créer une variable***
+        Il faut écrire le nom qu'on souhaite donné à notre variable, suivi du symbole d'assignation (le égale), suivi
+        d'une expression.
+
+        ```python
+        #Variable initialiser avec une constante
+        temperature_a = 36
+
+        #Variable initialiser à l'aide d'une expression (constate - constate)
+        temperature_b = 36 - 5
+
+        #Variable initialiser à l'aide d'une expression (variable + constate)
+        temperature_hier = 25
+        temperature_courante = temperature_hier + 5
+        ```
+
+        ***Nom des variables***
+        Chaque variable possède un *nom unique* permettant de l'identifier.
+        En mathématique, nous sommes habituer d'utiliser comme nom de variable X ou Y.
+        En programmation, nous tentons d'avoir des noms plus significatifs en fonction de ce qu'on tentons de conserver
+        comme information. Les noms de variable doivent être en minuscule, nous utilisons le symbole _ pour faire des
+        noms composés (ex : fleure_prefere) et nous évitons les accents dans les noms. Lorsqu'une variable contient une
+        valeur qui ne devrait jamais être modifié au cours de l'application, on nomme la variable en MAJUSCULES pour
+        indiquer que cette valeur ne devrait pas être modifié (ex : PI)
+
+        ***Type de base***
+        En mathématique, les variables sont uniquement de type numérique.
+        En Python, les variables peuvent être de différents types selon nos besoins :
+        - int (un nombre entier)
+        - float (un nombre à virgule)
+        - str (une châine de caractères)
+        - bool (une valeur logique)
+        - list (une collection de valeurs)
+        - dict (une collection de valeurs sous la forme de clé-valeur)
+        - tuple (des données toujours regroupées ensemble)
+
+        ```python
+        #Instructions pour créer différents types de variables
+
+        rayon_cercle = 20 #variable de type int
+        PI = 3.1416 #variable (constate) de type float
+        nom_element_chimique = "Hydrogène" #variable de type str, les guillemets sont importants !
+        est_un_element_halogene = True #variable de type bool
+        liste_nom_elements = ["Hydrogène", "Cobalt", "Fer"] #variable de type list (de str)
+        liste_numero_elements = [1, 27, 26] #variable de type list (de int)
+        element = {"nom": "Hydrogène", "numero_atomique": 1} #variable de type dict
+        coordonnees_mont_everest = (27.9881, 86.9250) #variable de type tuple
+        circonference_circle = rayon_cercle * PI #variable de type float contenant le résultat d'une expression
+        #le symbole * est un opérateur de multiplication
+
+        #Instructions pour afficher les variables à l'aide de la fonction "print"
+        print("*** VALEURS DES VARIABLES : ***")
+        print("rayon_cercle :", rayon_cercle)
+        print("PI :", PI)
+        print("nom_element_chimique :", nom_element_chimique)
+        print("est_halogene :", est_halogene)
+        print("liste_nom_elements :", liste_nom_elements)
+        print("\t1er élément :", liste_nom_elements[0])
+        print("\t2ème élément :", liste_nom_elements[1])
+        print("\t3ème élément :", liste_nom_elements[2])
+        print("liste_numero_elements :", liste_numero_elements)
+        print("\t1er élément :", liste_numero_elements[0])
+        print("\t2ème élément :", liste_numero_elements[1])
+        print("\t3ème élément :", liste_numero_elements[2])
+        print("element :", element)
+        print("element.nom :", element["nom"])
+        print("element.numero_atomique :", element["numero_atomique"])
+        print("coordonnees_mont_everest :", coordonnees_mont_everest)
+        print("coordonnees_mont_everest[0] :", coordonnees_mont_everest[0])
+        print("coordonnees_mont_everest[1] :", coordonnees_mont_everest[1])
+        print("circonference_circle :", circonference_circle)
+        ```
+
+        :::
+
+        ---
+
+        :::tip Les opérateurs arithmétiques
+
+        Les expressions en python peuvent contenir les opérateurs arithmétiques suivants en plus de parenthèses.
+        Les opérandes peuvent être des constantes (comme les exemples), mais pourrait être une variable, un élément d'un
+        tableau, etc.
+
+        | Opérateur | Description | Exemple | Résultat |
+        |-----------|------------|---------|----------|
+        | `+` | Addition | `5 + 3` | `8` |
+        | `-` | Soustraction | `10 - 4` | `6` |
+        | `*` | Multiplication | `6 * 7` | `42` |
+        | `/` | Division (résultat flottant) | `10 / 2` | `5.0` |
+        | `%` | Modulo (reste de la division) | `10 % 3` | `1` |
+        | `**` | Puissance | `2 ** 3` | `8` (équivaut à 2³) |
+        | `//` | Division entière (quotient sans décimales) | `10 // 3` | `3` |
+
+        Le résultat est de type int ou float selon l'opérateur ET selon les opérandes
+
+        TODO : Mettre beaucoup d'exemples
+
+        :::
+
+        ---
+
+        :::warning Les variables peuvent... variées!
+
+        Le contenu d'une variable peut être modifié au fur et à mesure de l'exécution des instructions à l'aide de
+        l'opérateur d'assignation (=).
+        Dans l'exemple ci-dessous, la variable "resultat" est modifiée 3 fois.
+
+        ```python
+        nombre1 = 10
+        nombre2 = 20
+        nombre3 = 30
+        resultat = nombre1 + nombre2
+        resultat = resultat + nombre3
+        resultat = resultat / 3 # le / est un opérateur de division
+        print("resultat :", resultat)
+        ```
+
+        Est-ce que vous pourriez prédire le résultat et identifier il correspond à quel calcul mathématique?
+
+        :::
+
+        ---
+
+        :::info Les fonctions
+
+        Une fonction correspond à un ensemble d'instructions réutilisables pour lesquelles un nom leur a été attribué.
+        Le nom de la fonction est généralement choisi en conséquence pour être significatif afin d'aider les personnes
+        développeuses. Par exemple, on peut se douter avec le nom de la fonction "print" que quelque chose va être
+        imprimer/afficher à quelque part. Si on regarde la documentation de la fonction "print" on peut apprendre
+        qu'elle permet d'écrire du contenu dans le terminal.
+
+
+        ***Comprendre le fonctionnement d'une fonction avant son utilisation***
+        Quand on fait appel à une fonction, il n'est pas toujours important de comprendre les instructions derrières et
+        d'aller inspecter son code.
+        Il faut simplement s'assurer de comprendre comment l'utiliser. Il faut se poser par exemple comme question :
+        - la fonction nécessite quoi comme information être utilisée? (on nomme ces informations attendues par une
+        fonction des paramètres)
+        - la fonction retourne telle une valeur qu'on pourrait par la suite stocker dans une variable pour la
+        réutiliser?
+        - est-ce qu'il y a des cas limites que la fonction ne peut pas gérée ou pouvant causer des erreurs (on va alors
+        parler d'exceptions)
+
+        ***Les paramètres***
+        Pour exécuter (on dit également appeler) une fonction, il faut écrire le nom de la fonction suivi de parenthèse
+        ()
+        Entre les parathèses, si la fonction nécessite des paramètres, ils doivent entre fournies séparés par une
+        virgule.
+        Le nombre de paramètres et l'ordre sont importants comme nous allons le voir avec des exemples.
+
+
+        ***Conserver la valeur de retour d'un appel d'une fonction***
+        Si le résultat d'un appel de fonction doit être réutilisé plus tard, vous pouvez le conserver dans une variable
+
+        ```python
+        #Exemple d'une fonction pouvant recevoir aucun paramètre en entrée
+        saisie_utilisateur = input() #permet de demander à l'utilisateur de saisir une entrée,
+        #la fonction retourne une str avec la valeur saisie
+        print(saisie_utilisateur)
+
+        #Exemple d'une variante de la même fonction, mais acceptant un paramètre en entrée
+        saisie_utilisateur = input("Veuillez saisir votre prénom:")
+        print(saisie_utilisateur)
+
+        #Exemple de fonction pouvant recevoir un nombre précis de paramètres :
+        longueur = len(saisie_utilisateur) #permet d'obtenir le nombre de caractères d'une str
+        valeur_convertir_en_entier = int("3") #permet d'obtenir un nombre entier à partir d'une str
+        valeur_convertir_en_float = float("3.41") #permet d'obtenir un nombre à virgule entier à partir d'une str
+        valeur_puissance = pow(2,3) #permet d'obtenir le résultat de 2 à la puissance 3 (l'ordre des paramètres est
+        important)
+        valeur_arrondie = round(3.14159, 2) #permet d'arrondir un float à la deuxième position après la virgule
+        type_variable = type(longueur) #permet d'obtenir le type d'une variable
+        nombre1_en_str = input("Entrée un nombre") #obtenir un nombre (en 2 étapes)
+        nombre1 = int(nombre1_en_str)
+        nombre2 = int(input("Entrée un second nombre")) #obtenir un nombre (en 1 étape), l'expression combine les 2
+        fonctions
+
+        #Exemple de fonction pouvant recevoir un nombre infini de paramètres :
+        print("le résultat de ", nombre1, " multiplié par ", nombre2, " est :", nombre1 * nombre2)
+
+        #Exemple de création d'une str à partir d'éléments variables et constants (f-strings)
+        message = f"Le résultat de {nombre1} multiplié par {nombre2} est : {nombre1 * nombre2}"
+        print(message)
+        ```
+
+        :::
+
+        ---
+
+        :::info
+
+        :::
+
+        ---
+
+        :::tip
+
+        :::
+
+        ---
+
+        :::info
+
+        :::
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
         ## Demo 1 : bonjour le monde, interactif
 
@@ -461,51 +702,6 @@ import TabItem from '@theme/TabItem';
 
         On va essayer de pointer les termes jargoniques au fur et à mesure.
 
-        # Exercices
-
-        ## Exercice de débogage de la semaine TODO
-
-        Parce qu'on apprend jamais aussi bien que par soi-même…
-
-        ## Exercice refaire_les_demos.py
-
-        Refaire les étapes des 3 démos par vous-même. S'assurer qu'on comprend un
-        peu ce qui se passe. Ne pas hésiter à poser des questions si certains points
-        sont moins clairs.
-
-        ## Exercice points_arrets.py
-
-        On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
-        est de se familiariser avec le débogueur.
-
-        Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
-
-        ```python
-        # ceci est une fonction, on va en parler en semaine 4
-        def calculComplexe(a, b, c):
-        return a**b + c*(b-a)
-        print("Arreter le temps, c'est impossible Marty")
-        a = calculComplexe(3,5,7)
-        b = calculComplexe(a,6,9)
-        c = calculComplexe(b,a,b)
-        a = calculComplexe(a,a,a)
-        print("le resultat est ", calculComplexe(a, b, c))
-        ```
-
-        On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
-        - essayer de calculer à la main combien ça vaut
-        - poser un point d'arrêt et observer
-
-        ## Exercice la_sequence.py
-
-        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
-        - des déclarations de variables
-        - des calculs avec assignations
-        - des affichages avec print
-
-        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
-        votre vie pour programmer)
-
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
@@ -607,11 +803,40 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - Points d'arrêt
+
+        On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
+        est de se familiariser avec le débogueur.
+
+        Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
+        ```python
+        # ceci est une fonction, on va en parler en semaine 4
+        def calculComplexe(a, b, c):
+            return a**b + c*(b-a)
+
+        print("Arreter le temps, c'est impossible Marty")
+        a = calculComplexe(3,5,7)
+        b = calculComplexe(a,6,9)
+        c = calculComplexe(b,a,b)
+        a = calculComplexe(a,a,a)
+        print("le resultat est ", calculComplexe(a, b, c))
+        ```
+
+        On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
+        - essayer de calculer à la main combien ça vaut
+        - poser un point d'arrêt et observer
 
         :::
 
         :::info Exercice -
+
+        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
+        - des déclarations de variables
+        - des calculs avec assignations
+        - des affichages avec print
+
+        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
+        votre vie pour programmer)
 
         :::
 
