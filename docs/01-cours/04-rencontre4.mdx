@@ -51,27 +51,6 @@ import TabItem from '@theme/TabItem';
         resultat = Math.exp(2, variable++) + 5 * Math.Mat.exp(3, variable++)
         ```
 
-
-        :::tip
-
-        ## Exercice de compréhension
-
-        Donne la trace d'exécution du code suivant dans le fichier **str-plus.md** :
-        ```python
-        for i in range(1, 5):
-        for j in range(4, 6):
-        print(str(i) + str(j))
-        ```
-
-        Donne la trace d'exécution du code suivant dans le fichier **plus-str.md** :
-        ```python
-        for i in range(1, 5):
-        for j in range(4, 6):
-        print(str(i + j))
-        ```
-
-        :::
-
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
@@ -98,6 +77,60 @@ import TabItem from '@theme/TabItem';
 
         ::::tip Exercices de création
 
+        :::info Exercice - SOLUTIONS D'UNE EQUATION QUADRATIQUE
+
+        Une équation quadratique, aussi appelée équation du second degré, est une équation polynomiale de la forme $ax² + bx + c = 0$, où $a$, $b$, et $c$ sont des constantes et $a$ est différent de zéro.
+
+        Le discriminant $\Delta = b^2 - 4ac$ est crucial pour déterminer le nombre de solutions d'une équation quadratique :
+
+        $$
+        \text{Si}
+        \begin{cases}
+            \Delta > 0, & \text{il y a deux solutions réelles distinctes,} \\
+            \Delta = 0, & \text{il y a une seule solution réelle,} \\
+            \Delta < 0, & \text{il n'y a pas de solution réelle, mais il y a deux solutions complexes conjuguées.}
+        \end{cases}
+        $$
+
+        La formule pour trouver les zéros est :
+
+        $$
+        x = \frac{-b \pm \sqrt{b² - 4ac}}{2a}
+        $$
+
+        Completez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
+
+        ```python
+        a = 1
+        b = 5
+        c = -10
+
+        discriminant = 0 # REMPLACER LE 0 PAR L'ÉQUATION DU DISCRIMINANT, SOLUTION : b ** 2 - 4 * a * c
+
+        # Si le discriminant est > 0
+        if discriminant > 0 :
+            # INSÉREZ VOS INSTRUCTIONS ICI
+        # Sinon, si le discriminant est égale à 0
+        elif discriminant == 0 :
+            # INSÉREZ VOS INSTRUCTIONS ICI
+        # Autrement (si le discriminant n'est pas > 0 et n'est pas égal à 0)
+        else :
+            # INSÉREZ VOS INSTRUCTIONS ICI
+        ```
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
+
+        :::info Exercice -
+
+        :::
 
         :::info Exercice Comparer 2 nombres
 
@@ -106,22 +139,6 @@ import TabItem from '@theme/TabItem';
         :::
 
         :::info Exercice Vérifier l'age
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
 
         :::
 
