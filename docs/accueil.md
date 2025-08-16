@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 :::tip Bienvenue au cours de Programmation en sciences!  
 
-Dans ce cours, nous allons programmer en Python et utiliser des librairies et des outils.
+Dans ce cours, nous allons programmer en Python.
 
 :::
 
@@ -40,7 +40,7 @@ L'onglet [**Aide-mémoire**](aidememoire/types) contient des concepts résumés.
 
 :::warning Avant chaque séance :
 
-- Vous avez du travail préparatoire pour découvrir la matière par vous-même.  
+- Vous avez du travail préparatoire pour découvrir la matière du prochain cours par vous-même, avant la rencontre.  
 - Il s'agira d'une page web à lire, d'une video à suivre et/ou d'exercices à faire.  
 - Cela représente environ 3 heures de travail.
 
