@@ -245,41 +245,55 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::tip 🖥️ Écrire et exécuter ses premières commandes Python
+        ::::note 🖥️ Écrire et exécuter ses premières commandes Python
 
-        Dans le **Terminal**
-        <img src={require('/img/icons/terminal.png').default} alt="Terminal" width="20"
-             style={{verticalAlign: 'middle'}}/>, vous pouvez écrire et exécuter directement des commandes Python grâce
+        Dans la **Console Python**
+        <img src={require('/img/icons/console.png').default} alt="Terminal" width="20"
+             style={{verticalAlign: 'middle'}}/> de PyCharm (en bas à gauche), vous pouvez écrire et exécuter directement des commandes Python grâce
         au mode interactif.
 
-        Tapez simplement :
-
-        ```bash
-        python
-        ```
-
-        Vous verrez :
+        Vous verrez quelque chose comme ça :
 
         ```
-        Python 3.12.1 (tags...)
-        >>>
+        Python Console
+        >>> |
         ```
 
-        Essayez quelques commandes :
-
+        Le `>>>` est l'invite de commande, il attend que vous tapiez quelque chose.
+        Tapez cette commande (vous pouvez aussi la copier-coller) puis appuyez sur `Entrée` :
         ```python
-        print("Bonjour!")
+        print("Bonjour le monde!")
         ```
 
+        Vous devriez voir s'afficher :
+        ```python
+        Python Console>>> print("Bonjour le monde!")
+        Bonjour le monde!
+
+        >>> |
+        ```
+
+        Tapez maintenant une simple expression mathématique, comme :
         ```python
         2 + 3
         ```
-
+        Vous devriez voir le résultat s'afficher aussitôt que vous appuyez sur `Entrée` :
         ```python
-        type(42)
+        Python Console>>> print("Bonjour le monde!")
+        Bonjour le monde!
+        >>> 2 + 3
+        5
+
+        >>> |
         ```
 
+        Vous pouvez continuer à taper des commandes et voir les résultats immédiatement. C'est le **mode interactif** de Python, idéal pour tester des idées rapidement.
+
+        :::tip
+        Vous pouvez utiliser les touches ⬆️ et ⬇️ pour rappeler les dernières commandes que vous avez tapées, ce qui est très pratique pour éviter de retaper la même chose plusieurs fois.
         :::
+
+        ::::
 
         ---
 
