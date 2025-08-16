@@ -13,6 +13,43 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="theorie" label="Théorie" default>
 
+        :::info Pandas - Manipulation et analyse de données
+
+        La bibliothèque Pandas permet de travailler avec des grands volumes de données de manière rapide et efficace
+        d'afin d'en faire de l'analyse et des manipulations. Il est rapide de pouvoir filtrer, trier et transformer des
+        données et d'en générer des statistiques. La bibliothèque support les données dans différents formats comme
+        Excel, CSV et s'intègre bien avec Matplotlib (pour générer des graphiques) et Scikit-learn (pour l'apprentissage
+        automatique).
+
+        ```python
+        import pandas as pd
+
+        # Création d'un DataFrame avec des données météorologiques sur 7 jours
+        data = {
+            "Jour": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
+            "Température (°C)": [22, 24, 19, 21, 23, 25, 20],
+            "Humidité (%)": [60, 55, 70, 65, 58, 50, 72],
+            "Vitesse du vent (km/h)": [15, 10, 20, 12, 14, 9, 22]
+        }
+
+        df = pd.DataFrame(data)
+
+        # Affichage des premières lignes du DataFrame
+        print("Données météorologiques :")
+        print(df)
+
+        # Analyses des données
+        moyenne_temp = df["Température (°C)"].mean()
+        moyenne_humidite = df["Humidité (%)"].mean()
+        moyenne_vent = df["Vitesse du vent (km/h)"].mean()
+
+        print(f"\nTempérature moyenne sur 10 jours : {moyenne_temp:.2f}°C")
+        print(f"Humidité moyenne sur 10 jours : {moyenne_humidite:.2f}%")
+        print(f"Vitesse moyenne du vent : {moyenne_vent:.2f} km/h")
+        ```
+
+        :::
+
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">

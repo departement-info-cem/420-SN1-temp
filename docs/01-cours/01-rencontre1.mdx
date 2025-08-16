@@ -480,67 +480,7 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Les fonctions
-
-        Une fonction correspond à un ensemble d'instructions réutilisables pour lesquelles un nom leur a été attribué.
-        Le nom de la fonction est généralement choisi en conséquence pour être significatif afin d'aider les personnes
-        développeuses. Par exemple, on peut se douter avec le nom de la fonction "print" que quelque chose va être
-        imprimer/afficher à quelque part. Si on regarde la documentation de la fonction "print" on peut apprendre
-        qu'elle permet d'écrire du contenu dans le terminal.
-
-
-        ***Comprendre le fonctionnement d'une fonction avant son utilisation***
-        Quand on fait appel à une fonction, il n'est pas toujours important de comprendre les instructions derrières et
-        d'aller inspecter son code.
-        Il faut simplement s'assurer de comprendre comment l'utiliser. Il faut se poser par exemple comme question :
-        - la fonction nécessite quoi comme information être utilisée? (on nomme ces informations attendues par une
-        fonction des paramètres)
-        - la fonction retourne telle une valeur qu'on pourrait par la suite stocker dans une variable pour la
-        réutiliser?
-        - est-ce qu'il y a des cas limites que la fonction ne peut pas gérée ou pouvant causer des erreurs (on va alors
-        parler d'exceptions)
-
-        ***Les paramètres***
-        Pour exécuter (on dit également appeler) une fonction, il faut écrire le nom de la fonction suivi de parenthèse
-        ()
-        Entre les parathèses, si la fonction nécessite des paramètres, ils doivent entre fournies séparés par une
-        virgule.
-        Le nombre de paramètres et l'ordre sont importants comme nous allons le voir avec des exemples.
-
-
-        ***Conserver la valeur de retour d'un appel d'une fonction***
-        Si le résultat d'un appel de fonction doit être réutilisé plus tard, vous pouvez le conserver dans une variable
-
-        ```python
-        #Exemple d'une fonction pouvant recevoir aucun paramètre en entrée
-        saisie_utilisateur = input() #permet de demander à l'utilisateur de saisir une entrée,
-        #la fonction retourne une str avec la valeur saisie
-        print(saisie_utilisateur)
-
-        #Exemple d'une variante de la même fonction, mais acceptant un paramètre en entrée
-        saisie_utilisateur = input("Veuillez saisir votre prénom:")
-        print(saisie_utilisateur)
-
-        #Exemple de fonction pouvant recevoir un nombre précis de paramètres :
-        longueur = len(saisie_utilisateur) #permet d'obtenir le nombre de caractères d'une str
-        valeur_convertir_en_entier = int("3") #permet d'obtenir un nombre entier à partir d'une str
-        valeur_convertir_en_float = float("3.41") #permet d'obtenir un nombre à virgule entier à partir d'une str
-        valeur_puissance = pow(2,3) #permet d'obtenir le résultat de 2 à la puissance 3 (l'ordre des paramètres est
-        important)
-        valeur_arrondie = round(3.14159, 2) #permet d'arrondir un float à la deuxième position après la virgule
-        type_variable = type(longueur) #permet d'obtenir le type d'une variable
-        nombre1_en_str = input("Entrée un nombre") #obtenir un nombre (en 2 étapes)
-        nombre1 = int(nombre1_en_str)
-        nombre2 = int(input("Entrée un second nombre")) #obtenir un nombre (en 1 étape), l'expression combine les 2
-        fonctions
-
-        #Exemple de fonction pouvant recevoir un nombre infini de paramètres :
-        print("le résultat de ", nombre1, " multiplié par ", nombre2, " est :", nombre1 * nombre2)
-
-        #Exemple de création d'une str à partir d'éléments variables et constants (f-strings)
-        message = f"Le résultat de {nombre1} multiplié par {nombre2} est : {nombre1 * nombre2}"
-        print(message)
-        ```
+        :::info
 
         :::
 
@@ -552,34 +492,9 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::tip
-
-        :::
-
-        ---
-
         :::info
 
         :::
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 
 
 
@@ -838,11 +753,6 @@ import TabItem from '@theme/TabItem';
         Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
         votre vie pour programmer)
 
-        :::
-
-        :::info Exercice - Calcul du périmètre d'un rectangle
-        Demande à l'utilisateur la longueur et la largeur de son rectangle et affiche ensuite le périmètre.
-        TODO
         :::
 
         ::::

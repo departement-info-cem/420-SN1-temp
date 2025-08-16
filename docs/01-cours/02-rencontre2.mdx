@@ -144,6 +144,161 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
+    <TabItem value="fonctions" label="Fonctions" default>
+
+        :::info Fonctions
+
+        Une fonction correspond à un ensemble d'instructions réutilisables pour lesquelles un nom leur a été attribué.
+        Le nom de la fonction est généralement choisi en conséquence pour être significatif afin d'aider les personnes
+        développeuses. Par exemple, on peut se douter avec le nom de la fonction "print" que quelque chose va être
+        imprimer/afficher à quelque part. Si on regarde la documentation de la fonction "print" on peut apprendre
+        qu'elle permet d'écrire du contenu dans le terminal.
+
+
+        ***Comprendre le fonctionnement d'une fonction avant son utilisation***
+        Quand on fait appel à une fonction, il n'est pas toujours important de comprendre les instructions derrières et
+        d'aller inspecter son code.
+        Il faut simplement s'assurer de comprendre comment l'utiliser. Il faut se poser par exemple comme question :
+        - la fonction nécessite quoi comme information être utilisée? (on nomme ces informations attendues par une
+        fonction des paramètres)
+        - la fonction retourne telle une valeur qu'on pourrait par la suite stocker dans une variable pour la
+        réutiliser?
+        - est-ce qu'il y a des cas limites que la fonction ne peut pas gérée ou pouvant causer des erreurs (on va alors
+        parler d'exceptions)
+
+        ***Les paramètres***
+        Pour exécuter (on dit également appeler) une fonction, il faut écrire le nom de la fonction suivi de parenthèse
+        ()
+        Entre les parathèses, si la fonction nécessite des paramètres, ils doivent entre fournies séparés par une
+        virgule.
+        Le nombre de paramètres et l'ordre sont importants comme nous allons le voir avec des exemples.
+
+
+        ***Conserver la valeur de retour d'un appel d'une fonction***
+        Si le résultat d'un appel de fonction doit être réutilisé plus tard, vous pouvez le conserver dans une variable
+
+        ```python
+        #Exemple d'une fonction pouvant recevoir aucun paramètre en entrée
+        saisie_utilisateur = input() #permet de demander à l'utilisateur de saisir une entrée,
+        #la fonction retourne une str avec la valeur saisie
+        print(saisie_utilisateur)
+
+        #Exemple d'une variante de la même fonction, mais acceptant un paramètre en entrée
+        saisie_utilisateur = input("Veuillez saisir votre prénom:")
+        print(saisie_utilisateur)
+
+        #Exemple de fonction pouvant recevoir un nombre précis de paramètres :
+        longueur = len(saisie_utilisateur) #permet d'obtenir le nombre de caractères d'une str
+        valeur_convertir_en_entier = int("3") #permet d'obtenir un nombre entier à partir d'une str
+        valeur_convertir_en_float = float("3.41") #permet d'obtenir un nombre à virgule entier à partir d'une str
+        valeur_puissance = pow(2,3) #permet d'obtenir le résultat de 2 à la puissance 3 (l'ordre des paramètres est
+        important)
+        valeur_arrondie = round(3.14159, 2) #permet d'arrondir un float à la deuxième position après la virgule
+        type_variable = type(longueur) #permet d'obtenir le type d'une variable
+        nombre1_en_str = input("Entrée un nombre") #obtenir un nombre (en 2 étapes)
+        nombre1 = int(nombre1_en_str)
+        nombre2 = int(input("Entrée un second nombre")) #obtenir un nombre (en 1 étape), l'expression combine les 2
+        fonctions
+
+        #Exemple de fonction pouvant recevoir un nombre infini de paramètres :
+        print("le résultat de ", nombre1, " multiplié par ", nombre2, " est :", nombre1 * nombre2)
+
+        #Exemple de création d'une str à partir d'éléments variables et constants (f-strings)
+        message = f"Le résultat de {nombre1} multiplié par {nombre2} est : {nombre1 * nombre2}"
+        print(message)
+        ```
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="modules" label="Modules" default>
+
+        :::info Modules
+
+        Certaines fonctions qui ne sont pas disponible par défaut. Pour être en mesure d'utiliser ces fonctions, nous
+        devons préalablement ajouter une instruction dans notre fichier Python qui va servir à charger le fichier
+        contenant ces fonctions (on nommera ce fichier un Module). Généralement, ces instructions sont placée au début
+        du fichier. Par la suite, pour utiliser/appeler une fonction du module, il faut simplement précéder le nom de la
+        fonction par le nom de son module.
+
+        ```python
+        import math #Importer le module "math"
+        print(math.sqrt(16)) # Résultat : 4.0
+        ```
+
+        Vous allez découvrir les modules suivants :
+        - math : ensemble de fonctions mathématiques avancées comme les logarithmes, les exposants, les racines carrées
+        et les fonctions trigonométriques
+        - random : permet de générer des nombres aléatoires, de sélectionner des éléments au hasard et de simuler des
+        événements probabilistiques
+        - os : ensemble de fonctionnalités pour intéragir avec le système d'exploitation (ex : Windows). Par exemple
+        permettre de pouvoir manipuler des fichiers ou des répertoires.
+        - sys : permet d'accéder à des informations sur l'environnement du programme et manipuler les entrées et sorties
+        - time : contient des fonctions pour manipuler le temps et les dates, comme la mesure du temps écoulé et les
+        conversions de format
+        - csv : facilite la lecture et l'écriture de fichiers CSV qui est un format couramment utilisés pour stocker des
+        données tabulaires
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="biblio" label="Bibliothèques" default>
+
+        :::info Bibliothèques
+
+        Parfois plusieurs modules sont regroupées ensemble pour former un tout réutilisable et
+        partageable facilement. Nous appelons ce regroupement une bibliothèque. Afin de pouvoir utiliser des
+        fonctionnalités des modules d'une bibliothèque, il faut préalablement avoir installé la bibliothèque a l'aide de
+        l'utilitaire "pip install" que nous verrons éventuellement. Par la suite, dans notre code, une bibliothèque
+        s'utilise relativement de la même manière qu'un simple module.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="matplotlib" label="Matplotlib" default>
+
+        :::info Générer des Graphiques
+
+        Nous allons utilisez dans le cadre du cours la bibliothèque Matplotlib servant à la visualisation des données en
+        Python. Cette bibliothèque est TRÈS flexible et permet de réaliser des graphiques autant simples que complexes.
+        La bibliothèque permet de personnaliser pratiquement tous les éléments et permet de réaliser autant des
+        graphiques à lignes, à barres, des histogrammes ou des nuages de points. La bibliothèque permet même de
+        superposer plusieurs graphes sur une seule figure. Un autre avantage de Matplotlib est compatible avec d'autres
+        bibliothèques à caractère scientifique comme NumPy, Pandas ou SciPy.
+
+        Nous aurons un cours complet dédié à l'utilisation de celle-ci.
+        Nous aborderons également l'existante d'autres bibliothèques (Seaborn, Ggplot2).
+        Voici un exemple
+
+        ```python
+        import matplotlib.pyplot as plt
+
+        # Âge en années
+        age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+
+        # Taille correspondante en cm (exemple fictif)
+        taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140]
+
+        # Création du graphique
+        plt.plot(age, taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")
+
+        # Ajout de titres et labels
+        plt.xlabel("Âge (années)")
+        plt.ylabel("Taille (cm)")
+        plt.title("Courbe de Croissance de l'Enfant")
+        plt.legend()
+
+        # Affichage du graphique
+        plt.show()
+        ```
+
+        :::
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ::::warning Exercices de compréhension

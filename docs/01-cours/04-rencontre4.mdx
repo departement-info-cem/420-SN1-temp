@@ -13,6 +13,52 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="theorie" label="Théorie" default>
 
+        :::info Les opérateurs de comparaison et les expressions booléennes
+
+        Une expression contenant un opérateur de comparaison est nommé une expression booléenne.
+        Le résultat d'une expression booléenne est toujours une valeur booléenne True ou False.
+
+        | Opérateur | Description | Exemple | Résultat |
+        |-----------|------------|---------|----------|
+        | `==`      | Égal à | `5 == 5` | `True` |
+        | `!=`      | Différent de | `5 != 3` | `True` |
+        | `>`       | Supérieur à | `7 > 4` | `True` |
+        | `<`       | Inférieur à | `2 < 6` | `True` |
+        | `>=`      | Supérieur ou égal à | `5 >= 5` | `True` |
+        | `<=`      | Inférieur ou égal à | `3 <= 7` | `True` |
+
+        :::
+
+        :::note Exécution de code sous-condition (aperçu)
+
+        Il est possible de rendre des instructions exécutables uniquement si une expression booléenne donne True.
+        Dans l'exemple ci-dessous avec des "if/elif/else" (si/sinon si/sinon). Un seul des 3 print va être exécuté.
+        - L'ordinateur testera en premier l'expression booléenne sur le "if", si le résultat est True, le 1er print sera
+        exécutée
+        - Si le résultat est False, il va tester l'expression booléenne sur le "elif", si le résultat est True, le 2ème
+        print sera exécutée
+        - Si le résultat est False, ça sera le 3ème print qui sera exécuté
+
+        ```python
+        nombre = int(input("Entrez un nombre : "))
+
+        if nombre > 0: #Si le nombre est supérieur à 0
+            print("Le nombre est positif.")
+        elif nombre < 0:
+            print("Le nombre est négatif.")
+        else:
+            print("Le nombre est zéro.")
+
+        print("reprise normale de l'exécution à partir de ce point")
+        ```
+
+        Seul le "if" est obligatoire, les sections "elif" et "else" sont facultatives.
+        Nous étudierons différentes variantes et des situations plus complexes dans des cours à venir.
+        Nous étudirons également les opérateurs logiciels (and, or, not) qui nous permettrons de combiner des
+        expressions conditionnelles ensembles.
+
+        :::
+
         ## Retour en classe sur le cours précédent
 
         Questions

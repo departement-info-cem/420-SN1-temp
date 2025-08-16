@@ -13,6 +13,59 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="theorie" label="Théorie" default>
 
+        :::info Créer nos propres fonctions
+
+        Il arrive parfois qu'on va souhaiter créer nos propres fonctions réutilisables pour représenter des instructions
+        qu'on aimerait pouvoir réutiliser facilement sans avoir à les répéter à chaque fois. Pour définir une fonction,
+        il faut le mot clée "def" suivi du nom qu'on souhaite donné à la fonction. Par la suite, entre parenthèses, nous
+        mettons des noms des paramètres que la valeur s'attends à recevoir. Les instructions de la fonction doivent être
+        intenter (touche TAB). Si la fonction retourne une valeur, il faut utiliser le mot clée "return" suivi de
+        l'expression représentant la valeur retourné. La définition de la fonction doit être avant sa première
+        utilisation. Il est possible de mettre en commentaire à l'aide du symbole """ des indications concernant
+        l'utilisation de la fonction.
+
+        ```python
+        # Définition de la fonction énergie-cinétique
+        def energie_cinetique(masse, vitesse):
+        """
+        Calcule l'énergie cinétique d'un objet en mouvement.
+
+        Formule :
+        E_c = 0.5 * m * v^2
+
+        Paramètres :
+        masse (float): Masse de l'objet en kilogrammes (kg)
+        vitesse (float): Vitesse de l'objet en mètres par seconde (m/s)
+
+        Retourne :
+        float : Énergie cinétique en Joules (J)
+
+        Exemple d'utilisation :
+        >>> energie_cinetique(10, 5)
+        125.0
+        """
+        nb_joute = 0.5 * masse * pow(vitesse,2)
+        return nb_joute
+
+        # Exemple avec différentes valeurs
+        objet1 = energie_cinetique(2, 3) # Masse de 2 kg, vitesse de 3 m/s
+        objet2 = energie_cinetique(5, 7) # Masse de 5 kg, vitesse de 7 m/s
+
+        # Affichage des résultats
+        print("Énergie cinétique de l'objet 1 :", objet1, "Joules")
+        print("Énergie cinétique de l'objet 2 :", objet2, "Joules")
+        ```
+
+        Dans l'exemple ci-haut, la fonction "energie_cinetique" est appelé à la ligne #7 et à la ligne #8.
+        Lors du premier appel, la valeur de "masse" sera de 2 et la valeur de "vitesse" sera de 3.
+        Lors du second appel, la valeur de "masse" sera de 5 et la valeur de "vitesse" sera de 7.
+
+        :::
+
+
+
+
+
         Quand on approche un problème, on peut le découper en sous-problèmes.
 
         Pour cela on peut trouver une solution au sous problème etc.
@@ -169,8 +222,15 @@ import TabItem from '@theme/TabItem';
 
         ::::tip Exercices de création
 
-        :::info Exercice -
+        :::info Exercice - Comparer 2 nombres
 
+        Demande 2 nombres et affiche lequel est le plus grand, si les 2 nombres sont égaux en informer l'utilisateur.
+
+        :::
+
+        :::info Exercice - Calcul du périmètre d'un rectangle
+        Demande à l'utilisateur la longueur et la largeur de son rectangle et affiche ensuite le périmètre.
+        TODO
         :::
 
         :::info Exercice -
