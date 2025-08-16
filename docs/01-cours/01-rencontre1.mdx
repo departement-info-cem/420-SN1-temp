@@ -260,6 +260,8 @@ import TabItem from '@theme/TabItem';
         ```
 
         Le `>>>` est l'invite de commande, il attend que vous tapiez quelque chose.
+        On peut maintenant donner des instructions à l'ordinateur.
+
         Tapez cette commande (vous pouvez aussi la copier-coller) puis appuyez sur `Entrée` :
         ```python
         print("Bonjour le monde!")
@@ -273,21 +275,21 @@ import TabItem from '@theme/TabItem';
         >>> |
         ```
 
+        - L'interpréteur Python a compris l'ordre d'imprimer parce qu'on lui a dit `print`.
+        Ici imprimer veut dire afficher dans notre console.
+        - Le truc à imprimer est fourni entre les parenthèses, c'est un paramètre.
+        Ici on veut imprimer un bout de texte.
+        - L'interpréteur comprend que c'est du texte à afficher et pas d'autres instructions parce que c'est entre
+        guillements ("").
+
         Tapez maintenant une simple expression mathématique, comme :
         ```python
-        2 + 3
+        6 / 2 * (1 + 2)
         ```
-        Vous devriez voir le résultat s'afficher aussitôt que vous appuyez sur `Entrée` :
-        ```python
-        Python Console>>> print("Bonjour le monde!")
-        Bonjour le monde!
-        >>> 2 + 3
-        5
+        Trop puissant!! Il nous affiche la réponse!
 
-        >>> |
-        ```
-
-        Vous pouvez continuer à taper des commandes et voir les résultats immédiatement. C'est le **mode interactif** de Python, idéal pour tester des idées rapidement.
+        On peut donc continuer à taper des commandes et voir les résultats immédiatement.<br />
+        C'est le **mode interactif** de Python, idéal pour tester des idées rapidement.
 
         :::tip
         Vous pouvez utiliser les touches ⬆️ et ⬇️ pour rappeler les dernières commandes que vous avez tapées, ce qui est très pratique pour éviter de retaper la même chose plusieurs fois.
@@ -518,39 +520,6 @@ import TabItem from '@theme/TabItem';
 
 
 
-
-
-        ## Demo 1 : bonjour le monde, interactif
-
-        On va ouvrir un terminal Powershell:
-        - un terminal, c'est une fenêtre qui nous invite à taper des commandes pour l'ordinateur
-        - Powershell, c'est le terminal à la mode pour un ordinateur qui roule Windows
-        - l'ordinateur attend nos instructions, on va partir python en tapant "python3"
-        - si l'ordinateur n'a pas l'air content, qu'il dit que Python n'est pas installé se référer à TODO
-        - si tout va bien on va pouvoir taper des trucs, vous devriez voir quelque chose qui ressemble à
-        ```
-        Python 3.10.0 (v3.10.0:b494f5935c, Oct 4 2021, 14:59:19) [Clang 12.0.5 (clang-1205.0.22.11)] on darwin
-        Type "help", "copyright", "credits" or "license" for more information.
-        >>>
-        ```
-        - on peut maintenant donner des instructions à l'ordinateur
-        - on va taper (enfin il ne faut pas taper les ">>>"), vous pouvez même copier/coller
-        ```
-        >>> print("bonjour bonjour cher maitre humain")
-        ```
-        - l'interpréteur Python3 comprend alors
-        - l'ordre d'imprimer parce qu'on lui a dit "print", ici imprimer veut dire afficher dans notre terminal
-        - le truc à imprimer est fourni entre les parenthèses, c'est un paramètre
-        - ici on veut imprimer un bout de texte
-        - l'interpréteur comprend que c'est du texte à afficher et pas d'autres instructions parce que c'est entre
-        guillements.
-        - un dernier petit test en mode interactif et promis on arrête
-        - taper
-        ```
-        >>> 6/2*(1+2)
-        ```
-        - trop puissant !! il nous affiche la réponse
-        - pour quitter l'interpréteur Python, on peut fermer la fenêtre Powershell au complet ou faire **CONTROL+D**
 
         ## Demo 2 : bonjour le monde en python, dans un fichier texte
 
