@@ -12,101 +12,6 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="expressions" label="Expressions" default>
-
-        Une expression est un bout de code qui a une valeur et un type.<br/>
-        Par exemple :
-        - `5` est une expression qui vaut 5 et de type entier (int).
-        - `"5"` est une expression de type texte.
-        - `5 + 3` est une expression de type entier qui vaut 8.
-
-    </TabItem>
-
-    <TabItem value="operateurs" label="Opérateurs" default>
-
-        Il existe plusieurs opérateurs qui permettent de construire des expressions à partir d'autres expressions.<br/>
-        Plusieurs sont répertoriés dans l'[aide-mémoire](../aidememoire/operateurs), mais nous commencerons avec ceux-ci
-        :
-
-        ## Opérateurs arithmétiques
-
-        | Opérateur | Description | Exemple |
-        |------------|------------------|-----------------------------|
-        | `+` | Addition | `10 + 3` (vaut `13`) |
-        | `-` | Soustraction | `10 - 3` (vaut `7`) |
-        | `*` | Multiplication | `10 * 3` (vaut `30`) |
-        | `/` | Division (float) | `10 / 3` (vaut `3.333...`) |
-        | `//` | Division entière | `10 // 3` (vaut `3`) |
-        | `%` | Modulo (reste) | `10 % 3` (vaut `1`) |
-        | `**` | Puissance | `10 ** 3` (vaut `1000`) |
-
-        ## Opérateurs d'affectation
-
-        | Opérateur | Description | Exemple |
-        |------------|------------------------------------|---------|
-        | `=` | Affectation simple | `x = 5` |
-
-    </TabItem>
-
-    <TabItem value="types" label="Types" default>
-
-        En programmation, on veut stocker des valeurs dans des variables, mais ces valeurs ont un type.<br/>
-        Le type d'une valeur détermine comment on peut l'utiliser et quelles opérations sont possibles
-        avec cette valeur.
-
-        Voici les [types de données](../aidememoire/types) de base pour débuter en Python :
-
-        ## Types de base
-
-        | Type | Description | Exemple |
-        |-----------|------------------------|--------------------|
-        | **int** | Nombre entier | `42` |
-        | **float** | Nombre décimal | `3.14` |
-        | **str** | Chaîne de caractères | `"Alice"` |
-        | **bool** | Booléen (vrai ou faux) | `True` |
-
-        Python contient une fonction permettant de connaître le type d'une expression:
-
-        ```python
-        truc = ...
-        print( type(truc) )
-        ```
-
-
-        La plupart des langages de programmation on des types de base pour représenter les nombres
-
-        - Entier : 1 2 3 -99 etc.
-        - Flottant : 1.0 2.5 -99.9 etc.
-        - Texte : "bonjour" "salut" "123" etc.
-        - Booléen : True False
-
-        - *5 + 3* est une expression de type entier qui vaut 8
-        - *"coucou " + str(81)* est une expression de type texte qui vaut "coucou 8"
-
-        On voit que *+* ne fait pas la même chose selon le type de son opérateur. Pour des nombres
-        il fait la somme habituelle. Pour du texte, il met les 2 textes bout à bout.
-
-        Les fonctions comme **str()** peuvent avoir un type. Ici **str** transforme une
-        expression qu'on lui passe en texte:
-        - *81* est un entier qui vaut 81
-        - *str(81)* est un texte constitué du caractère *8* suivi du caractère *1*
-
-
-        ### Exécution : évaluateur d'expression
-        On peut vite se laisser emporter et construire des expressions assez complexes:
-        ```python
-        str( 5 + 8 * (7 + 98 * 6) / 5 / 6.7 * 10 - 4)
-        ```
-
-        Pour évaluer cette expression petit bout par petit bout, on peut utiliser un évaluateur d'expression.
-        Il faut placer un point d'arrêt sur la ligne dans le script.
-
-        ## Types composés
-
-        Il existe aussi des [structures de données](../aidememoire/structuresdonnes) plus complexes pour stocker des données, que nous verrons plus tard.
-
-    </TabItem>
-
     <TabItem value="variables" label="Variables" default>
 
         Un nom qui va désigner plusieurs valeurs au fil du temps.
@@ -144,7 +49,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="fonctions" label="Fonctions" default>
+    <TabItem value="fonctions" label="Fonctions">
 
         :::info Fonctions
 
@@ -212,7 +117,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="modules" label="Modules" default>
+    <TabItem value="modules" label="Modules">
 
         :::info Modules
 
@@ -244,7 +149,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="biblio" label="Bibliothèques" default>
+    <TabItem value="biblio" label="Bibliothèques">
 
         :::info Bibliothèques
 
@@ -258,7 +163,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="matplotlib" label="Matplotlib" default>
+    <TabItem value="matplotlib" label="Matplotlib">
 
         :::info Générer des Graphiques
 

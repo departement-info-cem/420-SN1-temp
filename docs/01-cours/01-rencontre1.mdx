@@ -280,7 +280,7 @@ import TabItem from '@theme/TabItem';
         - Le truc à imprimer est fourni entre les parenthèses, c'est un paramètre.
         Ici on veut imprimer un bout de texte.
         - L'interpréteur comprend que c'est du texte à afficher et pas d'autres instructions parce que c'est entre
-        guillements ("").
+        guillements (`""`).
 
         Tapez maintenant une simple expression mathématique, comme :
         ```python
@@ -299,79 +299,142 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::caution Attention : rien n'est sauvegardé!
+        :::info Expressions
 
-        Le mode interactif est pratique pour tester des idées, mais :
+        Une expression est un bout de code qui a une valeur et un type.
 
-        - Tout disparaît dès que vous fermez le Terminal.
-        - Vous ne pouvez pas conserver votre code.
-        - Vous devez tout retaper à chaque fois.
+        Par exemple :
+        - `5` est une expression qui vaut 5 et de type entier (int).
+        - `"5"` est une expression de type texte (entre guillemets `"").
+        - `5 + 3` est une expression de type entier, et qui vaut 8.
 
-        C'est pourquoi nous allons maintenant créer des **scripts Python**, c'est-à-dire des fichiers `.py` où écrire
-        votre code.
         :::
 
         ---
 
-        :::tip 📝 Écrire et exécuter son premier script Python
+        ::::note Opérateurs
 
-        ### Étape 1 : Créer un fichier
+        Les expressions en Python peuvent contenir des opérateurs arithmétiques.<br/>
+        Il existe plusieurs opérateurs qui permettent de construire des expressions à partir d'autres expressions.<br/>
+        Plusieurs sont répertoriés dans l'[aide-mémoire](../aidememoire/operateurs), mais nous commencerons avec ceux-ci
+        :
 
-        Dans PyCharm :
+        <Row>
+            <Column>
+                :::tip Opérateurs arithmétiques
 
-        1. Clic droit sur votre projet dans la colonne de gauche.
-        2. Sélectionnez **New → Python File**.
-        3. Nommez le fichier `mon_premier_programme`.
-        4. PyCharm va automatiquement ajouter `.py` à la fin.
+                | Opérateur | Description | Exemple | Valeur résultante |
+                |------------|------------------|---------------|--------------|
+                | `+` | Addition | `10 + 3` | `13` |
+                | `-` | Soustraction | `10 - 3` | `7` |
+                | `*` | Multiplication | `10 * 3` | `30` |
+                | `/` | Division (float) | `10 / 3` | `3.333...` |
+                | `//` | Division entière | `10 // 3` | `3` |
+                | `%` | Modulo (reste) | `10 % 3` | `1` |
+                | `**` | Puissance | `10 ** 3` | `1000` |
+
+                :::
+            </Column>
+            <Column>
+
+                Les opérandes peuvent être des valeurs (comme dans les exemples du tableau), mais pourraient aussi être
+                des variables, un élément d'un tableau, etc.
+
+                La valeur résultante peut être de type `int` ou `float`, selon l'opérateur ET selon les opérandes.
+
+                :::info Console
+                Dans la console, tapez les expressions `10 / 3` et `10 // 3` pour voir la différence entre les deux.
+                :::
+
+                Les types sont expliqués plus en détail dans une section plus bas.
+
+                Un autre opérateur très utile est l'opérateur d'affectation `=`, qui permet de stocker une valeur dans une variable :
+
+                :::tip Opérateurs d'affectation
+                | Opérateur | Description | Exemple |
+                |------------|------------------------------------|---------|
+                | `=` | Affectation simple | `x = 5` |
+                :::
+
+                Nous y arrivons bientôt.
+
+            </Column>
+        </Row>
+
+        D'autres opérateurs utiles sont les parenthèses `()`, qui permettent de regrouper des expressions pour forcer l'ordre d'évaluation.<br />
+        Par exemple, dans l'expression `10 + 3 * 2`, la multiplication est effectuée avant l'addition, donc le résultat est `16`.<br />
+        Si on veut que l'addition soit effectuée en premier, on peut écrire `(10 + 3) * 2`, ce qui donne `26` comme résultat.
+
+
+
+        ::::
 
         ---
 
-        ### Étape 2 : Écrire du code
+        :::info Types
 
-        Dans le fichier, écrivez :
+        En programmation, on veut stocker des valeurs dans des variables, mais ces valeurs ont un type.<br/>
+        Le type d'une valeur détermine comment on peut l'utiliser et quelles opérations sont possibles
+        avec cette valeur.
+
+        Voici les [types de données](../aidememoire/types) de base pour débuter en Python :
+
+        ## Types de base
+
+        | Type | Description | Exemple |
+        |-----------|------------------------|--------------------|
+        | **int** | Nombre entier | `42` |
+        | **float** | Nombre décimal | `3.14` |
+        | **str** | Chaîne de caractères | `"Alice"` |
+        | **bool** | Booléen (vrai ou faux) | `True` |
+
+        Python contient une fonction permettant de connaître le type d'une expression:
 
         ```python
-        print("Bonjour le monde!")
+        truc = ...
+        print( type(truc) )
         ```
 
-        ---
+        La plupart des langages de programmation on des types de base pour représenter les nombres
 
-        ### Étape 3 : Exécuter le fichier
+        - Entier : 1 2 3 -99 etc.
+        - Flottant : 1.0 2.5 -99.9 etc.
+        - Texte : "bonjour" "salut" "123" etc.
+        - Booléen : True False
 
-        Dans le Terminal de PyCharm, tapez :
+        - *5 + 3* est une expression de type entier qui vaut 8
+        - *"coucou " + str(81)* est une expression de type texte qui vaut "coucou 8"
 
-        ```bash
-        python mon_premier_programme.py
+        On voit que *+* ne fait pas la même chose selon le type de son opérateur. Pour des nombres
+        il fait la somme habituelle. Pour du texte, il met les 2 textes bout à bout.
+
+        Les fonctions comme **str()** peuvent avoir un type. Ici **str** transforme une
+        expression qu'on lui passe en texte:
+        - *81* est un entier qui vaut 81
+        - *str(81)* est un texte constitué du caractère *8* suivi du caractère *1*
+
+
+        ### Exécution : évaluateur d'expression
+        On peut vite se laisser emporter et construire des expressions assez complexes:
+        ```python
+        str( 5 + 8 * (7 + 98 * 6) / 5 / 6.7 * 10 - 4)
         ```
 
-        Vous devriez voir s'afficher :
+        Pour évaluer cette expression petit bout par petit bout, on peut utiliser un évaluateur d'expression.
+        Il faut placer un point d'arrêt sur la ligne dans le script.
 
-        ```
-        Bonjour le monde!
-        ```
+        ## Types composés
 
-        Félicitations, vous avez exécuté votre premier **script Python**!
+        Il existe aussi des [structures de données](../aidememoire/structuresdonnes) plus complexes pour stocker
+        des données, que nous verrons plus tard.
 
         :::
 
         ---
 
-        :::info 🚀 Pourquoi écrire des scripts?
+        ::::note
 
-        Écrire son code dans des fichiers `.py` permet :
-
-        - ✅ De conserver vos programmes
-        - ✅ De pouvoir les exécuter autant de fois que vous voulez
-        - ✅ De pouvoir les améliorer petit à petit
-        - ✅ De les partager facilement avec d'autres personnes
-        :::
-
-        ---
-
-
-        TODO
-
-        :::note Variables, expressions et types
+        :::info Variables, expressions et types
 
         ***Rôle***
         Les variables servent à stocker des informations manipulées par une application.
@@ -454,30 +517,6 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::tip Les opérateurs arithmétiques
-
-        Les expressions en python peuvent contenir les opérateurs arithmétiques suivants en plus de parenthèses.
-        Les opérandes peuvent être des constantes (comme les exemples), mais pourrait être une variable, un élément d'un
-        tableau, etc.
-
-        | Opérateur | Description | Exemple | Résultat |
-        |-----------|------------|---------|----------|
-        | `+` | Addition | `5 + 3` | `8` |
-        | `-` | Soustraction | `10 - 4` | `6` |
-        | `*` | Multiplication | `6 * 7` | `42` |
-        | `/` | Division (résultat flottant) | `10 / 2` | `5.0` |
-        | `%` | Modulo (reste de la division) | `10 % 3` | `1` |
-        | `**` | Puissance | `2 ** 3` | `8` (équivaut à 2³) |
-        | `//` | Division entière (quotient sans décimales) | `10 // 3` | `3` |
-
-        Le résultat est de type int ou float selon l'opérateur ET selon les opérandes
-
-        TODO : Mettre beaucoup d'exemples
-
-        :::
-
-        ---
-
         :::warning Les variables peuvent... variées!
 
         Le contenu d'une variable peut être modifié au fur et à mesure de l'exécution des instructions à l'aide de
@@ -498,23 +537,78 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        ::::
+
         ---
 
-        :::info
+        :::caution Attention : rien n'est sauvegardé!
+
+        Le mode interactif est pratique pour tester des idées, mais :
+
+        - Tout disparaît dès que vous fermez le Terminal.
+        - Vous ne pouvez pas conserver votre code.
+        - Vous devez tout retaper à chaque fois.
+
+        C'est pourquoi nous allons maintenant créer des **scripts Python**, c'est-à-dire des fichiers `.py` où écrire
+        votre code.
+        :::
+
+        ---
+
+        :::tip 📝 Écrire et exécuter son premier script Python
+
+        ### Étape 1 : Créer un fichier
+
+        Dans PyCharm :
+
+        1. Clic droit sur votre projet dans la colonne de gauche.
+        2. Sélectionnez **New → Python File**.
+        3. Nommez le fichier `mon_premier_programme`.
+        4. PyCharm va automatiquement ajouter `.py` à la fin.
+
+        ---
+
+        ### Étape 2 : Écrire du code
+
+        Dans le fichier, écrivez :
+
+        ```python
+        print("Bonjour le monde!")
+        ```
+
+        ---
+
+        ### Étape 3 : Exécuter le fichier
+
+        Dans le Terminal de PyCharm, tapez :
+
+        ```bash
+        python mon_premier_programme.py
+        ```
+
+        Vous devriez voir s'afficher :
+
+        ```
+        Bonjour le monde!
+        ```
+
+        Félicitations, vous avez exécuté votre premier **script Python**!
 
         :::
 
         ---
 
-        :::info
+        :::info 🚀 Pourquoi écrire des scripts?
 
+        Écrire son code dans des fichiers `.py` permet :
+
+        - ✅ De conserver vos programmes
+        - ✅ De pouvoir les exécuter autant de fois que vous voulez
+        - ✅ De pouvoir les améliorer petit à petit
+        - ✅ De les partager facilement avec d'autres personnes
         :::
 
         ---
-
-        :::info
-
-        :::
 
 
 
