@@ -407,66 +407,50 @@ import TabItem from '@theme/TabItem';
 </Column>
             <Column>
         Un booléen (`bool`) est une valeur qui peut être soit `True` (vrai) soit `False` (faux).<br/>
+                Ce sont les deux seules valeurs possibles pour un booléen.
         :::warning
         L'expression `'True'` est une chaîne de caractères, pas un booléen!<br/>
         Si vous voulez un booléen, il faut écrire `True` sans guillemets.
         :::
 </Column>
         </Row>
-        Python contient une fonction permettant de connaître le type d'une expression:
-
+        Python possède une fonction permettant de connaître le type d'une expression, la fonction **type()**.<br />
+        :::note Console
+        Dans la console, tapez ces lignes une par une pour voir le type de chaque expression :
         ```python
-        truc = ...
-        print( type(truc) )
+        type(42)
+        type('42')
+        type(6 * 7)
+        type(3.14)
+        type("Alice")
+        type(True)
+        type('False')
         ```
+        :::
 
-        La plupart des langages de programmation on des types de base pour représenter les nombres
+        On peut changer le type d'une expression en utilisant des fonctions de conversion.<br />
+        Par exemple, pour convertir un entier en chaîne de caractères, on utilise la fonction **str()**.<br />
+        Pour convertir une chaîne de caractères en entier, on utilise la fonction **int()**.
 
-        - Entier : 1 2 3 -99 etc.
-        - Flottant : 1.0 2.5 -99.9 etc.
-        - Texte : "bonjour" "salut" "123" etc.
-        - Booléen : True False
-
-        - *5 + 3* est une expression de type entier qui vaut 8
-        - *"coucou " + str(81)* est une expression de type texte qui vaut "coucou 8"
-
-        On voit que *+* ne fait pas la même chose selon le type de son opérateur. Pour des nombres
-        il fait la somme habituelle. Pour du texte, il met les 2 textes bout à bout.
-
-        Les fonctions comme **str()** peuvent avoir un type. Ici **str** transforme une
-        expression qu'on lui passe en texte:
-        - *81* est un entier qui vaut 81
-        - *str(81)* est un texte constitué du caractère *8* suivi du caractère *1*
-
-
-        ### Exécution : évaluateur d'expression
-        On peut vite se laisser emporter et construire des expressions assez complexes:
+        :::note Console
+        Voici quelques exemples, essayez-les dans la console :
         ```python
-        str( 5 + 8 * (7 + 98 * 6) / 5 / 6.7 * 10 - 4)
-        ```
+        type(str(42))      # Convertit l'entier 42 en chaîne de caractères
+        type(int("42"))    # Convertit la chaîne de caractères "42" en entier
+        type(float(3))     # Convertit l'entier 3 en nombre décimal
+        type(float("3.14")) # Convertit la chaîne de caractères "3.14" en nombre décimal
+        :::
 
-        Pour évaluer cette expression petit bout par petit bout, on peut utiliser un évaluateur d'expression.
-        Il faut placer un point d'arrêt sur la ligne dans le script.
-
-
-
-
+        Certains opérateurs se comportent différemment selon le type de leurs opérandes.<br />
+        Par exemple, l'opérateur `+` peut faire la somme de deux nombres ou concaténer deux chaînes de caractères.
+        :::note Console
+        Voici quelques exemples, essayez-les dans la console :
         ```python
-        #Instructions pour créer différents types de variables
-        rayon_cercle = 20 #variable de type int
-        PI = 3.1416 #variable (constate) de type float
-        nom_element_chimique = "Hydrogène" #variable de type str, les guillemets sont importants !
-        est_un_element_halogene = True #variable de type bool
-        circonference_circle = rayon_cercle * PI #variable de type float contenant le résultat d'une expression
-
-        #Instructions pour afficher les variables à l'aide de la fonction "print"
-        print("*** VALEURS DES VARIABLES : ***")
-        print("rayon_cercle :", rayon_cercle)
-        print("PI :", PI)
-        print("nom_element_chimique :", nom_element_chimique)
-        print("est_halogene :", est_halogene)
-        print("circonference_circle :", circonference_circle)
+        5 + 3              # Addition de deux entiers
+        "coucou " + "Alice" # Concaténation de deux chaînes de caractères
+        "coucou " + str(81) # Concaténation d'une chaîne de caractères et d'un entier converti en chaîne
         ```
+        :::
 
         :::tip Types composés
         Il existe aussi des [structures de données](../aidememoire/structuresdonnes) plus complexes pour stocker
@@ -507,6 +491,24 @@ import TabItem from '@theme/TabItem';
         noms composés (ex : fleure_prefere) et nous évitons les accents dans les noms. Lorsqu'une variable contient une
         valeur qui ne devrait jamais être modifié au cours de l'application, on nomme la variable en MAJUSCULES pour
         indiquer que cette valeur ne devrait pas être modifié (ex : PI)
+
+
+        ```python
+        #Instructions pour créer différents types de variables
+        rayon_cercle = 20 #variable de type int
+        PI = 3.1416 #variable (constate) de type float
+        nom_element_chimique = "Hydrogène" #variable de type str, les guillemets sont importants !
+        est_un_element_halogene = True #variable de type bool
+        circonference_circle = rayon_cercle * PI #variable de type float contenant le résultat d'une expression
+
+        #Instructions pour afficher les variables à l'aide de la fonction "print"
+        print("*** VALEURS DES VARIABLES : ***")
+        print("rayon_cercle :", rayon_cercle)
+        print("PI :", PI)
+        print("nom_element_chimique :", nom_element_chimique)
+        print("est_halogene :", est_halogene)
+        print("circonference_circle :", circonference_circle)
+        ```
 
         :::warning Les variables peuvent... variées!
 
