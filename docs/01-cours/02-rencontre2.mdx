@@ -14,7 +14,154 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="fonctions" label="Fonctions" default>
+    <TabItem value="scripts" label="Scripts" default>
+
+        :::tip 📝 Écrire et exécuter son premier script Python
+
+        ### Étape 1 : Créer un fichier
+
+        Dans PyCharm :
+
+        1. Clic droit sur votre projet dans la colonne de gauche.
+        2. Sélectionnez **New → Python File**.
+        3. Nommez le fichier `mon_premier_programme`.
+        4. PyCharm va automatiquement ajouter `.py` à la fin.
+
+        ---
+
+        ### Étape 2 : Écrire du code
+
+        Dans le fichier, écrivez :
+
+        ```python
+        print("Bonjour le monde!")
+        ```
+
+        ---
+
+        ### Étape 3 : Exécuter le fichier
+
+        Dans le Terminal de PyCharm, tapez :
+
+        ```bash
+        python mon_premier_programme.py
+        ```
+
+        Vous devriez voir s'afficher :
+
+        ```
+        Bonjour le monde!
+        ```
+
+        Félicitations, vous avez exécuté votre premier **script Python**!
+
+        :::
+
+        ---
+
+        :::info 🚀 Pourquoi écrire des scripts?
+
+        Écrire son code dans des fichiers `.py` permet :
+
+        - ✅ De conserver vos programmes
+        - ✅ De pouvoir les exécuter autant de fois que vous voulez
+        - ✅ De pouvoir les améliorer petit à petit
+        - ✅ De les partager facilement avec d'autres personnes
+        :::
+
+        ---
+
+
+
+
+
+
+        ## Demo 2 : bonjour le monde en python, dans un fichier texte
+
+        On va vite vouloir donner plein d'ordres à l'ordinateur en lui parlant en Python.
+
+        Ça devient pénible de les écrire les uns après les autres en mode interactif. Alors, on a
+        pensé à écrire les ordres les uns après les autres dans un fichier.
+
+        On va appeler ça un "programme Python" ou un "script Python". Concrètement, c'est un
+        fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
+        le mélanger avec les ".pdf" et les ".jpg".
+
+        On ouvre un éditeur de texte. Il y en a plein, nous, on va partir Notepad++.
+        - on ouvre le menu **Démarrer** de Windows
+        - on tape "not" et il devrait apparaitre une liste avec Notepad++
+        - on va taper dans la zone du fichier les instructions, une par ligne
+        ```python
+        # ceci est un commentaire, cette ligne est pour les humains, l'ordinateur va l'ignorer
+        print("bonjour bonjour cher maitre humain")
+        6/2*(1+2)
+        print("Ca va aujourd' hui?")
+        print( 4 / 5 * (9 + 6) )
+        ```
+        - on sauve le fichier à un endroit où vous saurez le retrouver, par exemple sur le bureau avec comme nom
+        "bonjour.py"
+        - jusqu'ici ça ne fait rien
+        - on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres,
+        d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
+        - dans le terminal, on va taper
+        ```shell
+        python3 c:\Users\monmatricule\Desktop\bonjour.py
+        ```
+        - Vous venez d'exécuter un Python
+        - Regardons ce qu'on vient de voir
+        - l'interpréteur a affiché trois lignes
+        - il exécute dans l'ordre de haut en bas
+        - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
+        - les espaces peuvent être importants ou pas :
+        - en début de ligne c'est important
+        - dans une expression, c'est ignoré
+
+
+        ## Demo 3 : bonjour le monde dans un environnement de développement
+
+        On a gagné, on a perdu
+        - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
+        - on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
+
+        On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre, ils
+        vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain
+        je me suis mal exprimé.
+
+        On va alors utiliser un environnement de développement pour se doter des pouvoirs super :
+        - on va pouvoir arrêter le temps
+        - on va pouvoir voir à l'intérieur de l'ordinateur
+
+        On va partir PyCharm pour exécuter notre script en mode super développeur :
+        - partir l'application PyCharm, on appelle ça un IDE
+        - Integrated Developpement Environment, un environnement intégré pour programmer
+        - créer un fichier test_ide.py avec le contenu suivant
+        ```python
+        # commentaire : une ligne pour le programmeur qui est ignorée par l'ordi, commence par un "#"
+        print("bonjour bonjour cher maitre humain")
+        6/2*(1+2)
+        print("Ca va aujourd' hui?") # les espaces entre "" sont pris en compte
+        print( 4 / 5 * (9 + 6) ) # les espaces dans une expression sont ignorés
+        ```
+        - l'exécuter en cliquant sur le triangle vert
+        - on devrait voir.
+
+        ### le point d'arrêt : arrêter le temps
+
+        - en cliquant dans la marge du code, on va mettre un point d'arrêt
+        - on va maintenit partir notre code en mode débogage en cliquant sur la bestiole, sur le bug
+        - l'exécution s'arrête sur le point d'arrêt
+
+        ## Jargon
+
+        Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs :
+        - "print" ("imprimer") qui veut dire affiche à l'écran au lieu d'imprimer du papier
+        - "exécuter" un programme !?
+
+        On va essayer de pointer les termes jargoniques au fur et à mesure.
+
+    </TabItem>
+
+    <TabItem value="fonctions" label="Fonctions">
 
         :::info Fonctions
 
