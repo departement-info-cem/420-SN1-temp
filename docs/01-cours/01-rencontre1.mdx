@@ -510,6 +510,18 @@ import TabItem from '@theme/TabItem';
         temperature_courante = temperature_hier + 5
         ```
 
+        :::tip Voir le contenu d'une variable
+        Pour voir ce qui est stocké dans une variable, il suffit de taper son nom dans la console et d'appuyer sur `Entrée`.<br />
+        Par exemple, si vous avez créé une variable `x`, tapez simplement `x`
+        dans la console et appuyez sur `Entrée`.<br />
+        Vous verrez la valeur de `x` s'afficher :
+        ```python
+        >>> x = 42
+        >>> x
+        42
+        ```
+        :::
+
         Les variables sont comme des boîtes dans lesquelles on peut mettre des valeurs.<br />
         On peut les nommer comme on veut, tant que le nom est unique et respecte certaines règles.
 
@@ -586,7 +598,7 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="exercices" label="Exercices">
 
-        ::::note Exercices d'environnement de travail
+        ## 🧰 Exercices d'environnement de travail
 
         Complétez les exercices de cette section avant de poursuivre avec les autres exercices plus bas.
 
@@ -601,9 +613,7 @@ import TabItem from '@theme/TabItem';
         Ce projet contiendra tous les exercices ci-dessous.
         :::
 
-        ::::
-
-        ::::warning Exercices de compréhension
+        ## 🔨 Exercices de création
 
         Pour les exercices de cette section, vous pouvez écrire vos réponses sur papier (comme ce sera le cas en examen) ou vous pouvez [créer un fichier *markdown*](/recettes/creer-markdown) dans votre projet PyCharm créé plus haut.
 
@@ -651,7 +661,7 @@ import TabItem from '@theme/TabItem';
         La fonction `round()` permet d'arrondir. :
         - Le 1er paramètre est la valeur à arrondir.
         - Le 2ème paramètre est le nombre de décimales à conserver.
-        
+
         Poursuivez l'exercice avec les expressions suivantes :
         <Row>
             <Column>
@@ -679,12 +689,13 @@ import TabItem from '@theme/TabItem';
         nombre3 = nombre2 - nombre1 - 10
         print(nombre1, nombre2, nombre3)
         ```
+        Validez ensuite votre réponse en exécutant le code dans la console de PyCharm.
+        Si vous avez utilisé un fichier *markdown* pour écrire vos réponses, n'oubliez pas de mettre à jour votre réponse
+        avec le résultat obtenu dans la console.
         :::
 
         :::info Exercice - AFFICHAGE #2
-        Sans exécuter le code, qu'affichera le programme ci-dessous?<br/>
-        Que s'est-il passé avec le contenu des variables `x` et `y`?
-
+        Sans exécuter le code, qu'affichera le programme ci-dessous?
         ```python
         x = 50
         y = 100
@@ -693,54 +704,10 @@ import TabItem from '@theme/TabItem';
         x = temporaire
         print(x, y)
         ```
+        Validez votre réponse.
+
+        Que s'est-il passé avec le contenu des variables `x` et `y`?
         :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        ::::
-
-        ::::tip Exercices de création
-
-        Pour les exercices de cette section, vous devez écrire du code Python dans des fichiers `.py` dans votre projet PyCharm créé plus haut.
-
-        :::info Exercice - CALCULER LA DURÉE TOTAL EN SECONDE
-        Complété le programme ci-dessous.<br />
-        Il faut afficher le nombre total de secondes correspondant à un nombre d'heures, de minutes et secondes.<br />
-        La réponse devrait être de 7386 secondes.
-        ```python
-        nbHeures = 2
-        nbMinutes = 3
-        nbSecondes = 6
-        nbTotalSecondes = 0
-
-        # Ajoutez votre code ici pour calculer le nombre total de secondes
-        # en fonction des heures, minutes et secondes.
-        ```
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        ::::
 
     </TabItem>
 </Tabs>
