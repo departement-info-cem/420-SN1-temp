@@ -11,7 +11,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "2 - 🧮 Variables et fonctions",
+      label: "2 - 📚 Biblio. de fonctions",
       id: "cours/rencontre2",
     },
     {

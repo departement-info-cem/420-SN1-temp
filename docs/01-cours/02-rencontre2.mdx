@@ -5,51 +5,16 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 🧮 Expressions, Opérateurs, Types, Variables
+# 📚 Bibliothèques de fonctions
+
+[//]: # (# 🧮 Expressions, Opérateurs, Types, Variables)
 
 # 🏗️ en construction 🏗
 
 
 <Tabs queryString="onglet">
 
-    <TabItem value="variables" label="Variables" default>
-
-        Un nom qui va désigner plusieurs valeurs au fil du temps.
-
-        Dans un premier temps on va avoir des "variables" qui "varient" à chaque assignation.
-
-        Il est donc important de voir ce qu'est une assignation
-
-        ```python
-        nomDeMaVariable = expression
-        ```
-        - Ceci n'est pas une égalité comme en maths
-        - on calcule expression, ce qui nous donne une valeur et un type
-        - on associe, on "assigne" cette valeur et type au *nomDeMaVariable*
-
-        Exécute en mode débogage et on regarde la valeur de x changer.
-
-        TODO ajouter un exemple avec du hasard
-
-        ```python
-        x = 5 * 6
-        y = 2 * x
-        x = x * x + 25.6
-        x = str(5 - x)
-        ```
-        - si on était en maths, y devrait toujours valoir le double de x
-        - si x évolue dans le temps
-        - comme on a posé y qui est 2*x
-        - on devrait avoir y qui évolue avec le temps
-        - en programmation le **=** n'est pas une équation, c'est une **assignation**
-        - on évalue l'expression en partie droite *2 * x*
-        - comme x vaut 30 à ce moment là, ça donne 60
-        - on assigne cette valeur dans la variable y
-        - si on veut assigner une nouvelle valeur, il faut un autre *y = ...*
-
-    </TabItem>
-
-    <TabItem value="fonctions" label="Fonctions">
+    <TabItem value="fonctions" label="Fonctions" default>
 
         :::info Fonctions
 

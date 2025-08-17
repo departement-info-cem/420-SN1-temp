@@ -475,10 +475,28 @@ import TabItem from '@theme/TabItem';
         d'une expression :
 
         ```python
-        nom_variable = (expression)
+        nom_de_ma_variable = (expression)
         ```
+        - `nom_de_ma_variable` est le nom de la variable, qui doit être unique.
+        - `=` est l'opérateur d'affectation, qui permet de stocker la valeur de l'expression dans la variable.
+        - `(expression)` est une expression qui peut être une valeur, une opération mathématique, ou même une chaîne de caractères.
 
-        Par exemple :
+        L'expression est d'abord évaluée, puis la valeur résultante est stockée dans la variable.
+
+        - `=` n'est pas un symbole d'égalité, comme en mathématiques, mais un symbole d'**affectation**.
+        - On calcule d'abord l'expression, ce qui nous donne une valeur et un type.
+        - Puis on affecte cette valeur et ce type à *nom_de_ma_variable*.
+
+        :::tip
+        L'opérateur d'affectation `=` a une priorité plus basse que les opérateurs arithmétiques, et donc l'expression à droite est évaluée avant, puis la valeur résultante est affectée à la variable.
+        :::
+
+        Exemples :
+
+        ```python
+        x = 5 * 6           # (5 * 6) est évalué, puis le résultat (30) est affecté à x
+        y = 2 * x           # (2 * x) est évalué, puis le résultat (60) est affecté à y
+        ```
 
         ```python
         #Variable initialisée avec une valeur
@@ -492,12 +510,8 @@ import TabItem from '@theme/TabItem';
         temperature_courante = temperature_hier + 5
         ```
 
-        :::tip À noter
-        L'opérateur d'affectation `=` a une priorité plus basse que les opérateurs arithmétiques, et donc l'expression à droite est évaluée avant, puis la valeur résultante est affectée à la variable.
-        :::
-
-        Les variables sont comme des boîtes dans lesquelles on peut mettre des valeurs. On peut les nommer comme on veut,
-        tant que le nom est unique et respecte certaines règles.
+        Les variables sont comme des boîtes dans lesquelles on peut mettre des valeurs.<br />
+        On peut les nommer comme on veut, tant que le nom est unique et respecte certaines règles.
 
         ## Nom des variables
         Chaque variable possède un nom *unique* permettant de l'identifier.
@@ -517,14 +531,14 @@ import TabItem from '@theme/TabItem';
         :::
 
         ```python
-        # Quelsques exemples
+        # Exemples
         rayon_cercle = 20 # variable de type int
         PI = 3.1416 # variable (constate) de type float
         nom_element_chimique = "Hydrogène" # variable de type str, les guillemets sont importants !
         est_un_element_halogene = True # variable de type bool
         circonference_circle = rayon_cercle * PI # variable de type float contenant le résultat d'une expression
 
-        #Instructions pour afficher les variables à l'aide de la fonction "print"
+        # Afficher les variables à l'aide de la fonction "print"
         print("*** VALEURS DES VARIABLES : ***")
         print("rayon_cercle :", rayon_cercle)
         print("PI :", PI)
@@ -561,7 +575,7 @@ import TabItem from '@theme/TabItem';
 
         Le mode interactif est pratique pour tester des idées, mais :
 
-        - Tout disparaît dès que vous fermez le Terminal.
+        - Tout disparaît dès que vous fermez la console (ou PyCharm).
         - Vous ne pouvez pas conserver votre code.
         - Vous devez tout retaper à chaque fois.
 
