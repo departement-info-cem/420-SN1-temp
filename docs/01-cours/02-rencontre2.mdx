@@ -340,6 +340,43 @@ import TabItem from '@theme/TabItem';
 
         ::::tip Exercices de création
 
+        :::info Exercice - Points d'arrêt
+
+        On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
+        est de se familiariser avec le débogueur.
+
+        Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
+        ```python
+        # ceci est une fonction, on va en parler en semaine 4
+        def calculComplexe(a, b, c):
+            return a**b + c*(b-a)
+
+        print("Arreter le temps, c'est impossible Marty")
+        a = calculComplexe(3,5,7)
+        b = calculComplexe(a,6,9)
+        c = calculComplexe(b,a,b)
+        a = calculComplexe(a,a,a)
+        print("le resultat est ", calculComplexe(a, b, c))
+        ```
+
+        On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
+        - essayer de calculer à la main combien ça vaut
+        - poser un point d'arrêt et observer
+
+        :::
+
+        :::info Exercice -
+
+        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
+        - des déclarations de variables
+        - des calculs avec assignations
+        - des affichages avec print
+
+        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
+        votre vie pour programmer)
+
+        :::
+
         :::info Exercice -
 
         :::
