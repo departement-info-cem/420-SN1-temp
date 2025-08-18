@@ -11,10 +11,11 @@ hide_table_of_contents: true
 
         - Utiliser des **variables**, **types de base**, **opérateurs** et **fonctions**
         - Utiliser des **structures conditionnelles** et **expressions logiques**
-        - Travailler avec des **boucles**, **listes**, **tuples** et **dictionnaires**
+        - Utiliser des **structures répétitives**
         - **Décomposer** un algorithme en **fonctions réutilisables**
         - Évaluer la **performance** d’un algorithme avec des mesures de temps
         - Appliquer la logique pour résoudre un problème **numérique complexe** sans bibliothèque
+        - Valider le bon fonctionnement de vos algorithmes à l'aide de jeux d'essais
         :::
     </Column>
     <Column>
@@ -29,7 +30,6 @@ hide_table_of_contents: true
         Puis vous devrez :
         - Comparer ces méthodes à la fonction standard `math.sqrt`
         - Étendre le calcul à une racine n-ième
-        - Effectuer une extension vers le **logarithme**
         :::
     </Column>
 </Row>
@@ -69,8 +69,8 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         - 2² = 4
         - 3² = 9
 
-        Comme **8** est entre 4 et 9, on sait que la racine de 8 est entre 2 et 3.
-        Donc, la racine de 8 ressemble à 2.8...
+        Comme **8** est entre 4 et 9, on sait que la racine de 8 est entre 2 et 3, car 3² est plus grand que 8.
+        Donc, la racine de 8 ressemble à 2 point quelque chose (ex : 2.0..., 2.1..., ..., 2.9...). 
 
         On passe à la première décimale :
         - 2.0² = 4
@@ -84,9 +84,9 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         - 2.8² = 7.84
         - 2.9² = 8.41
 
-        La racine de 8 ressemble donc à 2.8....
+        La racine de 8 ressemble donc à 2.8...., car 2.9² est plus grand que 8.
 
-        Et ainsi de suite pour les décimales suivantes.\
+        Et on fait ainsi de suite pour les décimales suivantes.\
         On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
         :::
     </Column>
@@ -98,7 +98,24 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         → nouvel intervalle [0, 4] → milieu = 2 → 2² = 4 → trop petit \
         → nouvel intervalle [2, 4] → etc.
 
-        On continue ainsi jusqu'à la précision désirée.
+        On continue ainsi jusqu'à la précision désirée. Comment savoir qu'on a atteint la précision désirée?  \
+        Il faut regarder la différence entre les 2 intervalles (haut et bas), si elle est inférieure à la précision souhaitée, 
+        on peut alors considérer qu'on a suffisamment réduit l'intervalle pour atteindre la précision souhaitée et qu'il n'est pas nécessaire de continuer davantage.
+        La réponse recherchée sera alors la moyenne entre les 2 intervalles.
+        \
+        Exemple
+        \
+        Si on souhaite 2 décimales de précision, 
+        on devrait alors arrêter quand la différence entre les 2 intervalles est inférieure à 0.001, 
+        \
+            Début : [0, 8] -> 8 - 0 = 8 ... c'est plus grand que 0.001 on continue ... \
+                    nouvel intervalle [0, 4] -> 4 - 0 = 4 ... c'est plus grand que 0.001 on continue \
+                    nouvel intervalle [2, 4] -> 4 - 2 = 2 ... c'est plus grand que 0.001 on continue \
+                    ... \
+                    nouvel intervalle [2.828125, 2.8291015625] → 2.8291015625 - 2.828125 = 0.0009765625 on est en bas de 0.001 on peut arrêter!
+                    
+                    la réponse serait la moyenne de 2.828125 et 2.8291015625 qu'on arrondie à 2 décimales
+
         :::
 
         Pour **chacune des deux méthodes**, vous devez créer une fonction qui prendra un nombre en paramètre et renverra
@@ -131,7 +148,7 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         Vous allez comparer vos méthodes avec `math.sqrt` sur 10 000 nombres pseudo-aléatoires.\
         Pour y parvenir, vous devez :
 
-        1. Générer une liste de **10 000 nombres flottants** aléatoires entre 10 et 1000.
+        1. À l'aide d'une boucle, générez  **10 000 nombres flottants** aléatoires entre 10 et 1000.
         2. Chronométrer le temps pour :
         - Calculer toutes les racines avec **votre première fonction**
         - Calculer les racines avec **votre deuxième fonction**
@@ -145,7 +162,8 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une
         racine n-ième
         Pour chacune de vos 2 fonctions, faites-en une copie et généralisez-la pour qu'elle calcule la
-        racine n-ième d'un nombre, en prenant `base` et `nombre` comme paramètres.
+        racine n-ième d'un nombre, vous devez rajouter un paramètre `base` (ex. : 2 pour racine carrée, 3 pour racine cubique, etc.).
+        Il suffit ensuite de faire un changement minime aux 2 algorithmes pour calculer n'importe quelle racine n-ième.
 
         Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et
         quatrième de 8, 9, 81 et 123.
