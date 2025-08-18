@@ -36,8 +36,6 @@ import TabItem from '@theme/TabItem';
         - ✅ De pouvoir les améliorer petit à petit.
         :::
 
-        ---
-
         :::info
         Lisez la section [Fichier Python](/recettes/creer-python) pour apprendre à créer et exécuter un script Python.
 
@@ -47,15 +45,11 @@ import TabItem from '@theme/TabItem';
         1
         2
         3
+        TODO
         ```
         :::
 
-
-
-
-
-
-        ## Demo 2 : bonjour le monde en python, dans un fichier texte
+        ## Bonjour le monde en python, dans un fichier texte
 
         On va vite vouloir donner plein d'ordres à l'ordinateur en lui parlant en Python.
 
@@ -66,9 +60,7 @@ import TabItem from '@theme/TabItem';
         fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
         le mélanger avec les ".pdf" et les ".jpg".
 
-        On ouvre un éditeur de texte. Il y en a plein, nous, on va partir Notepad++.
-        - on ouvre le menu **Démarrer** de Windows
-        - on tape "not" et il devrait apparaitre une liste avec Notepad++
+
         - on va taper dans la zone du fichier les instructions, une par ligne
         ```python
         # ceci est un commentaire, cette ligne est pour les humains, l'ordinateur va l'ignorer
@@ -77,26 +69,39 @@ import TabItem from '@theme/TabItem';
         print("Ca va aujourd' hui?")
         print( 4 / 5 * (9 + 6) )
         ```
-        - on sauve le fichier à un endroit où vous saurez le retrouver, par exemple sur le bureau avec comme nom
-        "bonjour.py"
-        - jusqu'ici ça ne fait rien
+
         - on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres,
         d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
-        - dans le terminal, on va taper
-        ```shell
-        python3 c:\Users\monmatricule\Desktop\bonjour.py
-        ```
-        - Vous venez d'exécuter un Python
+
+        - Vous venez d'exécuter un script Python
         - Regardons ce qu'on vient de voir
         - l'interpréteur a affiché trois lignes
         - il exécute dans l'ordre de haut en bas
         - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
-        - les espaces peuvent être importants ou pas :
-        - en début de ligne c'est important
-        - dans une expression, c'est ignoré
 
+    </TabItem>
 
-        ## Demo 3 : bonjour le monde dans un environnement de développement
+    <TabItem value="debug" label="Débogueur">
+
+        :::tip Pourquoi utiliser le débogueur
+        Le débogueur est un outil puissant qui permet de suivre l'exécution de votre code pas à pas.
+        Il vous permet de voir la valeur des variables, d'arrêter l'exécution à des points spécifiques (points d'arrêt),
+        et de comprendre comment votre programme fonctionne en détail.
+
+        Utiliser le débogueur est essentiel pour :
+        - Comprendre le flux d'exécution de votre programme.
+        - Analyser le comportement de votre code dans des situations spécifiques.
+        - Identifier et corriger les erreurs dans votre code.
+        :::
+
+        :::info Utilisation du débogueur dans PyCharm
+        Lisez la section [Déboguer](/recettes/deboguer-point-arret) pour apprendre à utiliser le débogueur dans PyCharm.
+
+        Ensuite, avec le script Python créé à la section [Script](/cours/rencontre2?onglet=script), ajoutez un point d'arrêt
+        et exécutez le script en mode débogage pour observer son comportement.
+        :::
+
+        ## Bonjour le monde dans un environnement de développement
 
         On a gagné, on a perdu
         - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
@@ -129,36 +134,6 @@ import TabItem from '@theme/TabItem';
         - en cliquant dans la marge du code, on va mettre un point d'arrêt
         - on va maintenit partir notre code en mode débogage en cliquant sur la bestiole, sur le bug
         - l'exécution s'arrête sur le point d'arrêt
-
-        ## Jargon
-
-        Dans tous les domaines, il y a un vocabulaire un jargon, on a déjà rencontré des termes par très intuitifs :
-        - "print" ("imprimer") qui veut dire affiche à l'écran au lieu d'imprimer du papier
-        - "exécuter" un programme !?
-
-        On va essayer de pointer les termes jargoniques au fur et à mesure.
-
-    </TabItem>
-
-    <TabItem value="debug" label="Débogueur">
-
-        :::tip Pourquoi utiliser le débogueur
-        Le débogueur est un outil puissant qui permet de suivre l'exécution de votre code pas à pas.
-        Il vous permet de voir la valeur des variables, d'arrêter l'exécution à des points spécifiques (points d'arrêt),
-        et de comprendre comment votre programme fonctionne en détail.
-
-        Utiliser le débogueur est essentiel pour :
-        - Comprendre le flux d'exécution de votre programme.
-        - Analyser le comportement de votre code dans des situations spécifiques.
-        - Identifier et corriger les erreurs dans votre code.
-        :::
-
-        :::info Utilisation du débogueur dans PyCharm
-        Lisez la section [Déboguer](/recettes/deboguer-point-arret) pour apprendre à utiliser le débogueur dans PyCharm.
-
-        Ensuite, avec le script Python créé à la section [Script](/cours/rencontre2?onglet=script), ajoutez un point d'arrêt
-        et exécutez le script en mode débogage pour observer son comportement.
-        :::
 
     </TabItem>
 
