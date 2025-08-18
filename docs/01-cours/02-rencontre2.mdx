@@ -14,59 +14,26 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="scripts" label="Scripts" default>
+    <TabItem value="script" label="Script" default>
 
-        :::tip 📝 Écrire et exécuter son premier script Python
+        :::warning Retour sur le mode interactif
 
-        ### Étape 1 : Créer un fichier
+        Le mode interactif est pratique pour tester des idées, mais :
 
-        Dans PyCharm :
+        - Tout disparaît dès que vous fermez la console (ou PyCharm).
+        - Vous ne pouvez pas conserver votre code.
+        - Vous devez tout retaper à chaque fois.
 
-        1. Clic droit sur votre projet dans la colonne de gauche.
-        2. Sélectionnez **New → Python File**.
-        3. Nommez le fichier `mon_premier_programme`.
-        4. PyCharm va automatiquement ajouter `.py` à la fin.
-
-        ---
-
-        ### Étape 2 : Écrire du code
-
-        Dans le fichier, écrivez :
-
-        ```python
-        print("Bonjour le monde!")
-        ```
-
-        ---
-
-        ### Étape 3 : Exécuter le fichier
-
-        Dans le Terminal de PyCharm, tapez :
-
-        ```bash
-        python mon_premier_programme.py
-        ```
-
-        Vous devriez voir s'afficher :
-
-        ```
-        Bonjour le monde!
-        ```
-
-        Félicitations, vous avez exécuté votre premier **script Python**!
-
+        C'est pourquoi, à partir de maintenant, nous allons créer des [**scripts Python**](/recettes/creer-python), c'est-à-dire des fichiers `.py` dans lesquels nous allons écrire et conserver tout notre code.
         :::
 
-        ---
-
-        :::info 🚀 Pourquoi écrire des scripts?
+        :::tip 🚀 Pourquoi écrire des scripts?
 
         Écrire son code dans des fichiers `.py` permet :
 
-        - ✅ De conserver vos programmes
-        - ✅ De pouvoir les exécuter autant de fois que vous voulez
-        - ✅ De pouvoir les améliorer petit à petit
-        - ✅ De les partager facilement avec d'autres personnes
+        - ✅ De conserver vos programmes.
+        - ✅ De pouvoir les exécuter autant de fois que vous voulez.
+        - ✅ De pouvoir les améliorer petit à petit.
         :::
 
         ---
@@ -158,6 +125,30 @@ import TabItem from '@theme/TabItem';
         - "exécuter" un programme !?
 
         On va essayer de pointer les termes jargoniques au fur et à mesure.
+
+    </TabItem>
+
+    <TabItem value="debug" label="Débogueur">
+
+        :::tip Débogueur
+        Le débogueur est un outil puissant qui permet de suivre l'exécution de votre code pas à pas.
+        Il vous permet de voir la valeur des variables, d'arrêter l'exécution à des points spécifiques (points d'arrêt),
+        et de comprendre comment votre programme fonctionne en détail.
+        :::
+
+        :::info Utilisation du débogueur dans PyCharm
+        Lisez la section [Déboguer](/recettes/deboguer-point-arret).
+
+        Ensuite, créez un script Python simple, par exemple `debug_exemple.py`, avec le code suivant :
+
+        ```python
+
+        ```
+        :::
+
+    </TabItem>
+
+    <TabItem value="trace" label="Trace">
 
     </TabItem>
 
