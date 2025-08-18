@@ -113,7 +113,7 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         on devrait alors arrêter quand la différence entre les 2 intervalles est inférieure à 0.001
         \
         \
-            Début : [0, 8] → 8 - 0 = 8 ... c'est > 0.001 on continue ... \
+            Début : [0, 8] → 8 - 0 = 8 ... c'est > 0.001 → on continue ... \
                     nouvel intervalle [0, 4] → 4 - 0 = 4 ... c'est > 0.001 → on continue \
                     nouvel intervalle [2, 4] → 4 - 2 = 2 ... c'est > 0.001 → on continue \
                     ... \
@@ -163,10 +163,11 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         :::
     </Column>
     <Column>
-        :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une
-        racine n-ième
+        :::tip <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 🌱 Généraliser à une racine n-ième
         Pour chacune de vos 2 fonctions, faites-en une copie et généralisez-la pour qu'elle calcule la
-        racine n-ième d'un nombre, vous devez rajouter un paramètre `base` (ex. : 2 pour racine carrée, 3 pour racine cubique, etc.).
+        racine n-ième d'un nombre. \
+        \
+        Vous devez rajouter un paramètre `base` (ex. : 2 pour racine carrée, 3 pour racine cubique, etc.).
         Il suffit ensuite de faire un changement minime aux 2 algorithmes pour calculer n'importe quelle racine n-ième.
 
         Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et
