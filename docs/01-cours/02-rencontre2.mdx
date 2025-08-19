@@ -49,6 +49,11 @@ import TabItem from '@theme/TabItem';
         6 / 2 * (1 + 2)
         print("Ca va aujourd' hui?")
         print( 4 / 5 * (9 + 6) )
+        x = 6
+        y = 7
+        resultat = x * y
+        x = 0
+        y = resultat
         ```
 
         On va ensuite *exécuter* notre script (il ne s'agit pas de le tuer).<br />
@@ -64,6 +69,7 @@ import TabItem from '@theme/TabItem';
         - Il a ensuite exécuté la ligne 4, qui est un calcul, mais comme on ne lui a pas demandé d'afficher le résultat, il ne l'affiche pas.
         - Il a ensuite exécuté la ligne 5, qui est encore une instruction `print`, et il a affiché le texte entre guillemets.
         - Il a ensuite exécuté la ligne 6, qui est encore une instruction `print`, et il a affiché le résultat du calcul entre parenthèses.
+        - Il a ensuite exécuté les lignes 7 à 11, qui sont des affectations de variables. Comme on ne lui a pas demandé d'afficher quoi que ce soit, il n'affiche rien.
 
         :::
 
@@ -93,46 +99,43 @@ import TabItem from '@theme/TabItem';
         - Identifier et corriger les erreurs dans votre code.
         :::
 
-        :::info Utilisation du débogueur dans PyCharm
-        Lisez la section [Déboguer](/recettes/deboguer-point-arret) pour apprendre à utiliser le débogueur dans PyCharm.
-
-        Ensuite, avec le script Python créé à la section [Script](/cours/rencontre2?onglet=script), ajoutez un point d'arrêt
-        et exécutez le script en mode débogage pour observer son comportement.
-        :::
-
-        ## Bonjour le monde dans un environnement de développement
-
-        On a gagné, on a perdu
-        - on a gagné qu'on peut lancer plein d'ordres en exécutant un fichier Yeah!
-        - on a perdu parce que ça va tellement vite qu'on ne sait plus trop quel ordre a provoqué quoi
+        :::info Bonjour le monde dans un environnement de développement
 
         On va être honnête, vos scripts ne vont pas souvent faire ce que vous voulez. Par contre, ils
-        vont faire exactement ce que vous avez écrit. Il va donc falloir souvent trouver où moi humain
-        je me suis mal exprimé.
+        vont faire exactement ce que vous avez écrit. On va donc avoir besoin d'une méthode efficace pour comprendre ce qui se passe dans notre code.
 
-        On va alors utiliser un environnement de développement pour se doter des pouvoirs super :
-        - on va pouvoir arrêter le temps
-        - on va pouvoir voir à l'intérieur de l'ordinateur
+        Dans un environnement de développement (ou *IDE, Integrated Developpement Environment*) comme PyCharm, on pouvoir :
+        - arrêter le temps!
+        - et voir à l'intérieur de l'ordinateur!
 
-        On va partir PyCharm pour exécuter notre script en mode super développeur :
-        - partir l'application PyCharm, on appelle ça un IDE
-        - Integrated Developpement Environment, un environnement intégré pour programmer
-        - créer un fichier test_ide.py avec le contenu suivant
+        Lisez la section [Déboguer](/recettes/deboguer-point-arret) pour apprendre à utiliser le débogueur dans PyCharm.
+
+        Ensuite, mettez un point d'arrêt à la ligne de la première instruction (les commentaires ne sont pas des instructions) dans le script Python créé à la section [Script](/cours/rencontre2?onglet=script), donc à la ligne `print("bonjour...` :
         ```python
-        # commentaire : une ligne pour le programmeur qui est ignorée par l'ordi, commence par un "#"
+        # ceci est un commentaire, cette ligne est pour les humains
+        # l'ordinateur va l'ignorer car elle commence par un "#"
         print("bonjour bonjour cher maitre humain")
-        6/2*(1+2)
-        print("Ca va aujourd' hui?") # les espaces entre "" sont pris en compte
-        print( 4 / 5 * (9 + 6) ) # les espaces dans une expression sont ignorés
+        6 / 2 * (1 + 2)
+        print("Ca va aujourd' hui?")
+        print( 4 / 5 * (9 + 6) )
+        x = 6
+        y = 7
+        resultat = x * y
+        x = 0
+        y = resultat
         ```
-        - l'exécuter en cliquant sur le triangle vert
-        - on devrait voir.
 
-        ### le point d'arrêt : arrêter le temps
+        Roulez votre script, mais cette fois, en mode débogage (en cliquant sur l'icône du bug 🪲).
+        - L'exécution va s'arrêter sur le point d'arrêt.
+        - La ligne de code où se trouve le point d'arrêt sera mise en surbrillance et n'aura pas encore été exécutée.
+        - Si vous cliquez sur le bouton **Step Over** <img src={require('/img/icons/stepover.png').default} alt="Step Over" width="24" style={{ verticalAlign: 'middle' }} />, l'instruction sera exécutée et vous pourrez voir le résultat dans la console.
+        - Si vous continuer à cliquer sur <img src={require('/img/icons/stepover.png').default} alt="Step Over" width="24" style={{ verticalAlign: 'middle' }} />, vous pourrez exécuter le script ligne par ligne et observer son comportement.
+        - Si vous avez plus d'un point d'arrêt, vous pouvez cliquer sur le bouton **Resume** <img src={require('/img/icons/resume.png').default} alt="Resume" width="24" style={{ verticalAlign: 'middle' }} /> qui permet de continuer l'exécution jusqu'au prochain point d'arrêt.
+        - Vous pouvez également arrêter l'exécution à tout moment en cliquant sur le bouton **Stop** <img src={require('/img/icons/stop.png').default} alt="Stop" width="24" style={{ verticalAlign: 'middle' }} />.
 
-        - en cliquant dans la marge du code, on va mettre un point d'arrêt
-        - on va maintenit partir notre code en mode débogage en cliquant sur la bestiole, sur le bug
-        - l'exécution s'arrête sur le point d'arrêt
+        Lorsque vous arrivez à la ligne `x = 6`, avancez une ligne à la fois et observez les variables qui sont créées et affichées dans la fenêtre de débogage, ainsi que leurs modification. En particulier, notez le changement du contenu des variables `x`et `y`lorsqu'elles sont modifiées.
+
+        :::
 
     </TabItem>
 
