@@ -36,28 +36,34 @@ import TabItem from '@theme/TabItem';
         Ça devient pénible de les écrire les uns après les autres en mode interactif.<br />
         Alors, on va écrire les ordres les uns après les autres dans un fichier.
 
-        On va appeler ça un "programme Python" ou un "script Python". Concrètement, c'est un
-        fichier avec des ordres en Python. On va toujours le faire finir par ".py" pour pas
-        le mélanger avec les ".pdf" et les ".jpg".
+        On va appeler ça un *script Python*.<br />
+        Concrètement, c'est juste un fichier texte avec des instructions en Python.<br />
+        On va faire terminer son nom par `.py` pour éviter de le mélanger avec les fichiers `.pdf`, `.jpg`, etc.
 
-
-        - on va taper dans la zone du fichier les instructions, une par ligne
+        oOn va taper dans la zone du fichier les instructions, une par ligne.<br />
+        Par exemple :
         ```python
-        # ceci est un commentaire, cette ligne est pour les humains, l'ordinateur va l'ignorer
+        # ceci est un commentaire, cette ligne est pour les humains
+        # l'ordinateur va l'ignorer car elle commence par un "#"
         print("bonjour bonjour cher maitre humain")
-        6/2*(1+2)
+        6 / 2 * (1 + 2)
         print("Ca va aujourd' hui?")
         print( 4 / 5 * (9 + 6) )
         ```
 
-        - on va donc "exécuter" notre script, il ne s'agit pas de le tuer. On demande à python de suivre nos ordres,
-        d'"exécuter" nos ordres. Comme le script est une suite d'ordre, on "exécute un script"
+        On va ensuite *exécuter* notre script (il ne s'agit pas de le tuer).<br />
+        On demande à python de suivre nos ordres, d'*exécuter* nos instructions, une par une.
 
-        - Vous venez d'exécuter un script Python
-        - Regardons ce qu'on vient de voir
-        - l'interpréteur a affiché trois lignes
-        - il exécute dans l'ordre de haut en bas
-        - il n'affiche pas mon calcul de la ligne 2, en mode script, si on ne demande pas de "print" rien de s'affiche
+        En suivant [cette recette](/recettes/creer-python), créez, dans un projet PyCharm, un script Python, copiez-y le code ci-haut, et exécutez-le.
+
+        Que voyez-vous?
+        - L'interpréteur a affiché trois lignes. Pourquoi?
+        - Il a exécuté les instructions ligne par ligne, de haut en bas.
+        - Il n'affiche rien pour les 2 premières lignes, car elles sont des *commentaires*.
+        - Il a exécuté la ligne 3, qui est une instruction `print`, et il a affiché le texte entre guillemets.
+        - Il a ensuite exécuté la ligne 4, qui est un calcul, mais comme on ne lui a pas demandé d'afficher le résultat, il ne l'affiche pas.
+        - Il a ensuite exécuté la ligne 5, qui est encore une instruction `print`, et il a affiché le texte entre guillemets.
+        - Il a ensuite exécuté la ligne 6, qui est encore une instruction `print`, et il a affiché le résultat du calcul entre parenthèses.
 
         :::
 
@@ -70,21 +76,6 @@ import TabItem from '@theme/TabItem';
         - ✅ De conserver vos programmes.
         - ✅ De pouvoir les exécuter autant de fois que vous voulez.
         - ✅ De pouvoir les améliorer petit à petit.
-        :::
-
-        ---
-
-        :::info
-        Lisez la section [Fichier Python](/recettes/creer-python) pour apprendre à créer et exécuter un script Python.
-
-        Ensuite, créez un script Python simple avec le code suivant :
-
-        ```python
-        1
-        2
-        3
-        TODO
-        ```
         :::
 
     </TabItem>
