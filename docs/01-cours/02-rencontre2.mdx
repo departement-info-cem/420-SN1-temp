@@ -456,19 +456,32 @@ import TabItem from '@theme/TabItem';
 
         Pour les exercices de cette section, vous pouvez écrire vos réponses sur papier (comme ce sera le cas en examen) ou vous pouvez [créer un fichier *markdown*](/recettes/creer-markdown) dans votre projet PyCharm créé plus haut.
 
-        :::info Exercice -
+        :::info Exercice - Points d'arrêt
 
-        :::
+        Vous allez exécuter un script auquel on ne comprend rien pour l'instant.<br />
+        Le but est de se familiariser avec le débogueur.
 
-        :::info Exercice -
+        Tout d'abord, créez un nouveau fichier points_arrets.py et copiez-y le code suivant :
+        ```python
+        # ceci est une fonction
+        def calculComplexe(a, b, c):
+            return a ** b + c * (b - a)
 
-        :::
+        print("Arrêter le temps, c'est impossible Marty.")
+        a = calculComplexe(3, 5, 7)
+        b = calculComplexe(a, 6, 9)
+        c = calculComplexe(b, a, b)
+        a = calculComplexe(a, a, a)
+        print("Le resultat est ", calculComplexe(a, b, c))
+        ```
 
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
+        On veut savoir quelles sont les valeurs de `a` au fil de l'exécution du script.<br />
+        - Faites d'abord une trace de ce script, en essayant de deviner les valeurs de `a` à chaque étape.
+        - Ensuite, placez un point d'arrêt sur la ligne `a = calculComplexe(3, 5, 7)` et exécutez le script en mode débogage.
+        - Avancez ligne par ligne et observez les valeurs de `a`, `b` et `c` dans la fenêtre de débogage.
+        - Notez les valeurs de `a` à chaque étape et comparez-les avec votre trace.
+        - Si vous avez des différences, essayez de comprendre pourquoi.
+        - N'hésitez pas à demander de l'aide si vous avez des difficultés.
 
         :::
 
@@ -476,40 +489,28 @@ import TabItem from '@theme/TabItem';
 
         Pour les exercices de cette section, vous devez créer des fichiers `.py` dans un nouveau projet PyCharm.
 
-        :::info Exercice - Points d'arrêt
+        :::info Exercice - *Free style*
 
-        On va exécuter un script auquel on ne comprend rien pour l'instant. Le but
-        est de se familiariser avec le débogueur.
+        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python.<br />
+        Vous pouvez inclure :
+        - des déclarations de variables
+        - des calculs avec affectation des résultats dans des variables
+        - des affichages avec `print`
 
-        Tout d'abord créer un nouveau fichier points_arrets.py et y copier le code suivant :
-        ```python
-        # ceci est une fonction, on va en parler en semaine 4
-        def calculComplexe(a, b, c):
-            return a**b + c*(b-a)
-
-        print("Arreter le temps, c'est impossible Marty")
-        a = calculComplexe(3,5,7)
-        b = calculComplexe(a,6,9)
-        c = calculComplexe(b,a,b)
-        a = calculComplexe(a,a,a)
-        print("le resultat est ", calculComplexe(a, b, c))
-        ```
-
-        On voudrait savoir quelles sont les valeurs de *a* au fil de l'exécution du script. Vous pouvez soit :
-        - essayer de calculer à la main combien ça vaut
-        - poser un point d'arrêt et observer
+        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur.<br />
+        👉 Ce sera l'outil le plus utile de votre vie pour programmer!
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - CONVERTIR CELSIUS EN FAHRENHEIT
 
-        Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python. Vous pouvez inclure :
-        - des déclarations de variables
-        - des calculs avec assignations
-        - des affichages avec print
-
-        Exécutez votre code en mode débogage pour vous familiariser avec le débogueur (ce sera l'outil le plus utile de
-        votre vie pour programmer)
+        Écrire un programme pour convertir des degrés Celsius en Fahrenheit.
+        - Le programme doit demander à l'utilisateur une température en degrés Celsius.
+        - Le programme doit afficher la valeur initiale en Celsius (C) ainsi que la valeur en Fahrenheit (F).
+        - La formule pour convertir est la suivante :
+        $$
+        F = \left( C \times \frac{9}{5} \right) + 32
+        $$
 
         :::
 
