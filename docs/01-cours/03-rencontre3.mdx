@@ -5,7 +5,7 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# ⚙️ Fonctions
+# ⚙️ Création de fonctions
 
 # 🏗️ en construction 🏗
 
@@ -184,6 +184,162 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
+    <TabItem value="simple" label="Fonction simple">
+
+        :::info Fonction simple
+
+        Une fonction est un bloc de code réutilisable qui effectue une tâche spécifique.<br />
+        Elle est définie à l'aide du mot-clé `def`, suivi du nom de la fonction, de parenthèses et d'un `:`.<br />
+
+        Le code à l'intérieur de la fonction est indenté avec une tabulation (touche `TAB`).<br />
+        En Python, cette indentation est essentielle pour délimiter le bloc de code de la fonction.
+
+        ```python
+        def saluer():
+            print("Bonjour!")
+        ```
+
+        Dans cet exemple, nous avons défini une fonction nommée `saluer` qui affiche "Bonjour!" lorsqu'elle est appelée.
+
+        Une fois définie, la fonction peut être appelée à tout moment dans le code en utilisant son nom suivi de parenthèses.
+
+        ```python
+        saluer()  # Appel de la fonction
+        ```
+
+        *Appeler* une fonction se fait en écrivant son nom suivi de parenthèses.<br />
+        Lorsqu'une fonction est appelée, le code à l'intérieur de la fonction est exécuté.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="parametres" label="Paramètres">
+
+        :::info Paramètres de fonction
+
+        Les fonctions peuvent accepter des paramètres, qui sont des valeurs d'entrée que la fonction peut utiliser pour
+        effectuer son travail.<br />
+        Lorsqu'une fonction est appelée, les arguments fournis sont associés aux paramètres définis dans la fonction.
+
+        ```python showLineNumbers
+        def saluer(nom):
+            print(f"Bonjour, {nom}!")
+
+        saluer("Alice")  # Affiche "Bonjour, Alice!"
+        ```
+
+        Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant
+        ce paramètre.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="retour" label="Retour">
+
+        :::info Retour de fonction
+
+        Une fonction peut retourner une valeur à l'aide du mot-clé `return`.<br />
+        Lorsqu'une fonction est appelée, elle exécute son code et renvoie la valeur spécifiée par `return` à l'endroit où elle a été appelée.<br />
+        Si aucune valeur n'est spécifiée, la fonction renvoie la valeur `None` par défaut.
+
+        ```python showLineNumbers
+        def carre(x):
+            return x * x
+
+        resultat = carre(5)
+        print(resultat)  # Affiche 25
+        ```
+
+        Dans cet exemple, la fonction `carre` prend un paramètre `x`, calcule son carré et le retourne.<br />
+        La valeur retournée est ensuite stockée dans la variable `resultat`.
+
+        :::
+
+        ---
+
+        :::tip Retour avec plusieurs valeurs
+
+        Une fonction peut aussi retourner plusieurs valeurs en les séparant par des virgules.<br />
+        Lorsqu'une fonction retourne plusieurs valeurs, elles sont renvoyées sous forme de *tuple* (une structure de données que nous verrons plus tard).
+
+        ```python showLineNumbers
+        def diviser(a, b):
+            quotient = a / b
+            reste = a % b
+            return quotient, reste
+
+        q, r = diviser(10, 3)
+        print(f"Quotient: {q}, Reste: {r}")  # Affiche "Quotient: 3.3333333333333335, Reste: 1"
+        ```
+
+        Dans cet exemple, la fonction `diviser` retourne à la fois le quotient et le reste de la division.<br />
+        Ces valeurs sont ensuite assignées à deux variables distinctes, séparées par une virgule lors de l'appel de la fonction.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="appels" label="Appels">
+
+        :::info Appels
+
+        Les fonctions peuvent appeler d'autres fonctions.<br />
+        Cela est utile pour décomposer des tâches complexes en sous-tâches plus simples.
+
+        ```python showLineNumbers
+        def ajouter(x, y):
+            return x + y
+
+        def multiplier(x, y):
+            return x * y
+
+        def calculer_expression(a, b, c):
+            somme = ajouter(a, b)
+            resultat = multiplier(somme, c)
+            return resultat
+
+        valeur = calculer_expression(2, 3, 4)
+        print(valeur)  # Affiche 20
+        ```
+
+        Dans cet exemple, la fonction `calculer_expression` appelle les fonctions `ajouter` et `multiplier` pour
+        effectuer une série de calculs.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="portee" label="Portée">
+
+        :::info Portée des variables
+
+        La portée d'une variable détermine où cette variable peut être accédée dans le code.<br />
+        En Python, il existe deux types principaux de portée : locale et globale.
+
+        - **Portée locale** : Une variable définie à l'intérieur d'une fonction est locale à cette fonction et ne peut pas être accédée en dehors de celle-ci.
+        - **Portée globale** : Une variable définie en dehors de toute fonction est globale et peut être accédée depuis n'importe quelle fonction dans le même module.
+
+        ```python showLineNumbers
+        x = 10  # Variable globale
+
+        def ma_fonction():
+            y = 5  # Variable locale
+            print(f"Valeur locale y: {y}")
+            print(f"Valeur globale x: {x}")
+
+        ma_fonction()
+        print(f"Valeur globale x: {x}")
+        # print(y)  # Cela provoquerait une erreur car y n'est pas défini ici
+        ```
+
+        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`, tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
+
+        :::
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ## ✏️ Exercices de compréhension
@@ -192,7 +348,7 @@ import TabItem from '@theme/TabItem';
         Sans exécuter le code, qu'affichera le programme ci-dessous?<br />
         Faites la trace de l'exécution.<br />
         En situation d'examen, ce type de question serait à faire sans l'ordinateur.
-        ```python
+        ```python showLineNumbers
         def fonction_lineaire(a, x, b) :
             print("appel de la fonction")
             resultat = a * x + b
@@ -213,7 +369,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Appel de fonction avec paramètres
         Faites la trace de l'exécution de ce code :
-        ```python
+        ```python showLineNumbers
         def triple(x):
             print("appel de triple")
             return 3 * x
@@ -233,7 +389,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Appel de fonction avec paramètres 2
         Faites la trace de l'exécution de ce code :
-        ```python
+        ```python showLineNumbers
         def ajoute_cinq(x):
             print("appel de ajoute_cinq")
             return x + 5
