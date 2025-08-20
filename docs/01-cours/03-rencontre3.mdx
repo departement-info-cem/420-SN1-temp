@@ -209,19 +209,110 @@ import TabItem from '@theme/TabItem';
         Validez votre trace en exécutant le code dans un script en mode débogage.
         :::
 
-        :::info Exercice -
+        ---
 
+        :::info Exercice -Appel de fonction avec paramètres
+        Faites la trace de l'exécution de ce code :
+        ```python
+        def triple(x):
+            print("appel de triple")
+            return 3 * x
+
+        def double_et_triple(x):
+            print("appel de double_et_triple")
+            return 2 * x + triple(x)
+
+        val = 4
+        res = double_et_triple(val)
+        print(res)
+        ```
+        Validez votre trace en l'exécutant en mode débogage.
         :::
 
-        :::info Exercice -
+        ---
 
+        :::info Exercice -Appel de fonction avec paramètres
+        Faites la trace de l'exécution de ce code :
+        ```python
+        def ajoute_cinq(x):
+            print("appel de ajoute_cinq")
+            return x + 5
+
+        def carre(x):
+            print("appel de carre")
+            return x * x
+
+        def calcul_final(a, b):
+            print("appel de calcul_final")
+            return carre(a) + ajoute_cinq(b)
+
+        x = 2
+        y = 3
+        resultat = calcul_final(x, y)
+        print(resultat)
+        ```
+        Validez votre trace en l'exécutant en mode débogage.
         :::
 
-        :::info Exercice -
-
-        :::
+        ---
 
         ## 🔨 Exercices de création
+
+        Pour les exercices de cette section, vous devez créer des fichiers `.py` dans un nouveau projet PyCharm.
+
+        :::info Exercice - Bonjour
+        Écris une fonction `dire_bonjour()` qui affiche simplement le message **"Bonjour!"** à l’écran.<br/>
+        Ensuite, modifie la fonction pour qu’elle prenne un **paramètre** `prenom` et affiche :
+        ```python
+        Bonjour, Alice!
+        ```
+        lorsqu’on appelle `dire_bonjour("Alice")`.
+        :::
+
+        ---
+
+        :::info Exercice - Conversion Celsius → Fahrenheit
+        Écrivez une fonction `celsius_vers_fahrenheit(celsius)` qui reçoit une température en **°C** et retourne sa valeur
+        en **°F** grâce à la formule
+
+        $$
+        \text{°F} = \left( \text{°C} \times \frac{9}{5} \right) + 32
+        $$
+
+        Exemples d’appels attendus :
+        ```python
+        print(celsius_vers_fahrenheit(0)) # 32.0
+        print(celsius_vers_fahrenheit(100)) # 212.0
+        ```
+        :::
+
+        ---
+
+        :::info Exercice - Aire d’un rectangle
+        Écrivez une fonction `aire_rectangle(longueur, largeur)` qui calcule et **retourne** l’aire d’un rectangle.<br />
+        Puis, appellez la fonction pour afficher l’aire d’un rectangle de 5 m par 3 m.
+        :::
+
+        ---
+
+        :::info Exercice - Réutilisation de fonctions
+
+        1) Écrivez une fonction `aire_rectangle(longueur, largeur)` qui calcule et **retourne** l’aire d’un rectangle.
+
+        2) Écrivez une deuxième fonction `volume_prisme(longueur, largeur, hauteur)` qui calcule et **retourne** le
+        volume d’un prisme rectangulaire.
+
+        👉 Cette deuxième fonction doit **réutiliser** (appeler) votre fonction `aire_rectangle` pour calculer la base du prisme avant de la
+        multiplier par la hauteur.
+
+        3) Testez vos fonctions en affichant :
+        - l’aire d’un rectangle de 5 × 3
+        - le volume d’un prisme de 5 × 3 × 4
+
+        *Objectif :* pratiquer la décomposition d’un problème en plusieurs fonctions réutilisables.
+        :::
+
+        ---
 
         :::info Exercice - ÉNERGIE CINÉTIQUE
 
@@ -240,6 +331,8 @@ import TabItem from '@theme/TabItem';
         - affichez les résultats.
 
         :::
+
+        ---
 
         :::info Exercice - FORCE GRAVITATIONNELLE
 
@@ -261,13 +354,13 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice -
-
-        :::
+        ---
 
         :::info Exercice -
 
         :::
+
+        ---
 
         :::info Exercice -
 
