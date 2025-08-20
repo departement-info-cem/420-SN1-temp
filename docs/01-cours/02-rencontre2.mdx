@@ -157,9 +157,50 @@ import TabItem from '@theme/TabItem';
 
         Lisez la section [Trace d'exécution](/recettes/produire-une-trace) pour apprendre à rédiger une trace.
 
-        Ensuite, créez une trace pour le script Python créé à la section [Script](/cours/rencontre2?onglet=script).
-        Vous pouvez le faire en exécutant le script en mode débogage et en notant les valeurs des variables et les
-        instructions exécutées à chaque étape.
+        Ensuite, avec un crayon et du papier, générez la trace (en tableau) pour le script Python créé à la section [Script](/cours/rencontre2?onglet=script), montré ci-bas.
+
+        Une fois votre trace faite, vous allez exécuter le code pour valider qu'elle est correcte, en suivant ces étapes :
+        - Placez un point d'arrêt sur la première ligne qui s'exécute.
+        - Lancez l'exécution en mode débogage.
+        - Sautez de ligne en ligne pour voir si la trace est correcte (valeurs des variables, instructions exécutées).
+
+        <Row>
+            <Column>
+
+                ```python showLineNumbers
+                # ceci est un commentaire, cette ligne est pour les humains
+                # l'ordinateur va l'ignorer car elle commence par un "#"
+                print("bonjour bonjour cher maitre humain")
+                6 / 2 * (1 + 2)
+                print("Ca va aujourd' hui?")
+                print( 4 / 5 * (9 + 6) )
+                x = 6
+                y = 7
+                resultat = x * y
+                x = 0
+                y = resultat
+                ```
+            </Column>
+            <Column>
+
+                <details>
+                    <summary>Vous devriez normalement obtenir cette trace :</summary>
+                    | # ligne | x | y | resultat | affichage |
+                    |---------|---|---|----------|-----------|
+                    | 3 | | | | bonjour bonjour cher maitre humain |
+                    | 4 | | | | |
+                    | 5 | | | | Ca va aujourd' hui? |
+                    | 6 | | | | 12 |
+                    | 7 | 6 | | | |
+                    | 8 | 6 | 7 | | |
+                    | 9 | 6 | 7 | 42 |
+                    | 10 | 0 | 7 | 42 |
+                    | 11 | 0 | 42 | 42 |
+                </details>
+
+            </Column>
+        </Row>
+
         :::
 
     </TabItem>
