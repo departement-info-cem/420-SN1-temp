@@ -1,30 +1,30 @@
-# 📦 Ajouter une librairie
+# 📚 Ajouter une bibliothèque
 
-La plupart des librairies Python sont disponibles sur le site [PyPi](https://pypi.org/).
-Une *librairie* (ou *package*) contient du code Python qu'on peut réutiliser dans nos projets pour éviter
+La plupart des bibliothèques Python sont disponibles sur le site [PyPi](https://pypi.org/).
+Une *bibliothèque* (ou *package*) contient du code Python qu'on peut réutiliser dans nos projets pour éviter
 de tout programmer soi-même.
 
 ---
 
-## Ajouter une librairie à votre projet
+## Ajouter une bibliothèque à votre projet
 
 1. Ouvrir le projet dans PyCharm.
 2. Allez dans **File > Settings**.
 3. Dans la section **Project**, sélectionnez **Python Interpreter**.
-4. Cliquez sur l'icône + pour ajouter une nouvelle librairie.
-5. Recherchez la librairie souhaitée (par exemple, `matplotlib`) dans la barre de recherche.
+4. Cliquez sur l'icône + pour ajouter une nouvelle bibliothèque.
+5. Recherchez la bibliothèque souhaitée (par exemple, `matplotlib`) dans la barre de recherche.
 6. Sélectionnez-la dans la liste et cliquez sur **Install Package**.
 7. Attendre que l’installation se termine (un message apparaîtra en bas à gauche).
-8. Fermer la fenêtre — la librairie est maintenant prête à être utilisée dans votre code.
+8. Fermer la fenêtre — la bibliothèque est maintenant prête à être utilisée dans votre code.
 
-Cela installera la librairie dans l'interpréteur Python de votre projet.
+Cela installera la bibliothèque dans l'interpréteur Python de votre projet.
 
 ---
 
 ## Vérifier l'installation
 
 1. Ouvrir un fichier `.py` ou un notebook.
-2. Importer la librairie, par exemple :
+2. Importer la bibliothèque, par exemple :
 
 ```python
 import matplotlib
@@ -36,10 +36,10 @@ import matplotlib
 
 :::tip Installer via terminal
 
-On peut aussi installer une librairie en ligne de commande, dans le terminal intégré :
+On peut aussi installer une bibliothèque en ligne de commande, dans le terminal intégré :
 
 ```bash
-pip install nom-de-la-librairie
+pip install nom-de-la-bibliotheque
 ```
 
 Exemple :
@@ -52,7 +52,7 @@ pip install matplotlib
 
 ---
 
-## Utiliser la librairie dans un fichier Python
+## Utiliser la bibliothèque dans un fichier Python
 
 ```python
 import matplotlib.pyplot as plt
@@ -67,7 +67,7 @@ plt.show()
 
 ---
 
-:::tip Versions de librairies
+:::tip Versions de bibliothèques
 
 On peut spécifier une version précise lors de l’installation :
 
@@ -75,7 +75,7 @@ On peut spécifier une version précise lors de l’installation :
 pip install pandas==1.5.3
 ```
 
-Ou mettre à jour une librairie existante :
+Ou mettre à jour une bibliothèque existante :
 
 ```bash
 pip install --upgrade pandas

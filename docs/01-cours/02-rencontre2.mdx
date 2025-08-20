@@ -342,29 +342,28 @@ import TabItem from '@theme/TabItem';
 
         :::info Modules
 
-        Certaines fonctions qui ne sont pas disponible par défaut. Pour être en mesure d'utiliser ces fonctions, nous
-        devons préalablement ajouter une instruction dans notre fichier Python qui va servir à charger le fichier
-        contenant ces fonctions (on nommera ce fichier un Module). Généralement, ces instructions sont placée au début
-        du fichier. Par la suite, pour utiliser/appeler une fonction du module, il faut simplement précéder le nom de la
-        fonction par le nom de son module.
+        Certaines fonctions **ne sont pas disponibles par défaut**.<br />
+        Pour les utiliser, il faut d’abord **importer un module** (un fichier qui contient des fonctions prêtes à
+        l’emploi).
 
-        ```python
-        import math #Importer le module "math"
+        👉 En général, on écrit les `import` au **début du fichier Python**.<br />
+        💡 Remarque : pour appeler une fonction d’un module, on utilise `nom_du_module.fonction()`.
+
+        Exemple simple avec le module `math` :
+
+        ```python showLineNumbers
+        import math # Importer le module "math"
+
         print(math.sqrt(16)) # Résultat : 4.0
         ```
 
-        Vous allez découvrir les modules suivants :
-        - math : ensemble de fonctions mathématiques avancées comme les logarithmes, les exposants, les racines carrées
-        et les fonctions trigonométriques
-        - random : permet de générer des nombres aléatoires, de sélectionner des éléments au hasard et de simuler des
-        événements probabilistiques
-        - os : ensemble de fonctionnalités pour intéragir avec le système d'exploitation (ex : Windows). Par exemple
-        permettre de pouvoir manipuler des fichiers ou des répertoires.
-        - sys : permet d'accéder à des informations sur l'environnement du programme et manipuler les entrées et sorties
-        - time : contient des fonctions pour manipuler le temps et les dates, comme la mesure du temps écoulé et les
-        conversions de format
-        - csv : facilite la lecture et l'écriture de fichiers CSV qui est un format couramment utilisés pour stocker des
-        données tabulaires
+        ### 📚 Modules utiles en Python
+        - `math` → fonctions mathématiques avancées (racines, logarithmes, trigonométrie, etc.)
+        - `random` → génération de nombres aléatoires, choix au hasard, tirages probabilistes
+        - `os` → interaction avec le système d’exploitation (fichiers, dossiers, etc.)
+        - `sys` → informations sur l’environnement du programme, gestion des entrées/sorties
+        - `time` → manipulation du temps et des dates (mesurer le temps écoulé, conversions de format)
+        - `csv` → lecture/écriture de fichiers CSV (format courant pour stocker des données tabulaires)
 
         :::
 
@@ -380,6 +379,15 @@ import TabItem from '@theme/TabItem';
         l'utilitaire "pip install" que nous verrons éventuellement. Par la suite, dans notre code, une bibliothèque
         s'utilise relativement de la même manière qu'un simple module.
 
+        :::
+
+        :::tip Alias de bibliothèque
+        On peut donner un alias à une bibliothèque lors de son importation pour simplifier son utilisation.<br />
+        Par exemple, on peut importer la bibliothèque `numpy` avec l'alias `np` pour faciliter son utilisation dans le code :
+        ```python showLineNumbers
+        import numpy as np # Importer la bibliothèque "numpy" avec l'alias "np"
+        print(np.array([1, 2, 3])) # Utiliser l'alias "np" pour accéder à la fonction "array"
+        ```
         :::
 
     </TabItem>
