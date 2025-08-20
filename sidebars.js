@@ -11,7 +11,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "2 - 📚 Biblio. de fonctions",
+      label: "2 - 📚 Scripts et fonctions",
       id: "cours/rencontre2",
     },
     {
