@@ -144,26 +144,7 @@ import TabItem from '@theme/TabItem';
 
         Définis cette fonction et appelle la avec un nombre de ton choix.
 
-        ## Exercice sur une variable locale à la méthode
-
-        ```python
-        def minMaxMoyenne(liste):
-            min = liste[0]
-            max = liste[0]
-            somme = 0
-            for element in liste:
-            if element < min:
-            min=element
-            if element> max:
-            max = element
-            somme += element
-
-        minMaxMoyenne([1,2,3,4,5])
-        a = min # est-ce que cette ligne est correcte?
-        ```
-
         TODO lien vers la portée
-
 
         ## Mais combien vaut x?
 
@@ -281,7 +262,36 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="appels" label="Appels">
+    <TabItem value="portee" label="Portée">
+
+        :::info Portée des variables
+
+        La portée d'une variable détermine où cette variable peut être accédée dans le code.<br />
+        En Python, il existe deux types principaux de portée : locale et globale.
+
+        - **Portée locale** : Une variable définie à l'intérieur d'une fonction est locale à cette fonction et ne peut pas être accédée en dehors de celle-ci.
+        - **Portée globale** : Une variable définie en dehors de toute fonction est globale et peut être accédée depuis n'importe quelle fonction dans le même module.
+
+        ```python showLineNumbers
+        x = 10  # Variable globale
+
+        def ma_fonction():
+            y = 5  # Variable locale
+            print(f"Valeur locale y: {y}")
+            print(f"Valeur globale x: {x}")
+
+        ma_fonction()
+        print(f"Valeur globale x: {x}")
+        # print(y)  # Cela provoquerait une erreur car y n'est pas défini ici
+        ```
+
+        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`, tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="pile" label="Pile d'appels">
 
         :::info Appels
 
@@ -309,32 +319,78 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-    </TabItem>
+        ---
 
-    <TabItem value="portee" label="Portée">
+        :::note Pile d'appels
 
-        :::info Portée des variables
-
-        La portée d'une variable détermine où cette variable peut être accédée dans le code.<br />
-        En Python, il existe deux types principaux de portée : locale et globale.
-
-        - **Portée locale** : Une variable définie à l'intérieur d'une fonction est locale à cette fonction et ne peut pas être accédée en dehors de celle-ci.
-        - **Portée globale** : Une variable définie en dehors de toute fonction est globale et peut être accédée depuis n'importe quelle fonction dans le même module.
+        Lorsqu'une fonction est appelée, elle est ajoutée à la *pile d'appels*.<br />
+        La pile d'appels est une structure de données qui suit le principe LIFO (Last In, First Out), ce qui signifie que la dernière fonction appelée est la première à être terminée.<br />
+        Cela permet de gérer les appels imbriqués de fonctions et de revenir à l'état précédent une fois qu'une fonction a terminé son exécution.
 
         ```python showLineNumbers
-        x = 10  # Variable globale
+        def fonction_a():
+            print("Fonction A")
+            fonction_b()
 
-        def ma_fonction():
-            y = 5  # Variable locale
-            print(f"Valeur locale y: {y}")
-            print(f"Valeur globale x: {x}")
+        def fonction_b():
+            print("Fonction B")
 
-        ma_fonction()
-        print(f"Valeur globale x: {x}")
-        # print(y)  # Cela provoquerait une erreur car y n'est pas défini ici
+        fonction_a()
         ```
 
-        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`, tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
+        Dans cet exemple, lorsque `fonction_a` est appelée, elle appelle `fonction_b`, qui est ajoutée à la pile d'appels.<br />
+        Une fois que `fonction_b` a terminé son exécution, le contrôle revient à `fonction_a`.
+
+        :::
+
+        ---
+
+        :::info Débogueur
+
+        Le débogueur permet d'inspecter tous les détails de la pile d'appels.<br />
+
+        Copiez le code ci-dessous dans un script, mettez un point d'arrêt sur la ligne 12 (`valeur = ...`) et exécutez le script en mode débogage.
+
+        ```python showLineNumbers
+        def ajouter(x, y):
+            return x + y
+
+        def multiplier(x, y):
+            return x * y
+
+        def calculer_expression(a, b, c):
+            somme = ajouter(a, b)
+            resultat = multiplier(somme, c)
+            return resultat
+
+        valeur = calculer_expression(2, 3, 4)
+        print(valeur)  # Affiche 20
+        ```
+
+        Pour *entrer* dans les fonctions appelées en mode débogage, il faut utiliser le bouton **Step Into** <img src={require('/img/icons/stepinto.png').default} alt="Step Into" width="24" style={{ verticalAlign: 'middle' }} />.<br />
+        Lorsque vous entrez dans la fonction `calculer_expression`, vous voyez :
+        - cette fonction s'ajouter au sommet de la pile d'appels (à gauche),
+        - les paramètres `a`, `b` et `c` apparaître dans la liste des variables (à droite) :
+
+        <img src={require('/img/recettes/pile_appels1.png').default} width="70%"/>
+
+        Si vous appuyez de nouveau sur <img src={require('/img/icons/stepinto.png').default} alt="Step Into" width="24" style={{ verticalAlign: 'middle' }} />, vous entrez dans la fonction `ajouter`.<br />
+        Vous pouvez voir que la fonction `ajouter` est maintenant au sommet de la pile d'appels, et les paramètres `x` et `y` sont affichés dans la liste des variables :
+        <img src={require('/img/recettes/pile_appels2.png').default} width="70%"/>
+        Remarquez que les paramètres `a`, `b` et `c` de `calculer_expression` ne sont plus visibles, car vous êtes maintenant dans la fonction `ajouter` et `a`, `b` et `c` sont **hors de portée**.
+
+        Vous pouvez cliquer sur le nom de la fonction `calculer_expression` dans la pile d'appels pour revenir à cette fonction et voir ses paramètres à nouveau :
+        <img src={require('/img/recettes/pile_appels3.png').default} width="70%"/>
+
+        :::
+
+        ---
+
+        :::tip Trace
+
+        Lorsque vous faite une trace d'un code avec des appels de fonctions, il est nécessaire de noter la pile d'appels et les variables locales à chaque étape.
+
+        Le débogueur est alors le meilleur outil pour valider votre trace... sauf en examen!
 
         :::
 
