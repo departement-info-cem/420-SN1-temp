@@ -48,7 +48,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9 - 📦 List, Set, Tuple, Dict",
+      label: "9 - 🌳 Structures de données",
       id: "cours/rencontre9",
     },
     {
