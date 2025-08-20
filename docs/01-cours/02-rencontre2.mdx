@@ -514,7 +514,37 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - DÉCOMPOSER UN MONTANT EN BILLETS
+
+        Écrire un programme permettant de décomposer un montant en billets de 100, 50, 20, 10 et 5\$.<br />
+        Le programme doit privilégier les billets de plus grandes valeurs.
+
+        Voici un exemple d'exécution :
+
+        ```python
+        Saisir un montant : 376.54
+        Billets :
+        3 x 100$
+        1 x 50$
+        1 x 20$
+        0 x 10$
+        1 x 5$
+        Reste 1.54$
+        ```
+
+        Indices :
+        - Commencer une étape à la fois, d'abord par les billets de 100\$, seulement ensuite ceux de 50\$, etc.
+        - Créer autant de variables que vous le croyez nécessaire (ex : montant_initial, montant_restant, nb_billets100, etc.)
+        - Vous aurez besoin de l'opérateur pour la division entière (`//`), par exemple :
+            - `376 // 100 == 3`
+            - `95 // 100 == 0`
+
+        Pour vous aider à débuter :
+        ```python showLineNumbers
+        # Demander à l'utilisateur de saisir un montant
+        montantInitial = float(input("Saisir un montant : "))
+        montantRestant = montantInitial
+        ```
 
         :::
 
