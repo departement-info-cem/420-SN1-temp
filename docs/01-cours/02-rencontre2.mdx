@@ -207,67 +207,132 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="fonctions" label="Fonctions">
 
-        :::info Fonctions
+        :::info 📌 Fonctions
 
-        Une fonction correspond à un ensemble d'instructions réutilisables pour lesquelles un nom leur a été attribué.
-        Le nom de la fonction est généralement choisi en conséquence pour être significatif afin d'aider les personnes
-        développeuses. Par exemple, on peut se douter avec le nom de la fonction "print" que quelque chose va être
-        imprimer/afficher à quelque part. Si on regarde la documentation de la fonction "print" on peut apprendre
-        qu'elle permet d'écrire du contenu dans le terminal.
+        Une **fonction** est un ensemble d’instructions réutilisables regroupées sous un nom.<br />
+        👉 Le nom doit être **significatif** : par exemple, on devine que `print()` sert à afficher quelque chose.
 
+        ---
 
-        ***Comprendre le fonctionnement d'une fonction avant son utilisation***
-        Quand on fait appel à une fonction, il n'est pas toujours important de comprendre les instructions derrières et
-        d'aller inspecter son code.
-        Il faut simplement s'assurer de comprendre comment l'utiliser. Il faut se poser par exemple comme question :
-        - la fonction nécessite quoi comme information être utilisée? (on nomme ces informations attendues par une
-        fonction des paramètres)
-        - la fonction retourne telle une valeur qu'on pourrait par la suite stocker dans une variable pour la
-        réutiliser?
-        - est-ce qu'il y a des cas limites que la fonction ne peut pas gérée ou pouvant causer des erreurs (on va alors
-        parler d'exceptions)
+        ### ⚡ Comprendre une fonction
+        Quand on utilise une fonction, il n’est pas nécessaire de savoir tout son code interne.<br />
+        Il faut surtout comprendre :
+        - Quels **paramètres** attend-elle ? (les infos entre `()`)
+        - Est-ce qu’elle **retourne une valeur** qu’on peut stocker ?
+        - Y a-t-il des **cas limites** ou erreurs possibles (exceptions) ?
 
-        ***Les paramètres***
-        Pour exécuter (on dit également appeler) une fonction, il faut écrire le nom de la fonction suivi de parenthèse
-        ()
-        Entre les parathèses, si la fonction nécessite des paramètres, ils doivent entre fournies séparés par une
-        virgule.
-        Le nombre de paramètres et l'ordre sont importants comme nous allons le voir avec des exemples.
+        ---
 
+        ### 🎯 Les paramètres
+        Pour appeler une fonction :
+        `nom_de_fonction(param1, param2, ...)`<br />
+        ➡️ Le nombre et l’ordre des paramètres sont importants.
 
-        ***Conserver la valeur de retour d'un appel d'une fonction***
-        Si le résultat d'un appel de fonction doit être réutilisé plus tard, vous pouvez le conserver dans une variable
+        ---
 
-        ```python
-        #Exemple d'une fonction pouvant recevoir aucun paramètre en entrée
-        saisie_utilisateur = input() #permet de demander à l'utilisateur de saisir une entrée,
-        #la fonction retourne une str avec la valeur saisie
+        ### 💾 Conserver une valeur de retour
+        On peut stocker le résultat d’une fonction dans une variable, par exemple :
+        ```python showLineNumbers
+        mon_age_arrondi = round(17.8)
+        ```
+
+        :::
+
+        ---
+
+        :::info 📌 Quelques fonctions utiles
+
+        Vous trouverez dans la section [Fonctions utiles](/aidememoire/fonctions) de l'aide-mémoire une liste non-exhaustive de fonctions utiles.
+
+        Découvrons-en quelques-unes :
+
+        ---
+
+        ### La fonction `input()`
+        La fonction `input()` permet de demander à l'utilisateur de saisir une entrée.<br />
+        Elle peut être utilisée avec ou sans paramètre.<br />
+        - Sans paramètre, elle attend une saisie de l'utilisateur.
+        - Avec un paramètre, elle affiche un message pour guider l'utilisateur.
+
+        Par exemple (essayez ce code dans un script Python) :
+        ```python showLineNumbers
+        # Exemple : input() sans paramètre
+        saisie_utilisateur = input() # attend une saisie de l’utilisateur
         print(saisie_utilisateur)
 
-        #Exemple d'une variante de la même fonction, mais acceptant un paramètre en entrée
-        saisie_utilisateur = input("Veuillez saisir votre prénom:")
+        # Exemple : input() avec un paramètre
+        saisie_utilisateur = input("Veuillez saisir votre prénom : ")
         print(saisie_utilisateur)
 
-        #Exemple de fonction pouvant recevoir un nombre précis de paramètres :
-        longueur = len(saisie_utilisateur) #permet d'obtenir le nombre de caractères d'une str
-        valeur_convertir_en_entier = int("3") #permet d'obtenir un nombre entier à partir d'une str
-        valeur_convertir_en_float = float("3.41") #permet d'obtenir un nombre à virgule entier à partir d'une str
-        valeur_puissance = pow(2,3) #permet d'obtenir le résultat de 2 à la puissance 3 (l'ordre des paramètres est
-        important)
-        valeur_arrondie = round(3.14159, 2) #permet d'arrondir un float à la deuxième position après la virgule
-        type_variable = type(longueur) #permet d'obtenir le type d'une variable
-        nombre1_en_str = input("Entrée un nombre") #obtenir un nombre (en 2 étapes)
+        # Longueur d'une chaîne de caractères
+        longueur = len(saisie_utilisateur)
+        ```
+
+        ---
+
+        ### La fonction `len()`
+        La fonction len() permet de calculer la longueur d'une chaîne de caractères (le nombre de caractères qu'elle contient).<br />
+        Elle prend une chaîne de caractères en paramètre et retourne un entier représentant le nombre de caractères.
+
+        ---
+
+        Voici quelques exemples de fonctions utiles en Python, qui prennent différents nombres de paramètres :
+        ```python showLineNumbers
+        # Conversion de types
+        valeur_entier = int("3")
+        valeur_flottant = float("3.41")
+
+        # Puissances et arrondi
+        valeur_puissance = pow(2, 3)
+        valeur_arrondie = round(3.14159, 2)
+
+        # Type d’une variable
+        type_variable = type(longueur)
+        ```
+
+        ---
+
+        On peut imbriquer les appels de fonctions pour combiner plusieurs opérations en une seule ligne.<br />
+        Ainsi, la valeur retournée par une fonction peut être utilisée directement comme paramètre d'une autre fonction.<br />
+
+        Par exemple, pour obtenir des entrées numériques en une seule ligne :
+        ```python showLineNumbers
+        # Exemple d’entrées numériques
+        nombre1 = int(input("Entrez un premier nombre : "))
+        nombre2 = int(input("Entrez un second nombre : "))
+        ```
+        est beaucoup compacte que :
+        ```python showLineNumbers
+        nombre1_en_str = input("Entrez un nombre : ")
         nombre1 = int(nombre1_en_str)
-        nombre2 = int(input("Entrée un second nombre")) #obtenir un nombre (en 1 étape), l'expression combine les 2
-        fonctions
+        nombre2_en_str = input("Entrez un second nombre : ")
+        nombre2 = int(nombre2_en_str)
+        ```
 
-        #Exemple de fonction pouvant recevoir un nombre infini de paramètres :
-        print("le résultat de ", nombre1, " multiplié par ", nombre2, " est :", nombre1 * nombre2)
+        ### La fonction `print()`
 
-        #Exemple de création d'une str à partir d'éléments variables et constants (f-strings)
-        message = f"Le résultat de {nombre1} multiplié par {nombre2} est : {nombre1 * nombre2}"
+        Comme on a déjà vu, la fonction `print()` permet d'afficher du texte ou des valeurs dans le terminal.<br />
+        Elle peut prendre un nombre variable de paramètres, séparés par des virgules, qu'elle *concaténera* avec des espaces par défaut.
+
+        Par exemple, roulez ce code dans un script Python pour voir comment elle fonctionne :
+        ```python showLineNumbers
+        # Exemple d’entrées numériques
+        nombre1 = int(input("Entrez un premier nombre : "))
+        nombre2 = int(input("Entrez un second nombre : "))
+
+        # Fonction avec paramètres multiples
+        print("Le résultat de", nombre1, "x", nombre2, "est :", nombre1 * nombre2)
+
+        # Variante moderne : f-string
+        message = f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2}"
         print(message)
         ```
+
+        ### Les f-strings
+        Les f-strings (ou *formatted strings*) permettent de créer des chaînes de caractères formatées en insérant des variables directement dans la chaîne.<br />
+        Elles commencent par `f` avant les guillemets et utilisent des accolades `{}` pour insérer des variables.
+
+        Par exemple, dans le code ci-dessus, `f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2}"` crée une chaîne avec les valeurs des variables `nombre1` et `nombre2` directement intégrées.
 
         :::
 
