@@ -399,7 +399,7 @@ import TabItem from '@theme/TabItem';
         :::tip Alias de bibliothèque
         On peut donner un alias à une bibliothèque lors de son importation pour simplifier son utilisation.<br />
         Par exemple, on peut importer la bibliothèque `numpy` avec l'alias `np` pour faciliter son utilisation dans le code.
-        
+
         Il suffit d'utiliser le mot-clé `as` lors de l'importation :
         ```python showLineNumbers
         import numpy as np # Importer la bibliothèque "numpy" avec l'alias "np"
@@ -411,18 +411,18 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="matplotlib" label="Matplotlib">
 
-        :::info Générer des Graphiques
+        :::info Générer des graphiques 📊
 
-        Nous allons utilisez dans le cadre du cours la bibliothèque Matplotlib servant à la visualisation des données en
-        Python. Cette bibliothèque est TRÈS flexible et permet de réaliser des graphiques autant simples que complexes.
-        La bibliothèque permet de personnaliser pratiquement tous les éléments et permet de réaliser autant des
-        graphiques à lignes, à barres, des histogrammes ou des nuages de points. La bibliothèque permet même de
-        superposer plusieurs graphes sur une seule figure. Un autre avantage de Matplotlib est compatible avec d'autres
-        bibliothèques à caractère scientifique comme NumPy, Pandas ou SciPy.
+        Nous allons utiliser **Matplotlib**, une bibliothèque Python très flexible pour la visualisation de données.<br />
+        Elle permet de créer des graphiques simples ou complexes et de personnaliser pratiquement tous les éléments :
 
-        Nous aurons un cours complet dédié à l'utilisation de celle-ci.
-        Nous aborderons également l'existante d'autres bibliothèques (Seaborn, Ggplot2).
-        Voici un exemple
+        - Graphiques à lignes, à barres, histogrammes, nuages de points
+        - Superposition de plusieurs graphiques sur une seule figure
+        - Compatibilité avec d'autres bibliothèques scientifiques comme **NumPy**, **Pandas** ou **SciPy**
+
+        Il existe aussi d'autres excellentes bibliothèques de visualisation graphique, comme **Seaborn** ou **ggplot2**.
+
+        Voici un exemple simple, testez-le dans un script Python! :
 
         ```python
         import matplotlib.pyplot as plt
@@ -439,7 +439,7 @@ import TabItem from '@theme/TabItem';
         # Ajout de titres et labels
         plt.xlabel("Âge (années)")
         plt.ylabel("Taille (cm)")
-        plt.title("Courbe de Croissance de l'Enfant")
+        plt.title("Courbe de croissance de l'enfant")
         plt.legend()
 
         # Affichage du graphique
