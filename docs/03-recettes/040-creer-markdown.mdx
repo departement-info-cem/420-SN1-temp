@@ -29,7 +29,10 @@ dans la barre d’outils en haut.
 2. Ajouter des titres, des listes, des liens, des images ou des blocs de code (voir exemples ci-dessous).
 3. Le rendu visuel à droite se met à jour automatiquement.
 
-#### Exemple de contenu Markdown :
+<Row>
+<Column>
+
+    :::info Exemple de contenu Markdown
 
 ````markdown
 # Mes notes
@@ -42,7 +45,7 @@ Voici une **liste de tâches** :
 
 ## Exemple de lien
 
-[Documentation Markdown](https://www.markdownguide.org)
+[Doc](https://www.markdownguide.org)
 
 ## Exemple de code
 
@@ -52,9 +55,12 @@ def dire_bonjour(nom):
 ```
 ````
 
-#### Résultat affiché :
+    :::
 
-:::tip .
+</Column>
+<Column>
+
+:::tip Résultat affiché
 
 # Mes notes
 
@@ -66,7 +72,7 @@ Voici une **liste de tâches** :
 
 ## Exemple de lien
 
-[Documentation Markdown](https://www.markdownguide.org)
+[Doc](https://www.markdownguide.org)
 
 ## Exemple de code
 
@@ -76,6 +82,49 @@ def dire_bonjour(nom):
 ```
 
 :::
+
+</Column>
+</Row>
+
+---
+
+## Faire une trace
+
+Pour faire le tableau d'une trace de l'exécution d'un bout de code, il suffit d'utiliser des `|` pour séparer les colonnes et `-` pour créer une ligne horizontale.
+
+<Row>
+<Column>
+
+    :::info Exemple de tableau de trace
+
+````markdown
+| # ligne | a | b  | affichage |
+|---------|---|----|-----------|
+| 1       | 7 |    |           |
+| 2       | 7 | 14 |           |
+| 3       | 7 | 14 | salut 14  |
+````
+
+(vous pouvez copier-coller ce gabarit dans votre fichier Markdown)
+
+    :::
+
+</Column>
+<Column>
+
+:::tip Résultat affiché
+
+| # ligne | a | b  | affichage |
+|---------|---|----|-----------|
+| 1       | 7 |    |           |
+| 2       | 7 | 14 |           |
+| 3       | 7 | 14 | salut 14  |
+
+    :::
+
+</Column>
+</Row>
+
 
 ---
 
