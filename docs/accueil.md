@@ -25,7 +25,7 @@ Dans ce cours, nous allons programmer en Python.
 
 L'onglet [**Cours**](cours/rencontre1) contient les séances de cours.  
 L'onglet [**Travaux**](tp/tp1) contient les travaux pratiques.  
-L'onglet [**Recettes**](recettes/creer-repo-github) contient des procédures à suivre.  
+L'onglet [**Recettes**](recettes/gestion-repo-github) contient des procédures à suivre.  
 L'onglet [**Aide-mémoire**](aidememoire/types) contient des concepts résumés.
 
 :::
