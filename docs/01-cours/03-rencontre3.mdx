@@ -11,161 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="theorie" label="Théorie" default>
-
-        :::info Créer nos propres fonctions
-
-        Il arrive parfois qu'on va souhaiter créer nos propres fonctions réutilisables pour représenter des instructions
-        qu'on aimerait pouvoir réutiliser facilement sans avoir à les répéter à chaque fois. Pour définir une fonction,
-        il faut le mot clée "def" suivi du nom qu'on souhaite donné à la fonction. Par la suite, entre parenthèses, nous
-        mettons des noms des paramètres que la valeur s'attends à recevoir. Les instructions de la fonction doivent être
-        intenter (touche TAB). Si la fonction retourne une valeur, il faut utiliser le mot clée "return" suivi de
-        l'expression représentant la valeur retourné. La définition de la fonction doit être avant sa première
-        utilisation. Il est possible de mettre en commentaire à l'aide du symbole """ des indications concernant
-        l'utilisation de la fonction.
-
-        ```python
-        # Définition de la fonction énergie-cinétique
-        def energie_cinetique(masse, vitesse):
-        """
-        Calcule l'énergie cinétique d'un objet en mouvement.
-
-        Formule :
-        E_c = 0.5 * m * v^2
-
-        Paramètres :
-        masse (float): Masse de l'objet en kilogrammes (kg)
-        vitesse (float): Vitesse de l'objet en mètres par seconde (m/s)
-
-        Retourne :
-        float : Énergie cinétique en Joules (J)
-
-        Exemple d'utilisation :
-        >>> energie_cinetique(10, 5)
-        125.0
-        """
-        nb_joute = 0.5 * masse * pow(vitesse,2)
-        return nb_joute
-
-        # Exemple avec différentes valeurs
-        objet1 = energie_cinetique(2, 3) # Masse de 2 kg, vitesse de 3 m/s
-        objet2 = energie_cinetique(5, 7) # Masse de 5 kg, vitesse de 7 m/s
-
-        # Affichage des résultats
-        print("Énergie cinétique de l'objet 1 :", objet1, "Joules")
-        print("Énergie cinétique de l'objet 2 :", objet2, "Joules")
-        ```
-
-        Dans l'exemple ci-haut, la fonction "energie_cinetique" est appelé à la ligne #7 et à la ligne #8.
-        Lors du premier appel, la valeur de "masse" sera de 2 et la valeur de "vitesse" sera de 3.
-        Lors du second appel, la valeur de "masse" sera de 5 et la valeur de "vitesse" sera de 7.
-
-        :::
-
-
-
-
-
-        Quand on approche un problème, on peut le découper en sous-problèmes.
-
-        Pour cela on peut trouver une solution au sous problème etc.
-
-        DEMO SUR LA SEQUENCE DE 1 11 21 etc
-
-        ## Définition d'une fonction simple
-
-        ```python
-        def double(x):
-            return x*x
-        ```
-
-        Définir une fonction ne fait rien, on se donne juste un outil qu'on
-        pourra utiliser plus tard. Un peu comme quand on écrit une recette, on a
-        rien à manger mais on pourra suivre la recette plus tard.
-
-        ## Appel d'une fonction
-
-        On va regarder ce qui se passe sur un exemple simple
-        ```python
-        def double(x):
-            return x*x
-
-        a = double(4)
-        print(a)
-        ```
-        1. quand on définit la fonction, il ne se passe rien, les 2 premières lignes ne font rien
-        2. **double(4)** appelle la fonction double
-        - le paramètre est évalué, ça donne 4
-        - 4 remplace *x* comme valeur du paramètre
-        - la fonction calcule *x * x* soit *4 * 4* soit 16
-        - *return* renvoie la valeur 16
-        - alors *double(4)* vaut 16
-        3. on affiche la valeur avec un print
-
-        ## Paramètre à la définition et à l'appel
-
-        Lors d'un appel d'une fonction, on évalue le paramètre fourni avant de le
-        passer à la fonction. Sur un exemple un peu plus complexe:
-        ```python
-        def double(x):
-            return x*x
-
-        a = 25
-        print( double( double(4) + double( 5 + double(a) ) ) )
-        ```
-        Encore une fois, quand ça se complique le mode débogage devient notre
-        meilleur ami pour ne pas abandonner.
-
-        ## Typage (optionnel mais bien utile) d'une fonction
-
-        ## Paramètre nommé
-
-        ```python
-        def double(*x, ):
-            return x*x
-
-        a = 25
-        print( double( double(4) + double( 5 + double(a) ) ) )
-        ```
-
-        ## Paramètre avec valeur par défaut
-
-
-        ```python
-        def racine(nombre, base=2):
-            # ton code ici
-            return 1
-        ```
-
-
-        ## Exercice fonction simple
-
-        On veut faire une fonction simple qui prend un nombre et qui renvoie son carré.
-
-        Définis cette fonction et appelle la avec un nombre de ton choix.
-
-        TODO lien vers la portée
-
-        ## Mais combien vaut x?
-
-        ```python
-        def calculComplexe(a, b, c):
-            x = a**b
-            y = c*(b-a)
-            return a**b + c*(b-a)
-
-        x = 5
-        calculComplexe(3,5,7)
-        print(x)
-        ```
-
-        Combien vaut x dans calculComplexe? dans le script principal? C'est le même x?
-
-        TODO lien vers le shadowing et la pile d'appels dans le débogueur
-
-    </TabItem>
-
-    <TabItem value="simple" label="Fonction simple">
+    <TabItem value="simple" label="Fonction simple" default>
 
         :::info Fonction simple
 
@@ -212,6 +58,22 @@ import TabItem from '@theme/TabItem';
 
         Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant
         ce paramètre.
+
+        :::
+
+        ---
+
+        :::tip Paramètre avec valeur par défaut
+        Il est possible de définir une valeur par défaut pour un paramètre.<br />
+        Si aucun argument n'est fourni lors de l'appel de la fonction, la valeur par défaut sera utilisée.
+        ```python showLineNumbers
+        def saluer(nom="inconnu"):
+            print(f"Bonjour, {nom}!")
+        saluer()  # Affiche "Bonjour, inconnu!"
+        saluer("Alice")  # Affiche "Bonjour, Alice!"
+        ```
+        Dans cet exemple, si `saluer` est appelée sans argument, `nom` prendra la valeur par défaut "inconnu".
+
 
         :::
 
@@ -396,6 +258,60 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
+    <TabItem value="comments" label="Commentaires">
+
+        :::info Commentaires dans le code
+
+        Il est possible d'ajouter des commentaires dans le code pour expliquer ce que fait une fonction ou pour donner des indications sur son utilisation.<br />
+        Les commentaires sont ignorés par l'interpréteur Python et n'affectent pas l'exécution du code.<br />
+        Ils sont utiles pour rendre le code plus lisible et compréhensible pour les autres développeurs (et pour vous-même dans le futur!).
+
+        En Python, les commentaires sont créés en utilisant :
+        - le symbole `#` pour commenter une ligne entière ou une partie de ligne,
+        ou bien :
+        - des triples guillemets `"""` (ou `'''`) pour commenter un bloc de lignes continu.
+
+        Par exemple :
+        ```python showLineNumbers
+        # Ceci est un commentaire sur une seule ligne
+        def energie_cinetique(masse, vitesse): # Ceci est un commentaire en fin de ligne
+            """
+            Calcule l'énergie cinétique d'un objet en mouvement.
+
+            Formule :
+            E_c = 0.5 * m * v^2
+
+            Paramètres :
+            masse (float) : Masse de l'objet en kilogrammes (kg)
+            vitesse (float) : Vitesse de l'objet en mètres par seconde (m/s)
+
+            Retourne :
+            float : Énergie cinétique en Joules (J)
+
+            Exemple d'utilisation :
+            >>> energie_cinetique(10, 5)
+            125.0
+            """
+            nb_joute = 0.5 * masse * pow(vitesse,2)
+            return nb_joute
+
+        # Exemple avec différentes valeurs
+        objet1 = energie_cinetique(2, 3) # Masse de 2 kg, vitesse de 3 m/s
+        objet2 = energie_cinetique(5, 7) # Masse de 5 kg, vitesse de 7 m/s
+
+        # Affichage des résultats
+        print("Énergie cinétique de l'objet 1 :", objet1, "Joules")
+        print("Énergie cinétique de l'objet 2 :", objet2, "Joules")
+        ```
+
+        Les lignes 3 à 19 montrent un exemple de commentaire de bloc utilisant des triples guillemets pour expliquer en détail la fonction `energie_cinetique`.<br />
+        Elles sont ignorées par Python lors de l'exécution du code.<br />
+        Il en est de même pour les lignes 1, 23 et 27 qui sont des commentaires sur une seule ligne, ainsi que tout ce qui se trouve à droite du `#` à la ligne 2.
+
+        :::
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ## ✏️ Exercices de compréhension
@@ -419,6 +335,29 @@ import TabItem from '@theme/TabItem';
         print(r1, r2)
         ```
         Validez votre trace en exécutant le code dans un script en mode débogage.
+        :::
+
+        ---
+
+        :::info Exercice - Portée des variables
+
+        Soit le code suivant :
+
+        ```python showLineNumbers
+        def calcul_complexe(a, b, c):
+            x = a ** b
+            y = c * (b - a)
+            return a ** b + c * (b - a)
+
+        x = 5
+        calcul_complexe(3, 5, 7)
+        print(x)
+        ```
+
+        Combien vaut x dans calcul_complexe?<br />
+        Dans le script principal?<br />
+        C'est le même x?
+
         :::
 
         ---
