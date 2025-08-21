@@ -744,29 +744,66 @@ Voici des exemples d'expression :
         ## 🔨 Exercices de compréhension
         Pour les exercices de cette section, vous devez créer des fichiers .py dans un nouveau projet PyCharm.
 
-        :::info Exercice - NOTE OBTENUE POUR CE COURS (SANS PRISE EN COMPTE DE LA DOUBLE SANCTION)
+        :::info Exercice - MOYENNE PRESSION SYSTOLIQUE
         
-        Écrire un programme permettant de calculer la note obtenue pour ce cours. \
-        Ignorez la règle de la double sanction, nous n'avons pas vu encore les notions nécessaires pour l'appliquer. \
-        Il doit y avoir une variable par évaluation présente dans le cours.
-        ```python
-        nom_etudiant = "" #Mettre le nom d'un l'étudiant
-        note_tp1 = 0      #Mettre un nombre de 1 à 10
-        note_tp2 = 0      #Mettre un nombre de 1 à 10
-        examen_1 = 0      #Mettre un nombre de 1 à 100
-        examen_2 = 0      #Mettre un nombre de 1 à 100
+        Créer un programme qui calcule la moyenne de la pression systolique d’un patient pour une journée.
+        <br/>
+
+        #### 🛠️**INSTRUCTIONS**
+
+        - **Déclarez trois variables** pour stocker les mesures de pression systolique : 
+            - Une pour le matin
+            - Une pour le midi
+            - Une pour le soir
+        - **Calculez la moyenne** des trois mesures.
+        - **Affichez le résultat** de façon claire et lisible.
+
+        <br/>
+
+        #### ✅ EXEMPLE DE SORTIE ATTENDUE
         
-        #RESTE DE VOTRE CODE
+        ```markdown
+        Pression systolique
+        
+        Mesure du matin : 125
+        Mesure du midi : 130
+        Mesure du Soir : 180
+
+        Moyenne de la pression systolique : 145.0 mmHg
         ```
+        :::
+
+
+        :::info Exercice - CALCUL DE LA NOTE FINALE DU COURS
+         
+
+
+        Écrire un programme qui calcule la note finale obtenue par un étudiant dans ce cours. \
+        La règle de la double sanction n’est pas à appliquer dans cet exercice, car les notions nécessaires n’ont pas encore été vues.
+        <br/>
+
+        #### 🛠️**INSTRUCTIONS**
+        - **Créez une variable pour chaque évaluation** du cours :
+            - nom_etudiant : le nom de l’étudiant (chaîne de caractères)
+            - note_tp1 : note du TP1 (sur 10)
+            - note_tp2 : note du TP2 (sur 10)
+            - examen_1 : note de l’examen 1 (sur 100)
+            - examen_2 : note de l’examen 2 (sur 100)
+        - **Appliquez les pondérations suivantes** pour calculer la note finale :
+            - TP1 : 20%
+            - TP2 : 20%
+            - Examen 1 : 30%
+            - Examen 2 : 30%
+        - **Affichez un résumé clair** des notes des évaluations et de la note finale.
+        <br/>
         
-        Voici un exemple du résultat qu'on souhaiterait obtenir lorsqu'on lance le script :
+        #### ✅ EXEMPLE DE SORTIE ATTENDUE
         ```markdown
         Étudiant : Nicola Tesla
         Note TP1 (20%) : 8/10
         Note TP2 (20%) : 9/10
-        Note Examen #1 (30%) : 90/100 
-        Note Examen #2 (30%) : 95/100
-        ===
+        Note examen #1 (30%) : 90/100 
+        Note examen #2 (30%) : 95/100
         Note obtenue pour ce cours : 89.5/100
         Attention, l'application de la double sanction n'a pas été réalisée!
         ```
