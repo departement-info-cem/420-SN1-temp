@@ -301,12 +301,36 @@ import TabItem from '@theme/TabItem';
 
         :::info Expressions
 
-        Une **expression** est un bout de code qui a une valeur et un type.
+        En mathématique, les **expressions** :
 
-        Par exemple :
+                - Peuvent contenir des constantes, des nombres, des variables et des opérateurs et des opérandes. \
+                  Par exemple, l'expression pour calculer la circonférence d'un cercle est : 2πr
+                               - 2 est une constante
+                               - π est une constante mathématique un peu longue (3.14159265358979...)
+                               - r est une variable qu'on doit remplacer par la valeur du rayon
+
+                               
+                - Elles génèrent un résultat décimal ou entier. \
+                  Par exemple, l'expression représentant la multiplication de ses 3 valeurs produit une valeur numérique. \
+                  Avec un rayon de 2, le résultat de l'expression est 12.5664
+                  
+                - Pour résoudre une expression mathématique, on commence par remplacer les variables par leur valeur \
+                 (ex : on donne une valeur au rayon), puis on procède au calcul de la valeur (ex : 2 * 3.1416 * 2).
+                  
+                  
+En programmation, les expressions **fonctionnent** à la base **comme en mathématique**.
+
+Une particularité des expressions en programmation, c'est qu'elles peuvent contenir autre chose que simplement des nombres ou des variables représentant des nombres.
+On peut par exemple dans une expression inclure des caractères ou même des mots. Pour notre première rencontre, nous allons voir quelques expressions en lien avec les chaînes de caractères.
+Au fur et à mesure que nous avancerons dans la session, nous allons intégrer de nouveaux éléments possibles dans les expressions, comme des fonctions (cours R02) des valeurs booléennes (cours R03), et ainsi de suite.
+\
+\
+Voici des exemples d'expression :
+
         - `5` est une expression qui vaut 5 et de type entier (int).
         - `"5"` est une expression de type texte (entre guillemets `"").
         - `5 + 3` est une expression de type entier, et qui vaut 8.
+        - `"5"` + `"3"` est une expression de type texte, et qui vaut "58".
 
         :::
 
@@ -338,9 +362,9 @@ import TabItem from '@theme/TabItem';
             <Column>
 
                 Les opérandes peuvent être des valeurs (comme dans les exemples du tableau), mais pourraient aussi être
-                des variables, un élément d'un tableau, etc.
+                des variables, un élément d'un tableau, une expression, etc.
 
-                La valeur résultante peut être de type `int` ou `float`, selon l'opérateur ET selon les opérandes.
+                La valeur résultante de l'utilisation d'un opérateur arithmétique peut être de type `int` ou `float`, selon l'opérateur ET selon les opérandes.
 
                 :::note Console
                 Dans la console, tapez les expressions `10 / 3` et `10 // 3` pour voir la différence entre les deux.
@@ -362,7 +386,7 @@ import TabItem from '@theme/TabItem';
         </Row>
 
         Les opérateurs n'ont pas tous la même priorité, c'est-à-dire que certains sont évalués avant d'autres.<br />
-        Par exemple, dans l'expression `10 + 3 * 2`, la multiplication est effectuée avant l'addition, donc le résultat est `16`.<br />
+        Par exemple, dans l'expression `10 + 3 * 2`, la multiplication est effectuée avant l'addition, donc le résultat est `16`.<br /><br />
         On dit que la multiplication a une priorité plus élevée que l'addition.<br />
         Pour voir la liste complète des priorités, consultez l'[aide-mémoire sur les opérateurs](../aidememoire/operateurs?onglet=priorite).
 
@@ -395,7 +419,7 @@ import TabItem from '@theme/TabItem';
                 :::
             </Column>
             <Column>
-                Un nombre entier (ìnt`) s'écrit simplement avec des chiffres, comme `42` ou `-99`.
+                Un nombre entier (`ìnt`) s'écrit simplement avec des chiffres, comme `42` ou `-99`.
 
                 Un nombre décimal (`float`) s'écrit avec une partie entière et une partie décimale séparées par un point, comme `3.14` ou `-0.001`.
             </Column>
