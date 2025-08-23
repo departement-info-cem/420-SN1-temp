@@ -357,25 +357,31 @@ import TabItem from '@theme/TabItem';
         print(math.sqrt(16)) # Résultat : 4.0
         ```
 
-        ### 📚 Modules utiles en Python
-        - `math` → fonctions mathématiques avancées (racines, logarithmes, trigonométrie, etc.) - [documentation officielle](https://docs.python.org/fr/3.13/library/math.html)
-        - `random` → génération de nombres aléatoires, choix au hasard, tirages probabilistes - [documentation officielle](https://docs.python.org/fr/3.13/library/random.html)
-        - `os` → interaction avec le système d’exploitation (fichiers, dossiers, etc.) - [documentation officielle](https://docs.python.org/fr/3.13/library/os.html)
-        - `sys` → informations sur l’environnement du programme, gestion des entrées/sorties - [documentation officielle](https://docs.python.org/fr/3.13/library/sys.html)
-        - `time` → manipulation du temps et des dates (mesurer le temps écoulé, conversions de format) - [documentation officielle](https://docs.python.org/fr/3.13/library/time.html)
-        - `csv` → lecture/écriture de fichiers CSV (format courant pour stocker des données tabulaires) - [documentation officielle](https://docs.python.org/fr/3.13/library/csv.html)
+        ## 📚 Modules utiles en Python
+        - `math` → fonctions mathématiques avancées (racines, logarithmes, trigonométrie, etc.) - ([documentation officielle](https://docs.python.org/fr/3.13/library/math.html))
+        - `random` → génération de nombres aléatoires, choix au hasard, tirages probabilistes - ([doc](https://docs.python.org/fr/3.13/library/random.html))
+        - `os` → interaction avec le système d’exploitation (fichiers, dossiers, etc.) - ([doc](https://docs.python.org/fr/3.13/library/os.html))
+        - `sys` → informations sur l’environnement du programme, gestion des entrées/sorties - ([doc](https://docs.python.org/fr/3.13/library/sys.html))
+        - `time` → manipulation du temps et des dates (mesurer le temps écoulé, conversions de format) - ([doc](https://docs.python.org/fr/3.13/library/time.html))
+        - `csv` → lecture/écriture de fichiers CSV (format courant pour stocker des données tabulaires) - ([doc](https://docs.python.org/fr/3.13/library/csv.html))
 
         
-        ### 🤖 Vulgariser des modules et des fonctions avec l'IA
+        ## 🤖 Vulgariser des modules et des fonctions avec l’IA
 
-        Bien utilisé, des outils comme ChatGPT, disponible gratuitement à travers Copilot, peuvent aider à comprendre le fonctionnement de modules et de fonctions. 
-        Ceci peut être particulièrement pratique lorsque la documentation officielle vous semble complexe ou si vous avez des doutes sur le fonctionnement d'une fonction. 
-        Accéder à Copilot 🧠 à l'aide de ce [lien](https://copilot.microsoft.com/) et essayez le prompt suivant :  
+        **Si bien utilisés**, des outils d’intelligence artificielle comme Copilot (basé sur la technologie de ChatGPT et
+        accessible gratuitement en ligne) peuvent vous aider à mieux comprendre le fonctionnement de modules et de
+        fonctions Python.
 
-        - Peux-tu me donner une liste des principales fonctions du module Python **math**? \
-        J'aimerais avoir pour chacune une brève description et un exemple de code pour les utiliser?
+        Cela peut être particulièrement utile lorsque la documentation officielle vous semble complexe ou si vous avez
+        des doutes sur l’utilisation d’une fonction.
 
-        - Ressayez ce prompt pour en découvrir un peu plus sur d'autres modules comme **random** et **time**
+        Accédez à Copilot 🧠 à l’aide de ce [lien](https://copilot.microsoft.com/) et essayez le prompt suivant :
+        ```
+        Peux-tu me donner une liste des principales fonctions du module Python math ?
+        J’aimerais avoir pour chacune une brève description et un exemple de code pour les utiliser.
+        ```
+
+        Répétez ce prompt pour explorer d’autres modules comme `random` et `time`.
 
         :::
 
@@ -400,11 +406,11 @@ import TabItem from '@theme/TabItem';
         ```
 
         Voici quelques bibliothèques populaires en Python :
-        - `numpy` → calculs numériques avancés, manipulation de tableaux multidimensionnels - [documentation officielle](https://numpy.org/doc/stable/)
-        - `pandas` → manipulation et analyse de données tabulaires (*DataFrames*) - [documentation officielle](https://pandas.pydata.org/docs/)
-        - `matplotlib` → création de graphiques et visualisation de données - [documentation officielle](https://matplotlib.org/stable/index.html)
-        - `scikit-learn` → apprentissage automatique (*machine learning*), modèles prédictifs - [documentation officielle](https://scikit-learn.org/stable/user_guide.html)
-        - `keras` → création et entraînement de réseaux de neurones pour l'apprentissage profond (*deep learning*) - [documentation officielle](https://keras.io/guides/)
+        - `numpy` → calculs numériques avancés, manipulation de tableaux multidimensionnels - ([documentation officielle](https://numpy.org/doc/stable/))
+        - `pandas` → manipulation et analyse de données tabulaires (*DataFrames*) - ([doc](https://pandas.pydata.org/docs/))
+        - `matplotlib` → création de graphiques et visualisation de données - ([doc](https://matplotlib.org/stable/index.html))
+        - `scikit-learn` → apprentissage automatique (*machine learning*), modèles prédictifs - ([doc](https://scikit-learn.org/stable/user_guide.html))
+        - `keras` → création et entraînement de réseaux de neurones pour l'apprentissage profond (*deep learning*) - ([doc](https://keras.io/guides/))
 
         :::
 
@@ -522,17 +528,16 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::info Exercice - QUESTION DE GRAVITÉ
-        
-        La différence de gravité entre la terre et mars est d'un facteur de 3.71. \
-        Écrivez un programme demandant à l'utilisateur de saisir une masse en kilo sur terre. \
-        Le programme doit ensuite calculer et afficher le poids correspondant sur mars.
-        
-        <br/>
-        #### ✅ EXEMPLE DE SORTIE ATTENDUE
 
-        ```markdown
-        Nombre de kilos sur terre : 50
-        50 kilos sur terre corresponds à 185.5 kilos sur mars.
+        La gravité sur Mars est environ 3,71 fois plus faible que sur la Terre.<br />
+        Écrivez un programme qui demande à l’utilisateur de saisir une masse en kilos sur Terre.<br />
+        Le programme doit ensuite calculer et afficher le poids correspondant sur Mars.
+
+        ✅ Exemple de sortie attendue
+
+        ```python
+        Masse sur Terre (kg) : 50
+        50 kg sur Terre correspondent à 18.55 kg sur Mars.
         ```
 
         :::
@@ -561,15 +566,20 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Exercice - CONSTRUIRE UN NOMBRE AVEC UN SEUL CHIFFRE SIGNIFICATIF
+        :::info Exercice – CONSTRUIRE UN NOMBRE DÉCIMAL
 
-        Vous devez construire un nombre flottant composé d'un seul chiffre significatif en fonction d'information saisie par l'utilisateur. \
-        L'utilisateur doit pouvoir saisir 2 informations : un chiffre et la position de décimale souhaités pour ce chiffre.
+        Écrivez un programme qui demande à l’utilisateur deux informations :
+        1. un chiffre (entre 1 et 9),
+        2. une position décimale (un entier positif).
 
-        - Par exemple, si le chiffre est 5 et la position de décimale est 3, le nombre à construire devrait être "0.005".
-        - Par exemple, si le chiffre est 2 et la position de décimale est 1, le nombre à construire devrait être "0.2".
+        Le programme doit ensuite construire et afficher le nombre décimal correspondant, c’est-à-dire un nombre dont le
+        seul chiffre non nul est placé à la position décimale donnée.
 
-        **Indice** : le pouvoir des multiplications et des exposants vous sera utile!
+        Par exemple :
+        - Si le chiffre est 5 et la position décimale est 3, le résultat doit être `0.005`.
+        - Si le chiffre est 2 et la position décimale est 1, le résultat doit être `0.2`.
+
+        Indice : les puissances de 10 peuvent vous aider.
 
         :::
 
@@ -577,20 +587,27 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - GÉNÉRER UN NOMBRE ALÉATOIRE
 
-        L'utilisateur doit pouvoir saisir 2 nombres à l'aide de la console : un nombre maximal et un maximale. \
-        Vous devez ensuite générer un nombre entier aléatoire compris entre les 2 nombres inclusivement. \
-        Le module "**random**" sera nécessaire : 
-            - Vous pouvez tenter de lire la documentation du module pour trouver la fonction et des exemples.
-            - Vous pouvez demandez à ChatGPT la fonction a utiliser pour générer un nombre compris compris entre 2 valeurs et de vous détailler le fonctionnement. \
-            \
-              🧠 **Exemple de prompt** \
-              Quelle est la fonction du module random en Python qui permet de générer un nombre entier aléatoire compris entre deux valeurs données (inclusivement) ? \
-              Peux-tu m’expliquer comment elle fonctionne et me donner un exemple d’utilisation ?
-        
-        <br/>
-        #### ✅ EXEMPLE DE SORTIE ATTENDUE
+        L’utilisateur doit saisir 2 nombres entiers à l’aide de la console :
+        - un nombre minimal
+        - un nombre maximal
 
-        ```markdown
+        Vous devez ensuite générer un nombre entier aléatoire compris entre ces 2 nombres inclusivement.
+
+        Le module `random` sera nécessaire :
+        - Vous pouvez lire la ([documentation](https://docs.python.org/fr/3.13/library/random.html)) du module pour trouver la fonction et des exemples.
+        - Vous pouvez aussi demander à ChatGPT ou un autre outil d'IA quelle fonction utiliser pour générer un nombre compris entre deux bornes
+        inclusives, et de vous expliquer son fonctionnement.
+
+        🧠 Exemple de prompt :
+
+        ```
+        Quelle est la fonction du module random en Python qui permet de générer
+        un nombre entier aléatoire compris entre deux valeurs données (inclusivement) ?
+        Peux-tu m’expliquer comment elle fonctionne et me donner un exemple d’utilisation ?
+        ```
+
+        ✅ Exemple de sortie attendue
+        ```python
         Nombre le plus bas : 50
         Nombre le plus haut : 100
 
@@ -633,24 +650,22 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - CALCUL DE LA DISTANCE ENTRE 2 POINTS
 
-        Créez un programme qui demande les coordonnées de 2 points, puis calcul et affiche la distance entre les 2 points arrondis à 2 décimales. \
+        Créez un programme qui demande les coordonnées de 2 points, puis **calcule et affiche** la distance entre les 2 points arrondie à 2 décimales.<br />
         La formule de la distance entre 2 points $A(x_1, y_1)$ et $B(x_2, y_2)$ est :
 
         $$
-        d = \sqrt{(x_2 - x_1)^2 + (y_2 - y_1)^2}
+        d = \sqrt{(x_2 - x_1) ^ 2 + (y_2 - y_1) ^ 2}
         $$
 
-        \
-        Pour réaliser la racine carrée de la formule, vous aurez besoin d'une fonction du module "**math**". \
-        
-        #### ✅ EXEMPLE DE SORTIE ATTENDUE
-        ```markdown
+        Pour réaliser la racine carrée de la formule, vous aurez besoin d'une fonction du module `math`.
+
+        #### ✅ Exemple de sortie attendue
+        ```python
         Point A - X1 : 50
         Point A - Y1 : 70
-        Point B - X1 : 80
-        Point B - Y1 : 60
+        Point B - X2 : 80
+        Point B - Y2 : 60
         Distance : 31.62
-        ```
         :::
 
         ---
