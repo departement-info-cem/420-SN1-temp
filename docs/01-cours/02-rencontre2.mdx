@@ -394,7 +394,7 @@ import TabItem from '@theme/TabItem';
 
         ⚡ **Points clés :**
         - Chaque module d’une bibliothèque peut contenir des fonctions, classes ou constantes spécifiques.
-        - Pour utiliser une bibliothèque externe, il faut d'abord [l'installer](/recettes/ajouter-librairie) avec `pip install nom_de_la_bibliothèque`.
+        - Pour utiliser une bibliothèque externe, il faut d'abord [l'installer](/recettes/ajouter-librairie) avec la ligne de commande `pip install nom_de_la_bibliothèque`.
         - Une fois installée, on peut **importer ses modules** comme pour un module Python classique :
 
         ```python showLineNumbers
@@ -413,12 +413,12 @@ import TabItem from '@theme/TabItem';
 
         :::tip Alias de bibliothèque
         On peut donner un alias à une bibliothèque lors de son importation pour simplifier son utilisation.<br />
-        Par exemple, on peut importer la bibliothèque `numpy` avec l'alias `np` pour faciliter son utilisation dans le code.
+        Par exemple, on peut importer la bibliothèque `numpy` avec l'alias `np` pour faciliter son utilisation dans le code et éviter d'écrire `numpy` au long.<br />
 
         Il suffit d'utiliser le mot-clé `as` lors de l'importation :
         ```python showLineNumbers
         import numpy as np # Importer la bibliothèque "numpy" avec l'alias "np"
-        print(np.array([1, 2, 3])) # Utiliser l'alias "np" pour accéder à la fonction "array"
+        print(np.array([1, 2, 3])) # Utiliser l'alias "np" (au lieu d'écrire numpy) pour accéder à la fonction "array"
         ```
         :::
 
@@ -439,6 +439,11 @@ import TabItem from '@theme/TabItem';
 
         Voici un exemple simple, testez-le dans un script Python!<br />
         Ne vous inquiétez pas si vous ne comprenez le code pour l'instant, on verra plus en détail comment faire des graphiques dans un prochain cours.
+
+        :::warning Installer Matplotlib
+        Pour utiliser une bibliothèque Python comme Matplotlib, il faut d’abord l’installer dans votre environnement de travail. \
+        Avant d’exécuter l’exemple ci-dessous, assurez-vous d’avoir suivi les étapes nécessaires pour [installer](recettes/ajouter-librairie) la librairie Matplotlib.
+        :::
 
         ```python
         import matplotlib.pyplot as plt
@@ -461,6 +466,7 @@ import TabItem from '@theme/TabItem';
         # Affichage du graphique
         plt.show()
         ```
+        <img src={require('/img/recettes/exemple_graphique_coubre_croissance_enfant.png').default} alt="Résultat du graphique généré" style={{ verticalAlign: 'middle' }} />
 
         :::
 
