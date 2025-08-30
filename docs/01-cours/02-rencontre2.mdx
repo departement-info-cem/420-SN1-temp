@@ -467,48 +467,10 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
-
-        ## ✏️ Exercices de compréhension
-
-        Pour les exercices de cette section, vous pouvez écrire vos réponses sur papier (comme ce sera le cas en examen) \
-        ou vous pouvez [créer un fichier *markdown*](/recettes/creer-markdown) dans votre projet PyCharm créé plus haut.
-
-        :::info Exercice - Points d'arrêt
-
-        Vous allez exécuter un script auquel on ne comprend rien pour l'instant.<br />
-        Le but est de se familiariser avec le débogueur.
-
-        Tout d'abord, créez un nouveau fichier points_arrets.py et copiez-y le code suivant :
-        ```python showLineNumbers
-        # ceci est une fonction, nous verrons au prochain cours comment les écrire
-        # l'indentation de la 2e ligne est importante (les espaces au début de la ligne)
-        def calcul_complexe(a, b, c):
-            return a ** b + c * (b - a)
-
-        print("Arrêter le temps, c'est impossible Marty.")
-        a = calcul_complexe(3, 5, 7)
-        b = calcul_complexe(a, 6, 9)
-        c = calcul_complexe(b, a, b)
-        a = calcul_complexe(a, a, a)
-        print("Le resultat est ", calcul_complexe(a, b, c))
-        ```
-
-        On veut savoir quelles sont les valeurs de `a` au fil de l'exécution du script.<br />
-        - Faites d'abord une trace de ce script, en essayant de deviner les valeurs de `a` à chaque étape.
-        - Ensuite, placez un point d'arrêt sur la ligne `a = calcul_complexe(3, 5, 7)` et exécutez le script en mode débogage.
-        - Avancez ligne par ligne et observez les valeurs de `a`, `b` et `c` dans la fenêtre de débogage.
-        - Notez les valeurs de `a` à chaque étape et comparez-les avec votre trace.
-        - Si vous avez des différences, essayez de comprendre pourquoi.
-        - N'hésitez pas à demander de l'aide si vous avez des difficultés.
-
-        :::
-
-        ---
-
         ## 🔨 Exercices de création
 
-        Pour les exercices de cette section, vous devez créer des fichiers `.py` dans un nouveau projet PyCharm.
-
+        Pour chacun des exercices de cette section, vous devez créer des fichiers `.py` avec un nom significatif dans un nouveau projet PyCharm.
+        
         :::info Exercice - *Free style*
 
         Dans un fichier la_sequence.py, écrivez une dizaine de lignes de commandes Python.<br />
@@ -686,7 +648,7 @@ import TabItem from '@theme/TabItem';
             - TP2 : 20%
             - Examen 1 : 30%
             - Examen 2 : 30%
-        - **Affichez un résumé clair** des notes des évaluations et de la note finale.
+        - **Affichez un résumé clair** des notes des évaluations et de la note finale arrondie à 2 décimales.
         <br/>
 
         #### ✅ EXEMPLE DE SORTIE ATTENDUE
@@ -739,8 +701,42 @@ import TabItem from '@theme/TabItem';
 
         ---
 
+        ## ✏️ Exercices de compréhension
 
+        Pour les exercices de cette section, vous pouvez écrire vos réponses sur papier (comme ce sera le cas en examen) \
+        ou vous pouvez [créer un fichier *markdown*](/recettes/creer-markdown) dans votre projet PyCharm créé plus haut.
 
+        :::info Exercice - Points d'arrêt
+
+        Vous allez exécuter un script auquel on ne comprend rien pour l'instant.<br />
+        Le but est de se familiariser avec le débogueur.
+
+        Tout d'abord, créez un nouveau fichier points_arrets.py et copiez-y le code suivant :
+        ```python showLineNumbers
+        # ceci est une fonction, nous verrons au prochain cours comment les écrire
+        # l'indentation de la 2e ligne est importante (les espaces au début de la ligne)
+        def calcul_complexe(a, b, c):
+            return a ** b + c * (b - a)
+
+        print("Arrêter le temps, c'est impossible Marty.")
+        a = calcul_complexe(3, 5, 7)
+        b = calcul_complexe(a, 6, 9)
+        c = calcul_complexe(b, a, b)
+        a = calcul_complexe(a, a, a)
+        print("Le resultat est ", calcul_complexe(a, b, c))
+        ```
+
+        On veut savoir quelles sont les valeurs de `a` au fil de l'exécution du script.<br />
+        - Faites d'abord une trace de ce script, en essayant de deviner les valeurs de `a` à chaque étape.
+        - Ensuite, placez un point d'arrêt sur la ligne `a = calcul_complexe(3, 5, 7)` et exécutez le script en mode débogage.
+        - Avancez ligne par ligne et observez les valeurs de `a`, `b` et `c` dans la fenêtre de débogage.
+        - Notez les valeurs de `a` à chaque étape et comparez-les avec votre trace.
+        - Si vous avez des différences, essayez de comprendre pourquoi.
+        - N'hésitez pas à demander de l'aide si vous avez des difficultés.
+
+        :::
+
+        ---
 
 
     </TabItem>
