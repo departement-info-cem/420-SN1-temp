@@ -101,8 +101,10 @@ import TabItem from '@theme/TabItem';
         saluer("Sciel", 33, langue="anglais")       #Affiche "Bonjour Sciel, 33 ans, de Longueuil, parlant anglais."
         saluer("Gustave", 33, ville="Montréal")     #Affiche "Bonjour Gustave, 33 ans, de Montréal, parlant français."
         ```
-        Au niveau de la définition d'une fonction, on place en général les paramètres obligatoires (sans valeur par défaut) au début suivi des paramètres facultatifs (avec valeur par défaut). 
-        Ceci permet aux personnes utilisatrices de vos fonctions de fournir en premier des arguments pour les paramètres obligatoires et par la suite de fournir des arguments uniquement pour les paramètres souhaités.
+
+        Lorsqu’on définit une fonction, il est courant de **placer d’abord les paramètres obligatoires** (ceux qui n’ont pas de valeur par défaut), **suivis des paramètres facultatifs** (ceux qui ont une valeur par défaut).
+        Cette organisation permet à l’utilisateur de la fonction de **fournir les arguments essentiels en priorité**, tout en ayant la liberté de **spécifier uniquement les options supplémentaires** s’il le souhaite.
+        
         
         :::
 
@@ -176,7 +178,8 @@ import TabItem from '@theme/TabItem';
         # print(y)  # Cela provoquerait une erreur car y n'est pas défini ici
         ```
 
-        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`, tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
+        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`,\
+        tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
 
         :::
 
@@ -280,7 +283,8 @@ import TabItem from '@theme/TabItem';
         Si vous appuyez de nouveau sur <img src={require('/img/icons/stepinto.png').default} alt="Step Into" width="24" style={{ verticalAlign: 'middle' }} />, vous entrez dans la fonction `ajouter`.<br />
         Vous pouvez voir que la fonction `ajouter` est maintenant au sommet de la pile d'appels, et les paramètres `x` et `y` sont affichés dans la liste des variables :
         <img src={require('/img/recettes/pile_appels2.png').default} width="70%"/>
-        Remarquez que les paramètres `a`, `b` et `c` de `calculer_expression` ne sont plus visibles, car vous êtes maintenant dans la fonction `ajouter` et `a`, `b` et `c` sont **hors de portée**.
+        Remarquez que les paramètres `a`, `b` et `c` de `calculer_expression` ne sont plus visibles,\
+        car vous êtes maintenant dans la fonction `ajouter` et `a`, `b` et `c` sont **hors de portée**.
 
         Vous pouvez cliquer sur le nom de la fonction `calculer_expression` dans la pile d'appels pour revenir à cette fonction et voir ses paramètres à nouveau :
         <img src={require('/img/recettes/pile_appels3.png').default} width="70%"/>
@@ -348,7 +352,7 @@ import TabItem from '@theme/TabItem';
         ```
 
         Les lignes 3 à 19 montrent un exemple de commentaire de bloc utilisant des triples guillemets pour expliquer en détail la fonction `energie_cinetique`.<br />
-        Elles sont ignorées par Python lors de l'exécution du code.<br />
+        Elles sont ignorées par Python lors de l'exécution du code.<br /><br />
         Il en est de même pour les lignes 1, 23 et 27 qui sont des commentaires sur une seule ligne, ainsi que tout ce qui se trouve à droite du `#` à la ligne 2.
 
         :::
@@ -554,7 +558,8 @@ import TabItem from '@theme/TabItem';
 
         :::warning
 
-        La récursivité est un concept plus avancé qui dépasse le cadre de ce cours et n'est pas obligatoire pour réussir le cours, mais qui peut être intéressant à explorer si vous êtes curieu.x.se.<br />
+        La récursivité est un concept plus avancé qui dépasse le cadre de ce cours.<br/> 
+        Il n'est pas obligatoire pour réussir le cours, mais qui peut être intéressant à explorer si vous êtes curieu.x.se.<br />
         Vous pouvez choisir de ne pas lire cette section si vous n'êtes pas assez à l'aise ou si vous êtes déjà assez mêlé.e comme ça!<br />
         :::
 
