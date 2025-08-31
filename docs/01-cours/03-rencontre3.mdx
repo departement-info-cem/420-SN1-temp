@@ -316,11 +316,12 @@ import TabItem from '@theme/TabItem';
         Les commentaires sont ignorés par l'interpréteur Python et n'affectent pas l'exécution du code.<br />
         Ils sont utiles pour rendre le code plus lisible et compréhensible pour les autres développeurs (et pour vous-même dans le futur!).
 
-        En Python, les commentaires sont créés en utilisant :
-        - le symbole `#` pour commenter une ligne entière ou une partie de ligne,
-        ou bien :
-        - des triples guillemets `"""` (ou `'''`) pour commenter un bloc de lignes continu.
-
+        En Python, les commentaires sont créés en utilisant le symbole `#` pour commenter **une ligne entière** ou **une partie de ligne**.
+        
+        Pour documenter une fonction, il est possible d'utiliser les triples guillemets `"""` (ou `'''`). \
+        Ce type de documentation est nommée un **docstring** et est toujours placé au début de la définition d'une fonction. \
+        Créer une fonction sans mettre une documentation est une mauvaise pratique!
+        
         Par exemple :
         ```python showLineNumbers
         # Ceci est un commentaire sur une seule ligne
