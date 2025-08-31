@@ -43,8 +43,6 @@ import TabItem from '@theme/TabItem';
         **NameError:** name 'nom_de_la_fonction' is not defined
         :::
 
-        :::
-
     </TabItem>
 
     <TabItem value="parametres" label="Paramètres">
@@ -89,7 +87,7 @@ import TabItem from '@theme/TabItem';
         ```
         Dans cet exemple, si `saluer` est appelée sans argument, `nom` prendra la valeur par défaut "inconnu". \
         \
-        Une fonction peut posséder à la fois des paramètres avec des valeurs par défaut et des paramètres sans valeurs par défaut. \
+        Une fonction peut posséder à la fois des paramètres avec des valeurs par défaut et des paramètres sans valeurs par défaut.
 
         ```python showLineNumbers
         def saluer(nom, age, ville="Longueuil", langue="français"):
@@ -104,6 +102,11 @@ import TabItem from '@theme/TabItem';
 
         Lorsqu’on définit une fonction, il est courant de **placer d’abord les paramètres obligatoires** (ceux qui n’ont pas de valeur par défaut), **suivis des paramètres facultatifs** (ceux qui ont une valeur par défaut).
         Cette organisation permet à l’utilisateur de la fonction de **fournir les arguments essentiels en priorité**, tout en ayant la liberté de **spécifier uniquement les options supplémentaires** s’il le souhaite.
+
+        La ligne #7 de l'exemple est particulièrement intéressante à analyser : 
+        - on fournit un nom et un âge 
+        - on ne fournit aucune argument pour la ville, la valeur par défaut "Longueuil" sera prise.
+        - malgré l'absence d'argument pour la ville, on peut fournir un argument pour la langue, ici "anglais"!
         
         
         :::
