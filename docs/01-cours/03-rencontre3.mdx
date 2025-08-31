@@ -214,9 +214,21 @@ import TabItem from '@theme/TabItem';
 
         :::note Pile d'appels
 
-        Lorsqu'une fonction est appelée, elle est ajoutée à la *pile d'appels*.<br />
-        La pile d'appels est une structure de données qui suit le principe LIFO (Last In, First Out), ce qui signifie que la dernière fonction appelée est la première à être terminée.<br />
-        Cela permet de gérer les appels imbriqués de fonctions et de revenir à l'état précédent une fois qu'une fonction a terminé son exécution.
+        Lorsque l’on démarre un programme Python, **une pile d'appels** est automatiquement créée. \
+        Cette structure de données, généralement invisible sauf en cas d’erreur ou via des outils de débogage, \
+        permet à Python de suivre l’ordre d’exécution des fonctions et de conserver l’état des variables locales.
+        
+        🔁 Fonctionnement de la pile
+
+        - Lorsqu’une instruction **appelle une fonction**, celle-ci est **empilée au sommet de la pile d'appels**.
+        - Python exécute **une seule fonction à la fois**, toujours celle qui se trouve **en haut de la pile**.
+        - Une fois l’exécution terminée, **la fonction est retirée de la pile**.
+        - **La fonction suivante au sommet** devient alors **la nouvelle fonction active**, que Python exécute immédiatement.
+        
+        📚 Principe LIFO
+        La pile d'appels suit le principe LIFO (Last In, First Out) :
+        - La dernière fonction ajoutée est la première à être exécutée, et la première à être retirée.
+        - Ce mécanisme permet à Python de gérer les appels imbriqués de fonctions, et de revenir à l’état précédent une fois qu’une fonction a terminé son exécution.
 
         ```python showLineNumbers
         def fonction_a():
