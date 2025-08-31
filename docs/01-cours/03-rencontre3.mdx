@@ -13,7 +13,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Fonction simple
 
-        Une fonction est un bloc de code réutilisable qui effectue une tâche spécifique.<br />
+        Une fonction est un bloc de code réutilisable (un ensemble d'instructions) ayant une tâche ou un but spécifique.<br />
         Elle est définie à l'aide du mot-clé `def`, suivi du nom de la fonction, de parenthèses et d'un `:`.<br />
 
         Le code à l'intérieur de la fonction est indenté avec une tabulation (touche `TAB`).<br />
@@ -34,6 +34,14 @@ import TabItem from '@theme/TabItem';
 
         *Appeler* une fonction se fait en écrivant son nom suivi de parenthèses.<br />
         Lorsqu'une fonction est appelée, le code à l'intérieur de la fonction est exécuté.
+        
+        :::warning importance de placer la définition d'une fonction avant ses appels
+        La définition d'une fonction doit toujours être placée avant les appels à ces dernières. \
+        Tentez d'appeler une fonction avant la définition génère une erreur similaire à ceci :
+        \
+        \
+        **NameError:** name 'nom_de_la_fonction' is not defined
+        :::
 
         :::
 
@@ -54,9 +62,18 @@ import TabItem from '@theme/TabItem';
         saluer("Alice")  # Affiche "Bonjour, Alice!"
         ```
 
-        Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant
-        ce paramètre.
+        Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant ce paramètre. \
+        \
+        Si une fonction accepte plusieurs paramètres, les noms des paramètres sont séparés par une virgule. \
+        Au niveau de l'appel, les valeurs transmises (les arguments) doivent aussi être séparées par une virgule en respectant l'ordre attendu.
 
+        ```python showLineNumbers
+        def affiche_difference(a, b):
+            print(f"La différence entre {a} et {b} est {a - b}")
+
+        affiche_difference(8, 5)  # Affiche "La différence entre 8 et 5 est 3"
+        ```
+        
         :::
 
         ---
@@ -70,9 +87,23 @@ import TabItem from '@theme/TabItem';
         saluer()  # Affiche "Bonjour, inconnu!"
         saluer("Alice")  # Affiche "Bonjour, Alice!"
         ```
-        Dans cet exemple, si `saluer` est appelée sans argument, `nom` prendra la valeur par défaut "inconnu".
+        Dans cet exemple, si `saluer` est appelée sans argument, `nom` prendra la valeur par défaut "inconnu". \
+        \
+        Une fonction peut posséder à la fois des paramètres avec des valeurs par défaut et des paramètres sans valeurs par défaut. \
 
+        ```python showLineNumbers
+        def saluer(nom, age, ville="Longueuil", langue="français"):
+            print(f"Bonjour {nom}, {age} ans, de {ville}, parlant {langue}.")
 
+        #Exemples d'appels
+        saluer("Renoir", 72)                        #Affiche "Bonjour Renoir, 72 ans, de Longueuil, parlant français".
+        saluer("Maelle", 16, "Laval", "anglais")    #Affiche "Bonjour Maelle, 16 ans, de Laval, parlant anglais."
+        saluer("Sciel", 33, langue="anglais")       #Affiche "Bonjour Sciel, 33 ans, de Longueuil, parlant anglais."
+        saluer("Gustave", 33, ville="Montréal")     #Affiche "Bonjour Gustave, 33 ans, de Montréal, parlant français."
+        ```
+        Au niveau de la définition d'une fonction, on place en général les paramètres obligatoires (sans valeur par défaut) au début suivi des paramètres facultatifs (avec valeur par défaut). 
+        Ceci permet aux personnes utilisatrices de vos fonctions de fournir en premier des arguments pour les paramètres obligatoires et par la suite de fournir des arguments uniquement pour les paramètres souhaités.
+        
         :::
 
     </TabItem>
