@@ -728,11 +728,11 @@ import TabItem from '@theme/TabItem';
         # ceci est une fonction, nous verrons au prochain cours comment les écrire
         # l'indentation de la 2e ligne est importante (les espaces au début de la ligne)
         def calcul_complexe(a, b, c):
-            return a ** b + c * (b - a)
+            return a + c * (b - a)
 
         print("Arrêter le temps, c'est impossible Marty.")
-        a = calcul_complexe(3, 5, 7)
-        b = calcul_complexe(a, 6, 9)
+        a = calcul_complexe(3, 5, 6)
+        b = calcul_complexe(a, 6, 4)
         c = calcul_complexe(b, a, b)
         a = calcul_complexe(a, a, a)
         print("Le resultat est ", calcul_complexe(a, b, c))
