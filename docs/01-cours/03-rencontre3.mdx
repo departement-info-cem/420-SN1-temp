@@ -556,7 +556,7 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice - Affichage résultats échantillons
+        :::info Exercice - Refactorisation du code - Affichage des résultats expérimentations
 
         Le code ci-dessous permet d'afficher les résultats de différentes expérimentations scientifiques. \
         Beaucoup d'instructions sont redondantes ou très similaires avec juste des différences mineures. \
@@ -590,6 +590,44 @@ import TabItem from '@theme/TabItem';
 
         Lorsqu'on exécute la version originale du code, ou votre version améliorée, on devrait observer le même résultat dans la console.
         
+        :::
+
+        
+        :::info Exercice - Refactorisation du code - Calcul de densité
+
+        Le code ci-dessous permet de calculer la densité en kg/m<sup>3</sup> de 3 échantillons pour lesquelle nous possédons une masse en g et un volue en cm<sup>3</sup>. \
+        Le calcul de la densité nécessite plusieurs instructions. **Simplifiez ce code en créant une fonction réutilisable** pour calculer la densité en kg/m<sup>3</sup> et utilise-la.
+
+        ⚠️Il est **INTERDIT de modifier** les instructions **1 à 7** et **20 à 23** inclusiement.
+        
+
+
+        ```python showLineNumbers
+        #Variables contenants les données de 3 échantillons
+        echantillon1_masse_en_g = 135
+        echantillon1_volume_cm3 = 84
+        echantillon2_masse_en_g = 270
+        echantillon2_volume_cm3 = 151
+        echantillon3_masse_en_g = 92
+        echantillon3_volume_cm3 = 113
+
+        #Calcul des densitées pour les 3 échantilllons
+        echantillon1_masse_en_kg = echantillon1_masse_en_g / 1000
+        echantillon1_volume_m3 = echantillon1_volume_cm3 / 1_000_000
+        echantillon1_densite = echantillon1_masse_en_kg / echantillon1_volume_m3
+        echantillon2_masse_en_kg = echantillon2_masse_en_g / 1000
+        echantillon2_volume_m3 = echantillon2_volume_cm3 / 1_000_000
+        echantillon2_densite = echantillon2_masse_en_kg / echantillon2_volume_m3
+        echantillon3_masse_en_kg = echantillon3_masse_en_g / 1000
+        echantillon3_volume_m3 = echantillon3_volume_cm3 / 1_000_000
+        echantillon3_densite = echantillon3_masse_en_kg / echantillon3_volume_m3
+        
+        #Affichage des résultats
+        print("Densité 1 :", round(echantillon1_densite, 2), "kg/m3")
+        print("Densité 2 :", round(echantillon2_densite, 2), "kg/m3")
+        print("Densité 3 :", round(echantillon3_densite, 2), "kg/m3")
+        ```
+
         :::
 
     </TabItem>
