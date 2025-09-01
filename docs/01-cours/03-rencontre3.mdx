@@ -634,6 +634,46 @@ import TabItem from '@theme/TabItem';
         
         :::
 
+        :::info Exercice - Une question de nanosecondes
+
+        En lisant la documentation du module time  ([doc](https://docs.python.org/fr/3.13/library/time.html)), trouver une fonction : 
+        - Ne nécessitant aucun argument
+        - retournant un int représentant un temps en nanosecondes
+
+        Ensuite, créer votre propre fonction nommée <i>temps_en_ns()</i> sans paramètre. 🔨 \
+        Votre fonction doit simplement retourner la valeur renvoyée par la fonction que vous avez trouvé.
+        
+        Ensuite, exécuter le code suivant :
+
+        ```python showLineNumbers
+        def calcul_intensif():
+            '''
+            Fonction dont le code n'est pas important, mais prenant un certain temps à s'exécuter
+            '''
+            total = 0
+            for i in range(1, 20_000_000):  # 20 million d'itérations
+                total += i ** 0.5
+            return total
+
+        tempA = temps_en_ns()
+        calcul_intensif()
+        tempB = temps_en_ns()
+
+        mystere = tempB - tempA #Expression intéressante
+        print(mystere)
+        ```
+
+        **Question** \
+        ✏️ Selon vous, en observant les instructions 12 à 16 que représente le nombre retourné par la variable <i>mystere</i>? 
+        
+        **Instructions pour vous aider dans votre réflexion**
+        1. Exécutez le programme tel quel et notez la valeur affichée.
+        2. À la ligne 6, modifiez le nombre 20_000_000 en 40_000_000.
+        3. Réexécutez le programme et notez le nouveau résultat.
+        4. Expliquez la différence entre les 2 résultats obtenus.
+
+        :::
+
     </TabItem>
 
     <TabItem value="recusivite" label="*Récursivité*">
