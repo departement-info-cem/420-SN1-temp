@@ -331,6 +331,31 @@ import TabItem from '@theme/TabItem';
 
         Par exemple, dans le code ci-dessus, `f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2}"` crée une chaîne avec les valeurs des variables `nombre1` et `nombre2` directement intégrées.
 
+        ### Formattage des nombres
+        Les f-strings permettent un **contrôle très précis** de la façon la présentation les nombres entiers et flottants. \
+        Il suffit de mettre à l'intérieur des accolades `{}` après l'expression, un `:` suivi d'options pour contrôler la présentation.  \
+        Par exemple, `{nombre1 * nombre2:.2f}` afficherait le résultat de la multiplication arrondie à 2 décimales.
+        
+        |Syntaxe|Effet|Exemple|
+        |-|-|-|
+        |`:.2f`|Arrondi à 2 décimales, complété par des 0|`3.14159 → 3.14` / `3.5 → 3.50`|
+        |`:.0f`|Arrondi sans décimale|`3.99 → 4`|
+        |`:.3e`|Notions scientiques après la 3ème décimale|`123456 → 1.235e+05`|
+        |`:,`|Spécifier le séparateur de de milliers|`1000000 → 1,000,000`|
+        |`:05d`|Entier sur 5 chiffres, complété par des 0|`42 → 00042`|
+        |`:+.2f`|Affiche le signe + ou - et conserve 2 décimales|`3.5 → +3.50` / `-2 → -2.00`|
+
+        ### Formattage des chaînes de caractères
+        Il est possible de forcer une chaîne de caractères à occuper un certain nombre de caractères et de contrôler l'alignement. \
+        Ceci peut-être particulièrement utile lorsque l'alignement verticale entre plusieurs lignes dans la console doit être aligné (ex. l'affichage d'un tableau en console).
+
+        |Syntaxe|Effet|Exemple|
+        |-|-|-|
+        |`:<10`|Aligné à gauche sur 10 caractères|`"Mots" → 'Mots      '`|
+        |`:>10`|Aligné à droite sur 10 caractères|`"Mots" → '      Mots'`|
+        |`:^10`|Centré sur 10 caractères|`"Mots" → '   Mots   '`|
+        
+
         :::
 
     </TabItem>
