@@ -4,12 +4,13 @@ hide_table_of_contents: true
 
 # 🆎 F-string
 
-Voici les options de formatages les plus courantes pour les f-string. \
+Voici les options de formatage les plus courantes pour les *f-string*. \
 Ces options doivent être placées immédiatement à la fin de l'expression avant l'accolade fermante.
 
 **Exemple**
-```python showLineNumbers
-print(f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2:2f}") #le résultat est arrondi à 2 décimales
+```python
+# le résultat est arrondi à 2 décimales :
+print(f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2:.2f}")
 ```
 
 ### Formattage des nombres
@@ -23,13 +24,13 @@ print(f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2:2f}") #le
         |`:05d`|Entier sur 5 chiffres, complété par des 0|`42 → 00042`|
         |`:+.2f`|Affiche le signe + ou - et conserve 2 décimales|`3.5 → +3.50` / `-2 → -2.00`|
         
-        ### Formattage des chaînes de caractères
+        ### Formatage des chaînes de caractères
 
-        |Syntaxe|Effet|Exemple|
-        |-|-|-|
-        |`:<10`|Aligné à gauche sur 10 caractères|`"Mots" → 'Mots      '`|
-        |`:>10`|Aligné à droite sur 10 caractères|`"Mots" → '      Mots'`|
-        |`:^10`|Centré sur 10 caractères|`"Mots" → '   Mots   '`|
+        | Syntaxe | Effet | Exemple |
+        | - | - | - |
+        | `:<10` | Aligné à gauche sur 10 caractères |`"Mots" →  <code>Mots{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</code> |
+        | `:>10` | Aligné à droite sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Mots</code> |
+        | `:^10` | Centré sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0'}Mots{'\u00A0\u00A0\u00A0'}</code> |
 
         
         
