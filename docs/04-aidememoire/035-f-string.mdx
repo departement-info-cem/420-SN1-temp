@@ -13,24 +13,24 @@ Ces options doivent être placées immédiatement à la fin de l'expression avan
 print(f"Le résultat de {nombre1} x {nombre2} est : {nombre1 * nombre2:.2f}")
 ```
 
-### Formattage des nombres
+### Formatage des nombres
         
-        |Syntaxe|Effet|Exemple|
-        |-|-|-|
-        |`:.2f`|Arrondi à 2 décimales, complété par des 0|`3.14159 → 3.14` / `3.5 → 3.50`|
-        |`:.0f`|Arrondi sans décimale|`3.99 → 4`|
-        |`:.3e`|Notions scientiques après la 3ème décimale|`123456 → 1.235e+05`|
-        |`:,`|Spécifier le séparateur de de milliers|`1000000 → 1,000,000`|
-        |`:05d`|Entier sur 5 chiffres, complété par des 0|`42 → 00042`|
-        |`:+.2f`|Affiche le signe + ou - et conserve 2 décimales|`3.5 → +3.50` / `-2 → -2.00`|
-        
-        ### Formatage des chaînes de caractères
+|Syntaxe|Effet|Exemple|
+|-|-|-|
+|`:.2f`|Arrondi à 2 décimales, complété par des 0|`3.14159 → 3.14` / `3.5 → 3.50`|
+|`:.0f`|Arrondi sans décimale|`3.99 → 4`|
+|`:.3e`|Notions scientiques après la 3ème décimale|`123456 → 1.235e+05`|
+|`:,`|Spécifier le séparateur de de milliers|`1000000 → 1,000,000`|
+|`:05d`|Entier sur 5 chiffres, complété par des 0|`42 → 00042`|
+|`:+.2f`|Affiche le signe + ou - et conserve 2 décimales|`3.5 → +3.50` / `-2 → -2.00`|
 
-        | Syntaxe | Effet | Exemple |
-        | - | - | - |
-        | `:<10` | Aligné à gauche sur 10 caractères |`"Mots" →  <code>Mots{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</code> |
-        | `:>10` | Aligné à droite sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Mots</code> |
-        | `:^10` | Centré sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0'}Mots{'\u00A0\u00A0\u00A0'}</code> |
+### Formatage des chaînes de caractères
+
+| Syntaxe | Effet | Exemple |
+| - | - | - |
+| `:<10` | Aligné à gauche sur 10 caractères |`"Mots" →  <code>Mots{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}</code> |
+| `:>10` | Aligné à droite sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0\u00A0\u00A0\u00A0'}Mots</code> |
+| `:^10` | Centré sur 10 caractères |`"Mots" →  <code>{'\u00A0\u00A0\u00A0'}Mots{'\u00A0\u00A0\u00A0'}</code> |
 
         
         
