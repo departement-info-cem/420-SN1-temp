@@ -36,11 +36,12 @@ import TabItem from '@theme/TabItem';
         Lorsqu'une fonction est appelée, le code à l'intérieur de la fonction est exécuté.
         
         :::warning importance de placer la définition d'une fonction avant ses appels
-        La définition d'une fonction doit toujours être placée avant les appels à ces dernières. \
-        Tentez d'appeler une fonction avant la définition génère une erreur similaire à ceci :
-        \
-        \
-        **NameError:** name 'nom_de_la_fonction' is not defined
+        La définition d'une fonction doit toujours être placée avant les appels à celle-ci. \
+        Tenter d'appeler une fonction avant sa définition génère une erreur similaire à ceci :
+
+        ```
+        NameError: name 'nom_de_la_fonction' is not defined
+        ```
         :::
 
     </TabItem>
@@ -232,7 +233,8 @@ import TabItem from '@theme/TabItem';
         - **La fonction suivante au sommet** devient alors **la nouvelle fonction active**, que Python exécute immédiatement.
         
         📚 Principe LIFO
-        La pile d'appels suit le principe LIFO (Last In, First Out) :
+
+        La pile d'appels suit le principe LIFO (*Last In, First Out*) :
         - La dernière fonction ajoutée est la première à être exécutée, et la première à être retirée.
         - Ce mécanisme permet à Python de gérer les appels imbriqués de fonctions, et de revenir à l’état précédent une fois qu’une fonction a terminé son exécution.
 
@@ -296,9 +298,9 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::tip Trace
+        :::tip Trace d'exécution
 
-        Lorsque vous faite une trace d'un code avec des appels de fonctions, \
+        Lorsque vous faites la trace d'exécution d'un code qui contient des appels de fonctions, \
         il est nécessaire de noter la pile d'appels et les variables locales à chaque étape
         comme dans l'[exemple de trace disponible ici](/recettes/produire-une-trace?recette-activite=Avec+fonction).
 
@@ -319,7 +321,7 @@ import TabItem from '@theme/TabItem';
         En Python, les commentaires sont créés en utilisant le symbole `#` pour commenter **une ligne entière** ou **une partie de ligne**.
         
         Pour documenter une fonction, il est possible d'utiliser les triples guillemets `"""` (ou `'''`). \
-        Ce type de documentation est nommée un **docstring** et est toujours placé au début de la définition d'une fonction. \
+        Ce type de documentation se nomme un ***docstring*** et est toujours placé au début de la définition d'une fonction. \
         Créer une fonction sans mettre une documentation est une mauvaise pratique!
         
         Par exemple :
@@ -356,7 +358,8 @@ import TabItem from '@theme/TabItem';
         ```
 
         Les lignes 3 à 19 montrent un exemple de commentaire de bloc utilisant des triples guillemets pour expliquer en détail la fonction `energie_cinetique`.<br />
-        Elles sont ignorées par Python lors de l'exécution du code.<br /><br />
+        Elles sont ignorées par Python lors de l'exécution du code.
+
         Il en est de même pour les lignes 1, 23 et 27 qui sont des commentaires sur une seule ligne, ainsi que tout ce qui se trouve à droite du `#` à la ligne 2.
 
         :::
@@ -659,7 +662,7 @@ import TabItem from '@theme/TabItem';
             Fonction dont le code n'est pas important, mais prenant un certain temps à s'exécuter
             '''
             total = 0
-            for i in range(1, 20_000_000):  # 20 million d'itérations
+            for i in range(1, 20000000):  # 20 million d'itérations
                 total += i ** 0.5
             return total
 
@@ -675,10 +678,10 @@ import TabItem from '@theme/TabItem';
         ✏️ Selon vous, en observant les instructions 12 à 16 que représente le nombre retourné par la variable <i>mystere</i>? 
         
         **Instructions pour vous aider dans votre réflexion**
-        - Exécutez le programme tel quel et notez la valeur affichée,
-        - À la ligne 6, modifiez le nombre 20_000_000 en 40_000_000,
-        - Réexécutez le programme et notez le nouveau résultat,
-        - Expliquez la différence entre les 2 résultats obtenus.
+        1) Exécutez le programme tel quel et notez la valeur affichée.
+        2) À la ligne 6, modifiez le nombre 20 000 000 pour 40 000 000.
+        3) Réexécutez le programme et notez le nouveau résultat.
+        4) Expliquez la différence entre les 2 résultats obtenus.
 
         :::
 
@@ -687,8 +690,8 @@ import TabItem from '@theme/TabItem';
         # 🎯 Solutions des exercices
 
         Un solutionnaire possible pour chaque exercice est disponible en format vidéo avec des explications. 
-        Tu peux t'en servir pour **comparer ta solution** avec une solution possible jugée optimale et 
-        **te débloquer après un long** moment bloqué sur un exercice (**ex. 20 minutes**) et avoir utiliser le dégogueur.
+        Vous pouvez vous en servir pour **comparer votre solution** avec une solution possible jugée optimale et
+        **vous débloquer après un long** moment bloqué sur un exercice (**ex. 20 minutes**) et après avoir utilisé le dégogueur pour essayer par vous-même de trouver le problème.
     
         :::warning 
         Il est tout à fait normal que certains problèmes demandent du temps, de la réflexion, et parfois même un peu de frustration. 
@@ -716,8 +719,8 @@ import TabItem from '@theme/TabItem';
 
         :::warning
 
-        La récursivité est un concept plus avancé qui dépasse le cadre de ce cours.<br/> 
-        Il n'est pas obligatoire pour réussir le cours, mais qui peut être intéressant à explorer si vous êtes curieu.x.se.<br />
+        La récursivité est une notion plus avancée qui dépasse le cadre de ce cours.<br/>
+        Elle n'est pas obligatoire pour réussir le cours, mais il s'agit d'un concept intéressant à explorer si vous êtes curieu.x.se.<br />
         Vous pouvez choisir de ne pas lire cette section si vous n'êtes pas assez à l'aise ou si vous êtes déjà assez mêlé.e comme ça!<br />
         :::
 
