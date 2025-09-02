@@ -89,8 +89,7 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 
         La racine de 8 ressemble donc à 2.8...., car 2.9² est plus grand que 8.
 
-        Et on fait ainsi de suite pour les décimales suivantes.\
-        On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
+        Et on fait ainsi de suite pour les décimales suivantes. On fait des essais successifs pour chaque décimale jusqu’à la précision désirée.
         :::
     </Column>
     <Column>
@@ -112,24 +111,23 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         Exemple
         \
         \
-        Si on souhaite 2 décimales de précision, 
-        on devrait alors arrêter quand la différence entre les 2 intervalles est inférieure à 0.001
+        Si on souhaite 4 décimales de précision, 
+        on devrait alors arrêter quand la différence entre les 2 intervalles est inférieure à 0.00001
         \
         \
-            Début : [0, 8] → 8 - 0 = 8 ... c'est > 0.001 → on continue ... \
-                    nouvel intervalle [0, 4] → 4 - 0 = 4 ... c'est > 0.001 → on continue \
-                    nouvel intervalle [2, 4] → 4 - 2 = 2 ... c'est > 0.001 → on continue \
+            Début : [0, 8] → 8 - 0 = 8 ... c'est > 0.00001 → on continue ... \
+                    nouvel intervalle [0, 4] → 4 - 0 = 4 ... c'est > 0.00001 → on continue \
+                    nouvel intervalle [2, 4] → 4 - 2 = 2 ... c'est > 0.00001 → on continue \
                     ... \
                     nouvel intervalle [2.828125, 2.8291015625] → \
-                    2.8291015625 - 2.828125 = 0.0009765625... c'est < 0.001 → on arrête
+                    2.8291015625 - 2.828125 = 0.0009765625... c'est < 0.00001 → on arrête
                     
-                    La réponse est la moyenne des 2 intervalles qu'on arrondie à 2 décimales.
+                    La réponse est la moyenne des 2 intervalles.
 
         :::
 
-        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prendra un nombre en paramètre et renverra
-        la racine
-        carrée de ce nombre en utilisant cette méthode, avec une précision de 0.001.
+        Pour **chacune des deux méthodes**, vous devez créer une fonction prenant un nombre en paramètre et retournant
+        la racine carrée de ce nombre en utilisant cette méthode. La précision doit être de 4 décimales.
 
         :::tip ✅ Tests attendus
 
