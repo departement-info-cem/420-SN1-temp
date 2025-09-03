@@ -31,7 +31,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "6 - 🧩 Struct. combinées, TP1",
+      label: "6 - 🛠️ TP1",
       id: "cours/rencontre6",
     },
     {
