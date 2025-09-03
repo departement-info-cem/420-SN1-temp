@@ -54,7 +54,7 @@ de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d
 - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
 - Au moins 1 commit par semaine
 - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
-- Les fonctions doivent être documetées dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles
+- Les fonctions doivent être documetées à l'aide d'un [docstring](/cours/rencontre3?onglet=comments) dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles
 :::
 
 ::::note <Highlight color="tip"><span style={{color: 'white'}}>5 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
@@ -126,8 +126,9 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 
         :::
 
-        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prend un nombre en paramètre et qui retourne sa racine carrée en utilisant cette méthode.
-        La précision doit être entre 4 et 14 décimales à votre discrétion. Supérieur à 14 décimales, le calcul prend trop de temps et le programme arrête de fonctionner.
+        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prend un nombre en paramètre et qui retourne sa racine carrée en utilisant cette méthode. \
+        \
+        La **précision** doit être **entre 4 et 14 décimales** à votre discrétion. Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner.
 
         :::tip ✅ Tests attendus
 
@@ -156,16 +157,16 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 <Row>
     <Column>
         :::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des performances
-        Vous allez comparer vos méthodes avec `math.sqrt` sur 10 000 nombres pseudo-aléatoires. Pour y parvenir, vous devez :
+        Vous allez comparer vos 2 méthodes avec `math.sqrt` pour comparer les performances. Pour chaque méthode (fonction 1, fonction 2, math.sqrt) vous devez :
 
-        1. À l'aide d'une boucle, générez  **100 000 nombres flottants** aléatoires entre 10 et 1000.
-        2. Chronométrer le temps pour :
-        - Calculer toutes les racines avec **votre première fonction**
-        - Calculer les racines avec **votre deuxième fonction**
-        - Calculer les racines avec **`math.sqrt()`**
-        3. Afficher :
-        - Le **temps total (en nanosecondes)** pour chaque méthode
-        - Le **temps moyen** par appel de fonction pour chaque méthode
+        - Utiliser une boucle différente par méthode :
+            - Réaliser 100 000 appels de la méthode
+            - Utilisez un nombre flottant aléatoire différent à chaque appel
+            - Les nombres flottants générés doivent être compris entre 10 et 10 000
+            - Calculer le temps nécessaire pour réaliser les 100 000 appels (en ms)
+        - Afficher :
+            - Le **temps total (en millisecondes)** pour chaque méthode
+            - Le **temps moyen** par appel de fonction pour chaque méthode
         :::
     </Column>
     <Column>
