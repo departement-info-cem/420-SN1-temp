@@ -157,6 +157,14 @@ const config = {
                 {
                     property: "og:type",
                     content: "website",
+                },
+                {
+                    property: "og:image",
+                    content: "https://info.cegepmontpetit.ca/420-SN1/img/logo.svg"
+                },
+                {
+                    property: "og:url",
+                    content: "https://info.cegepmontpetit.ca/420-SN1/"
                 }
             ],
         }),
