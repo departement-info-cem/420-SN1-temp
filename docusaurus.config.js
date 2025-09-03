@@ -139,9 +139,25 @@ const config = {
             },
             metadata: [
                 {
-                    name: "keywords",
-                    content: `${siteConfig.nom}, ${siteConfig.description}, informatique, technique, cégep, cegep, édouard-montpetit, edouard-montpetit, édouard montpetit, edouard montpetit`,
+                    name: "description",
+                    content: siteConfig.description,
                 },
+                {
+                    name: "keywords",
+                    content: "SN1, programmation en sciences, cours programmation cégep, informatique, cégep Édouard-Montpetit, cegep Edouard Montpetit, programmation scientifique, apprendre la programmation, cours informatique, sciences de la nature, python, étudiants sciences de la nature, algorithmes, initiation à la programmation",
+                },
+                {
+                    property: "og:title",
+                    content: siteConfig.nom,
+                },
+                {
+                    property: "og:description",
+                    content: siteConfig.description,
+                },
+                {
+                    property: "og:type",
+                    content: "website",
+                }
             ],
         }),
 };
