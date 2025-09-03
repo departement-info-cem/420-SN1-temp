@@ -534,13 +534,12 @@ import TabItem from '@theme/TabItem';
         :::info Exercice - QUESTION DE GRAVITÉ
 
         La gravité sur Mars est d’environ 3,71 m/s². \
-        Écris un programme qui demande à l’utilisateur d’entrer une masse (en kilogrammes). \
-        Le programme doit ensuite calculer et afficher le poids correspondant sur Mars, en newtons.
+        Écrivez un programme qui demande à l’utilisateur d’entrer une masse (en kilogrammes). \
+        Le programme doit ensuite calculer et afficher le poids correspondant sur Mars, en Newtons.
         
-        💡 Formule : poids = masse × gravité
+        💡 Formule : $\text{poids}=\text{masse}\times\text{gravité}$
 
         ✅ Exemple de sortie attendue
-
         ```python
         Masse sur Terre (kg) : 50
         Le poids sur Mars est de 185.5 N.
@@ -552,7 +551,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - CONVERTIR CELSIUS EN FAHRENHEIT
 
-        Écrire un programme pour convertir des degrés Celsius en Fahrenheit.
+        Écrivez un programme pour convertir des degrés Celsius en Fahrenheit.
         - Le programme doit demander à l'utilisateur une température en degrés Celsius.
         - Le programme doit afficher la valeur initiale en Celsius (**°C**) ainsi que la valeur en Fahrenheit (**°F**).
         - La formule pour convertir est la suivante :
@@ -594,10 +593,18 @@ import TabItem from '@theme/TabItem';
         :::info Exercice - GÉNÉRER UN NOMBRE ALÉATOIRE
 
         L’utilisateur doit saisir 2 nombres entiers à l’aide de la console :
-        - un nombre minimal
-        - un nombre maximal
+        1) un nombre minimal
+        2) un nombre maximal
 
         Vous devez ensuite générer un nombre entier aléatoire compris entre ces 2 nombres inclusivement.
+
+        ✅ Exemple de sortie attendue
+        ```python
+        Nombre le plus bas : 50
+        Nombre le plus haut : 100
+
+        Nombre aléatoire généré : 56
+        ```
 
         Le module `random` sera nécessaire :
         - Vous pouvez lire la ([documentation](https://docs.python.org/fr/3.13/library/random.html)) du module pour trouver la fonction et des exemples.
@@ -612,14 +619,6 @@ import TabItem from '@theme/TabItem';
         Peux-tu m’expliquer comment elle fonctionne et me donner un exemple d’utilisation ?
         ```
 
-        ✅ Exemple de sortie attendue
-        ```python
-        Nombre le plus bas : 50
-        Nombre le plus haut : 100
-
-        Nombre aléatoire généré : 56
-        ```
-
         :::
 
         ---
@@ -630,17 +629,16 @@ import TabItem from '@theme/TabItem';
 
         #### 🛠️**INSTRUCTIONS**
 
-        - **Déclarez trois variables** pour stocker les mesures de pression systolique :
-            - Une pour le matin
-            - Une pour le midi
-            - Une pour le soir
-        - **Calculez la moyenne** des trois mesures
-        - **Affichez le résultat** de façon claire et lisible.
+        1. **Déclarez trois variables** pour stocker les mesures de pression systolique :
+            - une pour le matin
+            - une pour le midi
+            - une pour le soir
+        2. **Calculez la moyenne** des trois mesures
+        3. **Affichez le résultat** de façon claire et lisible.
 
         <br/>
 
-        #### ✅ EXEMPLE DE SORTIE ATTENDUE
-
+        ✅ Exemple de sortie attendue
         ```markdown
         Pression systolique
 
@@ -656,7 +654,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - CALCUL DE LA DISTANCE ENTRE 2 POINTS
 
-        Créez un programme qui demande les coordonnées de 2 points, puis **calcule et affiche** la distance entre les 2 points arrondie à 2 décimales.<br />
+        Créez un programme qui demande les coordonnées de 2 points, puis **calcule et affiche** la distance entre les 2 points, arrondie à 2 décimales.<br />
         La formule de la distance entre 2 points $A(x_1, y_1)$ et $B(x_2, y_2)$ est :
 
         $$
@@ -665,7 +663,7 @@ import TabItem from '@theme/TabItem';
 
         Pour réaliser la racine carrée de la formule, vous aurez besoin d'une fonction du module `math`.
 
-        #### ✅ Exemple de sortie attendue
+        ✅ Exemple de sortie attendue
         ```python
         Point A - X1 : 50
         Point A - Y1 : 70
@@ -682,21 +680,21 @@ import TabItem from '@theme/TabItem';
         La règle de la double sanction n’est pas à appliquer dans cet exercice, car les notions nécessaires n’ont pas encore été vues.
 
         #### 🛠️**INSTRUCTIONS**
-        - **Créez une variable pour chaque évaluation** du cours :
+        1. **Créez une variable pour chaque évaluation** du cours :
             - nom_etudiant : le nom de l’étudiant (chaîne de caractères)
             - note_tp1 : note du TP1 (sur 10)
             - note_tp2 : note du TP2 (sur 10)
             - examen_1 : note de l’examen 1 (sur 100)
             - examen_2 : note de l’examen 2 (sur 100)
-        - **Appliquez les pondérations suivantes** pour calculer la note finale :
+        2. **Appliquez les pondérations suivantes** pour calculer la note finale :
             - TP1 : 20%
             - TP2 : 30%
             - Examen 1 : 20%
             - Examen 2 : 30%
-        - **Affichez un résumé clair** des notes des évaluations et de la note finale arrondie à 2 décimales.
+        3. **Affichez un résumé clair** des notes des évaluations et de la note finale, arrondies à 2 décimales.
         <br/>
 
-        #### ✅ EXEMPLE DE SORTIE ATTENDUE
+        ✅ Exemple de sortie attendue
         ```markdown
         Étudiant : Nicola Tesla
         Note TP1 (20% sur 10 pts) : 8
@@ -712,7 +710,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - DÉCOMPOSER UN MONTANT EN BILLETS
 
-        Écrire un programme permettant de décomposer un montant en billets de 100, 50, 20, 10 et 5\$.<br />
+        Écrivez un programme permettant de décomposer un montant en billets de 100, 50, 20, 10 et 5\$.<br />
         Le programme doit privilégier les billets de plus grandes valeurs.
 
         Voici un exemple d'exécution :
@@ -729,11 +727,11 @@ import TabItem from '@theme/TabItem';
         ```
 
         Indices :
-        - Commencer une étape à la fois, d'abord par les billets de 100\$, seulement ensuite ceux de 50\$, etc.
-        - Créer autant de variables que vous le croyez nécessaire (ex : montant_initial, montant_restant, nb_billets100, etc.)
+        - Commencez une étape à la fois, d'abord par les billets de 100\$, ensuite seulement ceux de 50\$, etc.
+        - Créez autant de variables que vous le croyez nécessaire (ex : montant_initial, montant_restant, nb_billets100, etc.)
         - Vous aurez besoin de l'opérateur pour la division entière (`//`), par exemple :
-            - `376 // 100 == 3`
-            - `95 // 100 == 0`
+            - `376 // 100` $\longrightarrow$ `3`
+            - `95 // 100` $\longrightarrow$ `0`
 
         Pour vous aider à débuter :
         ```python showLineNumbers
@@ -773,7 +771,7 @@ import TabItem from '@theme/TabItem';
 
         On veut savoir quelles sont les valeurs de `a` au fil de l'exécution du script.<br />
         - Faites d'abord une trace de ce script, en essayant de deviner les valeurs de `a` à chaque étape.
-        - Ensuite, placez un point d'arrêt sur la ligne `a = calcul_complexe(3, 5, 7)` et exécutez le script en mode débogage.
+        - Ensuite, placez un point d'arrêt sur la ligne 7 et exécutez le script en mode débogage.
         - Avancez ligne par ligne et observez les valeurs de `a`, `b` et `c` dans la fenêtre de débogage.
         - Notez les valeurs de `a` à chaque étape et comparez-les avec votre trace.
         - Si vous avez des différences, essayez de comprendre pourquoi.
