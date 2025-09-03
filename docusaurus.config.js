@@ -144,7 +144,7 @@ const config = {
                 },
                 {
                     name: "keywords",
-                    content: "SN1, cem, 420, 420-sn1, programmation en sciences, cours programmation cégep, informatique, cégep Édouard-Montpetit, cegep Edouard Montpetit, programmation scientifique, apprendre la programmation, cours informatique, sciences de la nature, python, étudiants sciences de la nature, algorithmes, initiation à la programmation",
+                    content: "SN1, cem, 420, 420-SN1, programmation en sciences, cours programmation cégep, cégep Édouard-Montpetit, cegep Edouard Montpetit, programmation scientifique, étudiants sciences de la nature, initiation à la programmation, python, algorithmes, informatique, cours informatique, sciences de la nature, apprendre la programmation",
                 },
                 {
                     property: "og:title",
