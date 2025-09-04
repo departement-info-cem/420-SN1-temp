@@ -25,6 +25,37 @@ else:
 
 ---
 
+## 🔹 Condition ternaire
+
+Permet d'écrire une condition simple en une seule ligne.
+
+```python
+age = 18
+statut = "Majeur" if age >= 18 else "Mineur"
+print(statut)
+```
+
+---
+
+## 🔹 Conditions (`match`, `case`)
+
+Permet de gérer plusieurs cas de manière plus lisible (disponible à partir de Python 3.10).
+
+```python
+jour = "lundi"
+match jour:
+    case "lundi":
+        print("Début de la semaine")
+    case "mercredi":
+        print("Milieu de la semaine")
+    case "vendredi":
+        print("Fin de la semaine")
+    case _:
+        print("Jour inconnu")
+```
+
+---
+
 ## 🔹 Boucle `while`
 
 Exécute un bloc tant qu'une condition est vraie.
