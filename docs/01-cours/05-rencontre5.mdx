@@ -147,6 +147,47 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
+    <TabItem value="affectation" label="Affectation">
+
+        :::info Opérateurs d'affectation
+
+        Nous avons déjà vu l'opérateur d'affectation `=` qui permet d'affecter une valeur à une variable.<br />
+        Par exemple :
+        ```python
+        x = 5
+        y = 10
+        ```
+
+        Python propose également des opérateurs d'affectation composés qui permettent de faire des
+        opérations mathématiques et de réaffecter le résultat à la même variable en une seule instruction.
+
+        Voici les opérateurs d'affectation composés les plus courants :
+
+        | Opérateur | Description                          | Exemple               | Équivalent à          |
+        |-----------|--------------------------------------|-----------------------|-----------------------|
+        | `+=`      | Addition et affectation              | `a += b`              | `a = a + b`          |
+        | `-=`      | Soustraction et affectation          | `a -= b`              | `a = a - b`          |
+        | `*=`      | Multiplication et affectation        | `a *= b`              | `a = a * b`          |
+        | `/=`      | Division et affectation              | `a /= b`              | `a = a / b`          |
+        | `%=`      | Modulo et affectation                | `a %= b`              | `a = a % b`          |
+        | `//=`     | Division entière et affectation      | `a //= b`             | `a = a // b`         |
+        | `**=`     | Exponentiation et affectation        | `a **= b`             | `a = a ** b`         |
+
+        Ces opérateurs sont très utiles pour simplifier le code et rendre les opérations plus concises.
+
+        :::
+
+        :::tip Exemple d'utilisation
+        ```python
+        compteur = 0
+        compteur += 1  # équivalent à compteur = compteur + 1
+        compteur *= 2  # équivalent à compteur = compteur * 2
+        print(compteur)  # Affiche 2
+        ```
+        :::
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ## ✏️ Exercices de compréhension

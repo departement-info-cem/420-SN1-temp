@@ -13,93 +13,115 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="expressions" label="Expressions booléennes" default>
 
-        :::info Les opérateurs de comparaison et les expressions booléennes
+        :::info Qu'est-ce qu'une expression booléenne?
 
-        Une expression contenant un opérateur de comparaison est nommé une expression booléenne.
-        Le résultat d'une expression booléenne est toujours une valeur booléenne True ou False.
-
-        | Opérateur | Description | Exemple | Résultat |
-        |-----------|------------|---------|----------|
-        | `==`      | Égal à | `5 == 5` | `True` |
-        | `!=`      | Différent de | `5 != 3` | `True` |
-        | `>`       | Supérieur à | `7 > 4` | `True` |
-        | `<`       | Inférieur à | `2 < 6` | `True` |
-        | `>=`      | Supérieur ou égal à | `5 >= 5` | `True` |
-        | `<=`      | Inférieur ou égal à | `3 <= 7` | `True` |
+        Une expression booléenne est une expression qui évalue à une valeur de vérité, c'est-à-dire soit `True` (vrai) soit `False` (faux).<br />
+        Elles sont utilisées pour prendre des décisions dans le code, comme dans les instructions conditionnelles (`if`, `elif`, `else`) et les boucles (`while`, `for`).
 
         :::
 
-        :::note Exécution de code sous-condition (aperçu)
+        :::note Opérateurs de comparaison
 
-        Il est possible de rendre des instructions exécutables uniquement si une expression booléenne donne True.
-        Dans l'exemple ci-dessous avec des "if/elif/else" (si/sinon si/sinon). Un seul des 3 print va être exécuté.
-        - L'ordinateur testera en premier l'expression booléenne sur le "if", si le résultat est True, le 1er print sera
-        exécutée
-        - Si le résultat est False, il va tester l'expression booléenne sur le "elif", si le résultat est True, le 2ème
-        print sera exécutée
-        - Si le résultat est False, ça sera le 3ème print qui sera exécuté
+        Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.<br />
+        Voici les principaux opérateurs de comparaison en Python :
 
-        ```python
-        nombre = int(input("Entrez un nombre : "))
-
-        if nombre > 0: #Si le nombre est supérieur à 0
-            print("Le nombre est positif.")
-        elif nombre < 0:
-            print("Le nombre est négatif.")
-        else:
-            print("Le nombre est zéro.")
-
-        print("reprise normale de l'exécution à partir de ce point")
-        ```
-
-        Seul le "if" est obligatoire, les sections "elif" et "else" sont facultatives.
-        Nous étudierons différentes variantes et des situations plus complexes dans des cours à venir.
-        Nous étudirons également les opérateurs logiciels (and, or, not) qui nous permettrons de combiner des
-        expressions conditionnelles ensembles.
+        | Opérateur | Description               | Exemple          | Résultat          |
+        |-----------|---------------------------|------------------|-------------------|
+        | `==`      | Égal à                    | `a == b`         | `True` si `a` est égal à `b`, sinon `False` |
+        | `!=`      | Différent de              | `a != b`         | `True` si `a` est différent de `b`, sinon `False` |
+        | `<`       | Inférieur à               | `a < b`          | `True` si `a` est inférieur à `b`, sinon `False` |
+        | `<=`      | Inférieur ou égal à         | `a <= b`         | `True` si `a` est inférieur ou égal à `b`, sinon `False` |
+        | `>`       | Supérieur à               | `a > b`          | `True` si `a` est supérieur à `b`, sinon `False` |
+        | `>=`      | Supérieur ou égal à       | `a >= b`         | `True` si `a` est supérieur ou égal à `b`, sinon `False` |
 
         :::
 
-        ## Retour en classe sur le cours précédent
-
-        Questions
-        - Est-ce que **a = a + 1** ça a un sens?
-        - **a = a + 1** c'est équivalent à **a + 1 = a**?
-
-        ## si ... alors ... sinon
-
-        ### if instruction
-
-        ### if expression
-
+        :::tip Exemple d'utilisation
         ```python
-        b = (1 if x
-        <
-        1 else x)
+        a = 5
+        b = 10
+        print(a < b)  # Affiche True
+        print(a == b) # Affiche False
         ```
+        :::
 
-        TODO un bon exemple
+        :::note Opérateurs logiques
 
+        Les opérateurs logiques sont utilisés pour combiner plusieurs expressions booléennes.<br />
+        Voici les principaux opérateurs logiques en Python :
 
-        ## tant que ... faire ... la boucle dont on ne sait pas quand elle s'arrête
+        | Opérateur | Description               | Exemple                  | Résultat          |
+        |-----------|---------------------------|--------------------------|-------------------|
+        | `and`     | ET logique                | `a and b`               | `True` si `a` et `b` sont tous deux `True`, sinon `False` |
+        | `or`      | OU logique                | `a or b`                | `True` si au moins un de `a` ou `b` est `True`, sinon `False` |
+        | `not`     | NON logique               | `not a`                 | `True` si `a` est `False`, sinon `False` |
 
-        Imaginons qu'on veuille
+        :::
 
+        :::info Priorité des opérateurs
+        La priorité des opérateurs détermine l'ordre dans lequel les opérations sont effectuées dans une expression.<br />
+        En Python, la priorité des opérateurs est la suivante (de la plus haute à la plus basse) :
+        1. Parenthèses `()`
+        2. Opérateurs de comparaison (`==`, `!=`, `<`, `<=`, `>`, `>=`)
+        3. Opérateur `not`
+        4. Opérateur `and`
+        5. Opérateur `or`
 
-        ## pour tous les trucs dans ... la boucle dont on sait quand elle s'arrête
+        Un ordre plus exhaustif des priorités des opérateurs est disponible [ici dans l'aide-mémoire](/aidememoire/operateurs?onglet=priorite).
+        :::
 
+        :::tip Exemple de priorité
+        ```python
+        a = 5
+        b = 10
+        c = 15
+        print(a < b and b < c)  # Évalué comme (a < b) and (b < c), affiche True
+        print(a < b or b > c)   # Évalué comme (a < b) or (b > c), affiche True
+        print(not a < b)        # Évalué comme not (a < b), affiche False
 
-        # Exercices
-
-        Une trace plus facile mais sur une expression complexe
-
-        ```pyhton
-        variable = 2
-        resultat = Math.exp(2, variable++) + 5 * Math.Mat.exp(3, variable++)
+        # On peut utiliser des parenthèses pour modifier l'ordre d'évaluation :
+        print(a < b or b > c and a == 5)  # Évalué comme a < b or (b > c and a == 5), affiche True
+        print((a < b or b > c) and a == 5) # Évalué comme (a < b or b > c) and a == 5, affiche True
         ```
+        :::
+
+        :::info Stockage dans des variables
+        On peut stocker le résultat d'une expression booléenne dans une variable pour une utilisation ultérieure.
+        ```python
+        a = 5
+        b = 10
+        est_plus_petit = a < b  # est_plus_petit sera True
+        est_egal = a == b       # est_egal sera False
+        print(est_plus_petit)    # Affiche True
+        print(est_egal)          # Affiche False
+        ```
+        :::
+
+        :::note Autres opérateurs d'expression booléenne
+        Voici quelques autres opérateurs d'expression booléenne utiles en Python :
+        | Opérateur | Description                   | Exemple                  | Résultat          |
+        |-----------|-------------------------------|--------------------------|-------------------|
+        | `in`      | Appartenance (contenu dans)   | `"a" in "chat"`         | `True` si `"a"` est dans `"chat"`, sinon `False` |
+        | `not in`  | Non-appartenance (pas dans)   | `"b" not in "chat"`     | `True` si `"b"` n'est pas dans `"chat"`, sinon `False` |
+        :::
+
+        :::tip Exemple d'utilisation
+        ```python
+        mot = "chat"
+        print("a" in mot)      # Affiche True
+        print("b" not in mot)  # Affiche True
+        ```
+        :::
 
     </TabItem>
 
     <TabItem value="if" label="if">
+
+        :::info On veut pas le sawouère, on veut le wouère
+        C'est bien beau les expressions booléennes, mais à quoi ça sert?<br />
+        👉 Elles servent principalement à contrôler le flux d'exécution du programme, c'est-à-dire à décider quelles parties du code doivent être exécutées en fonction de certaines conditions.
+
+        :::
 
     </TabItem>
 
