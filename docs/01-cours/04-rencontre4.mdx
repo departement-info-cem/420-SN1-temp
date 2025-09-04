@@ -216,7 +216,7 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::warning Ordre des conditions
+        :::tip Ordre des conditions
         L'ordre des conditions est important.<br />
         Les conditions sont évaluées de haut en bas, et la première condition qui est `True` déclenche l'exécution du bloc de code correspondant.<br />
         Par exemple, dans le code suivant, la condition `age >= 13` sera toujours `True` pour tous les adultes, et la condition `age >= 18` ne sera jamais atteinte :
@@ -252,6 +252,95 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
     <TabItem value="else" label="else">
+
+        :::info Le sinon
+        `else` signifie "sinon".<br />
+        Elle permet de définir un bloc de code qui sera exécuté si toutes les conditions précédentes (`if` et `elif`) sont `False`.
+
+        Par exemple :
+        ```python
+        age = 10
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        elif age >= 13 :
+            print("Vous êtes adolescent.")
+        else :
+            print("Vous êtes un enfant.")
+        ```
+        Dans cet exemple, si `age` est inférieur à 13, le message "Vous êtes un enfant." sera affiché.
+        :::
+
+        ---
+
+        :::tip Utilisation avec if et elif
+        La clause `else` est souvent utilisée à la fin d'une série d'instructions `if` et `elif` pour capturer tous les cas non couverts par les conditions précédentes.<br />
+        Par exemple :
+        ```python
+        score = 85
+        if score >= 90 :
+            print("Excellent")
+        elif score >= 75 :
+            print("Bien")
+        elif score >= 50 :
+            print("Passable")
+        else :
+            print("Échec")
+        ```
+        :::
+
+        ---
+
+        :::warning Pas de condition avec else
+        Contrairement à `if` et `elif`, la clause `else` ne prend pas de condition.<br />
+        Elle est simplement exécutée si toutes les conditions précédentes sont `False`. Par exemple, le code suivant est incorrect et provoquera une erreur de syntaxe :
+        ```python
+        score = 85
+        if score >= 90 :
+            print("Excellent")
+        elif score >= 75 :
+            print("Bien")
+        elif score >= 50 :
+            print("Passable")
+        else score < 50 :  # Erreur : 'else' ne doit pas avoir de condition
+            print("Échec")
+        ```
+        :::
+
+        ---
+
+        :::tip else sans elif
+        Il est possible d'utiliser `else` directement après un `if`, sans avoir besoin de `elif`.<br />
+        Par exemple :
+        ```python
+        age = 20
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        else :
+            print("Vous êtes mineur.")
+        ```
+        :::
+
+    </TabItem>
+
+    <TabItem value="ifelifelse" label="recap">
+
+        :::info Récapitulatif if, elif, else
+
+        Pour récapituler, la structure d'une instruction conditionnelle en Python est la suivante :
+        1. `if` : Obligatoire pour commencer une instruction conditionnelle.
+        2. `elif` : Optionnels, il peut y en avoir 0, 1, 2, ou plus.<br />
+        Chaque `elif` vérifie une condition, seulement si toutes les conditions précédentes sont `False`.
+        3. `else` : Optionnel, il n'y a qu'un seul `else` possible.<br />
+        Il est exécuté si toutes les conditions précédentes sont `False`.<br />
+        Ne prend pas de condition.
+
+        :::
+
+        :::tip Autres points importants à retenir
+
+        - **Indentation** : le code à exécuter conditionnellement doit être indenté sous l'instruction correspondante.
+        - **Ordre des conditions** : les conditions sont évaluées de haut en bas, la première condition `True` déclenche l'exécution du bloc de code correspondant, et les autres sont ignorées.
+        :::
 
     </TabItem>
 
