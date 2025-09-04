@@ -43,33 +43,31 @@ Les opérateurs permettent de faire des calculs, des comparaisons et des opérat
 
 <TabItem value="compar" label="Comparaison">
 
-| Opérateur | Description                  | Exemple |
-|------------|------------------------------|---------|
-| `==`       | Égal à                       | `x == y` |
-| `!=`       | Différent de                 | `x != y` |
-| `>`        | Supérieur à                  | `x > y` |
-| `<`        | Inférieur à                  | `x < y` |
-| `>=`       | Supérieur ou égal à          | `x >= y` |
-| `<=`       | Inférieur ou égal à          | `x <= y` |
+| Opérateur | Description                  | Exemple<br /> (`x = 6`, `y = 7`) | Résultat |
+|------------|------------------------------|---------|---|
+| `==`       | Égal à                       | `x == y` | `False` |
+| `!=`       | Différent de                 | `x != y` | `True`  |
+| `>`        | Supérieur à                  | `x > y` | `False` |
+| `<`        | Inférieur à                  | `x < y` | `True`  |
+| `>=`       | Supérieur ou égal à          | `x >= y` | `False` |
+| `<=`       | Inférieur ou égal à          | `x <= y` | `True`  |
 
 </TabItem>
 
 <TabItem value="logique" label="Logiques (booléens)">
-
-| Opérateur | Description       | Exemple |
-|------------|-------------------|---------|
-| `and`      | Et logique         | `True and False` → `False` |
-| `or`       | Ou logique         | `True or False` → `True` |
-| `not`      | Négation           | `not True` → `False` |
-
+| Opérateur | Description   | Exemple    | Résultat          |
+|-----------|---------------|------------|-------------------|
+| `and`     | ET logique    | `a and b`  | `True` si `a` et `b` sont **tous deux** `True`, sinon `False` |
+| `or`      | OU logique    | `a or b`   | `True` si **au moins un** de `a` ou `b` est `True`, sinon `False` |
+| `not`     | NON logique   | `not a`    | `True` si `a` est `False`, sinon `False` |
 </TabItem>
 
 <TabItem value="autres" label="Autres utiles">
 
-| Opérateur | Description                   | Exemple |
-|------------|-------------------------------|---------|
-| `in`       | Appartenance (contenu dans)   | `"a" in "chat"` → `True` |
-| `not in`   | Non-appartenance (pas dans)   | `"b" not in "chat"` → `True` |
+| Opérateur | Description                   | Exemple | Résultat          |
+|------------|-------------------------------|---------|---|
+| `in`       | Appartenance (contenu dans)   | `"a" in "chat"` | `True`  |
+| `not in`   | Non-appartenance (pas dans)   | `"b" not in "chat"` | `True` |
 | `is`       | Identité d'objet (même objet) | `x is y` |
 | `is not`   | Objet différent               | `x is not y` |
 
