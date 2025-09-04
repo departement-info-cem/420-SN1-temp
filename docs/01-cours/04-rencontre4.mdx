@@ -322,7 +322,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="ifelifelse" label="recap">
+    <TabItem value="ifelifelse" label="ifelifelifelse">
 
         :::info Récapitulatif if, elif, else
 
@@ -346,7 +346,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="compacte" label="Compacte">
+    <TabItem value="compacte" label="Forme compacte">
 
         :::info Forme compacte
 
@@ -389,6 +389,46 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
     <TabItem value="match" label="match/case">
+
+        :::info match/case
+        Le `match/case` est une structure de contrôle qui permet de faire des correspondances de motifs (*pattern matching*).<br />
+        - Il permet de comparer une variable à plusieurs valeurs possibles.<br />
+        - Il offre ainsi une alternative aux longues chaînes d'instructions `if`/`elif`/`else` pour des cas spécifiques.
+
+        Sa syntaxe est la suivante :
+        ```python
+        match variable:
+            case valeur1:
+                # code à exécuter si variable == valeur1
+            case valeur2:
+                # code à exécuter si variable == valeur2
+            case _:
+                # code à exécuter si aucune des valeurs précédentes ne correspond
+        ```
+        - Le `_` dans le dernier `case` agit comme un `else`, capturant tous les autres cas non spécifiés.
+        - Utile pour des comparaisons simples, mais peut être moins flexible que `if`/`elif`/`else` pour des conditions complexes.
+        - Exemple :
+        ```python
+        jour = "lundi"
+        match jour:
+            case "lundi":
+                print("Début de la semaine")
+            case "mercredi":
+                print("Milieu de la semaine")
+            case "vendredi":
+                print("Fin de la semaine")
+            case _:
+                print("Jour ordinaire")
+        ```
+        :::
+
+        :::tip Avantages du match/case
+        - Plus lisible pour des comparaisons multiples sur une même variable.
+        - Permet de gérer facilement des cas spécifiques.
+        - Peut être plus performant que de nombreuses instructions `if`/`elif` dans certains cas.
+
+        👉 Il est important de noter que tout `match/case` peut être réécrit avec des `if`/`elif`/`else`, mais l'inverse n'est pas toujours vrai.
+        :::
 
     </TabItem>
 
