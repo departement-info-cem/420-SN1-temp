@@ -20,6 +20,8 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        ---
+
         :::note Opérateurs de comparaison
 
         Les opérateurs de comparaison sont utilisés pour comparer deux valeurs.<br />
@@ -36,6 +38,8 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        ---
+
         :::tip Exemple d'utilisation
         ```python
         a = 5
@@ -44,6 +48,8 @@ import TabItem from '@theme/TabItem';
         print(a == b) # Affiche False
         ```
         :::
+
+        ---
 
         :::note Opérateurs logiques
 
@@ -58,6 +64,8 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        ---
+
         :::info Priorité des opérateurs
         La priorité des opérateurs détermine l'ordre dans lequel les opérations sont effectuées dans une expression.<br />
         En Python, la priorité des opérateurs est la suivante (de la plus haute à la plus basse) :
@@ -69,6 +77,8 @@ import TabItem from '@theme/TabItem';
 
         Un ordre plus exhaustif des priorités des opérateurs est disponible [ici dans l'aide-mémoire](/aidememoire/operateurs?onglet=priorite).
         :::
+
+        ---
 
         :::tip Exemple de priorité
         ```python
@@ -85,6 +95,8 @@ import TabItem from '@theme/TabItem';
         ```
         :::
 
+        ---
+
         :::info Stockage dans des variables
         On peut stocker le résultat d'une expression booléenne dans une variable pour une utilisation ultérieure.
         ```python
@@ -97,6 +109,8 @@ import TabItem from '@theme/TabItem';
         ```
         :::
 
+        ---
+
         :::note Autres opérateurs d'expression booléenne
         Voici quelques autres opérateurs d'expression booléenne utiles en Python :
         | Opérateur | Description                   | Exemple                  | Résultat          |
@@ -104,6 +118,8 @@ import TabItem from '@theme/TabItem';
         | `in`      | Appartenance (contenu dans)   | `"a" in "chat"`         | `True` |
         | `not in`  | Non-appartenance (pas dans)   | `"b" not in "chat"`     | `True` |
         :::
+
+        ---
 
         :::tip Exemple d'utilisation
         ```python
@@ -120,12 +136,118 @@ import TabItem from '@theme/TabItem';
         :::info On veut pas le sawouère, on veut le wouère
         C'est bien beau, ça, les expressions booléennes, mais à quoi ça sert?<br />
         👉 Elles servent principalement à contrôler le flux d'exécution du programme, c'est-à-dire à décider quelles parties du code doivent être exécutées en fonction de certaines conditions.
+        :::
 
+        ---
+
+        :::tip Structure de base d'une instruction conditionnelle
+        Voici un exemple simple d'instruction conditionnelle en Python :
+        ```python
+        age = 18
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        ```
+        Dans cet exemple, l'instruction `if` vérifie si la variable `age` est supérieure ou égale à 18.<br />
+        Si c'est le cas (si la condition est `True`), le code indenté sous l'instruction `if` est exécuté, affichant "Vous êtes majeur.".<br />
+        Si la condition est `False`, le code indenté n'est pas exécuté.
+        :::
+
+        ---
+
+        :::warning Indentation
+        En Python, l'indentation (les espaces ou tabulations avant une ligne de code) est cruciale pour définir les blocs de code.<br />
+        Le code qui doit être exécuté conditionnellement doit être indenté sous l'instruction `if`.<br />
+        Par exemple :
+        ```python
+        if condition :
+            # Code indenté, exécuté si la condition est True
+            faire_quelque_chose()
+        # Code non indenté, exécuté indépendamment de la condition
+        faire_autre_chose()
+        ```
+        Exemple d'erreur courante due à une mauvaise indentation :
+        ```python
+        if condition :
+        faire_quelque_chose()  # Erreur : cette ligne doit être indentée
+        ```
+        Exemple concret :
+        ```python
+        age = 20
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        print("Bienvenue!")  # Toujours exécuté, indépendamment de l'âge
+        ```
         :::
 
     </TabItem>
 
     <TabItem value="elif" label="elif">
+
+        :::info Un elfe?
+        Non!<br />
+        `elif` la contraction de "else if", qui signifie "sinon si".<br />
+        Elle permet de vérifier une autre condition si la première condition dans l'instruction `if` est `False`.
+
+        Par exemple :
+        ```python
+        age = 16
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        elif age >= 13 :
+            print("Vous êtes adolescent.")
+        ```
+        :::
+
+        ---
+
+        :::note Multiple elif
+        On peut avoir plusieurs clauses `elif` pour vérifier plusieurs conditions différentes.<br />
+        Par exemple :
+        ```python
+        age = 10
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        elif age >= 13 :
+            print("Vous êtes adolescent.")
+        elif age >= 3 :
+            print("Vous êtes un enfant.")
+        ```
+        :::
+
+        ---
+
+        :::warning Ordre des conditions
+        L'ordre des conditions est important.<br />
+        Les conditions sont évaluées de haut en bas, et la première condition qui est `True` déclenche l'exécution du bloc de code correspondant.<br />
+        Par exemple, dans le code suivant, la condition `age >= 13` sera toujours `True` pour tous les adultes, et la condition `age >= 18` ne sera jamais atteinte :
+        ```python
+        age = 21
+        if age >= 13 :
+            print("Vous êtes adolescent.")
+        elif age >= 18 :
+            print("Vous êtes majeur.")
+        ```
+        Pour éviter cela, il faut toujours commencer par la condition la plus restrictive (la plus élevée) et descendre vers les conditions moins restrictives :
+        ```python
+        age = 21
+        if age >= 18 :
+            print("Vous êtes majeur.")
+        elif age >= 13 :
+            print("Vous êtes adolescent.")
+        ```
+        :::
+
+        ---
+
+        :::warning Pas de `elif` sans `if`
+        Une clause `elif` doit toujours être précédée d'une instruction `if`.<br />
+        Par exemple, le code suivant est incorrect et provoquera une erreur de syntaxe :
+        ```python
+        age = 16
+        elif age >= 13 :  # Erreur : 'elif' sans 'if'
+            print("Vous êtes adolescent.")
+        ```
+        :::
 
     </TabItem>
 
