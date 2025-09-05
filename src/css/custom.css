@@ -31,38 +31,22 @@
 }
 
 
-
 .katex {
   font-family: sans-serif !important;
 }
 
 
+.tabs-centered .tabs__list {
+  display: flex;
+}
 
-
-
-
-
-
-/*.remise-tp1::after {*/
-/*  content: "Remise TP1 (20%)";*/
-/*  text-align: center;*/
-/*  width: 100%;*/
-/*  display: block;*/
-/*  background: blue;*/
-/*  color: white;*/
-/*  font-size: 0.75em;*/
-/*}*/
-
-/*.remise-tp2::after {*/
-/*  content: "Remise TP2 (30%)";*/
-/*  text-align: center;*/
-/*  width: 100%;*/
-/*  display: block;*/
-/*  background: blue;*/
-/*  color: white;*/
-/*  font-size: 0.75em;*/
-/*}*/
-
+.tabs-centered .tabs__item {
+  flex: 1;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+}
 
 
 /* Style commun pour TP et examens */
