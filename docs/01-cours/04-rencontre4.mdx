@@ -15,7 +15,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Qu'est-ce qu'une expression booléenne?
 
-        Une expression booléenne est une expression qui évalue à une valeur de vérité, c'est-à-dire soit `True` (vrai) soit `False` (faux).<br />
+        Une expression booléenne est une expression qui évalue à une valeur de vérité ([`bool`](/aidememoire/types/)), c'est-à-dire soit `True` (vrai) soit `False` (faux).<br />
         Elles sont utilisées pour prendre des décisions dans le code, comme dans les instructions conditionnelles (`if`, `elif`, `else`) et les boucles (`while`, `for`).
 
         :::
@@ -41,7 +41,7 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::tip Exemple d'utilisation
-        ```python
+        ```python showLineNumbers
         a = 5
         b = 10
         print(a < b)  # Affiche True
@@ -81,7 +81,7 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::tip Exemple de priorité
-        ```python
+        ```python showLineNumbers
         a = 5
         b = 10
         c = 15
@@ -99,7 +99,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Stockage dans des variables
         On peut stocker le résultat d'une expression booléenne dans une variable pour une utilisation ultérieure.
-        ```python
+        ```python showLineNumbers
         a = 5
         b = 10
         est_plus_petit = a < b  # est_plus_petit sera True
@@ -122,7 +122,7 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::tip Exemple d'utilisation
-        ```python
+        ```python showLineNumbers
         mot = "chat"
         print("a" in mot)      # Affiche True
         print("b" not in mot)  # Affiche True
@@ -142,7 +142,7 @@ import TabItem from '@theme/TabItem';
 
         :::tip Structure de base d'une instruction conditionnelle
         Voici un exemple simple d'instruction conditionnelle en Python :
-        ```python
+        ```python showLineNumbers
         age = 18
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -158,7 +158,7 @@ import TabItem from '@theme/TabItem';
         En Python, l'indentation (les espaces ou tabulations avant une ligne de code) est cruciale pour définir les blocs de code.<br />
         Le code qui doit être exécuté conditionnellement doit être indenté sous l'instruction `if`.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         if condition :
             # Code indenté, exécuté si la condition est True
             faire_quelque_chose()
@@ -166,12 +166,12 @@ import TabItem from '@theme/TabItem';
         faire_autre_chose()
         ```
         Exemple d'erreur courante due à une mauvaise indentation :
-        ```python
+        ```python showLineNumbers
         if condition :
         faire_quelque_chose()  # Erreur : cette ligne doit être indentée
         ```
         Exemple concret :
-        ```python
+        ```python showLineNumbers
         age = 20
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -189,7 +189,7 @@ import TabItem from '@theme/TabItem';
         Elle permet de vérifier une autre condition si la première condition dans l'instruction `if` est `False`.
 
         Par exemple :
-        ```python
+        ```python showLineNumbers
         age = 16
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -203,7 +203,7 @@ import TabItem from '@theme/TabItem';
         :::note Multiple elif
         On peut avoir plusieurs clauses `elif` pour vérifier plusieurs conditions différentes.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         age = 10
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -220,7 +220,7 @@ import TabItem from '@theme/TabItem';
         L'ordre des conditions est important.<br />
         Les conditions sont évaluées de haut en bas, et la première condition qui est `True` déclenche l'exécution du bloc de code correspondant.<br />
         Par exemple, dans le code suivant, la condition `age >= 13` sera toujours `True` pour tous les adultes, et la condition `age >= 18` ne sera jamais atteinte :
-        ```python
+        ```python showLineNumbers
         age = 21
         if age >= 13 :
             print("Vous êtes adolescent.")
@@ -228,7 +228,7 @@ import TabItem from '@theme/TabItem';
             print("Vous êtes majeur.")
         ```
         Pour éviter cela, il faut toujours commencer par la condition la plus restrictive (la plus élevée) et descendre vers les conditions moins restrictives :
-        ```python
+        ```python showLineNumbers
         age = 21
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -242,7 +242,7 @@ import TabItem from '@theme/TabItem';
         :::warning Pas de `elif` sans `if`
         Une clause `elif` doit toujours être précédée d'une instruction `if`.<br />
         Par exemple, le code suivant est incorrect et provoquera une erreur de syntaxe :
-        ```python
+        ```python showLineNumbers
         age = 16
         elif age >= 13 :  # Erreur : 'elif' sans 'if'
             print("Vous êtes adolescent.")
@@ -258,7 +258,7 @@ import TabItem from '@theme/TabItem';
         Elle permet de définir un bloc de code qui sera exécuté si toutes les conditions précédentes (`if` et `elif`) sont `False`.
 
         Par exemple :
-        ```python
+        ```python showLineNumbers
         age = 10
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -275,7 +275,7 @@ import TabItem from '@theme/TabItem';
         :::tip Utilisation avec if et elif
         La clause `else` est souvent utilisée à la fin d'une série d'instructions `if` et `elif` pour capturer tous les cas non couverts par les conditions précédentes.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         score = 85
         if score >= 90 :
             print("Excellent")
@@ -293,7 +293,7 @@ import TabItem from '@theme/TabItem';
         :::warning Pas de condition avec else
         Contrairement à `if` et `elif`, la clause `else` ne prend pas de condition.<br />
         Elle est simplement exécutée si toutes les conditions précédentes sont `False`. Par exemple, le code suivant est incorrect et provoquera une erreur de syntaxe :
-        ```python
+        ```python showLineNumbers
         score = 85
         if score >= 90 :
             print("Excellent")
@@ -311,7 +311,7 @@ import TabItem from '@theme/TabItem';
         :::tip else sans elif
         Il est possible d'utiliser `else` directement après un `if`, sans avoir besoin de `elif`.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         age = 20
         if age >= 18 :
             print("Vous êtes majeur.")
@@ -352,13 +352,13 @@ import TabItem from '@theme/TabItem';
 
         Pour les instructions conditionnelles simples, on peut utiliser une forme compacte en une seule ligne.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         age = 20
         print("Vous êtes majeur.") if age >= 18 else print("Vous êtes mineur.")
         ```
 
         On peut aussi utiliser cette forme compacte pour stocker le résultat dans une variable :
-        ```python
+        ```python showLineNumbers
         age = 20
         statut = "majeur" if age >= 18 else "mineur"
         print(statut)  # Affiche "majeur"
@@ -378,7 +378,7 @@ import TabItem from '@theme/TabItem';
         :::warning Avec des elif
         On peut aussi utiliser des `elif` dans une forme compacte, mais cela peut rapidement devenir difficile à lire.<br />
         Par exemple :
-        ```python
+        ```python showLineNumbers
         score = 85
         resultat = "Excellent" if score >= 90 else "Bien" if score >= 75 else "Passable" if score >= 50 else "Échec"
         print(resultat)  # Affiche "Bien"
@@ -388,7 +388,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="match" label="match/case">
+    <TabItem value="match" label="match - case">
 
         :::info match/case
         Le `match/case` est une structure de contrôle qui permet de faire des correspondances de motifs (*pattern matching*).<br />
@@ -396,7 +396,7 @@ import TabItem from '@theme/TabItem';
         - Il offre ainsi une alternative aux longues chaînes d'instructions `if`/`elif`/`else` pour des cas spécifiques.
 
         Sa syntaxe est la suivante :
-        ```python
+        ```python showLineNumbers
         match variable:
             case valeur1:
                 # code à exécuter si variable == valeur1
@@ -408,7 +408,7 @@ import TabItem from '@theme/TabItem';
         - Le `_` dans le dernier `case` agit comme un `else`, capturant tous les autres cas non spécifiés.
         - Utile pour des comparaisons simples, mais peut être moins flexible que `if`/`elif`/`else` pour des conditions complexes.
         - Exemple :
-        ```python
+        ```python showLineNumbers
         jour = "lundi"
         match jour:
             case "lundi":
@@ -432,22 +432,154 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="Exception" label="Raise, try/catch">
-        - C'est quoi des exceptions
-        - Montrer des exemples
-            - Division par 0 ou par saisie de l'utilisateur
-            - Ouverture d'un fichier n'existant
-        - Instruction de base : raise, try, catch
-          (avec des exceptions qui existe déjà)
-    </TabItem>
-    
-    <TabItem value="Validation params" label="Validation params">
-        - Importance de ne pas faire confiance en l'utilisateur, valider les arguments reçus!
-        - Chicaner si envoie d'arguments non-conforme avec des exceptions
-        - Créer nos propres exceptions
-        - Identifier les cas limite/à tester d'une fonction?
+    <TabItem value="exceptions" label="Exceptions">
 
-        [//]: # (&#40;dans le TP1 on leur fait faire des validations&#41;)
+        :::info Pourquoi des exceptions?
+        Quand un programme rencontre une erreur (division par zéro, fichier manquant, format invalide), Python **interrompt son exécution** avec un message d’erreur.
+        Ces erreurs sont appelées **exceptions**.
+
+        Avec `try` et `except`, on peut **contrôler** ce qui se passe en cas d’erreur, au lieu de laisser le programme planter.
+        :::
+
+        ---
+
+        :::note Exemple de base : division par zéro
+        Copiez et exécutez ce code :
+        ```python showLineNumbers
+        numerateur = 10
+        denominateur = 0
+        resultat = numerateur / denominateur
+        ```
+        Notez l’erreur affichée par Python.
+
+        Maintenant, modifiez le code pour gérer l’erreur, et exécutez-le en mode débogage, ligne par ligne, afin de bien comprendre le flux d’exécution :
+        ```python showLineNumbers
+        numerateur = 10
+        denominateur = 0
+
+        try :
+            resultat = numerateur / denominateur
+            print("Résultat:", resultat)
+        except ZeroDivisionError :
+            print("Erreur : division par zéro interdite.")
+        ```
+        Grâce au `try/except`, on affiche plutôt un message clair à l’utilisateur et le programme continue.
+        :::
+
+        ---
+
+        :::tip Différence entre `try/except` et `raise`
+        - `try/except` = **rattraper** une erreur qui se produit (mettre un filet de sécurité).
+        - `raise` = **provoquer volontairement** une erreur si une condition n’est pas respectée (mettre une barrière).
+        :::
+
+        ---
+
+        :::note Lever une erreur soi-même (`raise`)
+        On peut aussi **créer nos propres erreurs** quand les conditions ne sont pas respectées.
+        ```python showLineNumbers
+        def concentration(masse_g, volume_L):
+            if volume_L == 0 :
+                raise ZeroDivisionError("Le volume ne peut pas être 0.")
+            if masse_g < 0 :
+                raise ValueError("La masse doit être positive.")
+            return masse_g / volume_L
+        ```
+        Dans ce cas, l’erreur est volontaire : on empêche l’utilisation de valeurs impossibles en science.
+        :::
+
+        ---
+
+        :::tip Bonnes pratiques
+        - N’attrapez **que les erreurs prévues** (sinon on cache de vrais bugs).
+        - Donnez toujours un **message utile** qui aide à corriger.
+        - Utilisez `raise` pour signaler un problème clair à l’utilisateur ou au scientifique qui réutilise votre fonction.
+        :::
+
+        ---
+
+        :::warning Pour aller plus loin
+        Il est aussi possible de **créer ses propres types d’erreurs** en définissant une classe qui hérite de `Exception`.
+        C’est utile dans de grands projets pour distinguer vos erreurs spécifiques de celles de Python.
+
+        Exemple minimal :
+        ```python showLineNumbers
+        class DonneesInvalidesError(Exception):
+            pass
+
+        raise DonneesInvalidesError("Les données fournies ne sont pas valides.")
+        ```
+
+        👉 Dans ce cours, nous allons nous limiter aux exceptions déjà existantes (`ValueError`, `ZeroDivisionError`, etc.), mais sachez que cette possibilité existe.
+        :::
+    </TabItem>
+
+    <TabItem value="validation" label="Validation">
+
+        :::info Valider les paramètres
+        Quand on écrit une fonction, il faut s’assurer que les **entrées** (paramètres) ont du sens.<br />
+        Sinon, on risque d’obtenir des résultats absurdes ou des erreurs difficiles à comprendre.
+
+        En science, valider les paramètres est essentiel pour pouvoir **faire confiance aux calculs**.<br />
+        Exemple : vérifier qu’une masse est positive, qu’un volume n’est pas nul, etc.
+        :::
+
+        ---
+
+        :::note Validation et exceptions
+        - **Validation** = vérifier les entrées avant de calculer.
+        - **Exceptions** = signaler clairement un problème si les conditions ne sont pas respectées.
+
+        👉 La validation **utilise** souvent `raise` pour bloquer une fonction quand un paramètre est invalide.
+        :::
+
+        ---
+
+        :::tip Exemple : calcul de densité
+
+        **Version 1 – sans validation**
+        ```python showLineNumbers
+        def densite(masse, volume):
+            return masse / volume
+
+        print(densite(10, 2))   # 5.0
+        print(densite(8, 0))    # Erreur Python (division par zéro)
+        ```
+        Ici, le programme plante si on entre un volume nul ou une masse invalide.
+
+        ---
+
+        **Version 2 – avec validation**
+        ```python showLineNumbers
+        def densite(masse, volume):
+            if masse < 0:
+                raise ValueError("La masse doit être positive.")
+            if volume <= 0:
+                raise ZeroDivisionError("Le volume doit être supérieur à 0.")
+            return masse / volume
+
+        print(densite(10, 2))   # 5.0
+        print(densite(-3, 5))   # ValueError
+        print(densite(8, 0))    # ZeroDivisionError
+        ```
+        Ici, les erreurs sont interceptées volontairement et donnent un message **clair et précis**.
+        :::
+
+        ---
+
+        :::note Pourquoi valider?
+        - Les erreurs deviennent **explicites** (ex.: “volume doit être > 0”).
+        - On **évite les résultats absurdes**.
+        - Le code est plus **robuste** et réutilisable.
+        :::
+
+        ---
+
+        :::warning Mini checklist de validation
+        - ✅ Types corrects (`int`, `float`)
+        - ✅ Domaines respectés (positif, non nul)
+        - ✅ Cas limites couverts (valeur négative, zéro, etc.)
+        :::
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
@@ -495,7 +627,7 @@ import TabItem from '@theme/TabItem';
 
         Completez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
 
-        ```python
+        ```python showLineNumbers
         a = 1
         b = 5
         c = -10
@@ -515,7 +647,14 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - Validation de paramètres
+
+        Écrivez une fonction `densite(masse, volume)` qui retourne la densité en g/mL.
+        - Validez que la masse est **positive**.
+        - Validez que le volume est **strictement positif** (non nul).
+        - Levez une exception claire (`ValueError` ou `ZeroDivisionError`) si les conditions ne sont pas respectées.
+
+        Pourquoi est-il préférable d’**arrêter l’exécution avec un message clair** plutôt que de laisser Python planter avec une erreur brute?
 
         :::
 
