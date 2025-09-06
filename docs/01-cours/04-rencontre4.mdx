@@ -50,7 +50,7 @@ import TabItem from '@theme/TabItem';
         ```
 
 Les 2 opérandes d’un opérateur de comparaison peuvent être le résultat d’expressions. \
-Python évalue l’expression selon la priorité des opérateurs, en remplaçant chaque sous-expression par sa valeur, jusqu’à obtenir 2 valeurs comparables.
+Python évalue l’expression selon la [priorité des opérateurs](/aidememoire/operateurs?onglet=priorite), en remplaçant chaque sous-expression par sa valeur, jusqu’à obtenir 2 valeurs comparables.
 
 Voici comment Python évalue l’instruction #5, étape par étape :
 
@@ -178,9 +178,10 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         ```python showLineNumbers
         if condition :
             # Code indenté, exécuté si la condition est True
-            faire_quelque_chose()
+            faire_quelque_chose_conditionnel()
+            faire_autre_chose_conditionnel()
         # Code non indenté, exécuté indépendamment de la condition
-        faire_autre_chose()
+        faire_autre_chose_en_tout_temps()
         ```
         Exemple d'erreur courante due à une mauvaise indentation :
         ```python showLineNumbers
@@ -192,6 +193,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         age = 20
         if age >= 18 :
             print("Vous êtes majeur.")
+            print("Vous avez le droit de vote!")
+            print("Un grand pouvoir implique de grandes responsabilités")
         print("Bienvenue!")  # Toujours exécuté, indépendamment de l'âge
         ```
         :::
@@ -336,6 +339,27 @@ Voici comment Python évalue l’instruction #5, étape par étape :
             print("Vous êtes mineur.")
         ```
         :::
+
+        ---
+
+        :::info Intégration avec des fonctions
+
+        Les structures conditionnelles (if/elsif/else, match) peuvent être utilisées à l'intérieur de fonctions. \
+        Par exemple :
+        ```python showLineNumbers
+        def est_pair(n):
+            if n % 2 == 0:
+                return True  # Faire modulo 2 sur un nombre pair donne toujours 0!
+            else:
+                return False
+        
+        a = 33
+        b = 52
+        print(f"{a} est un nombre pair : {est_pair(a)}")
+        print(f"{b} est un nombre pair : {est_pair(b)}")
+        ```
+        :::
+
 
     </TabItem>
 
