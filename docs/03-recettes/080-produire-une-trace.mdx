@@ -102,9 +102,9 @@ l'ordre de lecture du code. Simple!
 
 <TabItem value="avecportee" label="Avec portée">
 
-Lorsque des variables avec des noms identiques existent dans des portées différentes,
+Lorsque des variables (ou des paramètres de fonction) avec des noms identiques existent dans des portées différentes,
 on peut regrouper les variables par portée dans la trace.<br/>
-    Pour cela, on ajoute une ligne horizontale en haut de notre tableau pour chaque portée.
+    Pour cela, on ajoute une ligne horizontale en haut de notre tableau pour indiquer les portées.
 
 
     ### Code
@@ -130,16 +130,15 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <th></th>
           <th>portée globale</th>
           <th colspan="2">portée de `ma_fonction`</th>
-          <th></th>
-          <th></th>
-          <th></th>
+          <th colspan="4"></th>
         </tr>
         <tr>
-          <th># ligne</th>
+          <th>#ligne</th>
           <th>x</th>
           <th>y</th>
           <th>x</th>
           <th>affichage</th>
+            <th>pile d'appels</th>
           <th>fonction appelée</th>
           <th>valeur retournée</th>
         </tr>
@@ -151,6 +150,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td></td>
           <td></td>
           <td></td>
+            <td>`__main__`</td>
           <td></td>
           <td></td>
         </tr>
@@ -160,6 +160,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td></td>
           <td></td>
           <td>dans main, x vaut 5</td>
+            <td>`__main__`</td>
           <td></td>
           <td></td>
         </tr>
@@ -169,6 +170,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td></td>
           <td></td>
           <td></td>
+            <td>`__main__`</td>
           <td>`ma_fonction(100)`</td>
           <td></td>
         </tr>
@@ -178,6 +180,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td>100</td>
           <td>103</td>
           <td></td>
+            <td>`ma_fonction`<br />`__main__`</td>
           <td></td>
           <td></td>
         </tr>
@@ -187,6 +190,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td>100</td>
           <td>103</td>
           <td>dans ma_fonction, x vaut 103</td>
+            <td>`ma_fonction`<br />`__main__`</td>
           <td></td>
           <td></td>
         </tr>
@@ -196,6 +200,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
           <td></td>
           <td></td>
           <td>dans main, x vaut toujours 5</td>
+            <td>`__main__`</td>
           <td></td>
           <td></td>
         </tr>
