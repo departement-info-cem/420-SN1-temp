@@ -53,6 +53,158 @@ Dans le cas d'une séquence d'instructions, on peut voir que les instructions so
 l'ordre de lecture du code. Simple!
 
 </TabItem>
+
+<TabItem value="Avec fonction" label="Avec fonction">
+
+            ### Code
+            Si on a le code suivant :
+
+            ```python showLineNumbers
+            def carre(n):
+                return n * n
+
+            def somme_carres(x, y):
+                return carre(x) + carre(y)
+
+            def affiche_resultat():
+                a = 2
+                b = 3
+                total = somme_carres(a, b)
+                print(f'La somme des carrés est : {total}')
+
+            affiche_resultat()
+            ```
+
+            ### Trace
+            On indique aussi la **pile d'appels**, c'est-à-dire les fonctions en cours d'exécution (3e colonne).
+
+            Ce genre de code fait souvent appel à plusieurs appels de fonctions **imbriqués**.
+
+            On peut donc visualiser la pile d'appels comme un empilement temporaire :
+            chaque appel s’ajoute en haut de la pile, et disparaît dès qu’il est terminé.
+
+
+            | # ligne | a | b | x | y | n | total | affichage | pile d'appels | fonction appelée | valeur retournée |
+            |---------|---|---|---|---|---|-------|-----------|---------------|------------------|------------------|
+            | 13      |   |   |   |   |   |       |         | \_\_main__    | affiche_resultat() |  |
+            | 8       | 2 |   |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
+            | 9       | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
+            | 10      | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ | somme_carres(2, 3) |  |
+            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(2) |  |
+            | 2       |   |   |   |   | 2 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 4 |
+            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(3) |  |
+            | 2       |   |   |   |   | 3 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 9 |
+            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 13 |
+            | 10      | 2 | 3 |   |   |   |   13  |         | affiche_resultat <br/> \_\_main__ |  |  |
+            | 11      | 2 | 3 |   |   |   |   13  | La somme des carrés est : 13 | affiche_resultat <br/> \_\_main__ |  |  |
+
+</TabItem>
+
+<TabItem value="avecportee" label="Avec portée">
+
+Lorsque des variables avec des noms identiques existent dans des portées différentes,
+on peut regrouper les variables par portée dans la trace.<br/>
+    Pour cela, on ajoute une ligne horizontale en haut de notre tableau pour chaque portée.
+
+
+    ### Code
+    Si on a le code suivant :
+    ```python showLineNumbers
+    def ma_fonction(y):
+        x = 3 + y
+        print(f'dans ma_fonction, x vaut {x}')
+
+    x = 5
+    print(f'dans main, x vaut {x}')
+    ma_fonction(100)
+    print(f'dans main, x vaut toujours {x}')
+    ```
+
+
+    ### Trace
+    On aura la trace suivante :
+
+    <table>
+      <thead>
+        <tr>
+          <th></th>
+          <th>portée globale</th>
+          <th colspan="2">portée de `ma_fonction`</th>
+          <th></th>
+          <th></th>
+          <th></th>
+        </tr>
+        <tr>
+          <th># ligne</th>
+          <th>x</th>
+          <th>y</th>
+          <th>x</th>
+          <th>affichage</th>
+          <th>fonction appelée</th>
+          <th>valeur retournée</th>
+        </tr>
+      </thead>
+      <tbody>
+        <tr>
+          <td>5</td>
+          <td>5</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>6</td>
+          <td>5</td>
+          <td></td>
+          <td></td>
+          <td>dans main, x vaut 5</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>7</td>
+          <td>5</td>
+          <td></td>
+          <td></td>
+          <td></td>
+          <td>`ma_fonction(100)`</td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>2</td>
+          <td>5</td>
+          <td>100</td>
+          <td>103</td>
+          <td></td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>3</td>
+          <td>5</td>
+          <td>100</td>
+          <td>103</td>
+          <td>dans ma_fonction, x vaut 103</td>
+          <td></td>
+          <td></td>
+        </tr>
+        <tr>
+          <td>8</td>
+          <td>5</td>
+          <td></td>
+          <td></td>
+          <td>dans main, x vaut toujours 5</td>
+          <td></td>
+          <td></td>
+        </tr>
+      </tbody>
+    </table>
+
+
+</TabItem>
+
 <TabItem value="Avec boucle" label="Avec boucle">
 
 <Row>
@@ -102,76 +254,7 @@ On voit que :
 - On appelle ce cheminement le flot de contrôle.
 
 </TabItem>
-<TabItem value="Avec fonction" label="Avec fonction">
 
-    {/*<Row>
-        <Column>*/}
-
-            ### Code
-            Si on a le code suivant :
-
-            ```python showLineNumbers
-            def carre(n):
-                return n * n
-
-            def somme_carres(x, y):
-                return carre(x) + carre(y)
-
-            def affiche_resultat():
-                a = 2
-                b = 3
-                total = somme_carres(a, b)
-                print(f'La somme des carrés est : {total}')
-
-            affiche_resultat()
-            ```
-
-        {/*</Column>
-        <Column>*/}
-
-            ### Trace
-            On indique aussi la **pile d'appels**, c'est-à-dire les fonctions en cours d'exécution (3e colonne).
-
-            Ce genre de code fait souvent appel à plusieurs appels de fonctions **imbriqués**.
-
-            On peut donc visualiser la pile d'appels comme un empilement temporaire :
-            chaque appel s’ajoute en haut de la pile, et disparaît dès qu’il est terminé.
-
-            {/*| ligne exécutée | effet | pile d'appels |
-            |----------------------------|-------------------------------------------|-------------------------------|
-            | affiche_resultat() | appelle affiche_resultat() | \_\_main__ |
-            | a = 2 | a: 2 | affiche_resultat <br/> \_\_main__ |
-            | b = 3 | a: 2, b: 3 | affiche_resultat <br/> \_\_main__ |
-            | total = somme_carres(a, b) | a: 2, b: 3 <br/> appelle somme_carres avec 2→x, 3→y |
-            affiche_resultat <br/> \_\_main__ |
-            | return carre(x) + carre(y) | x: 2, y: 3 <br/> appelle carre avec 2→n |
-            somme_carres <br/> affiche_resultat <br/> \_\_main__ |
-            | return n * n | n: 2 <br/> retourne 4 | carre <br/> somme_carres <br/> affiche_resultat <br/> \_\_main__ |
-            | return carre(x) + carre(y) | x: 2, y: 3 <br/> appelle carre avec 3→n |
-            somme_carres <br/> affiche_resultat <br/> \_\_main__ |
-            | return n * n | n: 3 <br/> retourne 9 | carre <br/> somme_carres <br/> affiche_resultat <br/> \_\_main__ |
-            | return carre(x) + carre(y) | retourne 13 | somme_carres <br/> affiche_resultat <br/> \_\_main__ |
-            | print(...) | affiche "La somme des carrés est : 13" | affiche_resultat <br/> \_\_main__ |*/}
-
-
-            | # ligne | a | b | x | y | n | total | affichage | pile d'appels | fonction appelée | valeur retournée |
-            |---------|---|---|---|---|---|-------|-----------|---------------|------------------|------------------|
-            | 13      |   |   |   |   |   |       |         | \_\_main__    | affiche_resultat() |  |
-            | 8       | 2 |   |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 9       | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 10      | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ | somme_carres(2, 3) |  |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(2) |  |
-            | 2       |   |   |   |   | 2 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 4 |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(3) |  |
-            | 2       |   |   |   |   | 3 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 9 |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 13 |
-            | 10      | 2 | 3 |   |   |   |   13  |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 11      | 2 | 3 |   |   |   |   13  | La somme des carrés est : 13 | affiche_resultat <br/> \_\_main__ |  |  |
-
-        {/*</Column>
-    </Row>*/}
-
-</TabItem>
 <TabItem value="valider-une-trace" label="Valider une trace">
 
 Afin de valider une trace :
