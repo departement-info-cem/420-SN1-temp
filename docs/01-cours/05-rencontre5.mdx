@@ -35,106 +35,14 @@ import TabItem from '@theme/TabItem';
         - visualisation de la pile d'appels de fonction
         - evaluate expression sur un point d'arrêt
 
+    </TabItem>
+
+    <TabItem value="while" label="While">
 
 
 
 
-
-
-
-
-
-
-
-
-
-
-
-
-        
-
-        # Exercices
-
-        ## Exercice Débogue et compte
-
-        En déboguant le code avec un point d'arrêt, détermine combien de fois la ligne 8 de l'exemple suivant
-        est appelée et les valeurs successives de resultat
-        ```python
-        def factorielle(n):
-        resultat = 1
-        for i in range(1, n):
-        resultat = resultat * i
-        return resultat
-
-        r = factorielle(9)
-        print(r)
-        ```
-
-
-        ## Exercice EvalueUneExpression
-
-        ```python
-        a = 7
-        b = "gna"
-        c = 9.7
-        d = True
-        while (a < 999):
-        a += c * 3
-        c = c * (a / c)
-        b = str(c) + b
-        ```
-
-        Sans modifier le code, donne la valeur des expressions suivantes quand le code est arrété à la ligne
-        XX
-
-        ```python
-
-        ```
-
-        TODO exemple de
-
-        - a < b
-        - a < b
-        - a < b
-        - a < b
-
-        ## Exercice islam-chretien.py
-
-        Sachant que le calendrier mulsulman commence en 622 du calendrier chrétien mais que ses années sont plus
-        courtes,
-        il va y avoir un jour où pour la première fois les musulmans et les chrétiens seront dans la même année.
-
-        En 622, le calendrier musulman est en 1.
-
-        Écris un programme qui détermine l'année où les deux calendriers se rejoignent pour la première fois.
-        - le calendrier musulman s'appelle aussi [calendrier
-        hégirien](https://fr.wikipedia.org/wiki/Calendrier_hégirien)
-        - tu peux chercher une librairie de conversion entre dates
-
-
-        ## Exercice moyenne.py
-
-        TODO mauvais exemple
-
-        Le code suivant est supposé calculer la moyenne d'un tableau de nombre.
-
-        ```python
-        def moyenne(tableau):
-        total = 0
-        for e in tableau:
-        total = total + e
-        return total / len(tableau)
-
-        t = [1, 56, 67, 89]
-        m = moyenne(t)
-        print( "la moyenne est " + str(m) )
-        ```
-        - commencer par calculer la moyenne entre 1, 56, 67 et 89 à la main
-        - essayer de prévoir les valeurs successives de total sur une feuille de papier
-        - à l'aide du débogueur
-        - valide les valeurs successives de total
-        - valide la valeur de len(tableau)
-        - si tu arrives à trouver le problème, répare-le, sinon regarde avec ton prof
+        montrer que i += 1 est équivalent à i = i + 1
 
     </TabItem>
 
@@ -176,6 +84,22 @@ import TabItem from '@theme/TabItem';
         print(compteur)  # Affiche 2
         ```
         :::
+
+    </TabItem>
+
+    <TabItem value="for" label="For (range)">
+
+    </TabItem>
+
+    <TabItem value="list" label="Liste">
+
+    </TabItem>
+
+    <TabItem value="foreach" label="For (séquence)">
+
+    </TabItem>
+
+    <TabItem value="break" label="Break / Continue / Pass">
 
     </TabItem>
 
@@ -245,26 +169,51 @@ import TabItem from '@theme/TabItem';
         Validez **ensuite** votre réponse.
         :::
 
-        :::info Exercice -
+        :::info Exercice - Débogue et compte
+        En exécutant ce code en mode débogage, déterminez :
+        1) combien de fois la ligne 4 est exécutée,
+        2) les valeurs successives de `resultat`.
+        ```python showLineNumbers
+        def factorielle(n):
+            resultat = 1
+            for i in range(1, n):
+                resultat = resultat * i
+            return resultat
 
+        r = factorielle(9)
+        print(r)
+        ```
         :::
 
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
+        :::info Exercice - EvalueUneExpression
+        Exécutez ce code en mode débogage et, en suivant [cette recette](/recettes/deboguer-point-arret#évaluer-une-expression), utilisez la fonctionnalité "Evaluate Expression" pour calculer les expressions suivantes lorsque l'exécution est arrêtée à la ligne 7 (mettez un point d'arrêt!) :
+        1) `a + b`
+        2) `c * 2`
+        3) `d and False`
+        4) `b + " world"`
+        ```python showLineNumbers
+        a = 7
+        b = "gna"
+        c = 9.7
+        d = True
+        while (a < 999):
+            a += c * 3
+            c = c * (a / c)
+            b = str(c) + b
+        ```
         :::
 
         ## 🔨 Exercices de création
 
-        :::info Exercice -
+        :::info Exercice - islam-chretien
+        Sachant que le calendrier musulman commence en 622 du calendrier chrétien mais que ses années sont plus courtes, il va y avoir un jour où pour la première fois les musulmans et les chrétiens seront dans la même année.
 
+        En 622, le calendrier musulman est en 1.
+
+        Écrivez un programme qui détermine l'année où les deux calendriers se rejoignent pour la première fois.
+        - Le calendrier musulman s'appelle aussi [calendrier
+        hégirien](https://fr.wikipedia.org/wiki/Calendrier_hégirien).
+        - Vous pouvez chercher une librairie de conversion entre dates.
         :::
 
         :::info Exercice -
