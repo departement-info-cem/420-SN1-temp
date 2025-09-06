@@ -11,38 +11,82 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="theorie" label="Théorie" default>
+    <TabItem value="while" label="While" default>
 
-        On va voir une démarche algorithmique sur quelques exemples
-        - identifier une boucle
-        - identifier le type de boucle à utiliser
-        - identifier un sous problème
+        :::info Introduction aux boucles
 
-        ## Exemple 1 : afficher un rectangle
+        La boucle apporte à la programmation une puissance considérable.<br />
+        Elle permet de répéter des actions, de parcourir des listes, de traiter des données
+        de manière efficace.<br />
+        Elle est un des piliers de la programmation avec les conditions et les fonctions.
 
-        ## Exemple 2 : faire une pyramide
+        En gros, sa structure est la suivante :
+        ```pseudo showLineNumbers
+        Tant que (une certaine condition est vraie) :
+            # instructions à répéter
+            # instructions à répéter
+            # instructions à répéter
 
-        ## Exemple 3 : calculer 1 11 21 1211
+        ```
+        Si on exécutait ce pseudo-code, on répéterait l'exécution des lignes 2 à 4 tant que la condition de la ligne 1 est vraie.<br />
+        Dès que la condition devient fausse, on sort de la boucle et on continue l'exécution du programme à la ligne 5.
 
-        ## Exemple 4 : decider si 2 textes sont des anagrammes
+        En Python, on utilise le mot-clé `while` pour créer une boucle de ce type.<br />
+        Voici un exemple simple :
+        ```python showLineNumbers
+        compteur = 0
+        while compteur < 5:
+            print("Compteur =", compteur)
+            compteur = compteur + 1  # Incrémente le compteur de 1
+        print("Fin de la boucle")
+        ```
+        Dans cet exemple, la boucle `while` continue tant que la variable `compteur` est inférieure à 5, c'est-à-dire tant que l'expression `compteur < 5` est évaluée à `True`.<br />
+        À chaque ***itération*** (tour de la boucle), elle affiche la valeur du compteur (ligne 3) et l'incrémente de 1 (ligne 4).<br />
+        Quand `compteur` atteint 5, la condition (`compteur < 5`) devient fausse (`False`) et la boucle se termine.
 
+        Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
+        Mettez un point d'arrêt sur la ligne 1 et avancez une ligne à la fois pour suivre l'évolution de la variable `compteur`.
 
-        # Débogage
+        :::
 
-        On va revenir à travers des exercices sur les:
-        - point arrêt simple
-        - step over, resume, step into
-        - visualisation de la pile d'appels de fonction
-        - evaluate expression sur un point d'arrêt
+        :::warning Attention aux boucles infinies
+        Il est crucial de s'assurer que la condition de la boucle deviendra fausse à un moment donné.<br />
+        Sinon, la boucle continuera indéfiniment, ce qui peut faire planter votre programme.<br />
+        Dans l'exemple ci-dessus, si on oublie d'incrémenter `compteur`, la condition `compteur < 5` restera toujours vraie et la boucle ne s'arrêtera jamais.
+        :::
 
-    </TabItem>
+        :::tip affectation raccourcie
+        Pour incrémenter une variable, on peut utiliser l'opérateur d'affectation raccourcie `+=`.<br />
+        Par exemple, au lieu d'écrire `compteur = compteur + 1`, on peut écrire `compteur += 1`.<br />
+        Cela fonctionne de la même manière pour les autres opérations mathématiques avec les opérateurs `-=`, `*=`, `/=`, etc.
 
-    <TabItem value="while" label="While">
+        Voici le même exemple avec l'opérateur `+=` :
+        ```python showLineNumbers
+        compteur = 0
+        while compteur < 5:
+            print("Compteur =", compteur)
+            compteur += 1  # Incrémente le compteur de 1
+        print("Fin de la boucle")
+        ```
+        :::
 
+        :::info Autre exemple
+        Voici un autre exemple qui utilise une boucle `while` pour calculer la somme des nombres de 1 à 10 :
+        ```python showLineNumbers
+        somme = 0
+        nombre = 1
+        while nombre <= 10:
+            somme += nombre  # Ajoute le nombre courant à la somme
+            nombre += 1      # Passe au nombre suivant
+        print("La somme des nombres de 1 à 10 est :", somme)
+        ```
+        Dans cet exemple, la boucle continue tant que `nombre` est inférieur ou égal à 10 (`nombre <= 10`).<br />
+        À chaque itération, elle ajoute la valeur de `nombre` à `somme` et incrémente `nombre` de 1.<br />
+        Quand `nombre` devient 11, la condition `nombre <= 10` devient fausse et la boucle se termine.<br />
+        Le programme affiche alors la somme totale des nombres de 1 à 10.
 
-
-
-        montrer que i += 1 est équivalent à i = i + 1
+        Exécutez-le en mode débogage pour suivre l'évolution des variables `somme` et `nombre` à chaque itération!
+        :::
 
     </TabItem>
 
@@ -88,6 +132,16 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
     <TabItem value="for" label="For (range)">
+
+
+
+        ## Exemple 1 : afficher un rectangle
+
+        ## Exemple 2 : faire une pyramide
+
+        ## Exemple 3 : calculer 1 11 21 1211
+
+        ## Exemple 4 : decider si 2 textes sont des anagrammes
 
     </TabItem>
 
