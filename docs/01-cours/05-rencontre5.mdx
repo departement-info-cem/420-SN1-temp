@@ -133,7 +133,49 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="for" label="For (range)">
 
+        ::::info Boucle for avec range()
+        Lorsqu'on sait à l'avance combien de fois on veut répéter une action, on peut utiliser une boucle `for` avec la fonction `range()`.<br />
+        La boucle `for` permet une syntaxe plus concise et claire pour ce type précis de situation.
 
+        :::tip À noter
+        Une boucle `for` est un cas particulier de boucle `while` et peut être réécrite en boucle `while`.
+        :::
+
+        La boucle `for` en Python est utilisée pour itérer sur une séquence (comme une liste ou une chaîne de caractères) ou sur un objet itérable.<br />
+        L'une des utilisations les plus courantes de la boucle `for` est avec la fonction `range()`, qui génère une séquence de nombres.<br />
+        La syntaxe de base est la suivante :
+        ```python showLineNumbers
+        for variable in range(start, stop, step):
+            # instructions à exécuter
+        ```
+        - `start` : le nombre de départ (inclusif, par défaut 0)
+        - `stop` : le nombre de fin (**exclusif**)
+        - `step` : l'incrément entre chaque nombre (par défaut 1)
+
+        Voici quelques exemples d'utilisation de `for` avec `range()` :
+        ```python showLineNumbers
+        # Exemple 1 : Afficher les nombres de 0 à 4
+        for i in range(5):
+            print(i)
+        ```
+        ```python showLineNumbers
+        # Exemple 2 : Afficher les nombres de 1 à 5
+        for i in range(1, 6):
+            print(i)
+        ```
+        ```python showLineNumbers
+        # Exemple 3 : Afficher les nombres pairs de 0 à 10
+        for i in range(0, 11, 2):
+            print(i)
+        ```
+        ```python showLineNumbers
+        # Exemple 4 : Afficher les nombres de 10 à 1 en ordre décroissant
+        for i in range(10, 0, -1):
+            print(i)
+        ```
+        Exécutez ces exemples en mode débogage pour bien comprendre le fonctionnement de la boucle `for` avec `range()`.<br />
+        Mettez un point d'arrêt sur la ligne 1 de chaque exemple et avancez une ligne à la fois pour suivre l'évolution de la variable `i`.
+        ::::
 
         ## Exemple 1 : afficher un rectangle
 
@@ -183,7 +225,7 @@ import TabItem from '@theme/TabItem';
         while mystere < 16 :
             mystere += mystere
             print(mystere)
-            print("FIN DU PROGRAMME")
+        print("FIN DU PROGRAMME")
         ```
         Validez **ensuite** votre réponse en exécutant le programme en mode débogage.
         :::
