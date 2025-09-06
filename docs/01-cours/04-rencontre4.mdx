@@ -557,13 +557,13 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         ---
 
         :::warning Pour aller plus loin
-        Il est aussi possible de **créer ses propres types d’erreurs** en définissant une classe qui hérite de `Exception`.
+        Il est aussi possible de **créer ses propres types d’erreurs** en définissant une classe qui hérite de `Exception`. \
         C’est utile dans de grands projets pour distinguer vos erreurs spécifiques de celles de Python.
 
         Exemple minimal :
         ```python showLineNumbers
-        class DonneesInvalidesError(Exception):
-            pass
+        class DonneesInvalidesError(Exception): pass #Définir un nouveau type d'erreur possible
+
 
         raise DonneesInvalidesError("Les données fournies ne sont pas valides.")
         ```
