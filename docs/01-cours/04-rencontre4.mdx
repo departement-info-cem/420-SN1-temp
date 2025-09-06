@@ -358,6 +358,23 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(f"{a} est un nombre pair : {est_pair(a)}")
         print(f"{b} est un nombre pair : {est_pair(b)}")
         ```
+
+        Cet exemple permet de calculer le salaire d'un employé
+
+        ```python showLineNumbers
+        def calculer_paie_brute(nb_heures, taux_horaire, temps_double_apres_40_heures=False):
+            salaire = nb_heures * taux_horaire
+            if temps_double_apres_40_heures and nb_heures >= 40:
+                nb_heures_temps_supp = nb_heures - 40
+                salaire = salaire + nb_heures_temps_supp * taux_horaire * 2
+            return salaire
+
+        nb_heures = 45
+        taux_horaire = 20
+        print(f"Calcul de la paie brute pour {nb_heures} heures  à un taux horaire de {taux_horaire}$")
+        print(f"  Avec le temps > 40 payé au taux doublé : {calculer_paie_brute(nb_heures, taux_horaire, True)}$")
+        print(f"  Avec le temps > 40 payé au taux régulier : {calculer_paie_brute(nb_heures, taux_horaire, False)}$")
+        ```
         :::
 
 
