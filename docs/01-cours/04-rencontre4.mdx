@@ -545,7 +545,28 @@ Voici comment Python évalue l’instruction #5, étape par étape :
                 raise ValueError("La masse doit être positive.")
             return masse_g / volume_L
         ```
-        Dans ce cas, l’erreur est volontaire : on empêche l’utilisation de valeurs impossibles en science.
+        Dans ce cas, l’erreur est volontaire : on empêche l’utilisation de valeurs impossibles en science. \
+        
+        :::
+
+        ---
+
+        :::note Intercepter une erreur personnalisée (`try/catch`)
+        Si on souhaite intercepter l'erreur avec le message d'erreur personnalisé, on doit utiliser un bloc `try/except` comme ceci :
+        
+        ```python showLineNumbers
+        try:
+            #Début du code à risque
+            concentration(4,20)         #OKI, éxécutée sans problème
+            concentration(-10,20)       #PAS OKI, masse négative!
+            concentration(4,20)         #JAMAIS éxécuté à cause de l'exception
+            #Fin du code à risque
+        except {ZeroDivisionError, ValueError} as e:
+            #Interception de l'erreur
+            print(f"Une erreur est subvenue : {e}")
+        ```
+        La variable `e` représente ici l'exception intercepté, tenter de l'afficher à la console va afficher le message d'erreur personnalisé.
+
         :::
 
         ---
@@ -604,7 +625,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(densite(10, 2))   # 5.0
         print(densite(8, 0))    # Erreur Python (division par zéro)
         ```
-        Ici, le programme plante si on entre un volume nul ou une masse invalide.
+        Ici, la fonction ne réalise pas de validation, le programme plante si on entre un volume nul ou une masse invalide avec des **messages d'erreur générique**.
 
         ---
 
@@ -621,7 +642,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(densite(-3, 5))   # ValueError
         print(densite(8, 0))    # ZeroDivisionError
         ```
-        Ici, les erreurs sont interceptées volontairement et donnent un message **clair et précis**.
+        Ici, la fonction réalise des validations et lève des exceptions dans plus de situation accompagné de **messages d'erreur clair et précis**. 
         :::
 
         ---
