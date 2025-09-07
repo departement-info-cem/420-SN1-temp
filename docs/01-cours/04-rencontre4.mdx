@@ -637,6 +637,35 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         - ✅ Domaines respectés (positif, non nul)
         - ✅ Cas limites couverts (valeur négative, zéro, etc.)
         :::
+
+        ---
+
+        :::tip Exemple complet avec validation et exceptions
+
+        Voici un exemple complet d'une fonction qui calcule la concentration d'une solution, avec validation des paramètres et gestion des exceptions :
+
+        ```python showLineNumbers
+        def calculer_concentration(masse_g, volume_L):
+            if not isinstance(masse_g, (int, float)):
+                raise TypeError("La masse doit être un nombre (int ou float).")
+            if not isinstance(volume_L, (int, float)):
+                raise TypeError("Le volume doit être un nombre (int ou float).")
+            if masse_g < 0:
+                raise ValueError("La masse doit être positive.")
+            if volume_L <= 0:
+                raise ValueError("Le volume doit être supérieur à 0.")
+            return masse_g / volume_L
+        
+        # Exemples d'utilisation
+        try:
+            print(calculer_concentration(10, 2))    # 5.0
+            print(calculer_concentration(-5, 2))    # ValueError
+            print(calculer_concentration(10, 0))    # ValueError
+            print(calculer_concentration(10, "a"))  # TypeError
+        except (TypeError, ValueError) as e:
+            print(f"Erreur : {e}")
+        ```
+        :::
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
