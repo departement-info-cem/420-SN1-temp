@@ -877,6 +877,31 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ---
 
+        :::info Exercice - Remplacer des instructions
+
+        Pour cette exercice, vous devez remplacer les `if/elsif/else` du code ci-dessous par un `match`.
+
+        ```python showLineNumbers
+        def type_animal(deplacement):
+            if deplacement == "vol":
+                return "Oiseau"
+            elif deplacement == "nage":
+                return "Poisson"
+            elif deplacement == "marche":
+                return "Mammifère"
+            elif deplacement == "rampe":
+                return "Reptile"
+            else:
+                return "Inconnu"
+
+        deplacement = "vol"
+        print(f"Si je {deplacement}, je suis un {type_animal(deplacement)}")
+        ```
+
+        :::
+
+        ---
+
         :::info Exercice - Calcul de la note finale du cours, avec la double sanction!
 
         Améliorez le code réalisé lors de la rencontre 2 servant à calculer la note finale du cours.
