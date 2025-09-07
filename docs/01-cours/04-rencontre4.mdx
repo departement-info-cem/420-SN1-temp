@@ -663,7 +663,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::info Exercice - SOLUTIONS D'UNE EQUATION QUADRATIQUE
 
-        Une équation quadratique, aussi appelée équation du second degré, est une équation polynomiale de la forme $ax² + bx + c = 0$, où $a$, $b$, et $c$ sont des constantes et $a$ est différent de zéro.
+        Une équation quadratique, aussi appelée équation du second degré, est une équation polynomiale de la forme $ax² + bx + c = 0$, où $a$, $b$, et $c$ sont des constantes et $a$ est différente de zéro.
 
         Le discriminant $\Delta = b^2 - 4ac$ est crucial pour déterminer le nombre de solutions d'une équation quadratique :
 
@@ -682,7 +682,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         x = \frac{-b \pm \sqrt{b² - 4ac}}{2a}
         $$
 
-        Completez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
+        Complétez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
 
         ```python showLineNumbers
         a = 1
@@ -711,6 +711,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         - Validez que le volume est **strictement positif** (non nul).
         - Levez une exception claire (`ValueError` ou `ZeroDivisionError`) si les conditions ne sont pas respectées.
 
+        Testez votre fonction en l'appelant avec des valeurs valides et invalides pour vérifier que la validation fonctionne correctement.
+
         Pourquoi est-il préférable d’**arrêter l’exécution avec un message clair** plutôt que de laisser Python planter avec une erreur brute?
 
         :::
@@ -718,8 +720,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         :::info Exercice - Le niveau de pH
 
         Définissez une fonction décrivant le niveau d'acidité d'une solution à partir de son [pH](https://fr.wikipedia.org/wiki/Potentiel_hydrog%C3%A8ne). \
-        La fonction doit recevoir en entrée le pH et renvoyer en sortie soit : acide, neutre ou basique. \
-        Valide le bon fonctionnement en testant les différents cas possibles à l'aide d'appels :
+        La fonction doit recevoir en entrée le pH et renvoyer en sortie soit : "acide", "neutre" ou "basique". \
+        Validez le bon fonctionnement en testant les différents cas possibles à l'aide d'appels :
         ```python showLineNumbers
         print(f"Une solution avec un Ph de 5 est : {nom_de_votre_fonction(5)}") 
         print(f"Une solution avec un Ph de 7 est : {nom_de_votre_fonction(7)}")
@@ -732,13 +734,13 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         Améliorez le code réalisé lors de la rencontre 2 servant à calculer la note finale du cours.
         
-        1. Réaliser une fonction :
-            - Prenant en entrées les 4 nombres représentant les notes
-            - Retournant la note finale calculée
+        1. Créez une fonction :
+            - qui prend en entrées les 4 nombres représentant les notes,
+            - et qui retourne la note finale calculée.
         
-        2. Appelez cette fonction pour réaliser le calcul avec les notes saisies
+        2. Appelez cette fonction pour réaliser le calcul avec les notes saisies.
 
-        3. Modifier le calcul de la note finale afin de prendre en compte la double sanction
+        3. Modifiez le calcul de la note finale afin de prendre en compte la double sanction.
 
         <i>**Double sanction** : Pour réussir le cours, la personne étudiante doit conserver un minimum de 60% aux évaluations supervisées (examens, contrôles) ainsi qu’un minimum de 60% aux évaluations non supervisées (travaux pratiques, devoirs).
         À défaut de répondre à ces exigences, la personne étudiante obtient, à son bulletin, la note la plus basse enregistrée : celle des évaluations supervisées ou celle des évaluations non supervisées.</i>
