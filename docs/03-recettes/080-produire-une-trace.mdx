@@ -4,14 +4,22 @@ hide_table_of_contents: true
 
 # 🕵️‍♂️ Trace d’exécution
 
-Lorsqu'on a un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées.
+:::info Trace
 
-## Principe
+Lorsqu'on a un morceau de code, on peut souhaiter savoir dans quel ordre les instructions sont exécutées.<br />
+On veut spécifier précisément :
+- Quelles lignes de code s'exécutent dans quel ordre.
+- Les effets de chaque ligne de code :
+    - quelles variables sont créées/modifiées,
+    - quelles valeurs elles contiennent,
+    - ce qui est affiché (si on a des `print`).
+- La portée des variables.
+- Si on a des fonctions :
+    - la pile d'appels (quelles fonctions sont en cours d'exécution),
+    - quelle fonction est appelée,
+    - quelle valeur elle retourne (si elle en retourne une).
 
-On veut accomplir 2 éléments principaux :
-1. Indiquer quelles lignes de code s'exécutent dans quel ordre.
-2. Indiquer les effets de chaque ligne de code.
-3. Indiquer la pile d'appels (si on a des fonctions).
+:::
 
 <Tabs queryString="recette-activite">
 <TabItem value="Exemple simple" label="Exemple simple">
@@ -63,52 +71,161 @@ l'ordre de lecture du code. Simple!
             def carre(n):
                 return n * n
 
-            def somme_carres(x, y):
-                return carre(x) + carre(y)
-
             def affiche_resultat():
                 a = 2
                 b = 3
-                total = somme_carres(a, b)
+                total = carre(a) + carre(b)
                 print(f'La somme des carrés est : {total}')
 
+            z = 42
             affiche_resultat()
             ```
 
             ### Trace
-            On indique aussi la **pile d'appels**, c'est-à-dire les fonctions en cours d'exécution (3e colonne).
 
-            Ce genre de code fait souvent appel à plusieurs appels de fonctions **imbriqués**.
+            On aura la trace suivante :
 
-            On peut donc visualiser la pile d'appels comme un empilement temporaire :
-            chaque appel s’ajoute en haut de la pile, et disparaît dès qu’il est terminé.
+            <table>
+                <thead>
+                <tr>
+                    <th></th>
+                    <th>portée globale</th>
+                    <th colspan="3">portée de `affiche_resultat`</th>
+                    <th>portée de `carre`</th>
+                    <th colspan="4"></th>
+                </tr>
+                <tr>
+                    <th>#ligne</th>
+                    <th>z</th>
+                    <th>a</th>
+                    <th>b</th>
+                    <th>total</th>
+                    <th>n</th>
+                    <th>affichage</th>
+                    <th>pile d'appels</th>
+                    <th>fonction appelée</th>
+                    <th>valeur retournée</th>
+                </tr>
+                </thead>
+                <tbody>
+                <tr>
+                    <td>10</td>
+                    <td>42</td><td></td><td></td><td></td><td></td>
+                    <td></td>
+                    <td>`__main__`</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>11</td>
+                    <td>42</td><td></td><td></td><td></td><td></td>
+                    <td></td>
+                    <td>`__main__`</td>
+                    <td>`affiche_resultat()`</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>5</td>
+                    <td>42</td><td>2</td><td></td><td></td><td></td>
+                    <td></td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>6</td>
+                    <td>42</td><td>2</td><td>3</td><td></td><td></td>
+                    <td></td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>42</td><td>2</td><td>3</td><td></td><td></td>
+                    <td></td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td>`carre(2)`</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>42</td><td></td><td></td><td></td><td>2</td>
+                    <td></td>
+                    <td>`carre`<br />`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td>4</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>42</td><td>2</td><td>3</td><td></td><td></td>
+                    <td></td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td>`carre(3)`</td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>2</td>
+                    <td>42</td><td></td><td></td><td></td><td>3</td>
+                    <td></td>
+                    <td>`carre`<br />`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td>9</td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>42</td><td>2</td><td>3</td><td>13</td><td></td>
+                    <td></td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                <tr>
+                    <td>7</td>
+                    <td>42</td><td>2</td><td>3</td><td>13</td><td></td>
+                    <td>La somme des carrés est : 13</td>
+                    <td>`affiche_resultat`<br/>`__main__`</td>
+                    <td></td>
+                    <td></td>
+                </tr>
+                </tbody>
+            </table>
 
+    ## Explications
 
-            | # ligne | a | b | x | y | n | total | affichage | pile d'appels | fonction appelée | valeur retournée |
-            |---------|---|---|---|---|---|-------|-----------|---------------|------------------|------------------|
-            | 13      |   |   |   |   |   |       |         | \_\_main__    | affiche_resultat() |  |
-            | 8       | 2 |   |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 9       | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 10      | 2 | 3 |   |   |   |       |         | affiche_resultat <br/> \_\_main__ | somme_carres(2, 3) |  |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(2) |  |
-            | 2       |   |   |   |   | 2 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 4 |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ | carre(3) |  |
-            | 2       |   |   |   |   | 3 |       |         | carre <br /> somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 9 |
-            | 5       |   |   | 2 | 3 |   |       |         | somme_carres <br/> affiche_resultat <br/> \_\_main__ |  | 13 |
-            | 10      | 2 | 3 |   |   |   |   13  |         | affiche_resultat <br/> \_\_main__ |  |  |
-            | 11      | 2 | 3 |   |   |   |   13  | La somme des carrés est : 13 | affiche_resultat <br/> \_\_main__ |  |  |
+    :::info Portée des variables
+    On indique la portée des variables en les regroupant par portée (première ligne).<br/>
+    Ici, on a la portée globale (variables définies en dehors de toute fonction), la portée de `affiche_resultat` et la portée de `carre`.<br/>
 
-</TabItem>
+    On remarque que la variable `n` n'existe que dans la portée de la fonction `carre`, et que les variables `a`, `b` et `total` n'existent que dans la portée de la fonction `affiche_resultat`.<br/>
 
-<TabItem value="avecportee" label="Avec portée">
+    La variable `z` est dans la portée globale, c'est pourquoi elle est visible dans toute la trace.
 
-Lorsque des variables (ou des paramètres de fonction) avec des noms identiques existent dans des portées différentes,
-on peut regrouper les variables par portée dans la trace.<br/>
-    Pour cela, on ajoute une ligne horizontale en haut de notre tableau pour indiquer les portées.
+    :::
 
+    ---
+
+    :::info Fonction appelée et valeur retournée
+    On indique aussi la fonction appelée (avant son exécution) et la valeur qu'elle retourne (après son exécution) (dernières colonnes).
+
+    :::
+
+    ---
+
+    :::info Pile d'appels
+
+    On indique aussi la **pile d'appels**, c'est-à-dire les fonctions en cours d'exécution (3e colonne à partir de la droite).
+
+    Ce genre de code fait souvent appel à plusieurs appels de fonctions **imbriqués**.<br />
+    On peut donc visualiser la pile d'appels comme un empilement temporaire où chaque appel s’ajoute en haut de la pile, et disparaît dès qu’il est terminé.
+
+    :::
+
+    ---
+
+    Voici maintenant un petit exemple qui démontre l'importantce de spécifier la portée des variables, où on a une variable `x` dans la portée globale et une autre variable nommée `x` dans la portée de la fonction `ma_fonction`.
 
     ### Code
-    Si on a le code suivant :
     ```python showLineNumbers
     def ma_fonction(y):
         x = 3 + y
@@ -120,10 +237,7 @@ on peut regrouper les variables par portée dans la trace.<br/>
     print(f'dans main, x vaut toujours {x}')
     ```
 
-
     ### Trace
-    On aura la trace suivante :
-
     <table>
       <thead>
         <tr>
@@ -207,6 +321,12 @@ on peut regrouper les variables par portée dans la trace.<br/>
       </tbody>
     </table>
 
+    :::warning Portée des variables
+    On voit que la variable `x` dans la portée de `ma_fonction` n'a rien à voir avec la variable `x` dans la portée globale.<br />
+    Cette dernière n'est pas modifiée par l'exécution de `ma_fonction`, malgré le fait qu'on ait une instruction `x = 3 + y` dans `ma_fonction` et que la variable globale `x` soit aussi accessible dans `ma_fonction` (car elle est globale).<br />
+    La raison est que l'instruction `x = 3 + y` crée une nouvelle variable `x` dans la portée de `ma_fonction`, qui masque la variable globale `x`.<br />
+    Si on voulait modifier la variable globale `x` dans `ma_fonction`, il faudrait utiliser le mot-clé `global` (ce qui est déconseillé en général).
+    :::
 
 </TabItem>
 
