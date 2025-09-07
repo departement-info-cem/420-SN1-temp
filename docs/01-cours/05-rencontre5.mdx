@@ -185,124 +185,27 @@ import TabItem from '@theme/TabItem';
         Mettez un point d'arrêt sur la ligne 1 de chaque exemple et avancez une ligne à la fois pour suivre l'évolution de la variable `i`.
         ::::
 
-        ## Exemple 1 : afficher un rectangle
-
-        ## Exemple 2 : faire une pyramide
-
-        ## Exemple 3 : calculer 1 11 21 1211
-
-        ## Exemple 4 : decider si 2 textes sont des anagrammes
-
     </TabItem>
 
-    <TabItem value="list" label="Liste">
+    <TabItem value="forif" label="for / if combinés">
 
-        :::info Introduction aux listes
+        :::info Structures combinées
 
-        Jusqu'ici nous avons vu les 4 types de données de base en Python :<br />
-        - les entiers (`int`) : 5, -3, 42, 0, ...
-        - les nombres à virgule (`float`) : 3.14, -0.001, 2.0, ...
-        - les chaînes de caractères (`str`) : "Bonjour", 'a', "123", ...
-        - les booléens (`bool`) : `True`, `False`
+        Il est possible de combiner les différentes structures de contrôle pour créer des programmes plus complexes et puissants.<br />
+        Par exemple, on peut imbriquer des boucles à l'intérieur d'autres boucles, ou utiliser des conditions à l'intérieur de boucles.
 
-        Mais Python propose aussi des types de données plus complexes, comme les listes, les tuples, les ensembles et les dictionnaires.<br />
-        Nous allons commencer par les listes.<br />
-        Une liste est une collection ordonnée et modifiable d'éléments, qui peuvent être de n'importe quel type de données.<br />
-        Les listes sont définies par des crochets `[]`, avec les éléments séparés par des virgules.<br />
-        Par exemple :
+        Voici un exemple simple qui combine une boucle `for` avec une condition `if` pour afficher les nombres pairs de 0 à 10 :
         ```python showLineNumbers
-        ma_liste = [1, 2, 3, 4, 5]
-        noms = ["Alice", "Bob", "Charlie"]
-        mixte = [1, "deux", 3.0, True]
+        for i in range(11):
+            if i % 2 == 0:
+                print(i)
         ```
-        On peut accéder aux éléments d'une liste en utilisant leur index, qui commence à 0.<br />
-        Par exemple, pour accéder au premier élément de `ma_liste`, on écrit `ma_liste[0]` :
-        ```python showLineNumbers
-        print(ma_liste[0])  # Affiche 1
-        print(noms[1])      # Affiche "Bob"
-        print(mixte[2])     # Affiche 3.0
-        ```
-
-        :::
-
-    </TabItem>
-
-    <TabItem value="foreach" label="For (séquence)">
-
-        :::info Boucle for sur une liste
-        Une boucle `for` peut aussi être utilisée pour itérer directement sur les éléments d'une liste (ou d'autres collections comme les tuples, ensembles, dictionnaires, etc.).
-
-        La syntaxe est la suivante :
-        ```python showLineNumbers
-        for element in liste:
-            # instructions à exécuter
-        ```
-        Voici un exemple simple d'utilisation de `for` pour parcourir une liste de noms et les afficher :
-        ```python showLineNumbers
-        noms = ["Alice", "Bob", "Charlie"]
-        for nom in noms:
-            print("Bonjour", nom)
-        ```
-        Dans cet exemple, la boucle `for` parcourt chaque élément de la liste `noms` et l'affecte à la variable `nom` à chaque itération.<br />
-        Ensuite, elle exécute l'instruction `print()` pour afficher un message de bienvenue pour chaque nom.
+        Dans cet exemple, la boucle `for` itère sur les nombres de 0 à 10, et la condition `if` vérifie si le nombre est pair (c'est-à-dire si le reste de la division par 2 est égal à 0).<br />
+        Si la condition est vraie, le nombre est affiché.
 
         Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
-        Mettez un point d'arrêt sur la ligne 2 et avancez une ligne à la fois pour suivre l'évolution de la variable `nom`.
+        Mettez un point d'arrêt sur la ligne 1 et avancez une ligne à la fois pour suivre l'évolution de la variable `i` et l'évaluation de la condition.
 
-        :::
-
-        ---
-
-        :::note Équivalence en while et en range
-        On peut réécrire la boucle `for` ci-dessus en utilisant une boucle `while` ou une boucle `for` avec la fonction `range()` comme suit :
-        <Row>
-            <Column>
-                ## Boucle `while`
-                ```python showLineNumbers
-                noms = ["Alice", "Bob", "Charlie"]
-                i = 0
-                while i < len(noms):
-                    nom = noms[i]
-                    print("Bonjour", nom)
-                    i += 1
-                ```
-            </Column>
-            <Column>
-                ## Boucle `for` avec `range()`
-                ```python showLineNumbers
-                noms = ["Alice", "Bob", "Charlie"]
-                for i in range(len(noms)):
-                    nom = noms[i]
-                    print("Bonjour", nom)
-                ```
-            </Column>
-        </Row>
-        Remarquez que dans ces deux versions, nous utilisons la fonction `len()` pour obtenir la longueur de la liste `noms` et nous accédons aux éléments de la liste en utilisant leur index (`[i]`).<br />
-        Cependant, la version avec la boucle `for nom in noms` est plus concise et plus facile à lire.
-        :::
-
-        ---
-
-        :::tip Choix entre les types de boucles
-        - Selon le contexte, une boucle `for` sur une liste peut être plus efficace et plus claire qu'une boucle `while` ou une boucle `for` avec `range()`, surtout lorsque l'on n'a pas besoin de l'index des éléments.
-        - Mais parfois, on a besoin de l'index pour certaines opérations.
-        - Aussi, la boucle `while` offre plus de flexibilité pour des conditions d'arrêt plus complexes.
-        :::
-
-        ---
-
-        :::info Exemple avec modification de liste
-        Voici un autre exemple qui utilise une boucle `for` pour créer une nouvelle liste contenant les carrés des nombres d'une liste initiale :
-        ```python showLineNumbers
-        nombres = [1, 2, 3, 4, 5]
-        carrés = []
-        for nombre in nombres:
-            carrés.append(nombre ** 2)  # Ajoute le carré du nombre à la liste carrés
-        print("Les carrés des nombres sont :", carrés)
-        ```
-        Dans cet exemple, la boucle `for` parcourt chaque nombre dans la liste `nombres`, calcule son carré (`nombre ** 2`) et l'ajoute à la liste `carrés` en utilisant la méthode `append()`.
-
-        Exécutez-le en mode débogage pour suivre l'évolution des listes `nombres` et `carrés` à chaque itération.
         :::
 
     </TabItem>
@@ -368,6 +271,60 @@ import TabItem from '@theme/TabItem';
         Exécutez ces exemples en mode débogage pour bien comprendre comment chaque instruction affecte le flux d'exécution de la boucle.<br />
         Mettez des points d'arrêt aux endroits stratégiques et avancez ligne par ligne pour observer le comportement du programme.
         :::
+
+    </TabItem>
+
+    <TabItem value="forfor" label="Boucles imbriquées">
+
+        :::info Boucles imbriquées
+
+        Il est possible de placer une boucle à l'intérieur d'une autre boucle.<br />
+        On parle alors de boucles imbriquées.
+
+        Voici un exemple simple avec deux boucles `for` imbriquées pour afficher une table de multiplication :
+        ```python showLineNumbers
+        for i in range(1, 6):  # Boucle extérieure pour les lignes
+            for j in range(1, 6):  # Boucle intérieure pour les colonnes
+                print(i * j, end='\t')  # Affiche le produit avec une tabulation
+            print()  # Nouvelle ligne après chaque ligne de la table
+        ```
+        Dans cet exemple, la boucle extérieure itère sur les valeurs de `i` de 1 à 5, et pour chaque valeur de `i`, la boucle intérieure itère sur les valeurs de `j` de 1 à 5.<br />
+        Le produit `i * j` est affiché dans une grille formatée.
+
+        Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
+        Mettez un point d'arrêt sur la ligne 1 et avancez une ligne à la fois pour suivre l'évolution des variables `i` et `j`.
+
+        :::
+
+        ---
+
+        :::tip Exemple avec une boucle `while`
+        Voici un exemple similaire utilisant des boucles `while` imbriquées pour afficher un triangle d'étoiles :
+        ```python showLineNumbers
+        lignes = 5
+        i = 1
+        while i <= lignes:  # Boucle extérieure pour les lignes
+            j = 1
+            while j <= i:  # Boucle intérieure pour les étoiles dans chaque ligne
+                print('*', end=' ')
+                j += 1
+            print()  # Nouvelle ligne après chaque ligne d'étoiles
+            i += 1
+        ```
+        Dans cet exemple, la boucle extérieure contrôle le nombre de lignes, tandis que la boucle intérieure contrôle le nombre d'étoiles affichées dans chaque ligne.
+
+        Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
+        Mettez un point d'arrêt sur la ligne 2 et avancez une ligne à la fois pour suivre l'évolution des variables `i` et `j`.
+
+        :::
+
+        ## Exemple 1 : afficher un rectangle
+
+        ## Exemple 2 : faire une pyramide
+
+        ## Exemple 3 : calculer 1 11 21 1211
+
+        ## Exemple 4 : decider si 2 textes sont des anagrammes
 
     </TabItem>
 
