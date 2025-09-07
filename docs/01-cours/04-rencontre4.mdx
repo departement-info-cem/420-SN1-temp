@@ -644,15 +644,84 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ## ✏️ Exercices de compréhension
 
-        :::info Exercice -
+        :::info Exercice - Trace `if`/`else` + forme compacte
+
+        Sans exécuter le code, qu'affichera le programme ci-dessous? \
+        En suivant [cette recette de trace](/recettes/produire-une-trace?recette-activite=Avec+fonction), faites la trace de l'exécution. \
+        En situation d'examen, ce type de question serait à faire sans l'ordinateur.
+
+        ```python showLineNumbers
+        def carre(x):
+            return x * x
+
+        def calcul(n):
+            if n % 2 == 0:
+                return n + 5
+            else:
+                return carre(x) - 1
+
+        x = 3
+        x = calcul(x)
+        if x >= 5:
+            calcul(x)
+        print("Hello World") if x == 13 else print("Fin")
+        ```
+        Validez votre trace en exécutant le code dans un script en mode débogage.
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - Trace `if`/`elsi`/`else` + forme compacte
+        
+        Sans exécuter le code, qu'affichera le programme ci-dessous? \
+        En suivant [cette recette de trace](/recettes/produire-une-trace?recette-activite=Avec+fonction), faites la trace de l'exécution. \
+        En situation d'examen, ce type de question serait à faire sans l'ordinateur.
+
+        ```python showLineNumbers
+        def mystere(n):
+            print("---")
+            if n % 2 == 0:
+                print("!")
+            elif n >= 10:
+                print("E")
+                if n // 10 == 5:
+                    print("X")
+                else:
+                    print("D")
+                print("P.")
+            elif n >= 20:
+                print("F")
+            else:
+                print("3") if n < 5 else print("33")
+
+        mystere(55)
+        mystere(5)
+        mystere(12)
+        ```
+        Validez votre trace en exécutant le code dans un script en mode débogage.
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - Trace avec opérateurs `and` et `or`
+
+        Sans exécuter le code, qu'affichera le programme ci-dessous? \
+        En suivant [cette recette de trace](/recettes/produire-une-trace?recette-activite=Avec+fonction), faites la trace de l'exécution. \
+        En situation d'examen, ce type de question serait à faire sans l'ordinateur.
+
+        ```python showLineNumbers
+        def mystere(x,y,z):
+            print(f"--- x:{x}, y:{y}, z:{z}")
+            if (x >= 5 or y < 15) or z >= 10 :
+                print("Condition 1")
+            if (x >= 5 and y < 15) or z >= 10 :
+                print("Condition 2")
+            if (x >= 5 and y < 15) and z >= 10 :
+                print("Condition 3")
+
+        mystere(0,5,5)
+        mystere(5,5,5)
+        mystere(5,10, 10)
+        ```
+        Validez votre trace en exécutant le code dans un script en mode débogage.
 
         :::
 
