@@ -44,25 +44,25 @@ import TabItem from '@theme/TabItem';
         ```python showLineNumbers
         a = 5
         b = 10
-        print(a < b)   #Affiche True
-        print(a == b)  #Affiche False
-        print(a + 5 >= b - max(1,min(4,a,6)),5))   #Affiche False, explications ci-dessous!
+        print(a < b)   # Affiche True
+        print(a == b)  # Affiche False
+        print(a + 5 >= b - max(1, min(4, a, 6)), 5))   # Affiche False, explications ci-dessous!
         ```
 
-Les 2 opérandes d’un opérateur de comparaison peuvent être le résultat d’expressions. \
-Python évalue l’expression selon la [priorité des opérateurs](/aidememoire/operateurs?onglet=priorite), en remplaçant chaque sous-expression par sa valeur, jusqu’à obtenir 2 valeurs comparables.
+Les 2 opérandes d’un opérateur de comparaison peuvent être le résultat de l'évaluation d’expressions. \
+Python évalue l’expression selon la [priorité des opérateurs](/aidememoire/operateurs?onglet=priorite), en remplaçant chaque sous-expression par sa valeur résultante.
 
 Voici comment Python évalue l’instruction #5, étape par étape :
 
         ```python 
-        print(a + 5 >= b - max(1,min(4,a,6)),5))   #Instruction originale
-        print(5 + 5 >= b - max(1,min(4,5,6)),5))   #Remplacer 'a' par sa valeur
-        print(10 >= b - max(1,min(4,5,6)),5))      #Réaliser la somme de '5 + 5'
-        print(10 >= 10 - max(1,min(4,5,6),5))      #Remplacer 'b' par sa valeur
-        print(10 >= 10 - max(1,4,5))               #La fonction min(...) doit être résolue avant la fonction max(...)
-        print(10 >= 10 - 5)                        #La fonction max(...)
-        print(10 >= 5)                             #L'opération >=
-        print(False)                               #Afficher "False" dans la console
+        print(a + 5 >= b - max(1, min(4, a, 6)), 5))   # Instruction originale
+        print(5 + 5 >= b - max(1, min(4, 5, 6)), 5))   # Remplace 'a' par sa valeur
+        print(10 >= b - max(1, min(4, 5, 6)), 5))      # Calcule la somme de '5 + 5'
+        print(10 >= 10 - max(1, min(4, 5, 6), 5))      # Remplace 'b' par sa valeur
+        print(10 >= 10 - max(1, 4, 5))                 # La fonction min(...) doit être résolue avant la fonction max(...)
+        print(10 >= 10 - 5)                            # La fonction max(...) est résolue
+        print(10 >= 5)                                 # L'opération >=
+        print(False)                                   # Affiche "False" dans la console
         ```
         :::
 
@@ -194,7 +194,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         if age >= 18 :
             print("Vous êtes majeur.")
             print("Vous avez le droit de vote!")
-            print("Un grand pouvoir implique de grandes responsabilités")
+            print("Un grand pouvoir implique de grandes responsabilités.")
         print("Bienvenue!")  # Toujours exécuté, indépendamment de l'âge
         ```
         :::
@@ -344,7 +344,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::info Intégration avec des fonctions
 
-        Les structures conditionnelles (if/elsif/else, match) peuvent être utilisées à l'intérieur de fonctions. \
+        Les structures conditionnelles (`if/elif/else`, `match/case`) peuvent être utilisées à l'intérieur de fonctions. \
         Par exemple :
         ```python showLineNumbers
         def est_pair(n):
@@ -359,7 +359,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(f"{b} est un nombre pair : {est_pair(b)}")
         ```
 
-        Cet exemple permet de calculer la paie brute d'un employé
+        Cet exemple permet de calculer la paie brute d'un employé :
 
         ```python showLineNumbers
         def calculer_paie_brute(nb_heures, taux_horaire, temps_double_apres_40_heures=False):
@@ -371,7 +371,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         nb_heures = 45
         taux_horaire = 20
-        print(f"Calcul de la paie brute pour {nb_heures} heures  à un taux horaire de {taux_horaire}$")
+        print(f"Calcul de la paie brute pour {nb_heures} heures à un taux horaire de {taux_horaire}$/h.")
         print(f"  Avec le temps > 40 payé au taux doublé : {calculer_paie_brute(nb_heures, taux_horaire, True)}$")
         print(f"  Avec le temps > 40 payé au taux régulier : {calculer_paie_brute(nb_heures, taux_horaire)}$")
         ```
@@ -562,8 +562,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         Exemple minimal :
         ```python showLineNumbers
-        class DonneesInvalidesError(Exception): pass #Définir un nouveau type d'erreur possible
-
+        class DonneesInvalidesError(Exception): pass # Définir un nouveau type d'erreur
 
         raise DonneesInvalidesError("Les données fournies ne sont pas valides.")
         ```
@@ -670,6 +669,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::
 
+        ---
+
         :::info Exercice - Trace `if`/`elsi`/`else` + forme compacte
         
         Sans exécuter le code, qu'affichera le programme ci-dessous? \
@@ -701,6 +702,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::
 
+        ---
+
         :::info Exercice - Trace avec opérateurs `and` et `or`
 
         Sans exécuter le code, qu'affichera le programme ci-dessous? \
@@ -723,7 +726,11 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         ```
         Validez votre trace en exécutant le code dans un script en mode débogage.
 
+        ---
+
         :::
+
+        ---
 
         :::info Exercice -
 
@@ -731,20 +738,9 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ## 🔨 Exercices de création
 
-
-        :::info Exercice Comparer 2 nombres
-
-        Demande 2 nombres et affiche lequel est le plus grand, si les 2 nombres sont égaux en informer l'utilisateur.
-
-        :::
-
-        :::info Exercice Vérifier l'age
-
-        :::
-
         :::info Exercice - SOLUTIONS D'UNE EQUATION QUADRATIQUE
 
-        Une équation quadratique, aussi appelée équation du second degré, est une équation polynomiale de la forme $ax² + bx + c = 0$, où $a$, $b$, et $c$ sont des constantes et $a$ est différent de zéro.
+        Une équation quadratique, aussi appelée équation du second degré, est une équation polynomiale de la forme $ax² + bx + c = 0$, où $a$, $b$, et $c$ sont des constantes et $a$ est différente de zéro.
 
         Le discriminant $\Delta = b^2 - 4ac$ est crucial pour déterminer le nombre de solutions d'une équation quadratique :
 
@@ -763,7 +759,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         x = \frac{-b \pm \sqrt{b² - 4ac}}{2a}
         $$
 
-        Completez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
+        Complétez ce programme afin qu'il trouve les solutions pour n'importe quelles valeurs de $a$, $b$ et $c$ :
 
         ```python showLineNumbers
         a = 1
@@ -785,6 +781,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::
 
+        ---
+
         :::info Exercice - Validation de paramètres
 
         Écrivez une fonction `densite(masse, volume)` qui retourne la densité en g/mL.
@@ -792,15 +790,19 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         - Validez que le volume est **strictement positif** (non nul).
         - Levez une exception claire (`ValueError` ou `ZeroDivisionError`) si les conditions ne sont pas respectées.
 
+        Testez votre fonction en l'appelant avec des valeurs valides et invalides pour vérifier que la validation fonctionne correctement.
+
         Pourquoi est-il préférable d’**arrêter l’exécution avec un message clair** plutôt que de laisser Python planter avec une erreur brute?
 
         :::
 
+        ---
+
         :::info Exercice - Le niveau de pH
 
         Définissez une fonction décrivant le niveau d'acidité d'une solution à partir de son [pH](https://fr.wikipedia.org/wiki/Potentiel_hydrog%C3%A8ne). \
-        La fonction doit recevoir en entrée le pH et renvoyer en sortie soit : acide, neutre ou basique. \
-        Valide le bon fonctionnement en testant les différents cas possibles à l'aide d'appels :
+        La fonction doit recevoir en entrée le pH et renvoyer en sortie soit : "acide", "neutre" ou "basique". \
+        Validez le bon fonctionnement en testant les différents cas possibles à l'aide d'appels :
         ```python showLineNumbers
         print(f"Une solution avec un Ph de 5 est : {nom_de_votre_fonction(5)}") 
         print(f"Une solution avec un Ph de 7 est : {nom_de_votre_fonction(7)}")
@@ -809,97 +811,110 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::
 
+        ---
+
         :::info Exercice - Calcul de la note finale du cours, avec la double sanction!
 
         Améliorez le code réalisé lors de la rencontre 2 servant à calculer la note finale du cours.
         
-        1. Réaliser une fonction :
-            - Prenant en entrées les 4 nombres représentant les notes
-            - Retournant la note finale calculée
+        1. Créez une fonction :
+            - qui prend en entrées les 4 nombres représentant les notes,
+            - et qui retourne la note finale calculée.
         
-        2. Appelez cette fonction pour réaliser le calcul avec les notes saisies
+        2. Appelez cette fonction pour réaliser le calcul avec les notes saisies.
 
-        3. Modifier le calcul de la note finale afin de prendre en compte la double sanction
+        3. Modifiez le calcul de la note finale afin de prendre en compte la double sanction.
 
         <i>**Double sanction** : Pour réussir le cours, la personne étudiante doit conserver un minimum de 60% aux évaluations supervisées (examens, contrôles) ainsi qu’un minimum de 60% aux évaluations non supervisées (travaux pratiques, devoirs).
         À défaut de répondre à ces exigences, la personne étudiante obtient, à son bulletin, la note la plus basse enregistrée : celle des évaluations supervisées ou celle des évaluations non supervisées.</i>
 
         :::
 
+        ---
+
         :::info Exercice - Gènes Myc et P21 🧬
-                 
-        Les gènes **Myc** et **p21** régulent le cycle cellulaire de manière opposée : **Myc stimule la prolifération cellulaire** en activant des gènes liés à la croissance, tandis que **p21 freine cette progression** en bloquant les enzymes responsables de la division. On les étudie en science parce qu’**ils jouent un rôle clé dans le développement du cancer**, **Myc** par sa capacité à **favoriser les tumeurs**, et **p21** par son potentiel à **les empêche**r. Ces 2 gènes exercent souvent des **effets oppéses** dans les cellules souches.
-        
+
+        Les gènes **Myc** et **p21** régulent le cycle cellulaire de manière opposée : **Myc stimule la prolifération cellulaire** en activant des gènes liés à la croissance, tandis que **p21 freine cette progression** en bloquant les enzymes responsables de la division. On les étudie en science parce qu’**ils jouent un rôle clé dans le développement du cancer**, **Myc** par sa capacité à **favoriser les tumeurs**, et **p21** par son potentiel à **les empêcher**. Ces 2 gènes exercent souvent des **effets opposés** dans les cellules souches.
+
         <p align="center">
             <img src={require('/img/cours/exercicegensmycp21-image1.png').default} width="40%"/>
         </p>
 
-        Les deux courbes se croisent entre 18h et 24h, c’est le **point d’équilibre**! \
+        Les deux courbes se croisent entre 12h et 24h, c’est le **point d’équilibre**! \
         Ce moment marque une transition biologique importante : la cellule **quitte son état prolifératif** pour entrer en **phase de différenciation**.
 
         ---
+
         ### 📊 Étape A - Recréez le graphique, à vous de jouer!
 
         Utilisez **Python** pour générer le graphique, et rien d’autre!
-        Même si la bibliothèque **Matplotlib** n’a pas encore été abordée, vous disposez d’[un exemple suffisamment clair](/cours/rencontre2?onglet=matplotlib) pour vous guider. 
-        Il ne vous reste qu’à l’**adapter** à notre contexte. Pour le moment pas besoin de ChatGPT 🤖, vous avez déjà tout ce qu’il faut pour réussir cette étape! 
-        
-        Voici les données nécessaires pour réaliser cette tâche : 
-        
+        Même si la bibliothèque **Matplotlib** n’a pas encore été abordée, vous disposez d’[un exemple suffisamment clair](/cours/rencontre2?onglet=matplotlib) pour vous guider.
+        Il ne vous reste qu’à l’**adapter** à notre contexte. Pour le moment pas besoin de ChatGPT 🤖, vous avez déjà tout ce qu’il faut pour réussir cette étape!
 
-        ```python
-        temps = [0, 6, 12, 18, 24, 30, 36]          #Valeurs en X pour les 2 gênes
-        exp_gene_myc = [95, 80, 60, 45, 30, 15, 5]  #Valeurs en Y pour le gêne Myc
-        exp_gene_p21 = [5, 20, 40, 55, 70, 85, 95]  #Valeurs en Y pour le gêne p21
+        Voici les données nécessaires pour réaliser cette tâche :
+
+
+        ```python showLineNumbers
+        '''
+        Les valeurs stockées dans ces variables sont des listes,
+        structure de donnéees que nous verrons plus tard dans le cours.
+        Pour l'instant, contentez-vous de copier-coller ces lignes dans votre script.
+         '''
+        temps = [0, 6, 12, 18, 24, 30, 36]          # Valeurs en X pour les 2 gènes
+        exp_gene_myc = [95, 80, 60, 45, 30, 15, 5]  # Valeurs en Y pour le gène Myc
+        exp_gene_p21 = [5, 20, 40, 55, 70, 85, 95]  # Valeurs en Y pour le gène p21
         ```
-        
+
         ---
-        ### 🤖 Étape B - Expérimenter avec l'aide de ChatGPT! 
-         
-        #### 💡 Instructions pour cette section 
-        
+
+        ### 🤖 Étape B - Expérimentez avec l'aide de ChatGPT!
+
+        #### 💡 Instructions pour cette section
+
         Commencez par interroger ChatGPT afin de bien comprendre le rôle de chaque ligne de code présentée. \
         Une fois que vous êtes certain de leur fonctionnement, intégrez-les progressivement dans votre propre script. \
         Voici le résultat souhaité :
 
-        
+
         <p align="center">
             <img src={require('/img/cours/exercicegensmycp21-image2.png').default} width="60%"/>
         </p>
 
-        #### ⚙️ Procédez étape par étape 
-        
-        Ajoutez et relancer le programme à chaque changement afin de bien voir les changements.
-        
-        ```python
-        plt.figure(figsize=(10, 6)) #Mettre n'importe où avant l'instruction plt.show()
-        ```
-        
-        ```python
-        plt.tight_layout() #Mettre n'importe où avant l'instruction plt.show()
+        #### ⚙️ Procédez étape par étape
+
+        Ajoutez et relancez le programme à chaque changement afin de bien voir les changements.
+
+        ```python showLineNumbers
+        # Mettre n'importe où avant l'instruction plt.show()
+        plt.figure(figsize=(10, 6))
         ```
 
-        ```python
-        plt.grid(True) #Mettre n'importe où avant l'instruction plt.show()
+        ```python showLineNumbers
+        # Mettre n'importe où avant l'instruction plt.show()
+        plt.tight_layout()
         ```
 
-        ```python
-        plt.axvline(x=16, color='gray', linestyle='--', label='Point d\'équilibre') #Mettre n'importe où avant l'instruction plt.show()
+        ```python showLineNumbers
+        # Mettre n'importe où avant l'instruction plt.show()
+        plt.grid(True)
         ```
 
-        ```python
-        plt.text(17, 48, '⚖️ Équilibre', fontsize=12, color='gray') #Mettre n'importe où avant l'instruction plt.show()
+        ```python showLineNumbers
+        # Mettre n'importe où avant l'instruction plt.show()
+        plt.axvline(x=16, color='gray', linestyle='--', label='Point d\'équilibre')
         ```
 
-        ```python
-        plt.savefig('image_du_graphique.png') #Remplacez plt.show() par cette instruction, lancer le programme, puis ouvrez le fichier ".png" généré
+        ```python showLineNumbers
+        # Mettre n'importe où avant l'instruction plt.show()
+        plt.text(17, 48, '⚖️ Équilibre', fontsize=12, color='gray')
         ```
 
+        ```python showLineNumbers
+        # Remplacer plt.show() par cette instruction, lancer le programme, puis ouvrir le fichier ".png" généré
+        plt.savefig('image_du_graphique.png')
+        ```
         :::
 
-        
-
     </TabItem>
-
 </Tabs>
 
