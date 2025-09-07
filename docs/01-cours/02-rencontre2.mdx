@@ -459,7 +459,7 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="matplotlib" label="Matplotlib">
 
-        :::info Générer des graphiques 📊
+        ::::info Générer des graphiques 📊
 
         Nous allons utiliser **Matplotlib**, une bibliothèque Python très flexible pour la visualisation de données.<br />
         Elle permet de créer des graphiques simples ou complexes et de personnaliser pratiquement tous les éléments :
@@ -475,33 +475,39 @@ import TabItem from '@theme/TabItem';
 
         :::warning Installer Matplotlib
         Pour utiliser une bibliothèque Python comme Matplotlib, il faut d’abord l’installer dans votre environnement de travail. \
-        Avant d’exécuter l’exemple ci-dessous, assurez-vous d’avoir suivi les étapes nécessaires pour [installer](/recettes/ajouter-librairie) la librairie Matplotlib.
+        Avant d’exécuter l’exemple ci-dessous, assurez-vous d’avoir suivi les étapes nécessaires pour [installer la bibliothèque](/recettes/ajouter-librairie) Matplotlib.
         :::
 
-        ```python
+        ```python showLineNumbers
         import matplotlib.pyplot as plt
 
         # Âge en années
-        age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] #Tableau de données pour l'axe horizontal (axe des abscisses)
+        # Tableau de données pour l'axe horizontal (axe des abscisses)
+        age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
 
         # Taille correspondante en cm (exemple fictif)
-        taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140] #Tableau de données pour l'axe verticale (axe des ordonnées)
+        # Tableau de données pour l'axe vertical (axe des ordonnées)
+        taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140]
 
         # Création du graphique
-        plt.plot(x=age, y=taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")  #Création d'une courbe
+        # Création d'une courbe
+        plt.plot(x=age, y=taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")
 
         # Ajout de titres et labels
-        plt.xlabel("Âge (années)")                    #Ajout d'un label sur l'axe horizontal
-        plt.ylabel("Taille (cm)")                     #Ajout d'un label sur l'axe verticale
-        plt.title("Courbe de croissance de l'enfant") #Ajout d'un titre au graphique
-        plt.legend()                                  #Générer une légende
+        plt.xlabel("Âge (années)")                    # Ajout d'un label sur l'axe horizontal
+        plt.ylabel("Taille (cm)")                     # Ajout d'un label sur l'axe vertical
+        plt.title("Courbe de croissance de l'enfant") # Ajout d'un titre au graphique
+        plt.legend()                                  # Générer une légende
 
         # Affichage du graphique
         plt.show()
         ```
-        <img src={require('/img/recettes/exemple_graphique_coubre_croissance_enfant.png').default} alt="Résultat du graphique généré" style={{ verticalAlign: 'middle' }} />
 
-        :::
+        <p align="center">
+            <img src={require('/img/recettes/exemple_graphique_coubre_croissance_enfant.png').default} alt="Résultat du graphique généré" style={{ verticalAlign: 'middle' }} width="50%" />
+        </p>
+
+        ::::
 
     </TabItem>
 
