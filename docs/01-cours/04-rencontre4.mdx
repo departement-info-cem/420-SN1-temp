@@ -759,6 +759,79 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::
 
+        :::info Exercice Gènes Myc et P21 🧬
+                 
+        Les gènes **Myc** et **p21** régulent le cycle cellulaire de manière opposée : **Myc stimule la prolifération cellulaire** en activant des gènes liés à la croissance, tandis que **p21 freine cette progression** en bloquant les enzymes responsables de la division. On les étudie en science parce qu’**ils jouent un rôle clé dans le développement du cancer**, **Myc** par sa capacité à **favoriser les tumeurs**, et **p21** par son potentiel à **les empêche**r. Ces 2 gènes exercent souvent des **effets oppéses** dans les cellules souches.
+        
+        <p align="center">
+            <img src={require('/img/cours/exercicegensmycp21-image1.png').default} width="40%"/>
+        </p>
+
+        Les deux courbes se croisent entre 18h et 24h, c’est le **point d’équilibre**! \
+        Ce moment marque une transition biologique importante : la cellule **quitte son état prolifératif** pour entrer en **phase de différenciation**.
+
+        ---
+        ### 📊 Étape A - Recréez le graphique, à vous de jouer!
+
+        Utilisez **Python** pour générer le graphique, et rien d’autre!
+        Même si la bibliothèque **Matplotlib** n’a pas encore été abordée, vous disposez d’[un exemple suffisamment clair](/cours/rencontre2?onglet=matplotlib) pour vous guider. 
+        Il ne vous reste qu’à l’**adapter** à notre contexte. Pour le moment pas besoin de ChatGPT 🤖, vous avez déjà tout ce qu’il faut pour réussir cette étape! 
+        
+        Voici les données nécessaires pour réaliser cette tâche : 
+        
+
+        ```python
+        temps = [0, 6, 12, 18, 24, 30, 36]          #Valeurs en X pour les 2 gênes
+        exp_gene_myc = [95, 80, 60, 45, 30, 15, 5]  #Valeurs en Y pour le gêne Myc
+        exp_gene_p21 = [5, 20, 40, 55, 70, 85, 95]  #Valeurs en Y pour le gêne p21
+        ```
+        
+        ---
+        ### 🤖 Étape B - Expérimenter avec l'aide de ChatGPT! 
+         
+        #### 💡 Instructions pour cette section 
+        
+        Commencez par interroger ChatGPT afin de bien comprendre le rôle de chaque ligne de code présentée. \
+        Une fois que vous êtes certain de leur fonctionnement, intégrez-les progressivement dans votre propre script. \
+        Voici le résultat souhaité :
+
+        
+        <p align="center">
+            <img src={require('/img/cours/exercicegensmycp21-image2.png').default} width="60%"/>
+        </p>
+
+        #### ⚙️ Procédez étape par étape 
+        
+        Ajoutez et relancer le programme à chaque changement afin de bien voir les changements.
+        
+        ```python
+        plt.figure(figsize=(10, 6)) #Mettre n'importe où avant l'instruction plt.show()
+        ```
+        
+        ```python
+        plt.tight_layout() #Mettre n'importe où avant l'instruction plt.show()
+        ```
+
+        ```python
+        plt.grid(True) #Mettre n'importe où avant l'instruction plt.show()
+        ```
+
+        ```python
+        plt.axvline(x=16, color='gray', linestyle='--', label='Point d\'équilibre') #Mettre n'importe où avant l'instruction plt.show()
+        ```
+
+        ```python
+        plt.text(17, 48, '⚖️ Équilibre', fontsize=12, color='gray') #Mettre n'importe où avant l'instruction plt.show()
+        ```
+
+        ```python
+        plt.savefig('image_du_graphique.png') #Remplacez plt.show() par cette instruction, lancer le programme, puis ouvrez le fichier ".png" généré
+        ```
+
+        :::
+
+        
+
     </TabItem>
 
 </Tabs>

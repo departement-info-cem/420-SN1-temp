@@ -482,19 +482,19 @@ import TabItem from '@theme/TabItem';
         import matplotlib.pyplot as plt
 
         # Âge en années
-        age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10]
+        age = [0, 1, 2, 3, 4, 5, 6, 7, 8, 9, 10] #Tableau de données pour l'axe horizontal (axe des abscisses)
 
         # Taille correspondante en cm (exemple fictif)
-        taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140]
+        taille = [50, 75, 85, 95, 105, 112, 118, 124, 130, 135, 140] #Tableau de données pour l'axe verticale (axe des ordonnées)
 
         # Création du graphique
-        plt.plot(age, taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")
+        plt.plot(x=age, y=taille, marker='o', linestyle='-', color='g', label="Taille en fonction de l'âge")  #Création d'une courbe
 
         # Ajout de titres et labels
-        plt.xlabel("Âge (années)")
-        plt.ylabel("Taille (cm)")
-        plt.title("Courbe de croissance de l'enfant")
-        plt.legend()
+        plt.xlabel("Âge (années)")                    #Ajout d'un label sur l'axe horizontal
+        plt.ylabel("Taille (cm)")                     #Ajout d'un label sur l'axe verticale
+        plt.title("Courbe de croissance de l'enfant") #Ajout d'un titre au graphique
+        plt.legend()                                  #Générer une légende
 
         # Affichage du graphique
         plt.show()
