@@ -579,8 +579,18 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ---
 
-        :::warning Pour aller plus loin
+        :::note Catégories d'exception utilisées pour ce cours
+        Dans ce cours, nous allons nous limiter à utiliser les exceptions déjà existantes les plus communes :
+            - **ZeroDivisionError** : une division par zéro.
+            - **TypeError** : le type de la donnée transmise à la fonction n'est pas du type attendu.
+            - **ValueError** : la valeur transmise à la fonction n'est pas cohérente avec ce qui est attendu.
+            
+        :::
+            
+        :::warning Pour aller plus loin 
+        
         Il est aussi possible de **créer ses propres types d’erreurs** en définissant une classe qui hérite de `Exception`. \
+        Comme mentionné précédemment, nous allons nous limiter aux exceptions déjà existantes, mais sachez que cette possibilité existe. \
         C’est utile dans de grands projets pour distinguer vos erreurs spécifiques de celles de Python.
 
         Exemple minimal :
@@ -589,8 +599,6 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         raise DonneesInvalidesError("Les données fournies ne sont pas valides.")
         ```
-
-        👉 Dans ce cours, nous allons nous limiter aux exceptions déjà existantes (`ValueError`, `ZeroDivisionError`, etc.), mais sachez que cette possibilité existe.
         :::
     </TabItem>
 
