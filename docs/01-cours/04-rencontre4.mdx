@@ -696,7 +696,12 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         except (TypeError, ValueError) as e:
             print(f"Erreur : {e}")
         ```
+        
+        La fonction <i>`isinstance(valeur, type)`</i> permet de vérifier si une certaine valeur est bien d'un certain type. \
+        Par exemple <i>`isinstance(5, int)`</i>  retourne True alors que <i>`isinstance("5", int)`</i> retourne False. \
+        Dans l'exemple, il est vérifié si les paramètres sont de type int ou float.
         :::
+
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
