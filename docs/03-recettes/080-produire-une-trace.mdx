@@ -351,24 +351,45 @@ while i < 2:
     ### Trace
     On aura la trace suivante :
 
-    {/*| ligne exécutée | effet |
-    |----------------|-------------------------------|
-    | i = 0 | i vaut 0 |
-    | while i < 2: | i: 0 → condition vraie |
-    | print(...) | i: 0 <br/> affiche "i vaut 0" |
-    | i = i + 1 | i devient 1 |
-    | while i < 2: | i: 1 → condition vraie |
-    | print(...) | i: 1 <br/> affiche "i vaut 1" |
-    | i = i + 1 | i devient 2 |
-    | while i < 2: | i: 2 → condition fausse |*/}
-
-    | # ligne   | i     | affichage |
-    |-----------|-------|-----------|
-    | 1         | 0     |           |
-    | 3         | 0     | i vaut 0  |
-    | 4         | 1     |           |
-    | 3         | 1     | i vaut 1  |
-    | 4         | 2     |           |
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>portée globale</th>
+            <th colspan="4"></th>
+        </tr>
+        <tr>
+            <th>#ligne</th>
+            <th>i</th>
+            <th>affichage</th>
+            <th>pile d'appels</th>
+            <th>fonction appelée</th>
+            <th>valeur retournée</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>1</td>
+            <td>0</td><td></td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>0</td><td>i vaut 0</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>1</td><td></td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>3</td>
+            <td>1</td><td>i vaut 1</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>4</td>
+            <td>2</td><td></td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        </tbody>
+    </table>
 
 </Column>
 </Row>
