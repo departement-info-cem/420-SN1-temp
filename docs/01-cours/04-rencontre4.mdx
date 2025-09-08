@@ -545,36 +545,36 @@ Voici comment Python évalue l’instruction #5, étape par étape :
                 raise ValueError("La masse doit être positive.")
             return masse_g / volume_L
         ```
-        Dans ce cas, l’erreur est volontaire : on empêche l’utilisation de valeurs impossibles en science. \
+        Dans ce cas, l’erreur est volontaire : on empêche l’utilisation de valeurs impossibles en science.
         
         :::
 
         ---
 
-        :::note Intercepter une erreur personnalisée (`try/catch`)
+        :::note Intercepter une erreur personnalisée (`try/except`)
         Si on souhaite intercepter l'erreur avec le message d'erreur personnalisé, on doit utiliser un bloc `try/except` comme ceci :
         
         ```python showLineNumbers
         try:
-            #Début du code à risque
-            concentration(4,20)         #OKI, éxécutée sans problème
-            concentration(-10,20)       #PAS OKI, masse négative!
-            concentration(4,20)         #JAMAIS éxécuté à cause de l'exception
-            #Fin du code à risque
+            # Début du code à risque
+            concentration(4,20)         # OKI, éxécuté  sans problème
+            concentration(-10,20)       # PAS OKI, masse négative!
+            concentration(4,20)         # JAMAIS éxécuté à cause de l'exception
+            # Fin du code à risque
         except {ZeroDivisionError, ValueError} as e:
-            #Interception de l'erreur
+            # Interception de l'erreur
             print(f"Une erreur est subvenue : {e}")
         ```
-        La variable `e` représente ici l'exception intercepté, tenter de l'afficher à la console va afficher le message d'erreur personnalisé.
+        La variable `e` contient ici l'exception interceptée, l'afficher à la console va afficher le message d'erreur personnalisé.
 
         :::
 
         ---
 
         :::tip Bonnes pratiques
-        - N’attrapez **que les erreurs prévues** (sinon on cache de vrais bugs).
+        - N’attrapez **que les erreurs prévues** (sinon on cache de vrais bogues).
         - Donnez toujours un **message utile** qui aide à corriger.
-        - Utilisez `raise` pour signaler un problème clair à l’utilisateur ou au scientifique qui réutilise votre fonction.
+        - Utilisez `raise` pour signaler un problème clair à l’utilisateur qui utilise votre fonction.
         :::
 
         ---
@@ -586,6 +586,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
             - **ValueError** : la valeur transmise à la fonction n'est pas cohérente avec ce qui est attendu.
             
         :::
+
+        ---
             
         :::warning Pour aller plus loin 
         
@@ -633,7 +635,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(densite(10, 2))   # 5.0
         print(densite(8, 0))    # Erreur Python (division par zéro)
         ```
-        Ici, la fonction ne réalise pas de validation, le programme plante si on entre un volume nul ou une masse invalide avec des **messages d'erreur générique**.
+        Ici, la fonction ne réalise pas de validation, alors le programme plante si on entre un volume nul ou une masse invalide, avec des **messages d'erreur génériques**.
 
         ---
 
@@ -650,7 +652,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         print(densite(-3, 5))   # ValueError
         print(densite(8, 0))    # ZeroDivisionError
         ```
-        Ici, la fonction réalise des validations et lève des exceptions dans plus de situation accompagné de **messages d'erreur clair et précis**. 
+        Ici, la fonction effectue des validations et lève des exceptions accompagnées de **messages d'erreur clair et précis**, selon la situation problématique détectée.
         :::
 
         ---
@@ -698,8 +700,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         ```
         
         La fonction <i>`isinstance(valeur, type)`</i> permet de vérifier si une certaine valeur est bien d'un certain type. \
-        Par exemple <i>`isinstance(5, int)`</i>  retourne True alors que <i>`isinstance("5", int)`</i> retourne False. \
-        Dans l'exemple, il est vérifié si les paramètres sont de type int ou float.
+        Par exemple <i>`isinstance(5, int)`</i>  retourne `True` alors que <i>`isinstance("5", int)`</i> retourne `False`. \
+        Dans l'exemple, il est vérifié si les paramètres sont de type `int` ou `float`.
         :::
 
     </TabItem>
