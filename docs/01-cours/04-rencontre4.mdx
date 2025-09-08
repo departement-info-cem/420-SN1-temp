@@ -868,10 +868,12 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         \end{cases}
         $$
 
+        👉 Nous allons nous concentrer uniquement sur les solutions **réelles** dans cet exercice.
+
         La formule pour trouver les zéros est :
 
         $$
-        x = \frac{-b \pm \sqrt{b² - 4ac}}{2a}
+        x = \frac{-b \pm \sqrt{b^2 - 4ac}}{2a}
         $$
 
         Écrivez un programme permettant d'afficher les solutions d'une équation quadratique. \
@@ -881,17 +883,17 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         Si aucune solution (ex : a = 1, b = 2, c = 5)
         ```python
-        Il n'y a pas de solution possible pour ces valeurs de a, b et c
+        Il n'y a pas de solution réelle pour ces valeurs de a, b et c.
         ```
 
         Si une seule solution (ex. a = 1, b = 6, c = 9)
         ```python
-        Il y a une seule solution possible : -3
+        Il y a une seule solution (racine double) : -3
         ```
 
         Si 2 solutions possibles pour ce problème (ex. a = 1, b = 5, c = 6)
         ```python
-        Il y a 2 solutions possibles pour ce problème sont : -2 et -3
+        Il y a 2 solutions possibles : -2 et -3
         ```
         :::
 
