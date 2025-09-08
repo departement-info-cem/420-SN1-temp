@@ -7,8 +7,6 @@ import TabItem from '@theme/TabItem';
 
 # 🔍 Expressions booléennes
 
-# 🏗️ en construction 🏗
-
 <Tabs className="tabs-centered" queryString="onglet">
 
     <TabItem value="expressions" label="Expressions booléennes" default>
@@ -793,8 +791,6 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         ```
         Validez votre trace en exécutant le code dans un script en mode débogage.
 
-        ---
-
         :::
 
         ---
@@ -811,17 +807,19 @@ Voici comment Python évalue l’instruction #5, étape par étape :
                 raise ValueError("Valeur interdite")
             return a * b
 
-            print("World")
-            try:
-                calcul(2,3)
-                calcul(5,3)
-                calcul(8,3)
-            except ValueError as e:
-                print(f"Erreur : {e}")
-            print("Hello")
+        print("World")
+        try:
+            calcul(2,3)
+            calcul(5,3)
+            calcul(8,3)
+        except ValueError as e:
+            print(f"Erreur : {e}")
+        print("Hello")
         ```
         Validez votre trace en exécutant le code dans un script en mode débogage.
         :::
+
+        ---
 
         ## 🔨 Exercices de création
 
@@ -886,23 +884,23 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::info Exercice - Remplacer des instructions
 
-        Pour cette exercice, vous devez remplacer les `if/elsif/else` du code ci-dessous par un `match`.
+        Pour cet exercice, vous devez remplacer les `if/elsif/else` du code ci-dessous par un `match/case`.
 
         ```python showLineNumbers
         def type_animal(deplacement):
-            if deplacement == "vol":
-                return "Oiseau"
+            if deplacement == "vole":
+                return "oiseau"
             elif deplacement == "nage":
-                return "Poisson"
+                return "poisson"
             elif deplacement == "marche":
-                return "Mammifère"
+                return "mammifère"
             elif deplacement == "rampe":
-                return "Reptile"
+                return "reptile"
             else:
-                return "Inconnu"
+                return "inconnu"
 
-        deplacement = "vol"
-        print(f"Si je {deplacement}, je suis un {type_animal(deplacement)}")
+        deplacement = "vole"
+        print(f"Si je {deplacement}, je suis un {type_animal(deplacement)}.")
         ```
 
         :::
@@ -914,7 +912,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         Améliorez le code réalisé lors de la rencontre 2 servant à calculer la note finale du cours.
         
         1. Créez une fonction :
-            - qui prend en entrées les 4 nombres représentant les notes,
+            - qui prend en entrée les 4 nombres représentant les notes,
             - et qui retourne la note finale calculée.
         
         2. Appelez cette fonction pour réaliser le calcul avec les notes saisies.
