@@ -409,9 +409,9 @@ import TabItem from '@theme/TabItem';
         x = 5
         y = 10
         z = 2
-        r1 = fonction_lineaire(x, z, y)
+        r1 = fonction_lineaire(x, z, y) # Attention à l'ordre des paramètres
         x = x - 3
-        r2 = fonction_lineaire(x, y, z) # Attention à l'ordre des paramètres
+        r2 = fonction_lineaire(x, y, z)
         print(r1, r2)
         ```
         Validez votre trace en exécutant le code dans un script en mode débogage.
@@ -653,35 +653,44 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Une question de nanosecondes
 
-        En lisant la documentation du module time  ([doc](https://docs.python.org/fr/3.13/library/time.html)), trouvez une fonction :
-        1. ne nécessitant aucun argument,
-        2. retournant un `int` qui représente le temps présent en nanosecondes.
-
-        Puis, créez votre propre fonction nommée <i>temps_en_ns()</i> sans paramètre. 🔨 \
-        Votre fonction doit simplement retourner la valeur renvoyée par la fonction que vous avez trouvée.
-        
-        Ensuite, ajoutez le code suivant à votre script et exécutez-le :
+        En lisant la documentation du module time ([doc](https://docs.python.org/fr/3.13/library/time.html)), vous trouverez la fonction `time.monotonic_ns()`.
+        Cette fonction permet  d'obtenir le temps en nanosecondes depuis le lancement de l'application. À chaque appel de la fonction, le temps retourné est toujours de plus en plus grand. Testez le code, ci-dessous :
 
         ```python showLineNumbers
+        import time
+
+        print(f"Temps moment A: {time.monotonic_ns()}")
+        print(f"Temps moment B: {time.monotonic_ns()}")
+        print(f"Temps moment C: {time.monotonic_ns()}")
+        ```
+
+        Maintenant que vous comprennez ce que retourne cette fonction, observez son utilisation ci-dessous :
+
+        ```python showLineNumbers
+        import time 
+
         def calcul_intensif():
             '''
-            Fonction dont le code n'est pas important, mais prenant un certain temps à s'exécuter
+            N'essaie VRAIMENT pas de comprendre le code de cette fonction!
+            Tu vas être capable de le comprendre à partir du cours sur les boucles.
+            La seule chose qui est importante de savoir, c'est ce cette fonction prends un
+            certain temps pour s'exécuter (1 à 2 secondes en moyenne).
             '''
             total = 0
             for i in range(1, 20000000):  # 20 millions d'itérations
                 total += i ** 0.5
             return total
 
-        tempA = temps_en_ns()
+        tempA = time.monotonic_ns()
         calcul_intensif()
-        tempB = temps_en_ns()
+        tempB = time.monotonic_ns()
 
         mystere = tempB - tempA # Expression intéressante
         print(mystere)
         ```
 
         **Question** \
-        ✏️ Selon vous, en observant les instructions 12 à 16, que représente le nombre contenu dans la variable <i>mystere</i>?
+        ✏️ Selon vous, en observant les instructions 15 à 19, que représente le nombre contenu dans la variable <i>mystere</i>?
         
         **Instructions pour vous aider dans votre réflexion**
         1) Exécutez le programme tel quel et notez la valeur affichée.
