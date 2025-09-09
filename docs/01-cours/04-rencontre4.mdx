@@ -559,7 +559,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
             concentration(-10,20)       # PAS OKI, masse négative!
             concentration(4,20)         # JAMAIS éxécuté à cause de l'exception
             # Fin du code à risque
-        except {ZeroDivisionError, ValueError} as e:
+        except (ZeroDivisionError, ValueError) as e:
             # Interception de l'erreur
             print(f"Une erreur est subvenue : {e}")
         ```
