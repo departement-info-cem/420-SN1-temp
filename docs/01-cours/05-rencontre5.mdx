@@ -182,7 +182,7 @@ import TabItem from '@theme/TabItem';
             print(i)
         ```
         Exécutez ces exemples en mode débogage pour bien comprendre le fonctionnement de la boucle `for` avec `range()`.<br />
-        Mettez un point d'arrêt sur la ligne 1 de chaque exemple et avancez une ligne à la fois pour suivre l'évolution de la variable `i`.
+        Mettez un point d'arrêt sur la ligne 2 de chaque exemple, sur l'instruction `for`, et avancez une ligne à la fois pour suivre l'évolution de la variable `i`.
         ::::
 
     </TabItem>
@@ -283,10 +283,10 @@ import TabItem from '@theme/TabItem';
 
         Voici un exemple simple avec deux boucles `for` imbriquées pour afficher une table de multiplication :
         ```python showLineNumbers
-        for i in range(1, 6):  # Boucle extérieure pour les lignes
-            for j in range(1, 6):  # Boucle intérieure pour les colonnes
+        for i in range(1, 6):           # Boucle extérieure pour les lignes
+            for j in range(1, 6):       # Boucle intérieure pour les colonnes
                 print(i * j, end='\t')  # Affiche le produit avec une tabulation
-            print()  # Nouvelle ligne après chaque ligne de la table
+            print()                     # Nouvelle ligne après chaque ligne de la table
         ```
         Dans cet exemple, la boucle extérieure itère sur les valeurs de `i` de 1 à 5, et pour chaque valeur de `i`, la boucle intérieure itère sur les valeurs de `j` de 1 à 5.<br />
         Le produit `i * j` est affiché dans une grille formatée.
@@ -303,12 +303,12 @@ import TabItem from '@theme/TabItem';
         ```python showLineNumbers
         lignes = 5
         i = 1
-        while i <= lignes:  # Boucle extérieure pour les lignes
+        while i <= lignes:           # Boucle extérieure pour les lignes
             j = 1
-            while j <= i:  # Boucle intérieure pour les étoiles dans chaque ligne
-                print('*', end=' ')
+            while j <= i:            # Boucle intérieure pour les étoiles dans chaque ligne
+                print('*', end=' ')  # Afficher une étoile sans générer un saut de ligne
                 j += 1
-            print()  # Nouvelle ligne après chaque ligne d'étoiles
+            print()                  # Nouvelle ligne après chaque ligne d'étoiles
             i += 1
         ```
         Dans cet exemple, la boucle extérieure contrôle le nombre de lignes, tandis que la boucle intérieure contrôle le nombre d'étoiles affichées dans chaque ligne.
