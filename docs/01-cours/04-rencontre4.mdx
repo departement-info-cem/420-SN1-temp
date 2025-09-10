@@ -53,14 +53,14 @@ Python évalue l’expression selon la [priorité des opérateurs](/aidememoire/
 Voici comment Python évalue l’instruction #5, étape par étape :
 
         ```python 
-        print(a + 5 >= b - max(1, min(4, a, 6)), 5))   # Instruction originale
-        print(5 + 5 >= b - max(1, min(4, 5, 6)), 5))   # Remplace 'a' par sa valeur
-        print(10 >= b - max(1, min(4, 5, 6)), 5))      # Calcule la somme de '5 + 5'
-        print(10 >= 10 - max(1, min(4, 5, 6), 5))      # Remplace 'b' par sa valeur
-        print(10 >= 10 - max(1, 4, 5))                 # La fonction min(...) doit être résolue avant la fonction max(...)
-        print(10 >= 10 - 5)                            # La fonction max(...) est résolue
-        print(10 >= 5)                                 # L'opération >=
-        print(False)                                   # Affiche "False" dans la console
+        print(a + 5 >= b - max(1, min(4, a, 6), 5))  # Instruction originale
+        print(5 + 5 >= b - max(1, min(4, 5, 6), 5))  # Remplace 'a' par sa valeur
+        print(10 >= b - max(1, min(4, 5, 6), 5))     # Calcule la somme de '5 + 5'
+        print(10 >= 10 - max(1, min(4, 5, 6), 5))    # Remplace 'b' par sa valeur
+        print(10 >= 10 - max(1, 4, 5))               # La fonction min(...) doit être résolue avant la fonction max(...)
+        print(10 >= 10 - 5)                          # La fonction max(...) est résolue
+        print(10 >= 5)                               # L'opération >=
+        print(False)                                 # Affiche "False" dans la console
         ```
         :::
 
