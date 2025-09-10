@@ -587,6 +587,67 @@ import TabItem from '@theme/TabItem';
         ```
         :::
 
+        ---
+
+        :::info Exercice - Affichage d'étoiles
+
+        Nous allons transformer un code répétitif afficant des lignes d’étoiles sur plusieurs lignes \
+        en une version plus propre et flexible grâce à l’utilisation de boucles.
+
+
+        ```python showLineNumbers
+        #Ligne #1
+        print('*', end='')
+        print()
+
+        #Ligne #2
+        print('*', end='')  #Affiche une étoile et évite le saut de ligne
+        print('*', end='')
+        print()             #Génère une ligne vide
+
+        #Ligne #3
+        print('*', end='')
+        print('*', end='')
+        print('*', end='')
+        print()
+
+        #Ligne #4
+        print('*', end='')
+        print('*', end='')
+        print('*', end='')
+        print('*', end='')
+        print()
+        ```
+
+        #### 🪜 ÉTAPES À SUIVRE
+
+        1. 📌 **COMPRENDRE LE MOTIF** \
+        Exécute le code dans PyCharm, et observe le motif affiché. \
+        Chaque ligne contient un nombre croissant d’étoiles, allant de 1 à 4.
+
+
+        2. 🔍 **IDENTIFIER LA RÉPÉTITION** \
+        Tenter d'observer la répétition et tenter de voir comment on peut généraliser le tout. \
+        Pour chaque ligne, vous remarquez qu'on fait toujours les mêmes 2 actions :
+            - Afficher un nombre variable d'étoiles selon la ligne
+            - Puis réaliser un saut de ligne.
+
+        3. 🔁 **PLANIFIER LA RÉSOLUTION À L'AIDE DE BOUCLES** \
+        Vous aurez besoin d'une boucle pour répéter ces 2 ensembles d'actions pour chacune des lignes. \
+        Petit problème! Le nombre d'instructions pour afficher des étoiles est variable selon la ligne... que faire? \
+        Vous allez avoir besoin d'une boucle pour représenter la création des étoiles! \
+        \
+        Vous aurez donc une boucle de création de lignes, ayant une boucle de création d'étoiles!.
+
+        4. 👨🏻‍💻 **CODER** \
+        Vous avez assez philosophiez, codez! \
+        Lorsque vous avez fini, votre code sera générique et flexible! \
+        Vous seriez capable d'afficher 20 lignes au lieu de 4 avec un p'tit changement mineur!
+
+
+        :::
+
+
     </TabItem>
 
 </Tabs>
