@@ -54,7 +54,7 @@ import TabItem from '@theme/TabItem';
 
         Les fonctions peuvent accepter des paramètres, qui sont des valeurs d'entrée que la fonction peut utiliser pour
         effectuer son travail.<br />
-        Lorsqu'une fonction est appelée, les arguments fournis sont associés aux paramètres définis dans la fonction.
+        Lorsqu'une fonction est appelée, les valeurs transmises (les arguments) fournis sont associées aux paramètres définis dans la fonction.
 
         ```python showLineNumbers
         def saluer(nom):
@@ -67,7 +67,7 @@ import TabItem from '@theme/TabItem';
         Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant ce paramètre. \
         \
         Si une fonction accepte plusieurs paramètres, les noms des paramètres sont séparés par une virgule. \
-        Au niveau de l'appel, les valeurs transmises (les arguments) doivent aussi être séparées par une virgule en respectant l'ordre attendu.
+        Au niveau de l'appel, les valeurs transmises doivent aussi être séparées par une virgule en respectant l'ordre attendu.
 
         ```python showLineNumbers
         def affiche_difference(a, b):
@@ -83,7 +83,7 @@ import TabItem from '@theme/TabItem';
 
         :::tip Paramètre avec valeur par défaut
         Il est possible de définir une valeur par défaut pour un paramètre.<br />
-        Si aucun argument n'est fourni lors de l'appel de la fonction, la valeur par défaut sera utilisée.
+        Si aucune valeur n'est fourni pour un paramètre lors de l'appel de la fonction, la valeur par défaut sera utilisée.
         ```python showLineNumbers
         def saluer(nom="inconnu"):
             print(f"Bonjour, {nom}!")
@@ -91,7 +91,7 @@ import TabItem from '@theme/TabItem';
         saluer()  # Affiche "Bonjour, inconnu!"
         saluer("Alice")  # Affiche "Bonjour, Alice!"
         ```
-        Dans cet exemple, si `saluer` est appelée sans argument, `nom` prendra la valeur par défaut "inconnu". \
+        Dans cet exemple, si `saluer` est appelée sans valeur, `nom` prendra la valeur par défaut "inconnu". \
         \
         Une fonction peut posséder à la fois des paramètres avec des valeurs par défaut et des paramètres sans valeurs par défaut.
 
@@ -107,12 +107,12 @@ import TabItem from '@theme/TabItem';
         ```
 
         Lorsqu’on définit une fonction, il est courant de **placer d’abord les paramètres obligatoires** (ceux qui n’ont pas de valeur par défaut), **suivis des paramètres facultatifs** (ceux qui ont une valeur par défaut).
-        Cette organisation permet à l’utilisateur de la fonction de **fournir les arguments essentiels en priorité**, tout en ayant la liberté de **spécifier uniquement les options supplémentaires** s’il le souhaite.
+        Cette organisation permet à l’utilisateur de la fonction de **fournir les valeurs pour les paramètres essentiels en priorité**, tout en ayant la liberté de **spécifier uniquement les options supplémentaires** s’il le souhaite.
 
         La ligne #7 de l'exemple est particulièrement intéressante à analyser : 
         - on fournit un nom et un âge 
-        - on ne fournit aucune argument pour la ville, la valeur par défaut "Longueuil" sera prise.
-        - malgré l'absence d'argument pour la ville, on peut fournir un argument pour la langue, ici "anglais"!
+        - on ne fournit aucune valeur pour la ville, la valeur par défaut "Longueuil" sera prise.
+        - malgré l'absence de valeur pour la ville, on peut fournir une valeur pour la langue, ici "anglais"!
         
         
         :::
@@ -765,7 +765,7 @@ import TabItem from '@theme/TabItem';
         print(factorielle(5))  # Affiche 120
         ```
 
-        Dans cet exemple, la fonction `factorielle` s'appelle elle-même avec un argument réduit jusqu'à atteindre le cas de base (0 ou 1), où elle retourne 1.<br />
+        Dans cet exemple, la fonction `factorielle` s'appelle elle-même avec un paramètre réduit jusqu'à atteindre le cas de base (0 ou 1), où elle retourne 1.<br />
         La pile d'appels se remplit à chaque appel récursif, puis se vide lorsque les appels sont résolus.
 
         Si vous êtes curieu.x.se vous pouvez exécuter ce code en mode débogage et observer la pile d'appels pour voir comment elle évolue avec chaque appel récursif.
