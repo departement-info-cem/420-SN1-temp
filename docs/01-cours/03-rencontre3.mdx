@@ -191,16 +191,19 @@ import TabItem from '@theme/TabItem';
         ```
 
         ### PORTÉE LOCALE
-        Une variable définie à l’intérieur d’une fonction est locale. **Elle n’existe que dans cette fonction**.
+        Une variable définie à l’intérieur d’une fonction est locale. **Elle n’existe que dans cette fonction**. \
+        Les valeurs passées en paramètres à une fonction ont une portée locale également.
 
         ```python showLineNumbers
-        def ma_fonction():
+        def ma_fonction(z): #z à une portée locale
             y = 5  # Variable locale
             print(f"Valeur de y dans la fonction : {y}")
+            print(f"Valeur de z dans la fonction : {z}")
 
-        ma_fonction()
-        # print(y)  # Erreur : y n'existe pas en dehors de la fonction
-
+        ma_fonction(5)
+        ma_fonction(4)
+        #print(y)  # Erreur : y n'existe pas en dehors de la fonction
+        #print(z)  # Erreur : z n'existe pas en dehors de la fonction
         ```
 
         :::warning Une variable globale et une variable locale qui portent le même nom!
@@ -221,8 +224,7 @@ import TabItem from '@theme/TabItem';
         ```
 
         👉 Dans cet exemple, la variable `x` à l’intérieur de la fonction est indépendante de celle à l’extérieur. \
-        Elles ont le même nom, mais **ce sont 2 variables différentes**.<br />
-        Lorsque vous faites la [trace](/recettes/produire-une-trace), **vous devez prévoir 2 colonnes**!
+        Elles ont le même nom, mais **ce sont 2 variables différentes**. Lorsque vous faites la [trace](/recettes/produire-une-trace), **vous devez prévoir 2 colonnes**!
 
         :::
 
