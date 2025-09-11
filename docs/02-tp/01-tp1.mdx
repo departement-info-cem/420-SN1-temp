@@ -50,14 +50,22 @@ qui a été utilisé. Si vous ne réussissez pas à répondre à certaines quest
 de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d'une manière ou d'une autre).
 :::
 
-:::warning <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> Répertoire Git et documentation des fonctions
-- Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
-- Au moins 1 commit par semaine
-- Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
-- Les fonctions doivent être documetées à l'aide d'un [docstring](/cours/rencontre3?onglet=comments) dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles
-:::
+<Row>
+    <Column>
+        :::warning <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> Répertoire Git et documentation des fonctions
+        - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
+        - Au moins 1 commit par semaine
+        - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
+        :::
+    </Column>
+    <Column>
+        :::info <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> Documentation des fonctions
+        Chaque fonction doit être documentée à l'aide d'un  [docstring](/cours/rencontre3?onglet=comments)  dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles.
+        :::
+    </Column>
+</Row>
 
-::::note <Highlight color="tip"><span style={{color: 'white'}}>5 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
+::::note <Highlight color="tip"><span style={{color: 'white'}}>4 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
 Voici 2 méthodes brutes pour calculer la racine carrée d'un nombre.\
 Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 
@@ -94,94 +102,91 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
     </Column>
     <Column>
         :::info ➤ Méthode 2 : Dichotomie
-        On cherche dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
+        On cherche la racine dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
 
-        Début : [0, 8] → milieu = 4 → 4² = 16 → trop grand \
-        → nouvel intervalle [0, 4] → milieu = 2 → 2² = 4 → trop petit \
-        → nouvel intervalle [2, 4] → etc.
+        - Si n ≥ 1 : intervalle initial = [0, n]
+        - Si 0 < n < 1 : intervalle initial = [0, 1]
 
-        On continue ainsi jusqu'à la précision désirée.    \
-        Comment savoir qu'on a atteint la précision désirée?  \
-        Il faut regarder la différence entre les 2 intervalles (haut et bas).  \
-        Si elle est inférieure à la précision souhaitée, on peut alors considérer qu'on a suffisamment réduit l'intervalle et qu'on a trouvé la réponse. \
-         \
-        La réponse recherchée sera alors la moyenne entre les 2 intervalles.
-        \
-        \
-        Exemple
-        \
-        \
-        Si on souhaite 4 décimales de précision, 
-        on devrait alors arrêter quand la différence entre les 2 intervalles est inférieure à 0.00001
-        \
-        \
-            Début : [0, 8] → 8 - 0 = 8 ... c'est > 0.00001 → on continue ... \
-                    nouvel intervalle [0, 4] → 4 - 0 = 4 ... c'est > 0.00001 → on continue \
-                    nouvel intervalle [2, 4] → 4 - 2 = 2 ... c'est > 0.00001 → on continue \
-                    ... \
-                    nouvel intervalle [2.828125, 2.8291015625] → \
-                    2.8291015625 - 2.828125 = 0.0009765625... c'est < 0.00001 → on arrête
-                    
-                    La réponse est la moyenne des 2 intervalles.
+        À chaque étape :
+        - On calcule le milieu = (bas + haut) / 2
+        - Si milieu² est trop petit, on déplace bas = milieu
+        - Si milieu² est trop grand, on déplace haut = milieu
 
-        :::
+        On continue jusqu'à ce que la largeur de l’intervalle (haut - bas) soit inférieure à la précision souhaitée.
+        Dans ce cas, la racine est approximée par (bas + haut) / 2.
 
-        Pour **chacune des deux méthodes**, vous devez créer une fonction qui prend un nombre en paramètre et qui retourne sa racine carrée en utilisant cette méthode. \
-        \
-        La **précision** doit être **entre 4 et 14 décimales** à votre discrétion. Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner.
+        **Exemple (racine de 8, 3 décimales de précision)**
+        On arrête quand la largeur de l’intervalle < 0.001 :
+        - [0, 8] → largeur = 8 > 0.001 → on continue
+        - [0, 4] → largeur = 4 > 0.001 → on continue
+        - [2, 4] → largeur = 2 > 0.001 → on continue
+        …
+        - [2.828125, 2.8291015625] → largeur = 0.0009765625 < 0.001 → on arrête
 
-        :::tip ✅ Tests attendus
-
-        Tester vos 2 fonctions à l'aide d'appel de fonction similaire à ci-dessous. \
-        Lorsque vous obtenez des résultats similaires, retirez ces tests de votre code. \
-        \
-        **Remarque** : les dernières décimales peuvent variées selon le niveau de présion codée dans vos fonctions. Les résultats affichés sont les résultats de math.sqrt()
-
-        ```python
-        
-        print(nom_de_la_fonction(0))    #0.0
-        print(nom_de_la_fonction(0.1))  #0.31622776601683794
-        print(nom_de_la_fonction(0.2))  #0.4472135954999579
-        print(nom_de_la_fonction(0.9))  #0.9486832980505138
-        print(nom_de_la_fonction(8))    #2.8284271247461903
-        print(nom_de_la_fonction(9))    #3.0
-        print(nom_de_la_fonction(81))   #9.0
-        print(nom_de_la_fonction(123))  #11.090536506409418
-        print(nom_de_la_fonction(999))  #31.606961258558215
-        print(nom_de_la_fonction(-3))   #Doit lever une exception
-        ```
+        Résultat ≈ (2.828125 + 2.8291015625) / 2 = 2.82861328125 ≈ **2.829** (arrondi à 3 décimales).
         :::
     </Column>
 </Row>
+
+Pour **chacune des deux méthodes**, vous devez créer une fonction qui prend un nombre en paramètre et qui retourne sa racine carrée en utilisant cette méthode.
+
+La **précision** doit être **entre 4 et 14 décimales** à votre discrétion.<br />
+Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner.
+
+:::tip ✅ Tests attendus
+
+Tester vos 2 fonctions à l'aide d'appel de fonction similaire à ci-dessous. \
+Lorsque vous obtenez des résultats similaires, retirez ces tests de votre code. \
+\
+**Remarque** : les dernières décimales peuvent varier selon le niveau de précision codée dans vos fonctions. Les résultats affichés sont les résultats de math.sqrt()
+
+```python
+
+print(nom_de_la_fonction(0))    # 0.0
+print(nom_de_la_fonction(0.1))  # 0.31622776601683794
+print(nom_de_la_fonction(0.2))  # 0.4472135954999579
+print(nom_de_la_fonction(0.9))  # 0.9486832980505138
+print(nom_de_la_fonction(8))    # 2.8284271247461903
+print(nom_de_la_fonction(9))    # 3.0
+print(nom_de_la_fonction(81))   # 9.0
+print(nom_de_la_fonction(123))  # 11.090536506409418
+print(nom_de_la_fonction(999))  # 31.606961258558215
+print(nom_de_la_fonction(-3))   # Doit lever une exception
+```
+:::
+
 ::::
-<Row>
-    <Column>
-        :::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des performances
-        Vous allez comparer vos 2 méthodes avec `math.sqrt` pour comparer les performances. Pour chaque méthode (fonction 1, fonction 2, math.sqrt) vous devez :
+:::note <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> 📈 Comparaison des performances
+Vous allez comparer vos 2 fonctions avec la fonction `math.sqrt` pour comparer leurs performances.
 
-        - Utiliser une boucle différente par méthode :
-            - Réaliser 100 000 appels de la méthode
-            - Utilisez un nombre flottant aléatoire différent à chaque appel
-            - Les nombres flottants générés doivent être compris entre 10 et 10 000
-            - Calculer le temps nécessaire pour réaliser les 100 000 appels (en ms)
-        - Afficher :
-            - Le **temps total (en millisecondes)** pour chaque méthode
-            - Le **temps moyen** par appel de fonction pour chaque méthode
-        :::
-    </Column>
-    <Column>
-        :::tip <Highlight color="tip"><span style={{color: 'white'}}>1 points</span></Highlight> 🌱 Généraliser à une racine n-ième
-        Pour chacune de vos 2 fonctions, faites-en une copie, nommez la différemment, et généralisez-la pour qu'elle calcule la
-        racine n-ième d'un nombre. \
-        \
-        Vous devez rajouter un paramètre `base` (ex. : 2 pour racine carrée, 3 pour racine cubique, etc.).
-        Il suffit ensuite de faire un changement minime aux 2 algorithmes pour calculer n'importe quelle racine n-ième.
+**Pour chacune des 3 méthodes** (fonction 1, fonction 2, `math.sqrt`) vous devez :
+- À l'aide d'une boucle, appeler la fonction 100 000 fois avec un nombre flottant aléatoire
+    - Utilisez un nombre flottant aléatoire différent à chaque appel
+    - Les nombres flottants générés doivent être compris entre 10 et 10 000
+- Calculer le temps total nécessaire pour réaliser les 100 000 appels (en ms)
+- Afficher :
+    - Le **temps de calcul total** (en millisecondes)
+    - Le **temps moyen** par appel de la fonction
 
-        Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et
-        quatrième de 8, 9, 81 et 123.
-        :::
-    </Column>
-</Row>
+Exemple d'affichage attendu (les valeurs sont fictives) :
+```python
+Résultats des performances :
+Méthode 1 (chiffre par chiffre) : Temps total = 150 ms, Temps moyen = 0.0015 ms
+Méthode 2 (dichotomie)          : Temps total = 50 ms, Temps moyen = 0.0005 ms
+Méthode 3 (math.sqrt)           : Temps total = 10 ms, Temps moyen = 0.0001 ms
+```
+:::
+
+:::tip <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> 🌱 Généraliser à une racine n-ième
+Pour chacune de vos 2 fonctions, faites-en une copie, nommez-la différemment, et généralisez-la pour qu'elle calcule la
+racine n-ième d'un nombre. \
+\
+Pour cela, vous devez ajouter un paramètre `base` à vos nouvelles fonctions (ex. : 2 pour racine carrée, 3 pour racine cubique, etc.).<br />
+Il suffit ensuite de faire un changement minime aux 2 algorithmes pour calculer n'importe quelle racine n-ième.
+
+Appelez chacune de ces 2 nouvelles fonctions et affichez les résultats pour la racine carrée, cubique et
+quatrième de 8, 9, 81 et 123.
+:::
 
 :::danger Fonctionnement global <Highlight color="danger"><span style={{color: 'white'}}>2 points négatifs</span></Highlight>
 Le projet fonctionne sans plantage et correctement, et le code est clair et facile à lire.
