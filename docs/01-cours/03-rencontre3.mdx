@@ -26,8 +26,9 @@ import TabItem from '@theme/TabItem';
         ```
 
         Dans cet exemple, nous avons défini une fonction nommée `saluer` qui affiche "Bonjour!" lorsqu'elle est appelée. \
-        La définition d'une fonction avec le mots-clé `def` se fait qu'une fois. Une fois définie, la fonction peut être appelée à tout moment dans le code.
+        Une fonction n'est définie (avec le mot-clé `def`) qu'une seule fois.
 
+        Une fois définie, la fonction peut être appelée à tout moment dans le code, en utilisant son nom suivi de parenthèses :
         ```python
         saluer()  # 1er appel de la fonction
         saluer()  # 2e appel de la fonction
@@ -88,7 +89,7 @@ import TabItem from '@theme/TabItem';
         def saluer(nom="inconnu"):
             print(f"Bonjour, {nom}!")
 
-        saluer()  # Affiche "Bonjour, inconnu!"
+        saluer()         # Affiche "Bonjour, inconnu!"
         saluer("Alice")  # Affiche "Bonjour, Alice!"
         ```
         Dans cet exemple, si `saluer` est appelée sans valeur, `nom` prendra la valeur par défaut "inconnu". \
