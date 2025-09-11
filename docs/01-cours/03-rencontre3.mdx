@@ -174,24 +174,51 @@ import TabItem from '@theme/TabItem';
         La portée d'une variable détermine où cette variable peut être accédée dans le code.<br />
         En Python, il existe deux types principaux de portée : locale et globale.
 
-        - **Portée locale** : Une variable définie à l'intérieur d'une fonction est locale à cette fonction et ne peut pas être accédée en dehors de celle-ci.
-        - **Portée globale** : Une variable définie en dehors de toute fonction est globale et peut être accédée depuis n'importe quelle fonction dans le même module.
+        ### Portée globale
+        Une variable définie en dehors d’une fonction est globale.  \
+        Elle peut être utilisée dans tout le programme, y compris à l’intérieur des fonctions (sauf si une variable du même nom est redéfinie localement).
 
         ```python showLineNumbers
         x = 10  # Variable globale
 
         def ma_fonction():
-            y = 5  # Variable locale
-            print(f"Valeur locale y: {y}")
-            print(f"Valeur globale x: {x}")
+            print(f"Valeur de x dans la fonction : {x}")  # x est accessible ici
 
         ma_fonction()
-        print(f"Valeur globale x: {x}")
-        # print(y)  # Cela provoquerait une erreur car y n'est pas défini ici
+        print(f"Valeur de x en dehors de la fonction : {x}")
         ```
 
-        Dans cet exemple, `x` est une variable globale accessible à l'intérieur de `ma_fonction`,\
-        tandis que `y` est une variable locale accessible uniquement à l'intérieur de cette fonction.
+        ### Portée locale
+        Une variable définie à l’intérieur d’une fonction est locale. Elle n’existe que dans cette fonction.
+
+        ```python showLineNumbers
+        def ma_fonction():
+            y = 5  # Variable locale
+            print(f"Valeur de y dans la fonction : {y}")
+
+        ma_fonction()
+        # print(y)  # Erreur : y n'existe pas en dehors de la fonction
+
+        ```
+
+        :::warning Une variable à le même nom globalement et localement!
+
+        Si une variable a le même nom dans le programme et dans une fonction, \
+        la version locale prend le dessus dans la fonction. Elle cache la variable globale, mais ne la modifie pas.
+
+        ```python showLineNumbers
+        x = 10  # Variable globale
+
+        def ma_fonction():
+            x = 5  # Nouvelle variable locale, différente de la globale
+            print(f"Valeur locale de x : {x}")  # Affiche 5
+
+        ma_fonction()
+        print(f"Valeur globale de x : {x}")  # Affiche 10
+        ```
+
+        👉 Dans cet exemple, la variable `x` à l’intérieur de la fonction est indépendante de celle à l’extérieur. \
+        Elles ont le même nom, mais **ce sont 2 variables différentes**. Lorsque vous faites la [trace](/recettes/produire-une-trace), **vous devez prévoir 2 colonnes**!
 
         :::
 
