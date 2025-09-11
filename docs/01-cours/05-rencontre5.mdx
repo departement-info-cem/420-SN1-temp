@@ -318,6 +318,42 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        :::note Exemple
+        Voici une fonction qui prend comme paramètres une largeur et une hauteur, et qui affiche un rectangle de `#` de ces dimensions :
+        ```python showLineNumbers
+        def afficher_rectangle(largeur, hauteur):
+            for i in range(hauteur):          # Boucle pour chaque ligne
+                for j in range(largeur):      # Boucle pour chaque colonne
+                    print('#', end='')        # Affiche un '#' sans saut de ligne
+                print()                       # Nouvelle ligne après chaque ligne de '#'
+        afficher_rectangle(5, 3)
+        ```
+        Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
+        Il devrait afficher :
+        ```
+        #####
+        #####
+        #####
+        ```
+
+        Voici  maintenant une version qui utilise la concaténation de chaînes de caractères (str) pour construire chaque ligne avant de l'afficher :
+        ```python showLineNumbers
+        def afficher_rectangle(largeur, hauteur):
+            for i in range(hauteur):          # Boucle pour chaque ligne
+                ligne = ''                    # Initialise une chaîne vide pour la ligne
+                for j in range(largeur):      # Boucle pour chaque colonne
+                    ligne += '#'              # Concatène un '#' à la chaîne de la ligne
+                print(ligne)                  # Affiche la ligne complète
+        afficher_rectangle(5, 3)
+        ```
+
+        Vous remarquerez que le résultat est le même, mais la méthode est différente.<br />
+        Entre autres, cela évite d'utiliser `print()` à chaque itération de la boucle intérieure, ce qui peut être plus efficace pour de grandes dimensions.
+
+        Exécutez ce code en mode débogage pour bien voir la `str` `ligne` s'allonger à chaque itération de la boucle intérieure.
+
+        :::
+
     </TabItem>
 
     <TabItem value="exercices" label="Exercices">
@@ -401,8 +437,8 @@ import TabItem from '@theme/TabItem';
         ```python showLineNumbers
         def factorielle(n):
             resultat = 1
-            for i in range(1, n):
-                resultat = resultat * i
+            for i in range(1, n + 1):
+                resultat *= i
             return resultat
 
         r = factorielle(9)
@@ -436,32 +472,50 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Afficher 5 chiffres aléatoires
 
-        Afficher 5 chiffres aléatoires les uns en dessous des autres. \
-        Les chiffres doivent être compris dans l'ensemble **1**, **2**, **3**, **4**, **5**.
+        Afficher 5 chiffres aléatoires les uns en dessous des autres.
+        - Les chiffres doivent être compris dans l'ensemble **1**, **2**, **3**, **4**, **5**.
+        - Un même chiffre peut être affiché plusieurs fois.
         
         :::
 
         ---
 
-        :::info Exercice - Construire nombre #1
+        ::::info Exercice - Construire nombre #1
 
-        Construisez un nombre composé de **5 chiffres entiers aléatoires**, puis affichez-le à la console. \
-        Chaque chiffre doit être choisi **aléatoirement**, et appartenir uniquement à l’ensemble suivant : **5**, **6**, **7**, **8**, **9**.
+        Construisez un nombre composé de **5 chiffres entiers aléatoires**, puis affichez-le à la console.
+        - Chaque chiffre doit être choisi **aléatoirement**, et appartenir uniquement à l’ensemble suivant : **5**, **6**, **7**, **8**, **9**.
+        - Un même chiffre peut être utilisé plusieurs fois.
 
+        Par exemple, si vous obtenez les aléatoirement les chiffres : **7 5 9 6 8** vous devez construire le nombre **75968**
+
+        :::tip
+        Vous pouvez utiliser la fonction `str()` pour convertir un chiffre en chaîne de caractères, puis les concaténer pour former le nombre final.<br />
+        Par exemple :
+        ```python showLineNumbers
+        pseudo = "OliveTheKiller"
+        pseudo += str(42)  # Transforme le int 42 en str et le concatène à la fin de pseudo
+        print(pseudo)    # Affiche "OliveTheKiller42"
+        ```
         :::
+
+        ::::
 
         ---
 
-        :::info Exercice - Construire nombre #2
+        ::::info Exercice - Construire nombre #2
 
-        Construisez un nombre composé de **10 chiffres entiers aléatoires**, puis affichjez-le à la console. 
+        Construisez un nombre composé de **10 chiffres entiers aléatoires**, puis affichez-le à la console.
 
         - Les chiffres pairs (0, 2, 4, 6, 8) doivent composer la partie entière du nombre.
         - Les chiffres impairs (1, 3, 5, 7, 9) doivent composer la partie décimale du nombre.
 
-        Par exemple, si vous obtenez les aléatoirements les chiffres : **9 5 2 4 7 5 2 1 3 2** vous devez constuire le nombre **2422.95753** 
-            
+        Par exemple, si vous obtenez les aléatoirement les chiffres : **9 5 2 4 7 5 2 1 3 2** vous devez construire le nombre **2422.95753**
+
+        :::tip
+        Vous pouvez construire la partie entière et la partie décimale séparément, puis les combiner pour former le nombre final.
         :::
+
+        ::::
 
         ---
 
@@ -475,11 +529,11 @@ import TabItem from '@theme/TabItem';
         
         **Contraintes**
             - Vous devez utiliser une boucle.
-            - Vous avez le droit qu'à 2 variables, vous ne pouvez pas en déclarer de nouvelles!
+            - Vous n'avez droit qu'à 2 variables, vous ne pouvez pas en déclarer de nouvelles!
 
         ```python
         nombre = 8
-        resultat = "" #doit contenir le nombre généré à la fin du programme
+        resultat = "" # doit contenir le nombre généré à la fin du programme
         ```
         :::
 
@@ -487,7 +541,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Construire nombre #4
 
-        L'exercice presque identique au précédent sauf qu'il doit y avoir la présence d'un entre le 1<sup>er</sup> nombre et les suivantes.
+        L'exercice est presqu'identique au précédent sauf qu'il doit y avoir la présence d'un entre le 1<sup>er</sup> nombre et les suivantes.
 
         Par exemple :
             - **si** le nombre de départ est *8*, le nombre qu'on cherche à construire est **8.76**.
@@ -506,9 +560,9 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Exercice - Jeu de devinette numérique
+        ::::info Exercice - Jeu de devinette numérique
 
-        Écrire un programme qui choisit un nombre entier aléatoire entre 0 et 100. \
+        Écrivez un programme qui choisit un nombre entier aléatoire entre 0 et 100. \
         L'utilisateur doit deviner ce nombre. 
         
         Tant que la réponse est incorrecte, le programme indique si le nombre à deviner est plus haut ou plus bas. \
@@ -519,7 +573,11 @@ import TabItem from '@theme/TabItem';
         → <i>"Plus bas!"</i> \
         → <i>"Bravo humain, vous avez trouvé le nombre!"</i>
 
+        :::tip
+        Vous pouvez utiliser la fonction `input()` à l'intérieur d'une boucle!
         :::
+
+        ::::
 
         ---
 
@@ -536,9 +594,9 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Exercice - Afficher Fibonachie
+        :::info Exercice - Afficher Fibonacci
         
-        Créer un programme affichant les 10 premiers nombres de la suite de Fibonachie. \
+        Créez un programme affichant les 100 premiers nombres de la suite de Fibonacci. \
         Voici les 10 premiers nombres : **1, 1, 2, 3, 5, 8, 13, 21, 34, 55**
 
         Dans cette suite, les nombres sont toujours la somme des 2 nombres précédents.
@@ -546,10 +604,10 @@ import TabItem from '@theme/TabItem';
             - le nombre 8 s'obtient en additionnant 3 + 5.
             - le nombre 13 s'obtient en additionnant 5 + 8.
 
-        Les valeurs doivent être affichées au fur et à mesure qu'elles soient calculées avec la fonction "print".
+        Les valeurs doivent être affichées avec `print()` au fur et à mesure qu'elles sont calculées.
 
         **Contraintes** 
-        - Vous avez le droit qu'à 3 variables.
+        - Vous n'avez droit qu'à 3 variables.
         - Vous devez utilisez une boucle.
 
         <i>Petits indices concernant les variables : </i>  
@@ -583,7 +641,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Affichage d'étoiles #1
 
-        Nous allons transformer un code répétitif afficant des lignes d’étoiles sur plusieurs lignes \
+        Nous allons transformer un code répétitif affichant des lignes d’étoiles sur plusieurs lignes \
         en une version plus propre et flexible grâce à l’utilisation de boucles.
 
 
@@ -593,9 +651,9 @@ import TabItem from '@theme/TabItem';
         print()
 
         #Ligne #2
-        print('*', end='')  #Affiche une étoile et évite le saut de ligne
+        print('*', end='')  # Affiche une étoile et évite le saut de ligne
         print('*', end='')
-        print()             #Génère une ligne vide
+        print()             # Génère une ligne vide
 
         #Ligne #3
         print('*', end='')
@@ -614,24 +672,24 @@ import TabItem from '@theme/TabItem';
         #### 🪜 ÉTAPES À SUIVRE
 
         1. 📌 **COMPRENDRE LE MOTIF** \
-        Exécute le code dans PyCharm, et observe le motif affiché. \
+        Exécutez le code dans PyCharm et observez le motif affiché. \
         Chaque ligne contient un nombre croissant d’étoiles, allant de 1 à 4.
 
 
         2. 🔍 **IDENTIFIER LA RÉPÉTITION** \
-        Tenter d'observer la répétition et tenter de voir comment on peut généraliser le tout. \
+        Tentez d'observer la répétition et tentez de voir comment on peut généraliser le tout. \
         Pour chaque ligne, vous remarquez qu'on fait toujours les mêmes 2 actions :
             - Afficher un nombre variable d'étoiles selon la ligne
             - Puis réaliser un saut de ligne.
 
         3. 🔁 **PLANIFIER LA RÉSOLUTION À L'AIDE DE BOUCLES** \
         Vous aurez besoin d'une boucle pour répéter ces 2 ensembles d'actions pour chacune des lignes. \
-        Petit problème! Le nombre d'instructions pour afficher des étoiles est variable selon la ligne... que faire? \
+        Petit problème : le nombre d'instructions pour afficher des étoiles est variable selon la ligne... que faire? \
         Vous allez avoir besoin d'une boucle pour représenter la création des étoiles! \
-        Vous aurez donc une boucle de création de lignes, ayant une boucle de création d'étoiles.
+        Vous aurez donc une boucle de création de lignes, et à l'intérieur une boucle de création d'étoiles.
 
         4. 👨🏻‍💻 **CODER** \
-        Vous avez assez philosophiez, codez! \
+        Vous avez assez philosophié, maintenant codez! \
         Lorsque vous avez fini, votre code sera générique et flexible! \
         Vous seriez capable d'afficher 20 lignes au lieu de 4 avec un p'tit changement mineur!
 
@@ -656,11 +714,10 @@ import TabItem from '@theme/TabItem';
         ```python
         print(' ', end='') #Afficher une espace (sans saut de ligne)
         print('*', end='') #Afficher une étoile (sans saut de ligne)
+        print('x', end='') #Afficher une étoile (sans saut de ligne)
         ```
 
         :::
-
-        * * * * *
 
         ---
 
@@ -676,8 +733,56 @@ import TabItem from '@theme/TabItem';
         * * * * * * * * *
         ```
 
+        Mettez le code dans une fonction nommée `pyramide` qui prend la hauteur en paramètre.<br />
+        Il faut par exemple que ces 3 appels :
+        ```python showLineNumbers
+        pyramide(5)
+        pyramide(3)
+        pyramide(7)
+        ```
+        produisent exactement cette sortie :
+        ```text
+                *
+              * * *
+            * * * * *
+          * * * * * * *
+        * * * * * * * * *
+        ```
+        ```text
+            *
+          * * *
+        * * * * *
+        ```
+        ```text
+                    *
+                  * * *
+                * * * * *
+              * * * * * * *
+            * * * * * * * * *
+          * * * * * * * * * * *
+        * * * * * * * * * * * * *
+        ```
 
+        Appelez votre fonction pour générer une pyramide haute de 50 lignes.
 
+        Puis une, haute de 100 lignes!
+
+        :::
+
+        ---
+
+        :::info Exercice - Calculer 1 11 21 1211
+
+        La suite de Conway (ou suite audioactive) est une suite de nombres entiers où chaque terme est généré en décrivant le terme précédent.
+        1. Le premier terme est 1.
+        2. Le deuxième terme est 11 (un 1).
+        3. Le troisième terme est 21 (deux 1).
+        4. Le quatrième terme est 1211 (un 2, un 1).
+        5. Le cinquième terme est 111221 (un 1, un 2, deux 1).
+        6. Le sixième terme est 312211 (trois 1, deux 2, un 1).
+        7. ...
+
+        Écrivez un programme qui calcule et affiche les 10 premiers termes de cette suite.
         :::
 
 
