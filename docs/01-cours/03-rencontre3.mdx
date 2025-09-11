@@ -174,9 +174,11 @@ import TabItem from '@theme/TabItem';
         La portée d'une variable détermine où cette variable peut être accédée dans le code.<br />
         En Python, il existe deux types principaux de portée : locale et globale.
 
-        ### Portée globale
+        ### PORTÉE GLOBALE
         Une variable définie en dehors d’une fonction est globale.  \
-        Elle peut être utilisée dans tout le programme, y compris à l’intérieur des fonctions (sauf si une variable du même nom est redéfinie localement).
+        **Elle peut être utilisée dans tout le programme**, y compris à l’intérieur des fonctions \
+        <u>sauf si une variable du même nom est définie localement</u> (cette situation est montrée plus bas).
+
 
         ```python showLineNumbers
         x = 10  # Variable globale
@@ -188,8 +190,8 @@ import TabItem from '@theme/TabItem';
         print(f"Valeur de x en dehors de la fonction : {x}")
         ```
 
-        ### Portée locale
-        Une variable définie à l’intérieur d’une fonction est locale. Elle n’existe que dans cette fonction.
+        ### PORTÉE LOCALE
+        Une variable définie à l’intérieur d’une fonction est locale. **Elle n’existe que dans cette fonction**.
 
         ```python showLineNumbers
         def ma_fonction():
