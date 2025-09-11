@@ -7,8 +7,6 @@ import TabItem from '@theme/TabItem';
 
 # 🔄 Boucles
 
-# 🏗️ en construction 🏗
-
 <Tabs queryString="onglet">
 
     <TabItem value="while" label="while" default>
@@ -521,47 +519,6 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Exercice - Construire nombre #3
-
-        Construisez un nombre composé d'un nombre de départ et des 3 chiffres le précédant.
-
-        Par exemple :
-            - **si** le nombre de départ est *8*, le nombre qu'on cherche à construire est **876**.
-            - **si** le nombre de départ est *7*, le nombre qu'on cherche à construire est **765**.
-        
-        **Contraintes**
-            - Vous devez utiliser une boucle.
-            - Vous n'avez droit qu'à 2 variables, vous ne pouvez pas en déclarer de nouvelles!
-
-        ```python
-        nombre = 8
-        resultat = "" # doit contenir le nombre généré à la fin du programme
-        ```
-        :::
-
-        ---
-
-        :::info Exercice - Construire nombre #4
-
-        L'exercice est presqu'identique au précédent sauf qu'il doit y avoir la présence d'un entre le 1<sup>er</sup> nombre et les suivantes.
-
-        Par exemple :
-            - **si** le nombre de départ est *8*, le nombre qu'on cherche à construire est **8.76**.
-            - **si** le nombre de départ est *7*, le nombre qu'on cherche à construire est **7.65**.
-
-        **Contraintes**
-            - Les mêmes que l'exercice précédent à l'exception que vous avez le droit à une variable supplémentaire.
-        
-        ```python
-        nombre = 8
-        resultat = "" #doit contenir le nombre généré à la fin du programme
-        precision = 1 #peut vous servir pour représenter la position que le chiffre doit occuper dans le nombre 
-                      #par exemple : 1 == unité, 0.1 == dixième, 0.01 == centième.
-        ```        
-        :::
-
-        ---
-
         ::::info Exercice - Jeu de devinette numérique
 
         Écrivez un programme qui choisit un nombre entier aléatoire entre 0 et 100. \
@@ -580,19 +537,6 @@ import TabItem from '@theme/TabItem';
         :::
 
         ::::
-
-        ---
-
-        :::info Exercice - islam-chretien
-        Sachant que le calendrier musulman commence en 622 du calendrier chrétien mais que ses années sont plus courtes, il va y avoir un jour où pour la première fois les musulmans et les chrétiens seront dans la même année.
-
-        En 622, le calendrier musulman est en 1.
-
-        Écrivez un programme qui détermine l'année où les deux calendriers se rejoignent pour la première fois.
-        - Le calendrier musulman s'appelle aussi [calendrier
-        hégirien](https://fr.wikipedia.org/wiki/Calendrier_hégirien).
-        - Vous pouvez chercher une librairie de conversion entre dates.
-        :::
 
         ---
 
@@ -621,27 +565,7 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Exercice - Saisir température valide
-
-        Créer une fonction nommée <i>saisir_temperature</i> qui invite l'utilisateur à entrer une température en Kelvin. \
-        La valeur saisie doit être supérieure ou égale à 0, conformément aux règles physiques.
-
-        🔁 **Comportement attendu** :
-        - Tant que l'utilisateur saisit une température invalide (inférieure à 0), afficher un message d'erreur.
-        - Répéter la demande jusqu'à ce qu'une valeur correcte soit fournie.
-        - Une fois la température validée, la fonction la retourne.
-
-        📌 Exemples d'utilisation :
-             
-        ```python
-        temperature_saisie = saisir_temperature()
-        print("Vous avez saisie la température Kelvin : {temperature}")
-        ```
-        :::
-
-        ---
-
-        :::info Exercice - Affichage d'étoiles #1
+        :::info Exercice - Affichage d'étoiles
 
         Nous allons transformer un code répétitif affichant des lignes d’étoiles sur plusieurs lignes \
         en une version plus propre et flexible grâce à l’utilisation de boucles.
@@ -694,30 +618,6 @@ import TabItem from '@theme/TabItem';
         Vous avez assez philosophié, maintenant codez! \
         Lorsque vous avez fini, votre code sera générique et flexible! \
         Vous seriez capable d'afficher 20 lignes au lieu de 4 avec un p'tit changement mineur!
-
-        :::
-
-        ---
-
-        :::info Exercice - Affichage d'étoiles #2
-
-        À l'aide de `boucles` et `if`, faites un programme permettant d'afficher cette pyramide :
-
-        ```python
-        * x * x *
-        * x * x
-        * x *
-        * x
-        *
-        ```
-
-        Vous aurez besoin de ces instructions :
-
-        ```python
-        print(' ', end='') #Afficher une espace (sans saut de ligne)
-        print('*', end='') #Afficher une étoile (sans saut de ligne)
-        print('x', end='') #Afficher une étoile (sans saut de ligne)
-        ```
 
         :::
 
