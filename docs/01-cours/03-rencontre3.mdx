@@ -17,23 +17,25 @@ import TabItem from '@theme/TabItem';
         Elle est définie à l'aide du mot-clé `def`, suivi du nom de la fonction, de parenthèses et d'un `:`.<br />
 
         Le code à l'intérieur de la fonction est indenté avec une tabulation (touche `TAB`).<br />
-        En Python, cette indentation est essentielle pour délimiter le bloc de code de la fonction.
+        En Python, <u>cette indentation est essentielle</u> pour délimiter le bloc de code de la fonction.
 
         ```python
         def saluer():
             print("Bonjour!")
+            print("Bienvenue dans le cours SN1.")
         ```
 
-        Dans cet exemple, nous avons défini une fonction nommée `saluer` qui affiche "Bonjour!" lorsqu'elle est appelée.
-
-        Une fois définie, la fonction peut être appelée à tout moment dans le code en utilisant son nom suivi de parenthèses.
+        Dans cet exemple, nous avons défini une fonction nommée `saluer` qui affiche "Bonjour!" lorsqu'elle est appelée. \
+        La définition d'une fonction avec le mots-clé `def` se fait qu'une fois. Une fois définie, la fonction peut être appelée à tout moment dans le code.
 
         ```python
-        saluer()  # Appel de la fonction
+        saluer()  # 1er appel de la fonction
+        saluer()  # 2e appel de la fonction
         ```
 
-        *Appeler* une fonction se fait en écrivant son nom suivi de parenthèses.<br />
-        Lorsqu'une fonction est appelée, le code à l'intérieur de la fonction est exécuté.
+        <i>**Appeler**</i> une fonction se fait en écrivant son nom suivi de parenthèses.<br />
+        Lorsqu'une fonction est appelée, le code à l'intérieur de la fonction est exécuté. \
+        On peut appeler une fonction autant de fois que souhaité.
         
         :::warning importance de placer la définition d'une fonction avant ses appels
         La définition d'une fonction doit toujours être placée avant les appels à celle-ci. \
@@ -59,6 +61,7 @@ import TabItem from '@theme/TabItem';
             print(f"Bonjour, {nom}!")
 
         saluer("Alice")  # Affiche "Bonjour, Alice!"
+        saluer("Verso")  # Affiche "Bonjour, Verso!"
         ```
 
         Dans cet exemple, la fonction `saluer` prend un paramètre `nom` et affiche un message de salutation en utilisant ce paramètre. \
@@ -71,6 +74,7 @@ import TabItem from '@theme/TabItem';
             print(f"La différence entre {a} et {b} est {a - b}")
 
         affiche_difference(8, 5)  # Affiche "La différence entre 8 et 5 est 3"
+        affiche_difference(5, 1)  # Affiche "La différence entre 5 et 1 est 4"
         ```
         
         :::
@@ -83,6 +87,7 @@ import TabItem from '@theme/TabItem';
         ```python showLineNumbers
         def saluer(nom="inconnu"):
             print(f"Bonjour, {nom}!")
+
         saluer()  # Affiche "Bonjour, inconnu!"
         saluer("Alice")  # Affiche "Bonjour, Alice!"
         ```
@@ -128,6 +133,7 @@ import TabItem from '@theme/TabItem';
 
         resultat = carre(5)
         print(resultat)  # Affiche 25
+        print(carre(7))  # Affiche 49
         ```
 
         Dans cet exemple, la fonction `carre` prend un paramètre `x`, calcule son carré et le retourne.<br />
