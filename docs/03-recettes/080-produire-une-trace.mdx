@@ -344,6 +344,8 @@ elif a > 10:
     print('a est moyen')
 else:
     print('a est petit')
+
+print('a est nul') if a == 0 else print('fin')
 ```
 </Column>
 <Column>
@@ -375,6 +377,10 @@ else:
             <td>5</td>
             <td>42</td><td>a est moyen</td><td>`__main__`</td><td></td><td></td>
         </tr>
+        <tr>
+            <td>8</td>
+            <td>42</td><td>fin</td><td>`__main__`</td><td></td><td></td>
+        </tr>
         </tbody>
     </table>
 </Column>
@@ -383,6 +389,65 @@ else:
 On voit que :
 - On indique seulement les lignes qui s'exécutent en vrai.
 - Certaines lignes ne s'exécutent pas, c'est le principe de la condition!
+- On appelle ce cheminement le flot de contrôle.
+
+</TabItem>
+
+<TabItem value="try" label="Avec try/except">
+
+<Row>
+<Column>
+### Code
+Si on a le code suivant :
+```python showLineNumbers
+try:
+    a = 1 / 0
+    print('division réussie')
+except ZeroDivisionError:
+    print('division par zéro')
+finally:
+    print('fin du bloc try/except')
+```
+</Column>
+<Column>
+    ### Trace
+    On aura la trace suivante :
+    <table>
+        <thead>
+        <tr>
+            <th></th>
+            <th>portée globale</th>
+            <th colspan="4"></th>
+        </tr>
+        <tr>
+            <th>#ligne</th>
+            <th>a</th>
+            <th>affichage</th>
+            <th>pile d'appels</th>
+            <th>fonction appelée</th>
+            <th>valeur retournée</th>
+        </tr>
+        </thead>
+        <tbody>
+        <tr>
+            <td>2</td>
+            <td></td><td></td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>5</td>
+            <td></td><td>division par zéro</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td></td><td>fin du bloc try/except</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        </tbody>
+    </table>
+</Column>
+</Row>
+On voit que :
+- On indique seulement les lignes qui s'exécutent en vrai.
+- Certaines lignes ne s'exécutent pas, c'est le principe du try/except!
 - On appelle ce cheminement le flot de contrôle.
 
 </TabItem>
