@@ -736,7 +736,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ---
 
-        :::info Exercice - Trace `if`/`elsi`/`else` + forme compacte
+        :::info Exercice - Trace `if`/`elif`/`else` + forme compacte
         
         Sans exécuter le code, qu'affichera le programme ci-dessous? \
         En suivant [cette recette de trace](/recettes/produire-une-trace?recette-activite=Avec+fonction), faites la trace de l'exécution. \
@@ -877,7 +877,8 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         $$
 
         Écrivez un programme permettant d'afficher les solutions d'une équation quadratique. \
-        Votre programme doit demander à l'utilisateur une valeur pour `a`, `b` et `c` et ensuite il doit afficher les solutions.
+        Votre programme doit demander à l'utilisateur une valeur pour `a`, `b` et `c` et ensuite il doit afficher les solutions. \
+        Faite des variables globales pour stocker les valeurs de `a`, `b` et `c`. Ne créez pas de fonction pour ce numéro.
         
         ✅ **EXEMPLE DE SORTIE ATTENDUE POUR LES 3 CAS POSSIBLES**
 
@@ -901,7 +902,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         :::info Exercice - Remplacer des instructions
 
-        Pour cet exercice, vous devez remplacer les `if/elsif/else` du code ci-dessous par un `match/case`.
+        Pour cet exercice, vous devez remplacer les `if/elif/else` du code ci-dessous par un `match/case`.
 
         ```python showLineNumbers
         def type_animal(deplacement):
@@ -996,7 +997,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
         Ajoutez et relancez le programme à chaque changement afin de bien voir les changements.
 
         ```python showLineNumbers
-        # Mettre n'importe où avant l'instruction plt.show()
+        # Mettre immédiatement après la création des tableaux de données
         plt.figure(figsize=(10, 6))
         ```
 
