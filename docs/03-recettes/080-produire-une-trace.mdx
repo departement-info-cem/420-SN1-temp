@@ -346,6 +346,16 @@ else:
     print('a est petit')
 
 print('a est nul') if a == 0 else print('fin')
+
+match a:
+    case 6:
+        print('a est égal à 6')
+    case 7:
+        print('a est égal à 7')
+    case 42:
+        print('a est égal à 42')
+    case _:
+        print("a n'est pas 6, 7 ou 42")
 ```
 </Column>
 <Column>
@@ -380,6 +390,10 @@ print('a est nul') if a == 0 else print('fin')
         <tr>
             <td>9</td>
             <td>42</td><td>fin</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>17</td>
+            <td>42</td><td>a est égal à 42</td><td>`__main__`</td><td></td><td></td>
         </tr>
         </tbody>
     </table>
