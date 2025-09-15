@@ -479,6 +479,9 @@ i = 0
 while i < 2:
     print(f'i vaut {i}')
     i = i + 1
+
+for j in range(2):
+    print(f'j vaut {j}')
 ```
 
 </Column>
@@ -491,12 +494,13 @@ while i < 2:
         <thead>
         <tr>
             <th></th>
-            <th>portée globale</th>
+            <th colspan="2">portée globale</th>
             <th colspan="4"></th>
         </tr>
         <tr>
             <th>#ligne</th>
             <th>i</th>
+            <th>j</th>
             <th>affichage</th>
             <th>pile d'appels</th>
             <th>fonction appelée</th>
@@ -506,23 +510,31 @@ while i < 2:
         <tbody>
         <tr>
             <td>1</td>
-            <td>0</td><td></td><td>`__main__`</td><td></td><td></td>
+            <td>0</td><td></td><td></td><td>`__main__`</td><td></td><td></td>
         </tr>
         <tr>
             <td>3</td>
-            <td>0</td><td>i vaut 0</td><td>`__main__`</td><td></td><td></td>
+            <td>0</td><td></td><td>i vaut 0</td><td>`__main__`</td><td></td><td></td>
         </tr>
         <tr>
             <td>4</td>
-            <td>1</td><td></td><td>`__main__`</td><td></td><td></td>
+            <td>1</td><td></td><td></td><td>`__main__`</td><td></td><td></td>
         </tr>
         <tr>
             <td>3</td>
-            <td>1</td><td>i vaut 1</td><td>`__main__`</td><td></td><td></td>
+            <td>1</td><td></td><td>i vaut 1</td><td>`__main__`</td><td></td><td></td>
         </tr>
         <tr>
             <td>4</td>
-            <td>2</td><td></td><td>`__main__`</td><td></td><td></td>
+            <td>2</td><td></td><td></td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2</td><td>0</td><td>j vaut 0</td><td>`__main__`</td><td></td><td></td>
+        </tr>
+        <tr>
+            <td>7</td>
+            <td>2</td><td>1</td><td>j vaut 1</td><td>`__main__`</td><td></td><td></td>
         </tr>
         </tbody>
     </table>
