@@ -803,6 +803,7 @@ Voici comment Python évalue l’instruction #5, étape par étape :
 
         ```python showLineNumbers
         def calcul(a, b):
+            print(f"a : {a} b : {b}")
             if a ** 2 > 20:
                 raise ValueError("Valeur interdite")
             return a * b
