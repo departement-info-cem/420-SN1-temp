@@ -48,12 +48,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "9 - 🌳 Structures de données",
+      label: "9 - 📊 Graphiques, List, Set",
       id: "cours/rencontre9",
     },
     {
       type: "doc",
-      label: "10 - 🗂 Fichiers, Listes 2D, 3D...",
+      label: "10 - 🗂 Fichiers, Dict, Tuple",
       id: "cours/rencontre10",
     },
     {
@@ -63,7 +63,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "12 - 🤖 IA, Graphiques",
+      label: "12 - 🤖 Statistiques, IA",
       id: "cours/rencontre12",
     },
     {
