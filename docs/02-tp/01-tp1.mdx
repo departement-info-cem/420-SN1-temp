@@ -95,17 +95,19 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
     </Column>
     <Column>
         :::info ➤ Méthode 2 : Dichotomie
-        On cherche la racine dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape :
+        On cherche la racine dans un intervalle [bas, haut] qui se réduit de moitié à chaque étape.
+
+        On commence par déterminer l'intervalle initial :
 
         - Si n ≥ 1 : intervalle initial = [0, n]
         - Si 0 < n < 1 : intervalle initial = [0, 1]
 
-        À chaque étape :
+        Par la suite, on va réduire l'intervalle de moitié de la manière suivante :
         - On calcule le milieu = (bas + haut) / 2
-        - Si milieu² est trop petit, on déplace bas = milieu
-        - Si milieu² est trop grand, on déplace haut = milieu
+        - Si milieu² est plus petit que n, on déplace bas = milieu
+        - Si milieu² est plus grand que n, on déplace haut = milieu
 
-        On continue jusqu'à ce que la largeur de l’intervalle (haut - bas) soit inférieure à la précision souhaitée.
+        On répète l'opération de réduction de l'intervalle jusqu'à ce que la largeur de l’intervalle (haut - bas) soit inférieure à la précision souhaitée.
         Dans ce cas, la racine est approximée par (bas + haut) / 2.
 
         **Exemple (racine de 8, 3 décimales de précision)**
