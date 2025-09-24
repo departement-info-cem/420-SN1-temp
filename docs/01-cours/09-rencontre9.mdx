@@ -11,11 +11,7 @@ import TabItem from '@theme/TabItem';
 
 <Tabs queryString="onglet">
 
-    <TabItem value="theorie" label="Théorie" default>
-
-    </TabItem>
-
-    <TabItem value="liste" label="Liste">
+    <TabItem value="liste" label="Liste (list)" default>
 
         :::info Introduction aux listes
 
@@ -127,19 +123,233 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="list" label="list">
+    <TabItem value="listcomp" label="Compréhension de liste">
+
+        :::info Compréhension de liste (List Comprehension)
+
+        La compréhension de liste est une manière concise et élégante de créer des listes en Python. Elle permet de générer une nouvelle liste en appliquant une expression à chaque élément d'une séquence (comme une liste, un tuple, etc.) et en option, en filtrant les éléments selon une condition.
+
+        La syntaxe générale de la compréhension de liste est la suivante :
+        ```python showLineNumbers
+        nouvelle_liste = [expression for element in sequence if condition]
+        ```
+        - `expression` : l'opération ou la transformation à appliquer à chaque élément.
+        - `element` : la variable qui prend chaque valeur de la séquence.
+        - `sequence` : la séquence (comme une liste) que l'on parcourt.
+        - `condition` (optionnelle) : une condition pour filtrer les éléments.
+
+        Voici un exemple simple pour créer une liste des carrés des nombres pairs d'une liste initiale :
+        ```python showLineNumbers
+        nombres = [1, 2, 3, 4, 5, 6]
+        carrés_pairs = [x ** 2 for x in nombres if x % 2 == 0]
+        print(carrés_pairs)  # Affiche [4, 16, 36]
+        ```
+        Dans cet exemple :
+        - Nous parcourons chaque nombre `x` dans la liste `nombres`.
+        - Nous calculons le carré de `x` (`x ** 2`) uniquement si `x` est pair (`if x % 2 == 0`).
+        - Le résultat est une nouvelle liste `carrés_pairs` contenant les carrés des nombres pairs.
+
+        Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
+        Mettez un point d'arrêt sur la ligne 2 et avancez une ligne à la fois pour suivre l'évolution de la variable `x` et de la liste `carrés_pairs`.
+
+        :::
+
+        ---
+
+        :::tip Avantages de la compréhension de liste
+        - **Concision** : La compréhension de liste permet d'écrire moins de lignes de code pour accomplir la même tâche.
+        - **Lisibilité** : Elle rend le code plus lisible en exprimant clairement l'intention de créer une nouvelle liste basée sur une transformation ou un filtrage.
+        - **Performance** : La compréhension de liste est souvent plus rapide que l'utilisation de boucles `for` traditionnelles pour créer des listes.
+        :::
 
     </TabItem>
 
-    <TabItem value="tuple" label="tuple">
+    <TabItem value="matplotlib" label="Matplotlib">
+
+        :::info Matplotlib
+        Matplotlib est une bibliothèque de visualisation de données en Python qui permet de créer des graphiques statiques, animés et interactifs. Elle est largement utilisée pour l'analyse de données, la science des données et l'apprentissage-machine (*machine learning*).
+        :::
+
+        ---
+
+        :::note Installation de Matplotlib
+        Afin de pouvoir utiliser Matplotlib dans un projet, il faut d'abord [installer la bibliothèque](../recettes/ajouter-librairie) Matplotlib dans votre projet.
+        :::
+
+        ---
+
+        :::note Importation de Matplotlib
+
+        Matplotlib est une bibliothèque qui contient plusieurs modules.<br />
+        Le module le plus couramment utilisé pour créer des graphiques est `pyplot`.<br />
+        Pour l'importer dans un script, on utilise la commande suivante :
+        ```python showLineNumbers
+        import matplotlib.pyplot as plt
+        ```
+        Ici, nous importons le module `pyplot` de Matplotlib et lui donnons l'alias `plt` pour simplifier son utilisation dans le code.<br />
+        Nous pourrons ainsi appeler les fonctions du module `pyplot` en utilisant le préfixe `plt.`<br />
+        Par exemple :
+        ```python showLineNumbers
+        plt.plot(x, y)  # Pour tracer un graphique linéaire
+        plt.show()      # Pour afficher le graphique
+        ```
+        Plutôt que :
+        ```python showLineNumbers
+        matplotlib.pyplot.plot(x, y)
+        matplotlib.pyplot.show()
+        ```
+        qui est plus long et moins lisible.
+
+        :::
+
+        ---
+
+        :::info Création de graphiques avec Matplotlib
+
+        Créons d'abord un graphique très simple, avec un seul point :
+        ```python showLineNumbers
+        import matplotlib.pyplot as plt
+
+        # Données à tracer
+        x = [0]  # Liste contenant un seul point x=0
+        y = [0]  # Liste contenant un seul point y=0
+
+        # Créer le graphique
+        plt.plot(x, y, 'o')  # 'o' indique que nous voulons un point
+
+        # Afficher le graphique
+        plt.show()
+        ```
+        Exécutez ce code.
+
+        Dans cet exemple :
+        - Nous importons la bibliothèque Matplotlib en utilisant `import matplotlib.pyplot as plt`.
+        - Nous définissons deux listes `x` et `y` qui contiennent les coordonnées du point à tracer, sous la forme de listes.
+        - Nous utilisons la fonction `plt.plot(x, y, 'o')` pour créer le graphique avec un point.
+        - Enfin, nous affichons le graphique avec `plt.show()`.
+
+        Ajoutons maintenant plus de points :
+        ```python
+        # Données à tracer
+        x = [-100, -50, 0, 50, 100]  # Liste des points x
+        y = [10000, 2500, 0, 2500, 10000]  # Liste des points y (carré de x)
+        ```
+        Exécutez votre script modifié.
+
+        Nous allons maintenant ajouter encore plus de points pour obtenir une courbe :
+        ```python
+        # Données à tracer
+        x = [i for i in range(-100, 101)]  # Liste des entiers de -100 à 100
+        y = [i ** 2 for i in x]            # Liste des carrés des entiers
+        ```
+        Exécutez encore votre script.
+
+        Puisqu'il y a maintenant beaucoup de points, on peut remplacer le marqueur `'o'` par '-' pour tracer une ligne continue :
+        ```python
+        plt.plot(x, y, '-')  # Tracer une ligne sans marqueur
+        ```
+        Exécutez encore votre script pour voir la différence.<br />
+        Vous devriez voir une belle parabole s'afficher.
+
+        On veut maintenant afficher en rouge les points où x est un multiple de 10 :
+        ```python
+        # Ajouter des points rouges pour x multiple de 10
+        x_rouge = [i for i in x if i % 10 == 0]
+        y_rouge = [i ** 2 for i in x_rouge]
+        plt.plot(x_rouge, y_rouge, 'ro')  # 'ro' indique des points rouges
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
+
+        Ajoutons maintenant la courbe miroir en vert pour y = -x² :
+        ```python showLineNumbers
+        # Ajouter la courbe miroir y = -x² en vert
+        y_miroir = [-i ** 2 for i in x]
+        plt.plot(x, y_miroir, 'g-')  # 'g-' indique une ligne verte
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
+
+        :::
+
+        ---
+
+        :::note Titres et étiquettes
+
+        Pour rendre le graphique plus compréhensible, on peut ajouter un titre et des étiquettes (*labels*) aux axes :
+        ```python
+        plt.title("Graphique de y = x² et y = -x²")
+        plt.xlabel("Axe des X")
+        plt.ylabel("Axe des Y")
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
+
+        L'étiquette de l'axe des Y se retrouve un peu coupée ?<br />
+        On peut ajuster la mise en page avec :
+        ```python
+        plt.tight_layout()  # Ajuste la mise en page pour éviter les coupures
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
+
+        On peut aussi ajouter une grille pour mieux visualiser les points :
+        ```python
+        plt.grid(True)  # Active la grille
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
+
+        Aussi, si vous avez plusieurs courbes, vous pouvez ajouter une légende pour les différencier.<br />
+        Pour ce faire, ajoutez une valeur (sous forme de `str`) au paramètre `label à chaque courbe dans les appels à `plt.plot()` :
+        ```python
+        plt.plot(x, y, '-', label='y = x²')
+        plt.plot(x, y_miroir, 'g-', label='y = -x²')
+        plt.plot(x_rouge, y_rouge, 'ro', label='x multiple de 10')
+        ```
+        puis ajoutez l'appel à la fonction `plt.legend()` avant `plt.show()` :
+        ```python
+        plt.legend()  # Affiche la légende
+        ```
+        Exécutez encore votre script.
+
+        :::
+
+        ---
+
+        :::info Sauvegarde du graphique
+
+        Au lieu d'afficher le graphique à l'écran avec `plt.show()`, on peut le sauvegarder dans un fichier image (PNG, JPG, SVG, etc.) en utilisant la fonction `plt.savefig()` :
+        ```python
+        plt.savefig("mon_graphique.png")  # Sauvegarde le graphique en format PNG
+        plt.savefig("mon_graphique.svg")  # Sauvegarde le graphique en format SVG
+        plt.savefig("mon_graphique.jpg")  # Sauvegarde le graphique en format JPG
+        plt.savefig("mon_graphique.pdf")  # Sauvegarde le graphique en format PDF
+        ```
+        Ajoutez ce code avant `plt.show()` et exécutez encore votre script.<br />
+        Vous devriez voir les fichiers image créés dans le répertoire de votre script.
+
+        :::
+
+        ---
+
+        :::tip Autres fonctionnalités avancées de Matplotlib
+
+        Matplotlib offre de nombreuses fonctionnalités avancées pour personnaliser vos graphiques. Voici quelques exemples :
+
+        - **Graphiques à barres** : Utilisez `plt.bar()` pour créer des graphiques à barres.
+        - **Histogrammes** : Utilisez `plt.hist()` pour créer des histogrammes.
+        - **Graphiques en nuage de points** : Utilisez `plt.scatter()` pour créer des graphiques en nuage de points.
+        - **Personnalisation des couleurs et des styles** : Vous pouvez personnaliser les couleurs, les styles de ligne, les marqueurs, etc.
+        - **Sous-graphiques** : Utilisez `plt.subplot()` pour créer plusieurs graphiques dans une même figure.
+        - **Annotations** : Ajoutez des annotations à vos graphiques avec `plt.annotate()`.
+
+        Pour en savoir plus sur ces fonctionnalités et d'autres options avancées, consultez la [documentation officielle de Matplotlib](https://matplotlib.org/stable/contents.html).
+
+        Nous verrons plus tard la bibliothèque Numpy qui permet de manipuler efficacement des tableaux de données, ce qui est souvent utile en combinaison avec Matplotlib pour la visualisation de données.
+
+        :::
+
+
 
     </TabItem>
 
-    <TabItem value="set" label="set">
-
-    </TabItem>
-
-    <TabItem value="dict" label="dict">
+    <TabItem value="set" label="Ensemble (set)">
 
     </TabItem>
 
