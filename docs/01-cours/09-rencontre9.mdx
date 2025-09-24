@@ -41,6 +41,19 @@ import TabItem from '@theme/TabItem';
 
         :::
 
+        ---
+
+        :::tip Mise en abîme
+
+        Vous l'aurez peut-être deviné, on peut même avoir des listes de listes :
+        ```python showLineNumbers
+        liste_de_listes = [[1, 2, 3], ["a", "b", "c"], [True, False]]
+        print(liste_de_listes[0])  # Affiche [1, 2, 3]
+        print(liste_de_listes[1][1])  # Affiche "b"
+        ```
+
+        :::
+
     </TabItem>
 
     <TabItem value="foreach" label="For (séquence)">
@@ -160,6 +173,18 @@ import TabItem from '@theme/TabItem';
         - **Concision** : La compréhension de liste permet d'écrire moins de lignes de code pour accomplir la même tâche.
         - **Lisibilité** : Elle rend le code plus lisible en exprimant clairement l'intention de créer une nouvelle liste basée sur une transformation ou un filtrage.
         - **Performance** : La compréhension de liste est souvent plus rapide que l'utilisation de boucles `for` traditionnelles pour créer des listes.
+        :::
+
+        ---
+
+        :::warning Imbrication
+
+        Vous l'aurez peut-être deviné, on peut même avoir des compréhensions de liste imbriquées (*nested list comprehensions*) :
+        ```python showLineNumbers
+        liste = [[j for j in range(i)] for i in range(5)]
+        print(liste)  # Affiche [[ ], [0], [0, 1], [0, 1, 2], [0, 1, 2, 3]]
+        ```
+
         :::
 
     </TabItem>
@@ -357,7 +382,15 @@ import TabItem from '@theme/TabItem';
 
         ## ✏️ Exercices de compréhension
 
-        :::info Exercice -
+        :::info Exercice - Dessin 101
+
+        Sans ordinateur, dessinez sur papier la figure qui sera générée par ce code Matplotlib :
+
+        ```python showLineNumbers
+        import matplotlib.pyplot as plt
+        ...
+        plt.show()
+        ```
 
         :::
 
