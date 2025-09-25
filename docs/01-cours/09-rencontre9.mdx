@@ -408,34 +408,32 @@ import TabItem from '@theme/TabItem';
         Dans cet exemple :
         - Nous importons la bibliothèque Matplotlib en utilisant `import matplotlib.pyplot as plt`.
         - Nous définissons deux listes `x` et `y` qui contiennent les coordonnées du point à tracer, sous la forme de listes.
-        - Nous utilisons la fonction `plt.plot(x, y, 'o')` pour créer le graphique avec un point.
+        - Nous utilisons la fonction `plt.plot(x, y, 'o')` pour créer le graphique. Le troisième paramètre `'o'` indique que nous voulons afficher des points (des cercles) aux coordonnées spécifiées.
         - Enfin, nous affichons le graphique avec `plt.show()`.
 
-        Ajoutons maintenant plus de points :
-        ```python
-        # Données à tracer
+        Ajoutons maintenant plus de points (en modifiant les listes `x` et `y`) :
+        ```python showLineNumbers=4
         x = [-100, -50, 0, 50, 100]  # Liste des points x
         y = [10000, 2500, 0, 2500, 10000]  # Liste des points y (carré de x)
         ```
         Exécutez votre script modifié.
 
         Nous allons maintenant ajouter encore plus de points pour obtenir une courbe :
-        ```python
-        # Données à tracer
+        ```python showLineNumbers=4
         x = [i for i in range(-100, 101)]  # Liste des entiers de -100 à 100
         y = [i ** 2 for i in x]            # Liste des carrés des entiers
         ```
         Exécutez encore votre script.
 
         Puisqu'il y a maintenant beaucoup de points, on peut remplacer le marqueur `'o'` par `'-'` pour tracer une ligne continue :
-        ```python
+        ```python showLineNumbers=8
         plt.plot(x, y, '-')  # Tracer une ligne sans marqueur
         ```
         Exécutez encore votre script pour voir la différence.<br />
         Vous devriez voir une belle parabole s'afficher.
 
         On veut maintenant afficher en rouge les points où x est un multiple de 10 :
-        ```python
+        ```python showLineNumbers=10
         # Ajouter des points rouges pour x multiple de 10
         x_rouge = [i for i in x if i % 10 == 0]
         y_rouge = [i ** 2 for i in x_rouge]
@@ -444,7 +442,7 @@ import TabItem from '@theme/TabItem';
         Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
 
         Ajoutons maintenant la courbe miroir en vert pour y = -x² :
-        ```python showLineNumbers
+        ```python showLineNumbers=15
         # Ajouter la courbe miroir y = -x² en vert
         y_miroir = [-i ** 2 for i in x]
         plt.plot(x, y_miroir, 'g-')  # 'g-' indique une ligne verte
@@ -458,7 +456,7 @@ import TabItem from '@theme/TabItem';
         :::note Titres et étiquettes
 
         Pour rendre le graphique plus compréhensible, on peut ajouter un titre et des étiquettes (*labels*) aux axes :
-        ```python
+        ```python showLineNumbers=19
         plt.title("Graphique de y = x² et y = -x²")
         plt.xlabel("Axe des X")
         plt.ylabel("Axe des Y")
@@ -467,26 +465,30 @@ import TabItem from '@theme/TabItem';
 
         L'étiquette de l'axe des Y se retrouve un peu coupée ?<br />
         On peut ajuster la mise en page avec :
-        ```python
+        ```python showLineNumbers=22
         plt.tight_layout()  # Ajuste la mise en page pour éviter les coupures
         ```
         Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
 
         On peut aussi ajouter une grille pour mieux visualiser les points :
-        ```python
+        ```python showLineNumbers=24
         plt.grid(True)  # Active la grille
         ```
         Ajoutez ce code avant `plt.show()` et exécutez encore votre script.
 
         Aussi, si vous avez plusieurs courbes, vous pouvez ajouter une légende pour les différencier.<br />
         Pour ce faire, ajoutez une valeur (sous forme de `str`) au paramètre `label à chaque courbe dans les appels à `plt.plot()` :
-        ```python
+        ```python showLineNumbers=8
         plt.plot(x, y, '-', label='y = x²')
-        plt.plot(x, y_miroir, 'g-', label='y = -x²')
+        ```
+        ```python showLineNumbers=13
         plt.plot(x_rouge, y_rouge, 'ro', label='x multiple de 10')
         ```
+        ```python showLineNumbers=17
+        plt.plot(x, y_miroir, 'g-', label='y = -x²')
+        ```
         puis ajoutez l'appel à la fonction `plt.legend()` avant `plt.show()` :
-        ```python
+        ```python showLineNumbers=26
         plt.legend()  # Affiche la légende
         ```
         Exécutez encore votre script.
@@ -498,7 +500,7 @@ import TabItem from '@theme/TabItem';
         :::info Sauvegarde du graphique
 
         Au lieu d'afficher le graphique à l'écran avec `plt.show()`, on peut le sauvegarder dans un fichier image (PNG, JPG, SVG, etc.) en utilisant la fonction `plt.savefig()` :
-        ```python
+        ```python showLineNumbers=28
         plt.savefig("mon_graphique.png")  # Sauvegarde le graphique en format PNG
         plt.savefig("mon_graphique.svg")  # Sauvegarde le graphique en format SVG
         plt.savefig("mon_graphique.jpg")  # Sauvegarde le graphique en format JPG
