@@ -105,6 +105,19 @@ import TabItem from '@theme/TabItem';
 
         ---
 
+        :::info Vérification de présence
+        On peut vérifier si un élément est présent dans une liste en utilisant l'opérateur `in` :
+        ```python showLineNumbers
+        if 3 in ma_liste:
+            print("3 est dans la liste")
+        else:
+            print("3 n'est pas dans la liste")
+        ```
+        `3 in ma_liste` est une expression booléenne qui renvoie `True` si `3` est dans `ma_liste`, sinon `False`.
+        :::
+
+        ---
+
         :::info Ordre et tri
         Les listes en Python sont ordonnées, ce qui signifie que les éléments conservent leur ordre d'insertion.
 
@@ -254,14 +267,14 @@ import TabItem from '@theme/TabItem';
         Voici un autre exemple qui utilise une boucle `for` pour créer une nouvelle liste contenant les carrés des nombres d'une liste initiale :
         ```python showLineNumbers
         nombres = [1, 2, 3, 4, 5]
-        carrés = []
+        carres = []
         for nombre in nombres:
-            carrés.append(nombre ** 2)  # Ajoute le carré du nombre à la liste carrés
-        print("Les carrés des nombres sont :", carrés)
+            carres.append(nombre ** 2)  # Ajoute le carré du nombre à la liste carres
+        print("Les carrés des nombres sont :", carres)
         ```
-        Dans cet exemple, la boucle `for` parcourt chaque nombre dans la liste `nombres`, calcule son carré (`nombre ** 2`) et l'ajoute à la liste `carrés` en utilisant la méthode `append()`.
+        Dans cet exemple, la boucle `for` parcourt chaque nombre dans la liste `nombres`, calcule son carré (`nombre ** 2`) et l'ajoute à la liste `carres` en utilisant la méthode `append()`.
 
-        Exécutez-le en mode débogage pour suivre l'évolution des listes `nombres` et `carrés` à chaque itération.
+        Exécutez-le en mode débogage pour suivre l'évolution des listes `nombres` et `carres` à chaque itération.
         :::
 
         ---
@@ -299,16 +312,16 @@ import TabItem from '@theme/TabItem';
         Voici un exemple simple pour créer une liste des carrés des nombres pairs d'une liste initiale :
         ```python showLineNumbers
         nombres = [1, 2, 3, 4, 5, 6]
-        carrés_pairs = [x ** 2 for x in nombres if x % 2 == 0]
-        print(carrés_pairs)  # Affiche [4, 16, 36]
+        carres_pairs = [x ** 2 for x in nombres if x % 2 == 0]
+        print(carres_pairs)  # Affiche [4, 16, 36]
         ```
         Dans cet exemple :
         - Nous parcourons chaque nombre `x` dans la liste `nombres`.
         - Nous calculons le carré de `x` (`x ** 2`) uniquement si `x` est pair (`if x % 2 == 0`).
-        - Le résultat est une nouvelle liste `carrés_pairs` contenant les carrés des nombres pairs.
+        - Le résultat est une nouvelle liste `carres_pairs` contenant les carrés des nombres pairs.
 
         Exécutez ce code en mode débogage pour bien comprendre son fonctionnement.<br />
-        Mettez un point d'arrêt sur la ligne 2 et avancez une ligne à la fois pour suivre l'évolution de la variable `x` et de la liste `carrés_pairs`.
+        Mettez un point d'arrêt sur la ligne 2 et avancez une ligne à la fois pour suivre l'évolution de la variable `x` et de la liste `carres_pairs`.
 
         :::
 
@@ -520,6 +533,64 @@ import TabItem from '@theme/TabItem';
     </TabItem>
 
     <TabItem value="set" label="Ensemble (set)">
+
+        :::info Introduction aux ensembles
+        Un ensemble (`set`) est une collection non ordonnée et non indexée d'éléments uniques en Python. Les ensembles sont utiles lorsque vous souhaitez stocker des éléments sans doublons et effectuer des opérations mathématiques comme l'union, l'intersection et la différence.
+
+        Les ensembles sont définis par des accolades `{}` ou en utilisant la fonction `set()`. Par exemple :
+        ```python showLineNumbers
+        mon_ensemble = {1, 2, 3, 4, 5}
+        autre_ensemble = set([4, 5, 6, 7, 8])
+        ```
+        :::
+
+        ---
+
+        :::info Caractéristiques des ensembles
+        - **Unicité** : Les ensembles ne peuvent pas contenir de doublons. Si vous essayez d'ajouter un élément déjà présent dans l'ensemble, il ne sera pas ajouté.
+        - **Non ordonné** : Les éléments d'un ensemble n'ont pas d'ordre spécifique. Vous ne pouvez pas accéder aux éléments par index.
+        - **Modifiable** : Vous pouvez ajouter ou supprimer des éléments d'un ensemble après sa création.
+        :::
+
+        ---
+
+        :::info Opérations sur les ensembles
+        Voici quelques opérations courantes que vous pouvez effectuer avec les ensembles en Python :
+
+        - **Ajouter un élément** : Utilisez la méthode `add()` pour ajouter un élément à un ensemble.
+        ```python showLineNumbers
+        mon_ensemble.add(6)
+        ```
+
+        - **Supprimer un élément** : Utilisez la méthode `remove()` pour supprimer un élément spécifique (lève une erreur si l'élément n'existe pas) ou `discard()` (ne lève pas d'erreur).
+        ```python showLineNumbers
+        mon_ensemble.remove(3)
+        mon_ensemble.discard(10)  # Ne fait rien si 10 n'est pas dans l'ensemble
+        ```
+
+        - **Vérifier l'appartenance** : Utilisez l'opérateur `in` pour vérifier si un élément est dans un ensemble.
+        ```python showLineNumbers
+        if 4 in mon_ensemble:
+            print("4 est dans l'ensemble")
+        ```
+
+        - **Union** : Utilisez l'opérateur `|` ou la méthode `union()` pour obtenir l'union de deux ensembles.
+        ```python showLineNumbers
+        union = mon_ensemble | autre_ensemble
+        ```
+        - **Intersection** : Utilisez l'opérateur `&` ou la méthode `intersection()` pour obtenir l'intersection de deux ensembles.
+        ```python showLineNumbers
+        intersection = mon_ensemble & autre_ensemble
+        ```
+        - **Différence** : Utilisez l'opérateur `-` ou la méthode `difference()` pour obtenir la différence entre deux ensembles.
+        ```python showLineNumbers
+        difference = mon_ensemble - autre_ensemble
+        ```
+        - **Différence symétrique** : Utilisez l'opérateur `^` ou la méthode `symmetric_difference()` pour obtenir les éléments qui sont dans l'un ou l'autre des ensembles, mais pas dans les deux.
+        ```python showLineNumbers
+        sym_diff = mon_ensemble ^ autre_ensemble
+        ```
+        :::
 
     </TabItem>
 
