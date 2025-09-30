@@ -100,6 +100,8 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
 
         - Si n ≥ 1 : intervalle initial = [0, n]
         - Si 0 < n < 1 : intervalle initial = [n, 1]
+        - Si n = 0 : la racine est 0
+        - Si n < 0 : la racine n'existe pas dans les réels (on lève une exception)
 
         Par la suite, on va réduire l'intervalle de moitié de la manière suivante :
         - On calcule le milieu = (bas + haut) / 2
