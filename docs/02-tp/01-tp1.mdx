@@ -106,7 +106,7 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
         Par la suite, on va réduire l'intervalle de moitié de la manière suivante :
         - On calcule le milieu = (bas + haut) / 2
         - Si milieu² est plus petit que n, on déplace bas = milieu
-        - Si milieu² est plus grand que n, on déplace haut = milieu
+        - Si milieu² est plus grand ou égal à n, on déplace haut = milieu
 
         On répète l'opération de réduction de l'intervalle jusqu'à ce que la largeur de l’intervalle (haut - bas) soit inférieure à la précision souhaitée.
         Dans ce cas, la racine est approximée par (bas + haut) / 2.
