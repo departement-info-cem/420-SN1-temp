@@ -752,12 +752,15 @@ import TabItem from '@theme/TabItem';
         ```python showLineNumbers
         virus = ["Virus-T", "Virus-C", "Virus-G", "Uroboros"]
         ```
+
+        <br/>
         ##### ⚠️ CONTRAINTES À RESPECTER
 
         - Votre code doit fonctionner peu importe le nombre d'éléments dans la liste.
         - Vous pouvez modifier le contenu de la liste fournie pour tester différents scénarios.
         - Si la liste est vide, afficher un message sympa à l'utilisateur.
 
+        <br/>
         ##### ✅ RÉSULTAT ATTENDU AVEC LA LISTE DE DÉPART FOURNIE
 
         ```python
@@ -767,6 +770,8 @@ import TabItem from '@theme/TabItem';
           Virus-G
           Uroboros
         ```
+
+        <br/>
         ##### ✅ RÉSULTAT ATTENDU AVEC UNE LISTE VIDE
 
         ```python
@@ -779,26 +784,28 @@ import TabItem from '@theme/TabItem';
         :::info Exercice - CALCULER DES STATISTIQUES V1
 
         La corporation remarque des variations de la température dans l'une des salles d'entreposage. \
-        Différentes mesures de la température ont été prise durant la journée :
+        Différentes mesures de la température ont été prises durant la journée :
 
         ```python showLineNumbers
         temperatures = [23.5, 25.4, 27.6, 24.9, 26.7, 24.6]
         ```
-
+        <br/>
         ##### 🎯 OBJECTIFS
         - Calculer par programmation :
-            - La température la plus petite
-            - La température la plus élevé
+            - La température la plus basse
+            - La température la plus élevée
             - La température moyenne
-            - Le nombre de mesure prise
+            - Le nombre de mesures prises
         - Afficher ces informations dans le format défini plus bas
 
+        <br/>
         ##### ⚠️ CONTRAINTES À RESPECTER
 
-        - Vous **n'avez pas** le droit d'appeller des fonctions :(
+        - Vous **n'avez pas** le droit d'utiliser des fonctions **(ಥ⌣ಥ)**.
         - Vous pouvez utiliser qu'**une seule boucle**.
         - Votre code doit fonctionner peu importe le nombre de mesure prise.
 
+        <br/>
         ##### ✅ RÉSULTAT ATTENDU AVEC LA LISTE DE DÉPART FOURNIE
 
         ```python
@@ -806,7 +813,7 @@ import TabItem from '@theme/TabItem';
                  min : 23.5
                  max : 27.6
              moyenne : 25.45
-          nb. mesure : 6
+         nb. mesures : 6
         ```
 
 
@@ -814,19 +821,44 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - CALCULER DES STATISTIQUES V2
 
-        Recopier le code du numéro précédent dans un nouveau script python. \
-        Vous devez cette version du code afin de respecter ces 2 contraintes :
-        - Vous **n'avez pas** le droit d'utiliser de boucle
-        - Vous devez utilisez des fonctions pour vos calculs (ex : min)
+        Recopier le code du numéro précédent dans un nouveau script. \
+        Vous devez modifier le code afin de respecter ces 2 contraintes :
+        - Vous **n'avez pas** le droit d'utiliser de boucle.
+        - Vous devez utiliser des fonctions pour réaliser les calculs.
 
+        Le résultat produit doit être identique au numéro précédent.
         :::
 
-        :::info Exercice - Jeu de devinette passif-aggressif
+        :::info Exercice - Jeu de devinette amélioré
 
-        Vous devez modifier le code du jeu de devinette de nombre de la rencontre 3. \
-        Dans cette version, si l'utilisateur saisie un nombre déjà saisie précédemment, vous devez l'insulter. \
+        Recopier le code de l'exercice "**Jeu de devinette**" de la rencontre #5, il vous servira de **point de départ**. \
+        Vous devez **améliorer le jeu** afin d'insulter gentiment l'utilisateur s'il saisit un nombre déjà saisi. \
+        Malgré sa stupidité, vous devez quand même lui indiquer si la réponse est plus haut ou plus bas!
 
-        TODO À FINIR
+        ##### ✅ EXEMPLE DE RÉSULTAT ATTENDU
+
+        <i>**Rappel** : le nombre est choisi aléatoirement par l'ordinateur.</i>
+        <br/><br/>
+
+        ```python
+        Tente de trouver le nombre que j'ai en tête : 50
+        Plus haut!
+
+        Tente de trouver le nombre que j'ai en tête : 95
+        Plus bas!
+
+        Tente de trouver le nombre que j'ai en tête : 92
+        Plus bas!
+
+        Tente de trouver le nombre que j'ai en tête : 50
+        Tu ne sembles pas être le pingouin glissant le plus loin...
+        Tu avais déjà essayé cette réponse...
+        Plus haut!
+
+        Tente de trouver le nombre que j'ai en tête : 89
+        Bravo humain, vous avez trouvé le nombre!
+        ```
+
 
         :::
 
