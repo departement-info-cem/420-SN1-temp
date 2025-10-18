@@ -710,33 +710,69 @@ import TabItem from '@theme/TabItem';
 
         ## ✏️ Exercices de compréhension
 
-        :::info Exercice - Dessin 101
+        :::info Exercice - Trace d'un tri à bulles
 
-        Sans ordinateur, dessinez sur papier la figure qui sera générée par ce code Matplotlib :
+        Le code ci-dessous tri une liste en utilisant un algorithme nommé le tri à bulles. \
+        Réaliser la trace d'exécution de ce code.
 
         ```python showLineNumbers
-        import matplotlib.pyplot as plt
-        ...
-        plt.show()
+        # Liste de 3 éléments non-ordonné
+        liste = [42, 17, 8]
+
+        # Tri à bulles
+        nb_elements = len(liste)
+        for i in range(nb_elements):
+
+            for j in range(0, nb_elements - i - 1):
+
+                # Si l'élément courant est plus grand que l'élément suivant dans la liste
+                if liste[j] > liste[j + 1]:
+
+                    # Utilisation d'une variable temporaire pour échanger les éléments de place
+                    temp = liste[j]
+                    liste[j] = liste[j + 1]
+                    liste[j + 1] = temp
+                    print(liste)
+
+        # Affichage du résultat
+        print("Liste triée :", liste)
         ```
 
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
+        Validez **ensuite** votre réponse à l'aide du débogueur en avançant pas à pas.
 
         :::
 
         ## 🔨 Exercices de création
 
-        :::info Exercice -
+        :::info Exercice - Affichage des virus
+
+        Umbrella Corporation souhaite afficher la liste des virus qu'elle possède. \
+        La présentation souhaitée est détaillée ci-dessous. La liste est contenue dans la variable **virus**.
+
+        ```python showLineNumbers
+        virus = ["Virus-T", "Virus-C", "Virus-G", "Uroboros"]
+        ```
+        ##### ⚠️ CONTRAINTES À RESPECTER
+
+        - Votre code doit fonctionner peu importe le nombre d'éléments dans la liste.
+        - Vous pouvez modifier le contenu de la liste fournie pour tester différents scénarios.
+        - Si la liste est vide, afficher un message sympa à l'utilisateur.
+
+        ##### ✅ RÉSULTAT ATTENDU AVEC LA LISTE DE DÉPART FOURNIE
+
+        ```python
+        Liste des 4 virus :
+          Virus-T
+          Virus-C
+          Virus-G
+          Uroboros
+        ```
+        ##### ✅ RÉSULTAT ATTENDU AVEC UNE LISTE VIDE
+
+        ```python
+        Désolé aucun produit pharmaceutique mortel disponible
+        ```
+
 
         :::
 
