@@ -864,7 +864,23 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Espèces marines observées
 
-        TODO : combinaison de 2 listes de manifèere provenant de différente région, afficher une version avec les doublons et une sans
+        Des océanographes étudient les espèces marines observées dans deux zones côtières différentes. \
+        Chaque équipe a recensé les espèces dans sa zone, elles sont recensées dans les 2 listes ci-dessous. \
+        Pour établir un inventaire global, ils veulent **fusionner** les deux listes **sans doublons**.
+
+        ```python
+        # Liste des espèces marines observées dans la zone Atlantique
+        zone_atlantique = ["morue", "homard", "maquereau", "phoque"]
+
+        # Liste des espèces marines observées dans la zone Pacifique
+        zone_pacifique = ["saumon", "morue", "otarie", "maquereau"]
+        ```
+
+        ##### ✅ RÉSULTAT ATTENDU
+
+        ```python
+        Espèces recensées : ["morue", "homard", "maquereau", "phoque", "saumon", "otarie"]
+        ```
 
         :::
 
