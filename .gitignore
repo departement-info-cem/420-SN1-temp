@@ -18,3 +18,9 @@
 npm-debug.log*
 yarn-debug.log*
 yarn-error.log*
+
+# JetBrains IDE (PyCharm, WebStorm, IntelliJ)
+.idea/
+
+# Copilot migration files (in case the folder is tracked)
+.idea/copilot.data.migration.*
