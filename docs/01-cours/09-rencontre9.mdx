@@ -712,8 +712,8 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Trace d'un tri à bulles
 
-        Le code ci-dessous tri une liste en utilisant un algorithme nommé le tri à bulles. \
-        Réaliser la trace d'exécution de ce code.
+        Le code ci-dessous trie une liste en utilisant un algorithme nommé le tri à bulles. \
+        Réalisez la trace d'exécution de ce code.
 
         ```python showLineNumbers
         # Liste de 3 éléments non-ordonné
@@ -801,9 +801,9 @@ import TabItem from '@theme/TabItem';
         <br/>
         ##### ⚠️ CONTRAINTES À RESPECTER
 
-        - Vous **n'avez pas** le droit d'utiliser des fonctions **(ಥ⌣ಥ)**.
-        - Vous pouvez utiliser qu'**une seule boucle**.
-        - Votre code doit fonctionner peu importe le nombre de mesure prise.
+        - Vous **n'avez pas** le droit d'utiliser des fonctions prédéfinies comme `min()`, `max()`, `sum()` ou `len()` **(ಥ⌣ಥ)**.
+        - Vous ne pouvez utiliser qu'**une seule boucle**.
+        - Votre code doit fonctionner peu importe le nombre de mesures prises.
 
         <br/>
         ##### ✅ RÉSULTAT ATTENDU AVEC LA LISTE DE DÉPART FOURNIE
@@ -821,17 +821,17 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - CALCULER DES STATISTIQUES V2
 
-        Recopier le code du numéro précédent dans un nouveau script, il vous servira de point de départ. \
+        Recopiez le code du numéro précédent dans un nouveau script, il vous servira de point de départ. \
         Vous devez modifier le code afin de respecter ces 2 contraintes :
         - Vous **n'avez pas** le droit d'utiliser de boucle.
-        - Vous devez utiliser des fonctions pour réaliser les calculs.
+        - Cette fois, vous devez utiliser des fonctions prédéfinies pour réaliser les calculs.
 
         Le résultat produit doit être identique au numéro précédent.
         :::
 
         :::info Exercice - Jeu de devinette amélioré
 
-        Recopier le code de l'exercice "**Jeu de devinette**" de la rencontre #5, il vous servira de **point de départ**. \
+        Recopiez votre code de l'exercice "**Jeu de devinette**" de la rencontre #5, il vous servira de **point de départ**. \
         Vous devez **améliorer le jeu** afin d'insulter gentiment l'utilisateur s'il saisit un nombre déjà saisi. \
         Malgré sa stupidité, vous devez quand même lui indiquer si la réponse est plus haut ou plus bas!
 
@@ -857,7 +857,7 @@ import TabItem from '@theme/TabItem';
         Plus haut!
 
         Tente de trouver le nombre que j'ai en tête : 89
-        Bravo humain, vous avez trouvé le nombre!
+        Bravo humain, tu as trouvé le nombre!
         ```
 
         :::
@@ -891,12 +891,12 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice - AFFICHAGE AMÉLIORÉE DES VIRUS - VERSION 1 (2 LISTES SÉPARÉES)
+        :::info Exercice - AFFICHAGE AMÉLIORÉ DES VIRUS - VERSION 1 (2 LISTES SÉPARÉES)
 
-        Recopier le code du 1<sup>er</sup> numéro dans un nouveau script, il vous servira de point de départ.
+        Recopiez le code de l'exercice `Affichage des virus` dans un nouveau script, il vous servira de point de départ.
 
         La Umbrella Corporation souhaite améliorer le rapport précédent fait. \
-        Elle vous fournie sous la forme d'une liste des caractéristiques sur chaque virus.
+        Elle vous fournit sous la forme d'une liste des caractéristiques sur chaque virus.
 
         ```python
         virus = ["Virus-T", "Virus-C", "Virus-G", "Uroboros"]
@@ -908,7 +908,7 @@ import TabItem from '@theme/TabItem';
         ]
         ```
 
-        <i>**Remarques** : Les 2 listes ont toujours le même nombre d'éléments et l'ordre est cohérente.</i>
+        <i>**Remarques** : Les 2 listes ont toujours le même nombre d'éléments et l'ordre est cohérent (c'est-à-dire que le virus à l'index `i` dans la liste `virus` possède la caractéristique à l'index `i` dans la liste `caracteristiques`).</i>
 
         <br/>
         <br/>
@@ -925,23 +925,25 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - AFFICHAGE AMÉLIORÉE DES VIRUS - VERSION 2 (1 SEULE LISTE AVEC 2 DIMENSIONS)
 
-        Recopier le code du 1<sup>er</sup> numéro dans un nouveau script, il vous servira de point de départ.
+        Recopiez le code de l'exercice `Affichage des virus` dans un nouveau script, il vous servira de point de départ.
 
         La Umbrella Corporation souhaite améliorer le rapport précédent fait. \
-        La corporation souhaite désormait affiché dans le rapport le taux de succès de mutation. \
-        Elle vous fournie désormait toutes les données sous la forme d'une seule liste!
+        La corporation souhaite désormais afficher dans le rapport le taux de succès de mutation. \
+        Elle vous fournit désormais toutes les données sous la forme d'une seule liste!
 
         ```python
         virus_et_autres_info = [
-            ["Virus-T",0.9,"Transforme les humains en zombies et armes biologiques"],
-            ["Virus-C",0.0001,"Provoque des mutations extrêmes et régénère les tissus"],
-            ["Virus-G",0.85,"Cause des mutations incontrôlables avec régénération cellulaire rapide"],
-            ["Uroboros",0.005,"Consomme les organismes incompatibles et renforce les hôtes compatibles"]
+            ["Virus-T", 0.9 ,"Transforme les humains en zombies et armes biologiques"],
+            ["Virus-C", 0.0001 ,"Provoque des mutations extrêmes et régénère les tissus"],
+            ["Virus-G", 0.85, "Cause des mutations incontrôlables avec régénération cellulaire rapide"],
+            ["Uroboros", 0.005, "Consomme les organismes incompatibles et renforce les hôtes compatibles"]
         ]
         ```
+        <i>**Remarque** : C'est une liste à 2 dimensions (liste de listes).</i>
+
         <br/>
         <br/>
-        ##### ✅ RÉSULTAT ATTENDU AVEC LES LISTES DE DÉPART FOURNIES
+        ##### ✅ RÉSULTAT ATTENDU AVEC LA LISTE DE DÉPART FOURNIE
 
         ```python
         Liste des 4 virus :
@@ -952,17 +954,17 @@ import TabItem from '@theme/TabItem';
         ```
         :::
 
-        :::info Exercice - Manipulation de listes de compréhensions
+        :::info Exercice - Manipulation de listes (par la compréhension!)
 
-        Les listes en compréhension permet de transformer, filtrer et manipuler des données de manière concise et efficace. \
+        La compréhension de liste permet de transformer, filtrer et manipuler des données de manière concise et efficace. \
         À partir de la liste suivante :
 
         ```python
         liste = [1, 2, 3, 4, 5]
         ```
 
-        Tu dois créer **10 nouvelles listes** en utilisant **exclusivement des compréhensions de liste**. \
-        Chaque cas représente une transformation ou une opération différente.
+        Vous devez créer **10 nouvelles listes** en utilisant **exclusivement la [compréhension de liste](?onglet=listcomp)**. \
+        Chaque cas représente une transformation ou une opération **différente**.
 
         ##### 🧩 CAS À COMPLÉTER
         1. Multiplier chaque élément par 5 \
@@ -997,10 +999,10 @@ import TabItem from '@theme/TabItem';
 
         ##### ✅ FORMAT ATTENDU
 
-        Pour chaque cas, tu dois écrire ton code comme ceci :
+        Pour chaque cas, vous devez écrire votre code comme ceci :
 
         ```python
-        casX = [ ... ]  # Remplace les "..." par ta compréhension de liste
+        casX = [ ... ]  # Remplacez les "..." par votre compréhension de liste
         print(casX)
         ```
 
@@ -1016,7 +1018,7 @@ import TabItem from '@theme/TabItem';
         ensemble2 = {4, 5, 6, 7, 8}
         ```
 
-        Tu dois créer **3 nouveaux ensembles** en utilisant **exclusivement des opérations sur les set**. \
+        Vous devez créer **3 nouveaux ensembles** en utilisant **exclusivement des opérations sur les set**. \
         Pas de boucles, ni de compréhension de liste. Chaque cas représente une transformation ou une opération différente.
 
         <br/>
@@ -1030,10 +1032,10 @@ import TabItem from '@theme/TabItem';
         <br/>
         ##### ✅ FORMAT ATTENDU
 
-        Pour chaque cas, tu dois écrire ton code comme ceci :
+        Pour chaque cas, vous devez écrire votre code comme ceci :
 
         ```python
-        casX = [ ... ]  # Remplace les "..." par ton opération sur les ensembles
+        casX = [ ... ]  # Remplacez les "..." par une opération sur les ensembles
         print(casX)
         ```
 
