@@ -780,6 +780,7 @@ import TabItem from '@theme/TabItem';
         ##### ⚠️ CONTRAINTES À RESPECTER
 
         - Votre code doit fonctionner peu importe le nombre d'éléments dans la liste.
+        - Vous devez utiliser un for ... in pour parcourir les éléments de la liste.
         - Vous pouvez modifier le contenu de la liste fournie pour tester différents scénarios.
         - Si la liste est vide, afficher un message sympa à l'utilisateur.
 
@@ -825,7 +826,7 @@ import TabItem from '@theme/TabItem';
         ##### ⚠️ CONTRAINTES À RESPECTER
 
         - Vous **n'avez pas** le droit d'utiliser des fonctions prédéfinies comme `min()`, `max()`, `sum()` ou `len()` **(ಥ⌣ಥ)**.
-        - Vous ne pouvez utiliser qu'**une seule boucle**.
+        - Vous ne pouvez utiliser qu'**une seule boucle** (for ... in).
         - Votre code doit fonctionner peu importe le nombre de mesures prises.
 
         <br/>
@@ -931,7 +932,7 @@ import TabItem from '@theme/TabItem';
         ]
         ```
 
-        <i>**Remarques** : Les 2 listes ont toujours le même nombre d'éléments et l'ordre est cohérent (c'est-à-dire que le virus à l'index `i` dans la liste `virus` possède la caractéristique à l'index `i` dans la liste `caracteristiques`).</i>
+        <i>**Remarques** : Les 2 listes ont toujours le même nombre d'éléments et l'ordre est cohérent (c'est-à-dire que le virus à l'index `i` dans la liste `virus` possède la caractéristique à l'index `i` dans la liste `caracteristiques`). Étant donné qu'un même index doit être utilisé pour parcourir les 2 listes simultanément, un for ... in ne fonctionnera pas, vous aurez besoin d'une boucle classique (while).</i>
 
         <br/>
         <br/>
