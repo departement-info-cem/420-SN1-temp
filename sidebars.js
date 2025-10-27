@@ -58,12 +58,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "11 - 🔢 Numpy",
+      label: "11 - 🔢 Numpy, Pandas",
       id: "cours/rencontre11",
     },
     {
       type: "doc",
-      label: "12 - 🤖 Statistiques, IA",
+      label: "12 - 🤖 IA et TP2",
       id: "cours/rencontre12",
     },
     {
