@@ -38,12 +38,12 @@ plt.show()
 
 ---
 
-## 🔹 Plusieurs courbes
+## 🔹 Plusieurs courbes et légendes
 
 ```python
 plt.plot(x, y, label="x²")
 plt.plot(x, [i**3 for i in x], label="x³")
-plt.legend()
+plt.legend() #les label des 2 courbes seront affichés dans la légende
 plt.show()
 ```
 
@@ -52,7 +52,7 @@ plt.show()
 ## 🔹 Personnalisation rapide
 
 ```python
-plt.plot(x, y, color="red", linestyle="--", marker="o")
+plt.plot(x, y, color="red", linestyle="--", marker="o", alpha=0.5)
 plt.show()
 ```
 
