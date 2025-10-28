@@ -5,20 +5,127 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 🗂 Fichiers
+# 🗂 Fichiers, statistiques
 
 # 🏗️ en construction 🏗
 
 <Tabs queryString="onglet">
 
-    <TabItem value="theorie" label="Théorie" default>
+    <TabItem value="tuple" label="Tuple (tuple)" default>
 
-        Aujourd'hui nous allons voir comment manipuler des fichiers texte.
+        :::tip Introduction
 
-        Dans une deuxième partie, nous manipulerons des fichiers "Comma Separated Values". Il s'agit d'un standard
-        qui permet facilement de charger des données ou de sauver des fichiers.
+        Vous connaissez maintenant les 4 types de données de base en Python :<br />
+        - les entiers (`int`) : 5, -3, 42, 0, ...
+        - les nombres à virgule (`float`) : 3.14, -0.001, 2.0, ...
+        - les chaînes de caractères (`str`) : "Bonjour", 'a', "123", ...
+        - les booléens (`bool`) : `True`, `False`
 
-        ## Fichiers texte
+        Et deux structures de données principales :
+        - les listes (`list`) : une collection ordonnée et modifiable d'éléments, définie en utilisant des crochets `[]`.
+        - les ensembles (`set`) : une collection non ordonnée et non indexée d'éléments uniques, définie en utilisant des accolades `{}`.
+
+        Nous allons maintenant découvrir deux autre types de [structures de données](../aidememoire/structuresdonnes) en Python :
+        - les tuples (`tuple`).
+        - les dictionnaires (`dict`).
+
+        :::
+
+        ---
+
+        :::note Tuple
+
+        Un tuple est une collection ordonnée et immuable d'éléments.<br/>
+        Contrairement aux listes, les tuples ne peuvent pas être modifiés après leur création.<br/>
+        Ils sont définis en utilisant des parenthèses `()`.
+
+        :::
+
+        ---
+
+        :::info Création d'un tuple
+
+        ```python
+        # Création d'un tuple
+        mon_tuple = (1, 2, 3, "quatre", True)
+        ```
+
+        On peut aussi créer un tuple sans parenthèses :
+
+        ```python
+        mon_tuple = 1, 2, 3, "quatre", True
+        ```
+
+        On peut convertir une liste en tuple en utilisant la fonction `tuple()` :
+
+        ```python
+        ma_liste = [1, 2, 3]
+        mon_tuple = tuple(ma_liste)
+        print(mon_tuple)  # Output: (1, 2, 3)
+        ```
+
+        :::
+
+        ---
+
+        :::info Accès aux éléments d'un tuple
+        On peut accéder aux éléments d'un tuple en utilisant des indices, de la même manière que pour les listes :
+
+        ```python
+        mon_tuple = (10, 20, 30, 40, 50)
+        print(mon_tuple[0])  # Output: 10
+        print(mon_tuple[2])  # Output: 30
+        ```
+
+        Comme les listes, les indices négatifs fonctionnent aussi :
+
+        ```python
+        print(mon_tuple[-1])  # Output: 50
+        print(mon_tuple[-3])  # Output: 30
+        ```
+
+        Cependant, comme les tuples sont immuables (contrairement aux listes), on ne peut pas modifier leurs éléments :
+
+        ```python
+        mon_tuple[0] = 100  # Cela provoquera une erreur
+        ```
+        :::
+
+        ---
+
+        :::tip Retour de fonctions multiples
+
+        Une fonction qui retourne plusieurs valeurs utilise souvent un tuple pour les regrouper.
+        - Les parenthèses sont souvent omises après le `return`.
+        - Les valeurs retournées peuvent être soit capturées dans une seule variable (un tuple), soit décomposées en plusieurs variables, ce qui est très pratique.
+
+        ```python
+        def calculer_operations(a, b):
+            somme = a + b
+            produit = a * b
+            return somme, produit  # Retourne un tuple (somme, produit)
+
+        resultat = calculer_operations(3, 5)
+        print(resultat)  # Output: (8, 15)
+
+        somme, produit = calculer_operations(3, 5)
+        print(somme)    # Output: 8
+        print(produit)  # Output: 15
+        ```
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="dict" label="Dictionnaire (dict)">
+
+    </TabItem>
+
+    <TabItem value="fichier" label="Fichier">
+
+    </TabItem>
+
+    <TabItem value="texte" label="Fichier texte">
 
         Un fichier texte c'est quoi?
 
@@ -32,7 +139,9 @@ import TabItem from '@theme/TabItem';
         you
         ```
 
-        ## Fichiers CSV
+    </TabItem>
+
+    <TabItem value="csv" label="Fichier CSV">
 
         Les fichiers CSV sont un cas spécial de fichier texte
         - une entrée de données correspond à une ligne
@@ -45,11 +154,7 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
-    <TabItem value="tuple" label="Tuple (tuple)">
-
-    </TabItem>
-
-    <TabItem value="dict" label="Dictionnaire (dict)">
+    <TabItem value="stats" label="Scikit-learn">
 
     </TabItem>
 
