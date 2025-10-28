@@ -119,6 +119,137 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="dict" label="Dictionnaire (dict)">
 
+
+        :::info Intro
+
+        Le dictionnaire est une structure de données très puissante en Python, mais aussi plus complexe que les listes, les ensembles ou les tuples.
+
+        Il ressemble à un ensemble, où chaque élément unique est en fait une clé, associée à une valeur.<br />
+        Un peu comme un dictionnaire papier, où chaque mot (la clé) est associé à une définition (la valeur).<br />
+        On peut accéder rapidement à une valeur en connaissant sa clé.
+
+        Par exemple, on peut créer un dictionnaire pour stocker des informations sur une personne :
+        - la clé "nom" est associée à la valeur "Alice"
+        - la clé "âge" est associée à la valeur 30
+        - la clé "ville" est associée à la valeur "Montréal"
+
+        Pour créer un dictionnaire, on utilise des accolades `{}` et on sépare les clés des valeurs avec des deux-points `:`.<br />
+        Chaque paire clé-valeur est séparée par une virgule `,`.
+
+        ```python
+        # Création d'un dictionnaire
+        mon_dict = {
+            "nom": "Alice",
+            "âge": 30,
+            "ville": "Montréal"
+        }
+        ```
+
+        On peut aussi créer un dictionnaire vide et y ajouter des éléments plus tard (ce qui est plus courant et très pratique) :
+
+        ```python
+        mon_dict = {}
+        mon_dict["nom"] = "Alice"
+        mon_dict["âge"] = 30
+        ```
+
+        :::
+
+        ---
+
+        :::info Accès aux éléments d'un dictionnaire
+        On peut accéder aux valeurs d'un dictionnaire en utilisant leurs clés :
+
+        ```python
+        mon_dict = {"nom": "Alice", "âge": 30, "ville": "Montréal"}
+        print(mon_dict["nom"])  # Output: Alice
+        print(mon_dict["âge"])  # Output: 30
+        ```
+
+        On peut aussi modifier les valeurs associées à une clé :
+
+        ```python
+        mon_dict["âge"] = 31
+        print(mon_dict["âge"])  # Output: 31
+        ```
+
+        :::
+
+        ---
+
+        :::info Types de clés et valeurs
+        - Les **clés** dans un dictionnaire doivent être de types immuables (comme les chaînes de caractères, les nombres ou les tuples immuables).
+        - Les **valeurs** peuvent être de n'importe quel type, y compris des listes, des ensembles, des tuples ou même d'autres dictionnaires.
+        ```python
+        mon_dict = {
+            "nom": "Alice",          # clé str, valeur str
+            "âge": 30,               # clé str, valeur int
+            "notes": [85, 90, 78],   # clé str, valeur list
+            "adresse": {             # clé str, valeur dict
+                "rue": "123 Rue Principale",
+                "ville": "Montréal"
+            }
+        }
+        ```
+
+        :::
+
+        ---
+
+        :::info Itération sur un dictionnaire
+        On peut parcourir les clés ou les paires clé-valeur d'un dictionnaire en utilisant une boucle `for` :
+        ```python
+        mon_dict = {"nom": "Alice", "âge": 30, "ville": "Montréal"}
+
+        # Itération sur les clés :
+        for cle in mon_dict:
+            print(cle)  # Affiche chaque clé et sa valeur
+
+        print("---")
+
+        # Itération sur les paires clé-valeur :
+        for cle, valeur in mon_dict.items():
+            print(cle, valeur)  # Affiche chaque paire clé-valeur
+        ```
+        L'exécution de ce code affichera :
+        ```
+        nom
+        âge
+        ville
+        ---
+        nom Alice
+        âge 30
+        ville Montréal
+        ```
+        :::
+
+        ---
+
+        :::info Méthodes utiles des dictionnaires
+        Voici quelques méthodes couramment utilisées avec les dictionnaires :
+        - `mon_dict.keys()` : retourne une `list` des clés du dictionnaire.
+        - `mon_dict.values()` : retourne une `list` des valeurs du dictionnaire.
+        - `mon_dict.items()` : retourne une `list` de tuples (clé, valeur).
+
+        Exemple :
+        ```python
+        mon_dict = {"nom": "Alice", "âge": 30, "ville": "Montréal"}
+        print(mon_dict.keys())    # Output: dict_keys(['nom', 'âge', 'ville'])
+        print(mon_dict.values())  # Output: dict_values(['Alice', 30, 'Montréal'])
+        print(mon_dict.items())   # Output: dict_items([('nom', 'Alice'), ('âge', 30), ('ville', 'Montréal')])
+        ```
+
+        :::
+
+        ---
+
+        :::tip Utilisations courantes des dictionnaires
+        Les dictionnaires sont très utiles pour :
+        - Stocker des données structurées (comme des informations sur une personne, un produit, etc.).
+        - Compter des occurrences (par exemple, compter combien de fois chaque mot apparaît dans un texte).
+        - Regrouper des données associées (comme des listes de scores pour différents joueurs).
+        :::
+
     </TabItem>
 
     <TabItem value="fichier" label="Fichier">
