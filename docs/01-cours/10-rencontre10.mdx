@@ -529,6 +529,225 @@ import TabItem from '@theme/TabItem';
 
     </TabItem>
 
+    <TabItem value="numpy" label="Numpy">
+
+        :::info Introduction à Numpy
+
+        Numpy est une bibliothèque Python très populaire pour le calcul scientifique et l'analyse de données.
+        - Elle fournit des structures de données puissantes, comme les tableaux multidimensionnels (`ndarray`), qui permettent de manipuler efficacement de grandes quantités de données numériques.
+        - Numpy offre également une large gamme de fonctions mathématiques et statistiques optimisées pour travailler avec ces tableaux.
+
+        :::
+
+        ---
+
+        :::info Création d'un tableau Numpy
+
+        Pour utiliser Numpy, il faut d'abord l'importer :
+
+        ```python
+        import numpy as np
+        ```
+
+        On peut créer un tableau Numpy à partir d'une liste Python en utilisant la fonction `np.array()` :
+
+        ```python
+        liste = [1, 2, 3, 4, 5]
+        tableau = np.array(liste)
+
+        print(tableau)  # Output: [1 2 3 4 5]
+        print(type(tableau))  # Output: <class 'numpy.ndarray'>
+        ```
+
+        :::
+
+        ---
+
+        :::info Tableaux multidimensionnels
+        Numpy permet de créer des tableaux multidimensionnels (matrices) en passant une liste de listes à `np.array()` :
+        ```python
+        liste_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
+        tableau_2d = np.array(liste_2d)
+        print(tableau_2d)
+        ```
+        Cela affichera :
+        ```
+        [[1 2 3]
+         [4 5 6]
+         [7 8 9]]
+        ```
+        :::
+
+        ---
+
+        :::info Propriétés d'un tableau Numpy
+        Un tableau Numpy possède plusieurs propriétés utiles :
+        - `shape` : retourne la forme (dimensions) du tableau (sous forme de tuple).
+        - `dtype` : retourne le type de données des éléments du tableau.
+        - `size` : retourne le nombre total d'éléments dans le tableau.
+        Exemple :
+        ```python
+        tableau = np.array([[1, 2, 3], [4, 5, 6]])
+        print(tableau.shape)  # Output: (2, 3)
+        print(tableau.dtype)  # Output: int64 (ou int32 selon la plateforme)
+        print(tableau.size)   # Output: 6
+        ```
+        :::
+
+        ---
+
+        :::info Opérations sur les tableaux Numpy
+        Les tableaux Numpy permettent d'effectuer des opérations mathématiques de manière efficace et concise. Par exemple, on peut additionner deux tableaux élément par élément :
+        ```python
+        a = np.array([1, 2, 3])
+        b = np.array([4, 5, 6])
+        c = a + b  # Résultat : array([5, 7, 9])
+        ```
+        On peut aussi effectuer des opérations plus complexes, comme le calcul de la moyenne ou de la somme des éléments :
+        ```python
+        tableau = np.array([1, 2, 3, 4, 5])
+        moyenne = np.mean(tableau)  # Résultat : 3.0
+        somme = np.sum(tableau)      # Résultat : 15
+        ```
+        :::
+
+        ---
+
+        :::info Indexation et slicing
+        On peut accéder aux éléments d'un tableau Numpy en utilisant des indices, de la même manière que pour les listes Python :
+        ```python
+        tableau = np.array([10, 20, 30, 40, 50])
+        print(tableau[0])  # Output: 10
+        print(tableau[2])  # Output: 30
+        ```
+        On peut aussi utiliser le slicing pour extraire des sous-tableaux :
+        ```python
+        tableau = np.array([10, 20, 30, 40, 50])
+        sous_tableau = tableau[1:4]  # Résultat : array([20, 30, 40])
+        ```
+        :::
+
+        ---
+
+        :::info Fonctions utiles de Numpy
+        Voici quelques fonctions couramment utilisées avec Numpy :
+        - `np.zeros(shape)` : crée un tableau rempli de zéros avec la forme spécifiée.
+        - `np.ones(shape)` : crée un tableau rempli de uns avec la forme spécifiée.
+        - `np.arange(start, stop, step)` : crée un tableau avec des valeurs espacées régulièrement.
+        - `np.linspace(start, stop, num)` : crée un tableau avec un nombre spécifié de valeurs espacées régulièrement entre deux bornes.
+
+        ```python
+        tableau_zeros = np.zeros((3, 4))  # Tableau 3x4 rempli de zéros
+        print(tableau_zeros)
+        ```
+        ```
+        [[0. 0. 0. 0.]
+         [0. 0. 0. 0.]
+         [0. 0. 0. 0.]]
+        ```
+        ```python
+        tableau_uns = np.ones((2, 5))     # Tableau 2x5 rempli de uns
+        print(tableau_uns)
+        ```
+        ```
+        [[1. 1. 1. 1. 1.]
+         [1. 1. 1. 1. 1.]]
+        ```
+        ```python
+        tableau_arange = np.arange(0, 10, 2)  # Résultat : array([0, 2, 4, 6, 8])
+        print(tableau_arange)
+        ```
+        ```
+        [0 2 4 6 8]
+        ```
+        ```python
+        tableau_linspace = np.linspace(0, 1, 5)  # Résultat : array([0. , 0.25, 0.5 , 0.75, 1. ])
+        print(tableau_linspace)
+        ```
+        ```
+        [0.   0.25 0.5  0.75 1.  ]
+        ```
+        :::
+
+        ---
+
+        :::info De CSV à Numpy
+
+        On peut combiner la lecture de fichiers CSV avec Numpy pour analyser des données numériques efficacement.
+        ```python
+        import csv
+        import numpy as np
+
+        jours = []
+        heures_ensoleillement = []
+        temperature_moyenne = []
+        precipitations = []
+
+        with open("monfichier.csv", "r") as f:
+            lecteur_csv = csv.reader(f)
+            next(lecteur_csv)  # Ignorer la ligne d'en-tête
+
+            for ligne in lecteur_csv:
+                jours.append(ligne[0])
+                heures_ensoleillement.append(float(ligne[1]))
+                temperature_moyenne.append(float(ligne[2]))
+                precipitations.append(float(ligne[3]))
+
+        # Convertir les listes en tableaux Numpy
+        heures_ensoleillement_np = np.array(heures_ensoleillement)
+        temperature_moyenne_np = np.array(temperature_moyenne)
+        precipitations_np = np.array(precipitations)
+
+        print("Heures d'ensoleillement (Numpy) :", heures_ensoleillement_np)
+        print("Températures moyennes (Numpy) :", temperature_moyenne_np)
+        print("Précipitations (Numpy) :", precipitations_np)
+        ```
+        :::
+
+    </TabItem>
+
+    <TabItem value="matplotlib" label="Numpy et Matplotlib">
+
+        :::info Intégration avec d'autres bibliothèques
+        Numpy s'intègre bien avec d'autres bibliothèques Python populaires pour l'analyse de données et le machine learning, comme Pandas, Matplotlib et Scikit-learn.
+        - Par exemple, Pandas utilise des tableaux Numpy en interne pour stocker les données dans ses DataFrames.
+        - Matplotlib peut tracer des graphiques directement à partir de tableaux Numpy.
+        - Scikit-learn utilise Numpy pour manipuler les données d'entraînement et de test.
+
+        Nous verrons comment utiliser Numpy avec Pandas et Scikit-learn au prochain cours.
+        :::
+
+        ---
+
+        :::info Visualisation avec Matplotlib
+
+        Matplotlib s'intègre bien avec Numpy, ce qui permet de tracer facilement des graphiques à partir de tableaux Numpy.
+
+        Exemple de code pour tracer un graphique simple avec Matplotlib et Numpy :
+
+        ```python
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        # Créer des données avec Numpy
+        x = np.linspace(0, 10, 100)  # 100 points entre 0 et 10
+        y = np.sin(x)                 # Fonction sinus
+
+        # Tracer le graphique
+        plt.plot(x, y)
+        plt.title("Graphique de la fonction sinus")
+        plt.xlabel("x")
+        plt.ylabel("sin(x)")
+        plt.grid()
+        plt.show()
+        ```
+
+        Allez, exécutez-le!
+
+        :::
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ### Exercice exo-csv.py
