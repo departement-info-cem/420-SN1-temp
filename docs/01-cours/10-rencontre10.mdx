@@ -411,14 +411,121 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="csv" label="Fichier CSV">
 
-        Les fichiers CSV sont un cas spécial de fichier texte
-        - une entrée de données correspond à une ligne
-        - chaque morceau de données est séparé des autres par un séparateur, habituellement une virgule
+        :::info Fichier CSV
 
-        On peut souvent ouvrir ou créer un fichier CSV
-        - à la main
-        - avec Excel
-        - avec du code Python pour les manipuler etc.
+        Un fichier CSV (*Comma-Separated Values*) est un type de fichier texte utilisé pour stocker des données tabulaires, comme dans une feuille de calcul ou une base de données.
+        - Chaque ligne du fichier représente un enregistrement (ou une ligne de données).
+        - Les valeurs dans chaque ligne sont séparées par des virgules (`,`) (*comma*), bien que d'autres délimiteurs comme le point-virgule (`;`) ou la tabulation puissent aussi être utilisés.
+
+        Exemple de contenu d'un fichier CSV :
+        ```
+        jour,heures_ensoleillement,temperature_moyenne,precipitations
+        Lundi,5,22.5,0.0
+        Mardi,6,24.0,1.2
+        Mercredi,4,19.5,0.0
+        Jeudi,5,21.0,0.5
+        Vendredi,7,23.5,0.0
+        Samedi,8,25.0,0.0
+        Dimanche,3,20.0,2.3
+        ```
+
+        :::
+
+        ---
+
+        :::info Manipulation des fichiers CSV en Python
+
+        En Python, on peut utiliser le module intégré `csv` pour lire et écrire des fichiers CSV facilement.
+
+        ### Lire un fichier CSV
+
+        ```python
+        import csv
+
+        with open("monfichier.csv", "r") as f:
+            lecteur_csv = csv.reader(f)
+            for ligne in lecteur_csv:
+                print(ligne)
+        ```
+
+        ### Écrire dans un fichier CSV
+
+        ```python
+        import csv
+
+        donnees = [
+            ["jour", "heures_ensoleillement", "temperature_moyenne", "precipitations"],
+            ["Lundi", 5, 22.5, 0.0],
+            ["Mardi", 6, 24.0, 1.2],
+            ["Mercredi", 4, 19.5, 0.0],
+            ["Jeudi", 5, 21.0, 0.5],
+            ["Vendredi", 7, 23.5, 0.0],
+            ["Samedi", 8, 25.0, 0.0],
+            ["Dimanche", 3, 20.0, 2.3]
+        ]
+
+        with open("monfichier.csv", "w", newline='') as f:
+            ecrivain_csv = csv.writer(f)
+            ecrivain_csv.writerows(donnees)
+        ```
+
+        :::
+
+        ---
+
+        :::info Lire un fichier CSV et stocker les colonnes dans des listes
+
+        ```python
+        import csv
+
+        jours = []
+        heures_ensoleillement = []
+        temperature_moyenne = []
+        precipitations = []
+
+        with open("monfichier.csv", "r") as f:
+            lecteur_csv = csv.reader(f)
+            next(lecteur_csv)  # Ignorer la ligne d'en-tête
+            for ligne in lecteur_csv:
+                jours.append(ligne[0])
+                heures_ensoleillement.append(float(ligne[1]))
+                temperature_moyenne.append(float(ligne[2]))
+                precipitations.append(float(ligne[3]))
+
+        print("Jours :", jours)
+        print("Heures d'ensoleillement :", heures_ensoleillement)
+        print("Températures moyennes :", temperature_moyenne)
+        print("Précipitations :", precipitations)
+        ```
+
+        affichera :
+        ```
+        Jours : ['Lundi', 'Mardi', 'Mercredi', 'Jeudi', 'Vendredi', 'Samedi', 'Dimanche']
+        Heures d'ensoleillement : [5.0, 6.0, 4.0, 5.0, 7.0, 8.0, 3.0]
+        Températures moyennes : [22.5, 24.0, 19.5, 21.0, 23.5, 25.0, 20.0]
+        Précipitations : [0.0, 1.2, 0.0, 0.5, 0.0, 0.0, 2.3]
+        ```
+
+        On pourrait maintenant utiliser ces listes pour faire des analyses ou des visualisations :
+        ```python
+        import matplotlib.pyplot as plt
+
+        plt.plot(jours, temperature_moyenne, marker='o')
+        plt.plot(jours, heures_ensoleillement, marker='s')
+        plt.plot(jours, precipitations, marker='^')
+
+        plt.title("Température moyenne sur la semaine")
+        plt.xlabel("Jour")
+        plt.ylabel("Température (°C)")
+        plt.grid()
+        plt.legend(["Température moyenne", "Heures d'ensoleillement", "Précipitations"])
+
+        plt.show()
+        ```
+
+        <img src={require('/img/cours/r10_graphique1.png').default} width="40%"/>
+
+        :::
 
     </TabItem>
 
