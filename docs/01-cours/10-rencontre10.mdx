@@ -254,21 +254,158 @@ import TabItem from '@theme/TabItem';
 
     <TabItem value="fichier" label="Fichier">
 
+        :::info Introduction aux fichiers
+
+        Un fichier c'est quoi?
+
+        - un ensemble de données stockées sur un support de stockage (disque dur, SSD, clé USB, carte SD, etc.)
+        - chaque fichier a un nom et une extension (par exemple `monfichier.txt`)
+        - les fichiers peuvent contenir différents types de données : texte, images, vidéos, audio, etc.
+        - pour lire ou écrire dans un fichier, on utilise des programmes ou des scripts
+
+        ### Types de fichiers courants
+
+        - Fichiers texte (.txt, .csv, .json, .xml, etc.)
+        - Fichiers binaires (.bin, .exe, .dll, etc.)
+        - Fichiers image (.jpg, .png, .gif, etc.)
+        - Fichiers audio (.mp3, .wav, .flac, etc.)
+        - Fichiers vidéo (.mp4, .avi, .mkv, etc.)
+
+        ### Opérations courantes sur les fichiers
+
+        - Ouvrir un fichier : pour lire ou écrire des données
+        - Lire un fichier : pour extraire les données contenues dans le fichier
+        - Écrire dans un fichier : pour ajouter ou modifier des données dans le fichier
+        - Fermer un fichier : pour libérer les ressources utilisées par le fichier
+
+        En Python, on utilise la fonction `open()` pour ouvrir un fichier. Par exemple :
+
+        ```python
+        # Ouvrir un fichier en mode lecture
+        fichier = open("monfichier.txt", "r")
+
+        # Lire le contenu du fichier
+        contenu = fichier.read()
+        print(contenu)
+
+        # Fermer le fichier
+        fichier.close()
+        ```
+
+        :::
+
     </TabItem>
 
     <TabItem value="texte" label="Fichier texte">
 
-        Un fichier texte c'est quoi?
+        :::info Fichier texte
 
-        - une suite de caractères comme '1' 'a' 'é' ou encore un espace ' ', une tabulation ou un saut de ligne
-        - pour chaque caractère, on associe un encodage binaire, par exemple ' ' (un espace)
-        -
-        ### Exemple
-        On veut faire le fichier texte appelé yo.txt
+        Un fichier texte est un type de fichier très courant et simple à manipuler.
+        - Il est simplement constitué d'une suite de caractères lisibles par l'humain.
+        - Il ne contient aucun formatage, juste du texte brut.
+        - ✅ Les scripts Python (`.py`) que vous écrivez sont aussi des fichiers texte.
+        - ❌ Un fichier `.docx` (Word) ou `.pdf` contient du texte, mais aussi beaucoup d'autres informations de formatage, donc ce ne sont pas des fichiers texte.
+
+        :::
+
+        ---
+
+        :::info Structure d'un fichier texte
+
+        Un fichier texte est organisé en lignes.
+        - Chaque ligne peut contenir plusieurs morceaux de données séparés par des espaces, des tabulations, des virgules, etc.
+        - Les lignes sont séparées par des caractères spéciaux appelés "sauts de ligne" (`\n`).
+
+        On peut souvent ouvrir ou créer un fichier texte
+        - à la main avec un éditeur de texte (Notepad, Pycharm, VSCode, ...)
+        - avec du code Python pour les manipuler
+
+        Exemple de code Python pour lire un fichier texte ligne par ligne :
+
+        ```python
+        # Ouvrir un fichier en mode lecture
+        with open("monfichier.txt", "r") as f:
+            # Lire chaque ligne du fichier
+            for ligne in f:
+                print(ligne, end="") # end="" pour éviter d'ajouter des lignes vides supplémentaires
         ```
-        Hey!
-        you
+
+        Exemple de code Python pour écrire dans un fichier texte :
+
+        ```python
+        # Ouvrir un fichier en mode écriture
+        with open("monfichier.txt", "w") as f:
+            # Écrire des lignes dans le fichier
+            f.write("Bonjour le monde!\n")
+            f.write("Ceci est un fichier texte.\n")
         ```
+
+        :::
+
+        ---
+
+        :::warning Gestion des fichiers avec le mot-clé with
+        En Python, il est recommandé d'utiliser le mot-clé `with` pour gérer les fichiers.
+        - Cela garantit que le fichier est correctement fermé après son utilisation, même en cas d'erreur.
+        - Le fichier est automatiquement fermé lorsque le bloc `with` est quitté.
+        ```python
+        with open("monfichier.txt", "r") as f:
+            contenu = f.read()
+        # Le fichier est automatiquement fermé ici
+        ```
+        :::
+
+        ---
+
+        :::info Autres façons de lire un fichier texte
+        On peut aussi lire tout le contenu d'un fichier texte en une seule fois avec la méthode `read()` :
+
+        Supposons que le fichier `monfichier.txt` contient :
+        ```
+        Y a pas deux gros.
+        Y en a qu'un seul.
+        Et il est pas gros.
+        ```
+        On peut lire tout le contenu du fichier avec le code suivant :
+        ```python
+        with open("monfichier.txt", "r") as f:
+            contenu = f.read()
+
+        print(contenu)
+        ```
+        La variable `contenu` contiendra alors la chaîne de caractères complète du fichier, y compris les sauts de ligne :
+        ```
+        Y a pas deux gros.
+        Y en a qu'un seul.
+        Et il est pas gros.
+        ```
+
+        On peut aussi lire toutes les lignes d'un fichier texte en une seule fois avec la méthode `readlines()` :
+        ```python
+        with open("monfichier.txt", "r") as f:
+            lignes = f.readlines()
+
+        print(lignes)
+        ```
+        La variable `lignes` contiendra alors une liste de chaînes de caractères, chaque chaîne représentant une ligne du fichier, avec les sauts de ligne (`\n`) inclus :
+        ```
+        ["Y a pas deux gros.\n", "Y en a qu'un seul.\n", "Et il est pas gros.\n"]
+        ```
+        :::
+
+        ---
+
+        :::info Autres façons d'écrire dans un fichier texte
+
+        Plutôt que d'écrire ligne par ligne avec `write()`, on peut d'abord construire une liste de lignes, puis utiliser la méthode `join()` pour joindre les lignes avec des sauts de ligne (`\n`) en une seule chaîne de caractères, et enfin écrire cette chaîne dans le fichier.
+        ```python
+        lignes = ["Y a pas deux gros.", "Y en a qu'un seul.", "Et il est pas gros."]
+
+        with open("monfichier.txt", "w") as f:
+            f.write("\n".join(lignes))
+        ```
+
+        :::
 
     </TabItem>
 
