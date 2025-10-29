@@ -672,6 +672,34 @@ import TabItem from '@theme/TabItem';
 
         ---
 
+        :::info Filtrage
+
+        NumPy permet de filtrer les éléments d’un tableau rapidement selon des conditions logiques, sans devoir utiliser de boucles for! \
+        La syntaxe est la suivante : <i>**tableau[tableau operateur_de_comparaison expression]**</i> \
+        Le résultat est un nouveau tableau NumPy filtré.
+
+        ```python
+        temperatures = np.array([-5, 2, 10, -3, 15])
+        positives = temperatures[temperatures > 0]
+        print(positives)# Résultat : [ 2 10 15]
+        ```
+
+        **Combiner plusieurs conditions** \
+        On peut combiner plusieurs conditions logiques l'ensemble. \
+        L'exemple ci-dessous applique 2 conditions à l'aide d'un <i>ET</i> logique
+
+        ```python
+        tableau = np.array([5, 12, 18, 25, 30])
+        filtre = tableau[(tableau > 10) & (tableau < 25)]
+        print(filtre) #Résultat : [ 12, 18]
+        ```
+
+
+
+        :::
+
+        ---
+
         :::info De CSV à Numpy
 
         On peut combiner la lecture de fichiers CSV avec Numpy pour analyser des données numériques efficacement.
