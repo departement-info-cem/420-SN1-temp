@@ -4,6 +4,7 @@ hide_table_of_contents: true
 
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
+import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # 🗂 Fichiers, NumPy
 
@@ -964,7 +965,7 @@ import TabItem from '@theme/TabItem';
 
         Un biologiste étudie les températures enregistrées dans une forêt pendant plusieurs jours, les données sont enregistrées dans un fichier texte.
 
-        - <a href="/ressources/texte/temperatures.txt" download="temperatures.txt">Téléchargez le fichier temperatures.txt.</a>
+        - <a href={useBaseUrl('/ressources/texte/temperatures.txt')} download="temperatures.txt">Téléchargez le fichier temperatures.txt</a>
         - Placez-le dans le même dossier que votre script Python.
 
         En utilisant un script Python, vous devez :
@@ -976,7 +977,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Prix Turing
 
-        - <a href="/ressources/csv/Turing-675de1a6fe79b00e3f0d5750f3dc2af9.csv" download="Turing.csv">Téléchargez le fichier Turing.csv.</a>
+        - <a href={useBaseUrl('/ressources/csv/Turing.csv')} download="Turing.csv">Téléchargez le fichier Turing.csv</a>
         - Placez-le dans le même dossier que votre script Python.
         - Il contient tous les gagnants du Prix Turing.
 
