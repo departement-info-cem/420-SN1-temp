@@ -5,7 +5,7 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 🗂 Fichiers, Numpy
+# 🗂 Fichiers, NumPy
 
 # 🏗️ en construction 🏗
 
@@ -474,7 +474,7 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Lire un fichier CSV et stocker les colonnes dans des listes
+        ::::info Lire un fichier CSV et stocker les colonnes dans des listes
 
         ```python
         import csv
@@ -489,9 +489,9 @@ import TabItem from '@theme/TabItem';
             next(lecteur_csv)  # Ignorer la ligne d'en-tête
             for ligne in lecteur_csv:
                 jours.append(ligne[0])
-                heures_ensoleillement.append(float(ligne[1])) #Conversion en nombre flottant
-                temperature_moyenne.append(float(ligne[2]))   #Conversion en nombre flottant
-                precipitations.append(float(ligne[3]))        #Conversion en nombre flottant
+                heures_ensoleillement.append(float(ligne[1])) # Conversion en nombre flottant
+                temperature_moyenne.append(float(ligne[2]))   # Conversion en nombre flottant
+                precipitations.append(float(ligne[3]))        # Conversion en nombre flottant
 
         print("Jours :", jours)
         print("Heures d'ensoleillement :", heures_ensoleillement)
@@ -507,6 +507,13 @@ import TabItem from '@theme/TabItem';
         Précipitations : [0.0, 1.2, 0.0, 0.5, 0.0, 0.0, 2.3]
         ```
 
+        :::warning Conversion de type nécessaire avec les nombres
+
+        Lors de la lecture de données avec le module csv, les données sont toujours obtenues en format `string`. \
+        Des conversions peuvent être nécessaires au besoin.
+        - Remarquez ci-haut la fonction `float()` appelée lors de la lecture des nombres.
+
+        :::
 
         On pourrait maintenant utiliser ces listes pour faire des analyses ou des visualisations :
         ```python
@@ -527,38 +534,31 @@ import TabItem from '@theme/TabItem';
 
         <img src={require('/img/cours/r10_graphique1.png').default} width="40%"/>
 
-        :::
-
-        :::warning Conversion de type nécessaire avec les nombres
-
-        Lors de la lecture de données avec le module csv, les données sont toujours obtenues en format `string`. \
-        Des conversions peuvent être nécessaires au besoin. Dans l'exemple précédent, la fonction `float` a été appelée lors de la lecture des nombres.
-
-        :::
+        ::::
 
     </TabItem>
 
-    <TabItem value="numpy" label="Numpy">
+    <TabItem value="numpy" label="NumPy">
 
-        :::info Introduction à Numpy
+        :::info Introduction à NumPy
 
-        Numpy est une bibliothèque Python très populaire pour le calcul scientifique et l'analyse de données.
+        NumPy est une bibliothèque Python très populaire pour le calcul scientifique et l'analyse de données.
         - Elle fournit des structures de données puissantes, comme les tableaux multidimensionnels (`ndarray`), qui permettent de manipuler efficacement de grandes quantités de données numériques.
-        - Numpy offre également une large gamme de fonctions mathématiques et statistiques optimisées pour travailler avec ces tableaux.
+        - NumPy offre également une large gamme de fonctions mathématiques et statistiques optimisées pour travailler avec ces tableaux.
 
         :::
 
         ---
 
-        :::info Création d'un tableau Numpy
+        :::info Création d'un tableau NumPy
 
-        Pour utiliser Numpy, il faut d'abord l'importer :
+        Pour utiliser NumPy, il faut d'abord l'importer :
 
         ```python
         import numpy as np
         ```
 
-        On peut créer un tableau Numpy à partir d'une liste Python en utilisant la fonction `np.array()` :
+        On peut créer un tableau NumPy à partir d'une liste Python en utilisant la fonction `np.array()` :
 
         ```python
         liste = [1, 2, 3, 4, 5]
@@ -573,7 +573,7 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::info Tableaux multidimensionnels
-        Numpy permet de créer des tableaux multidimensionnels (matrices) en passant une liste de listes à `np.array()` :
+        NumPy permet de créer des tableaux multidimensionnels (matrices) en passant une liste de listes à `np.array()` :
         ```python
         liste_2d = [[1, 2, 3], [4, 5, 6], [7, 8, 9]]
         tableau_2d = np.array(liste_2d)
@@ -589,8 +589,8 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Propriétés d'un tableau Numpy
-        Un tableau Numpy possède plusieurs propriétés utiles :
+        :::info Propriétés d'un tableau NumPy
+        Un tableau NumPy possède plusieurs propriétés utiles :
         - `shape` : retourne la forme (dimensions) du tableau (sous forme de tuple).
         - `dtype` : retourne le type de données des éléments du tableau.
         - `size` : retourne le nombre total d'éléments dans le tableau.
@@ -605,8 +605,8 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Opérations sur les tableaux Numpy
-        Les tableaux Numpy permettent d'effectuer des opérations mathématiques de manière efficace et concise. Par exemple, on peut additionner deux tableaux élément par élément :
+        :::info Opérations sur les tableaux NumPy
+        Les tableaux NumPy permettent d'effectuer des opérations mathématiques de manière efficace et concise. Par exemple, on peut additionner deux tableaux élément par élément :
         ```python
         a = np.array([1, 2, 3])
         b = np.array([4, 5, 6])
@@ -623,7 +623,7 @@ import TabItem from '@theme/TabItem';
         ---
 
         :::info Indexation et slicing
-        On peut accéder aux éléments d'un tableau Numpy en utilisant des indices, de la même manière que pour les listes Python :
+        On peut accéder aux éléments d'un tableau NumPy en utilisant des indices, de la même manière que pour les listes Python :
         ```python
         tableau = np.array([10, 20, 30, 40, 50])
         print(tableau[0])  # Résultat: 10
@@ -638,8 +638,8 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Fonctions utiles de Numpy
-        Voici quelques fonctions couramment utilisées avec Numpy :
+        :::info Fonctions utiles de NumPy
+        Voici quelques fonctions couramment utilisées avec NumPy :
         - `np.zeros(shape)` : crée un tableau rempli de zéros avec la forme spécifiée.
         - `np.ones(shape)` : crée un tableau rempli de uns avec la forme spécifiée.
         - `np.arange(start, stop, step)` : crée un tableau avec des valeurs espacées régulièrement.
@@ -682,8 +682,11 @@ import TabItem from '@theme/TabItem';
 
         :::info Filtrage
 
-        NumPy permet de filtrer les éléments d’un tableau rapidement selon des conditions logiques, sans devoir utiliser de boucles for! \
-        La syntaxe est la suivante : <i>**tableau[tableau operateur_de_comparaison expression]**</i> \
+        NumPy permet de filtrer les éléments d’un tableau rapidement selon des conditions logiques, sans devoir utiliser de boucles explicitement! \
+        La syntaxe est la suivante :
+        ```
+        tableau [ tableau   operateur_de_comparaison   expression ]
+        ```
         Le résultat est un nouveau tableau NumPy filtré.
 
         ```python
@@ -693,8 +696,8 @@ import TabItem from '@theme/TabItem';
         ```
 
         **Combiner plusieurs conditions** \
-        On peut combiner plusieurs conditions logiques l'ensemble. \
-        L'exemple ci-dessous applique 2 conditions à l'aide d'un <i>ET</i> logique.
+        On peut combiner plusieurs conditions logiques ensemble. \
+        L'exemple ci-dessous applique 2 conditions à l'aide d'un *ET* logique.
 
         ```python
         tableau = np.array([5, 12, 18, 25, 30])
@@ -706,10 +709,10 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Opérateurs arithmétiques, utile pour vos graphiques!
+        :::info Opérateurs arithmétiques, utiles pour vos graphiques!
 
-        Les tableaux NumPy permettent d’utiliser directement les opérateurs arithmétiques +, -, *, /, **, etc. \
-        Ces opérations s’appliquent **élément par élément** et **génère un nouveau tableau** sans besoin de boucle for!
+        Les tableaux NumPy permettent d’utiliser directement les opérateurs arithmétiques `+`, `-`, `*`, `/`, `**`, etc. \
+        Ces opérations s’appliquent **élément par élément** et **génèrent un nouveau tableau** sans besoin de boucle for!
 
         ```python
         x = np.array([10,20,30,40,50])
@@ -719,15 +722,15 @@ import TabItem from '@theme/TabItem';
         print(z)  # Résultat: [25, 45, 65, 85, 105]
         ```
 
-        Ceci est particulièrement utile pour générer une liste de y pour alimenter vos graphiques avec MatPlotLib!
+        Ceci est particulièrement utile pour générer une liste `y` pour alimenter vos graphiques avec Matplotlib!
 
         :::
 
         ---
 
-        :::info De CSV à Numpy
+        :::info De CSV à NumPy
 
-        On peut combiner la lecture de fichiers CSV avec Numpy pour analyser des données numériques efficacement.
+        On peut combiner la lecture de fichiers CSV avec NumPy pour analyser des données numériques efficacement.
         ```python
         import csv
         import numpy as np
@@ -747,46 +750,46 @@ import TabItem from '@theme/TabItem';
                 temperature_moyenne.append(float(ligne[2]))
                 precipitations.append(float(ligne[3]))
 
-        # Convertir les listes en tableaux Numpy
+        # Convertir les listes en tableaux NumPy
         heures_ensoleillement_np = np.array(heures_ensoleillement)
         temperature_moyenne_np = np.array(temperature_moyenne)
         precipitations_np = np.array(precipitations)
 
-        print("Heures d'ensoleillement (Numpy) :", heures_ensoleillement_np)
-        print("Températures moyennes (Numpy) :", temperature_moyenne_np)
-        print("Précipitations (Numpy) :", precipitations_np)
+        print("Heures d'ensoleillement :", heures_ensoleillement_np)
+        print("Températures moyennes :", temperature_moyenne_np)
+        print("Précipitations :", precipitations_np)
         ```
         :::
 
     </TabItem>
 
-    <TabItem value="matplotlib" label="Numpy et Matplotlib">
+    <TabItem value="matplotlib" label="NumPy et Matplotlib">
 
         :::info Intégration avec d'autres bibliothèques
-        Numpy s'intègre bien avec d'autres bibliothèques Python populaires pour l'analyse de données et le machine learning, comme Pandas, Matplotlib et Scikit-learn.
-        - Par exemple, Pandas utilise des tableaux Numpy en interne pour stocker les données dans ses DataFrames.
-        - Matplotlib peut tracer des graphiques directement à partir de tableaux Numpy.
-        - Scikit-learn utilise Numpy pour manipuler les données d'entraînement et de test.
+        NumPy s'intègre bien avec d'autres bibliothèques Python populaires pour l'analyse de données et le machine learning, comme Pandas, Matplotlib et Scikit-learn.
+        - Par exemple, Pandas utilise des tableaux NumPy en interne pour stocker les données dans ses DataFrames.
+        - Matplotlib peut tracer des graphiques directement à partir de tableaux NumPy.
+        - Scikit-learn utilise NumPy pour manipuler les données d'entraînement et de test.
 
-        Nous verrons comment utiliser Numpy avec Pandas et Scikit-learn au prochain cours.
+        Nous verrons comment utiliser NumPy avec Pandas et Scikit-learn au prochain cours.
         :::
 
         ---
 
         :::info Visualisation avec Matplotlib
 
-        Matplotlib s'intègre bien avec Numpy, ce qui permet de tracer facilement des graphiques à partir de tableaux Numpy.
+        Matplotlib s'intègre bien avec NumPy, ce qui permet de tracer facilement des graphiques à partir de tableaux NumPy.
 
-        #### Exemple #1 - Fonctions sinus
-        Exemple de code pour tracer un graphique simple avec Matplotlib et Numpy :
+        #### Exemple #1 - Fonction sinus
+        Exemple de code pour tracer un graphique simple avec Matplotlib et NumPy :
 
         ```python
         import numpy as np
         import matplotlib.pyplot as plt
 
-        # Créer des données avec Numpy
-        x = np.linspace(0, 10, 100)   #Créer un tableau NumPy de 100 points entre 0 et 10
-        y = np.sin(x)                 #Fonction sinus retournant un tableau NumPy
+        # Créer des données avec NumPy
+        x = np.linspace(0, 10, 100)   # Crée un tableau NumPy de 100 points entre 0 et 10
+        y = np.sin(x)                 # Fonction sinus retournant un tableau NumPy
 
         # Tracer le graphique
         plt.plot(x, y)
@@ -808,7 +811,7 @@ import TabItem from '@theme/TabItem';
         import numpy as np
         import matplotlib.pyplot as plt
 
-        # Créer des données avec Numpy
+        # Créer des données avec NumPy
         x = np.linspace(-10, 100, 1000)  #Créer un tableau NumPy de 1000 points entre -10 et 100
         y = 2 * x - 15                   #Générer un tableau NumPy des y grace aux pouvoirs des opérateurs arithmétiques sur le tableau NumPy x
 
@@ -972,7 +975,7 @@ import TabItem from '@theme/TabItem';
 
         :::info Exercice - Prix Turing
 
-        - Télécharger le fichier <a href="/ressources/csv/Turing-675de1a6fe79b00e3f0d5750f3dc2af9.csv" download="Turing.csv">Turing.csv.</a>
+        - <a href="/ressources/csv/Turing-675de1a6fe79b00e3f0d5750f3dc2af9.csv" download="Turing.csv">Téléchargez le fichier Turing.csv.</a>
         - Placez-le dans le même dossier que votre script Python.
         - Il contient tous les gagnants du Prix Turing.
 
@@ -1000,24 +1003,24 @@ import TabItem from '@theme/TabItem';
 
         :::
 
-        :::info Exercice - Numpy
+        :::info Exercice - NumPy
 
-        Utilisez Numpy pour créer un tableau 2D (matrice) de taille 4x4 rempli de nombres aléatoires entre 0 et 1.
+        Utilisez NumPy pour créer un tableau 2D (matrice) de taille 4x4 rempli de nombres aléatoires entre 0 et 1.
         - Calculez la moyenne de chaque colonne et affichez les résultats.
-            - Utilisez des fonctions Numpy et ne répétez pas du code pour chaque colonne!
+            - Utilisez des fonctions NumPy et ne répétez pas du code pour chaque colonne!
         - Trouvez l'élément maximum et minimum dans le tableau et affichez leurs valeurs ainsi que leurs positions (indices).
-            - Utilisez des fonctions Numpy.
+            - Utilisez des fonctions NumPy.
 
         :::
 
-        :::info Exercice - Numpy et Matplotlib
+        :::info Exercice - NumPy et Matplotlib
 
         Générez un graphique affichant ces 3 fonctions mathématiques sur l'intervalle de -10 à 10 :
         - $y = x^2\qquad$ (fonction quadratique)
         - $y = 2x + 3\qquad$ (fonction linéaire)
         - $y = \sin(x)\qquad$ (fonction sinus)
 
-        Utilisez Numpy pour créer les données et Matplotlib pour tracer le graphique. \
+        Utilisez NumPy pour créer les données et Matplotlib pour tracer le graphique. \
         Utilisez 3 couleurs différentes pour chaque fonction et ajoutez une légende pour les identifier.
 
         :::

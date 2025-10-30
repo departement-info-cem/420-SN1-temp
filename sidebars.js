@@ -53,7 +53,7 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "10 - 🗂 Fichiers, Numpy",
+      label: "10 - 🗂 Fichiers, NumPy",
       id: "cours/rencontre10",
     },
     {
