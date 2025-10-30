@@ -777,6 +777,7 @@ import TabItem from '@theme/TabItem';
 
         Matplotlib s'intègre bien avec Numpy, ce qui permet de tracer facilement des graphiques à partir de tableaux Numpy.
 
+        #### Exemple #1 - Fonctions sinus
         Exemple de code pour tracer un graphique simple avec Matplotlib et Numpy :
 
         ```python
@@ -784,8 +785,8 @@ import TabItem from '@theme/TabItem';
         import matplotlib.pyplot as plt
 
         # Créer des données avec Numpy
-        x = np.linspace(0, 10, 100)  # 100 points entre 0 et 10
-        y = np.sin(x)                 # Fonction sinus
+        x = np.linspace(0, 10, 100)   #Créer un tableau NumPy de 100 points entre 0 et 10
+        y = np.sin(x)                 #Fonction sinus retournant un tableau NumPy
 
         # Tracer le graphique
         plt.plot(x, y)
@@ -796,7 +797,31 @@ import TabItem from '@theme/TabItem';
         plt.show()
         ```
 
-        Allez, exécutez-le!
+        <br/>
+
+        #### Exemple #2 - Représenter une fonction personnalisée graphiquement!
+
+        Imaginons que nous avons une formule personnalisée qu'on souhaite représenté graphiquement : y = 2 x a - 15 \
+        Grâce aux pouvoirs des opérateurs arithmétiques sur des tableaux NumPy, on peut créer un tableau NumPy y des résultats rapidement!
+
+        ```python
+        import numpy as np
+        import matplotlib.pyplot as plt
+
+        # Créer des données avec Numpy
+        x = np.linspace(-10, 100, 1000)  #Créer un tableau NumPy de 1000 points entre -10 et 100
+        y = 2 * x - 15                   #Générer un tableau NumPy des y grace aux pouvoirs des opérateurs arithmétiques sur le tableau NumPy x
+
+        # Tracer le graphique
+        plt.plot(x, y)
+        plt.title("Graphique de la fonction linéaire : y = 2 x a - 15")
+        plt.xlabel("x")
+        plt.ylabel("y")
+        plt.grid()
+        plt.show()
+        ```
+
+        <img src={require('/img/cours/R10ExempleGraphique2.png').default} width="50%"/>
 
         :::
 
