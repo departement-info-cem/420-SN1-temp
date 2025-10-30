@@ -776,20 +776,21 @@ import TabItem from '@theme/TabItem';
 
         ---
 
-        :::info Visualisation avec Matplotlib
+        ::::info Visualisation de fonctions mathématiques avec Matplotlib et NumPy
 
         Matplotlib s'intègre bien avec NumPy, ce qui permet de tracer facilement des graphiques à partir de tableaux NumPy.
 
-        #### Exemple #1 - Fonction sinus
-        Exemple de code pour tracer un graphique simple avec Matplotlib et NumPy :
+        Par exemple, il est très facile de tracer une fonction mathématique en utilisant NumPy pour générer les données et Matplotlib pour les afficher.
+        Voici 2 exemples :
 
+        :::note Exemple #1 - Fonction sinus
         ```python
         import numpy as np
         import matplotlib.pyplot as plt
 
         # Créer des données avec NumPy
-        x = np.linspace(0, 10, 100)   # Crée un tableau NumPy de 100 points entre 0 et 10
-        y = np.sin(x)                 # Fonction sinus retournant un tableau NumPy
+        x = np.linspace(0, 10, 100)   # crée un tableau NumPy de 100 points entre 0 et 10
+        y = np.sin(x)                 # crée un tableau NumPy avec les valeurs du sinus de chaque élément de x
 
         # Tracer le graphique
         plt.plot(x, y)
@@ -799,34 +800,36 @@ import TabItem from '@theme/TabItem';
         plt.grid()
         plt.show()
         ```
+        <img src={require('/img/cours/R10ExempleGraphique1.png').default} width="50%"/>
+        :::
 
-        <br/>
+        ---
 
-        #### Exemple #2 - Représenter une fonction personnalisée graphiquement!
-
-        Imaginons que nous avons une formule personnalisée qu'on souhaite représenté graphiquement : y = 2 x a - 15 \
-        Grâce aux pouvoirs des opérateurs arithmétiques sur des tableaux NumPy, on peut créer un tableau NumPy y des résultats rapidement!
+        :::note Exemple #2 - Fonction linéaire
+        Supposons que nous voulons représenter graphiquement la fonction $y = 2x - 15$. \
+        Grâce aux pouvoirs des opérateurs arithmétiques sur des tableaux NumPy, on peut facilement créer un tableau NumPy `y` des résultats :
 
         ```python
         import numpy as np
         import matplotlib.pyplot as plt
 
         # Créer des données avec NumPy
-        x = np.linspace(-10, 100, 1000)  #Créer un tableau NumPy de 1000 points entre -10 et 100
-        y = 2 * x - 15                   #Générer un tableau NumPy des y grace aux pouvoirs des opérateurs arithmétiques sur le tableau NumPy x
+        x = np.linspace(-10, 100, 1000)  # créer un tableau NumPy de 1000 points entre -10 et 100
+        y = 2 * x - 15                   # créer un tableau NumPy avec la formule y = 2x - 15
+                                # (grâce aux pouvoirs des opérateurs arithmétiques sur le tableau NumPy x)
 
         # Tracer le graphique
         plt.plot(x, y)
-        plt.title("Graphique de la fonction linéaire : y = 2 x a - 15")
+        plt.title("Graphique de la fonction linéaire : y = 2x - 15")
         plt.xlabel("x")
         plt.ylabel("y")
         plt.grid()
         plt.show()
         ```
-
         <img src={require('/img/cours/R10ExempleGraphique2.png').default} width="50%"/>
-
         :::
+
+        ::::
 
     </TabItem>
 
@@ -963,7 +966,7 @@ import TabItem from '@theme/TabItem';
 
         Un biologiste étudie les températures enregistrées dans une forêt pendant plusieurs jours, les données sont enregistrées dans un fichier texte.
 
-        - Télécharger le fichier <a href="/ressources/texte/temperatures.txt" download="temperatures.txt">temperatures.txt.</a>
+        - <a href="/ressources/texte/temperatures.txt" download="temperatures.txt">Téléchargez le fichier temperatures.txt.</a>
         - Placez-le dans le même dossier que votre script Python.
 
         En utilisant un script Python, vous devez :
