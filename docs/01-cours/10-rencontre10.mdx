@@ -489,9 +489,9 @@ import TabItem from '@theme/TabItem';
             next(lecteur_csv)  # Ignorer la ligne d'en-tête
             for ligne in lecteur_csv:
                 jours.append(ligne[0])
-                heures_ensoleillement.append(float(ligne[1]))
-                temperature_moyenne.append(float(ligne[2]))
-                precipitations.append(float(ligne[3]))
+                heures_ensoleillement.append(float(ligne[1])) #Conversion en nombre flottant
+                temperature_moyenne.append(float(ligne[2]))   #Conversion en nombre flottant
+                precipitations.append(float(ligne[3]))        #Conversion en nombre flottant
 
         print("Jours :", jours)
         print("Heures d'ensoleillement :", heures_ensoleillement)
@@ -506,6 +506,7 @@ import TabItem from '@theme/TabItem';
         Températures moyennes : [22.5, 24.0, 19.5, 21.0, 23.5, 25.0, 20.0]
         Précipitations : [0.0, 1.2, 0.0, 0.5, 0.0, 0.0, 2.3]
         ```
+
 
         On pourrait maintenant utiliser ces listes pour faire des analyses ou des visualisations :
         ```python
@@ -525,6 +526,13 @@ import TabItem from '@theme/TabItem';
         ```
 
         <img src={require('/img/cours/r10_graphique1.png').default} width="40%"/>
+
+        :::
+
+        :::warning Conversion de type nécessaire avec les nombres
+
+        Lors de la lecture de données avec le module csv, les données sont toujours obtenues en format `string`. \
+        Des conversions peuvent être nécessaires au besoin. Dans l'exemple précédent, la fonction `float` a été appelée lors de la lecture des nombres.
 
         :::
 
