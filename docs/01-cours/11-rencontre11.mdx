@@ -5,68 +5,135 @@ hide_table_of_contents: true
 import Tabs from '@theme/Tabs';
 import TabItem from '@theme/TabItem';
 
-# 🐼 Pandas et Scikit-learn
+# 🐼 Pandas et 🤖 Scikit-learn
 
 # 🏗️ en construction 🏗
 
 <Tabs queryString="onglet">
 
-    <TabItem value="theorie" label="Théorie" default>
+    <TabItem value="data" label="Analyse de données" default>
 
-        :::info Pandas - Manipulation et analyse de données
+        :::tip 💡 Introduction à l'analyse de données
 
-        La bibliothèque Pandas permet de travailler avec des grands volumes de données de manière rapide et efficace
-        d'afin d'en faire de l'analyse et des manipulations. Il est rapide de pouvoir filtrer, trier et transformer des
-        données et d'en générer des statistiques. La bibliothèque support les données dans différents formats comme
-        Excel, CSV et s'intègre bien avec Matplotlib (pour générer des graphiques) et Scikit-learn (pour l'apprentissage
-        automatique).
+        📊 Pour votre **TP2**, vous allez devoir manipuler des **données réelles** :
 
+        - 📥 Charger des ensembles de données à partir de fichiers **CSV**.
+        - 🧹 **Nettoyer et prétraiter** les données pour les rendre exploitables.
+        - 🔍 **Analyser** les données pour en extraire des informations pertinentes.
+        - 📈 **Visualiser** les données à l'aide de graphiques.
+        - 🤖 Utiliser des techniques d’**apprentissage automatique** pour construire des modèles prédictifs.
+
+        🧠 Cela nécessite une bonne compréhension des **concepts** et des **outils d’analyse de données**.
+
+        ---
+
+        🔬 L’**analyse de données** est un processus essentiel qui consiste à examiner, nettoyer, transformer et modéliser des données dans le but de **découvrir des informations utiles**, **informer des conclusions** et **soutenir la prise de décision**.
+
+        ---
+
+        🧰 **Bibliothèques Python couramment utilisées** pour l’analyse de données :
+
+        - 🐼 **Pandas** : pour la **manipulation et l’analyse** de données, offrant des structures de type *DataFrame*.
+        - 🔢 **NumPy** : pour le **calcul scientifique** et les opérations sur des tableaux multidimensionnels.
+        - 🤖 **Scikit-learn** : pour l’**apprentissage automatique** et la modélisation prédictive.
+        - 🧠 **Keras** et **TensorFlow** : pour le développement de modèles d’**apprentissage profond** (*deep learning*).
+        - 🎨 **Matplotlib** et **Seaborn** : pour la **visualisation** de données.
+        - … et bien d’autres selon les besoins !
+
+        ---
+
+        🧩 Vous connaissez déjà :
+        - 🎨 **Matplotlib** pour la **visualisation**
+        - 🔢 **NumPy** pour les **calculs numériques**
+
+        📅 Cette semaine, nous allons apprendre à utiliser deux nouvelles bibliothèques essentielles pour votre TP2 :
+        🐼 **Pandas** et 🤖 **Scikit-learn**.<br />
+        👉 La semaine prochaine, nous aborderons les concepts d’**intelligence artificielle** et d’**apprentissage profond** (*deep learning*).
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="pandas" label="🐼 Pandas">
+
+        :::info Introduction à 🐼 Pandas
+
+        Pandas est une bibliothèque Python essentielle pour la manipulation et l'analyse de données. Elle offre des structures de données flexibles et performantes, telles que les *DataFrames*, qui facilitent le traitement des données tabulaires.
+
+        ### Concepts clés de Pandas
+        - **DataFrame** : Une structure de données bidimensionnelle, similaire à une feuille de calcul Excel, qui permet de stocker et de manipuler des données étiquetées.
+        - **Series** : Une structure de données unidimensionnelle, similaire à une colonne dans un DataFrame.
+        - **Indexation** : Pandas permet une indexation avancée pour accéder et manipuler les données de manière efficace.
+        - **Manipulation des données** : Pandas offre de nombreuses fonctions pour filtrer, trier, agréger et transformer les données.
+        ### Exemple d'utilisation de Pandas
         ```python
         import pandas as pd
 
-        # Création d'un DataFrame avec des données météorologiques sur 7 jours
-        data = {
-            "Jour": ["Lundi", "Mardi", "Mercredi", "Jeudi", "Vendredi", "Samedi", "Dimanche"],
-            "Température (°C)": [22, 24, 19, 21, 23, 25, 20],
-            "Humidité (%)": [60, 55, 70, 65, 58, 50, 72],
-            "Vitesse du vent (km/h)": [15, 10, 20, 12, 14, 9, 22]
-        }
-
+        # Création d'un DataFrame
+        data = {'Nom': ['Alice', 'Bob', 'Charlie'],
+                'Âge': [25, 30, 35],
+                'Ville': ['Paris', 'Lyon', 'Marseille']}
         df = pd.DataFrame(data)
 
-        # Affichage des premières lignes du DataFrame
-        print("Données météorologiques :")
+        # Affichage du DataFrame
         print(df)
-
-        # Analyses des données
-        moyenne_temp = df["Température (°C)"].mean()
-        moyenne_humidite = df["Humidité (%)"].mean()
-        moyenne_vent = df["Vitesse du vent (km/h)"].mean()
-
-        print(f"\nTempérature moyenne sur 10 jours : {moyenne_temp:.2f}°C")
-        print(f"Humidité moyenne sur 10 jours : {moyenne_humidite:.2f}%")
-        print(f"Vitesse moyenne du vent : {moyenne_vent:.2f} km/h")
+        
+        # Filtrage des données
+        df_filtered = df[df['Âge'] > 28]
+        print(df_filtered)
         ```
 
         :::
 
     </TabItem>
 
+    <TabItem value="learn" label="🤖 Scikit-learn">
+
+        :::info Introduction à 🤖 Scikit-learn
+
+        Scikit-learn est une bibliothèque Python puissante pour l'apprentissage automatique. Elle fournit des outils simples et efficaces pour la modélisation prédictive, y compris des algorithmes de classification, de régression et de clustering.
+
+        ### Concepts clés de Scikit-learn
+        - **Modèles** : Scikit-learn propose une large gamme d'algorithmes d'apprentissage automatique, tels que les forêts aléatoires, les machines à vecteurs de support (SVM) et les réseaux de neurones.
+        - **Prétraitement des données** : La bibliothèque offre des outils pour normaliser, standardiser et encoder les données avant de les utiliser dans des modèles.
+        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic* 🤪).
+        - **Pipeline** : Permet de chaîner plusieurs étapes de traitement et de modélisation en un seul objet.
+        ### Exemple d'utilisation de Scikit-learn
+        ```python
+        from sklearn.model_selection import train_test_split
+        from sklearn.ensemble import RandomForestClassifier
+        from sklearn.metrics import accuracy_score
+        import pandas as pd
+
+        # Chargement des données
+        data = pd.read_csv('data.csv')
+        X = data.drop('target', axis=1)
+        y = data['target']
+
+        # Division des données en ensembles d'entraînement et de test
+        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+
+        # Création et entraînement du modèle
+        model = RandomForestClassifier()
+        model.fit(X_train, y_train)
+
+        # Prédiction et évaluation
+        y_pred = model.predict(X_test)
+        accuracy = accuracy_score(y_test, y_pred)
+        print(f'Accuracy: {accuracy}')
+        ```
+
+        :::
+
+    </TabItem>
+
+    <TabItem value="pipeline" label="Pipeline">
+
+    </TabItem>
+
     <TabItem value="exercices" label="Exercices">
 
         ## ✏️ Exercices de compréhension
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
-
-        :::info Exercice -
-
-        :::
 
         :::info Exercice -
 

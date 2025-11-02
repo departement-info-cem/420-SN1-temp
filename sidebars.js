@@ -53,12 +53,12 @@ const sidebars = {
     },
     {
       type: "doc",
-      label: "10 - 🗂 Fichiers, NumPy",
+      label: "10 - 🗂 Fichiers, 🔢 NumPy",
       id: "cours/rencontre10",
     },
     {
       type: "doc",
-      label: "11 - 🐼 Pandas, Scikit-learn",
+      label: "11 - 🐼 Pandas, 🤖 Scikit-learn",
       id: "cours/rencontre11",
     },
     {
