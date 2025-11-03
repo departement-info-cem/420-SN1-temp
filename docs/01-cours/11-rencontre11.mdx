@@ -106,7 +106,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Lire un fichier CSV avec Pandas
 
-        Le <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">fichier tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, avec des colonnes telles que le montant total de la facture, le pourboire, le sexe du serveur, etc.
+        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, avec des colonnes telles que le montant total de la facture, le pourboire, le sexe du serveur, etc.
 
         ```csv
         total_bill,tip,sex,smoker,day,time,size
@@ -116,16 +116,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         23.68,3.31,Male,No,Sun,Dinner,2
         ...
         ```
-        Si vous le téléchargez et le placez dans votre projet Pycharm, vous pouvez le lire avec Pandas comme ceci :
+        Si vous le <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">téléchargez</a> et le placez dans votre projet Pycharm, vous pouvez le lire avec Pandas comme ceci :
         ```python
         import pandas as pd
+
         # Lire le fichier CSV dans un DataFrame
         df = pd.read_csv('tips_dataset.csv')
 
         # Afficher les premières lignes du DataFrame
         print(df.head())
         ```
-        Cela produira un DataFrame qui ressemble à ceci :
+        Cela produira un DataFrame qui ressemble à ceci (seules les 5 premières lignes sont affichées) :
         ```
            total_bill   tip     sex smoker  day    time  size
         0       16.99  1.01  Female     No  Sun  Dinner     2
