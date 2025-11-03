@@ -323,30 +323,38 @@ import TabItem from '@theme/TabItem';
         - **Prétraitement des données** : La bibliothèque offre des outils pour normaliser, standardiser et encoder les données avant de les utiliser dans des modèles.
         - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic* 🤪).
         - **Pipeline** : Permet de chaîner plusieurs étapes de traitement et de modélisation en un seul objet.
-        ### Exemple d'utilisation de Scikit-learn
+
+        ---
+
+        ### Exemple d'utilisation de Scikit-learn pour visualiser une régression linéaire
         ```python
-        from sklearn.model_selection import train_test_split
-        from sklearn.ensemble import RandomForestClassifier
-        from sklearn.metrics import accuracy_score
-        import pandas as pd
+        import numpy as np
+        import matplotlib.pyplot as plt
+        from sklearn.linear_model import LinearRegression
 
-        # Chargement des données
-        data = pd.read_csv('data.csv')
-        X = data.drop('target', axis=1)
-        y = data['target']
+        # Générer des données synthétiques
+        np.random.seed(0)
+        X = 2 * np.random.rand(100, 1)
+        y = 4 + 3 * X + np.random.randn(100, 1)
 
-        # Division des données en ensembles d'entraînement et de test
-        X_train, X_test, y_train, y_test = train_test_split(X, y, test_size=0.2, random_state=42)
+        # Créer et entraîner le modèle de régression linéaire
+        model = LinearRegression()
+        model.fit(X, y)
+        # Prédire les valeurs
+        X_new = np.array([[0], [2]])
+        y_predict = model.predict(X_new)
 
-        # Création et entraînement du modèle
-        model = RandomForestClassifier()
-        model.fit(X_train, y_train)
-
-        # Prédiction et évaluation
-        y_pred = model.predict(X_test)
-        accuracy = accuracy_score(y_test, y_pred)
-        print(f'Accuracy: {accuracy}')
+        # Visualiser les résultats
+        plt.scatter(X, y, color='blue', label='Données réelles')
+        plt.plot(X_new, y_predict, color='red', linewidth=2, label='Régression linéaire')
+        plt.xlabel('X')
+        plt.ylabel('y')
+        plt.title('Régression Linéaire avec Scikit-learn')
+        plt.legend()
+        plt.show()
         ```
+
+
 
         :::
 
