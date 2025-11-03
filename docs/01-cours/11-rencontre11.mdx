@@ -60,16 +60,25 @@ import TabItem from '@theme/TabItem';
 
         Pandas est une bibliothèque Python essentielle pour la manipulation et l'analyse de données. Elle offre des structures de données flexibles et performantes, telles que les *DataFrames*, qui facilitent le traitement des données tabulaires.
 
-        ### Concepts clés de Pandas
-        - **DataFrame** : Une structure de données bidimensionnelle, similaire à une feuille de calcul Excel, qui permet de stocker et de manipuler des données étiquetées.
-        - **Series** : Une structure de données unidimensionnelle, similaire à une colonne dans un DataFrame.
-        - **Indexation** : Pandas permet une indexation avancée pour accéder et manipuler les données de manière efficace.
-        - **Manipulation des données** : Pandas offre de nombreuses fonctions pour filtrer, trier, agréger et transformer les données.
-        ### Exemple d'utilisation de Pandas
+        :::
+
+        ---
+
+        :::info Le DataFrame
+
+        Le **DataFrame** est la structure de données principale de Pandas. Il s'agit d'une table bidimensionnelle, similaire à une feuille de calcul Excel, où les données sont organisées en lignes et en colonnes. Chaque colonne peut contenir des types de données différents (nombres, chaînes de caractères, dates, etc.).
+
+        On peut créer un DataFrame à partir de diverses sources de données, telles que des fichiers CSV, des bases de données SQL, ou même des dictionnaires Python.
+
+        :::
+
+        ---
+
+        :::info Création d'un DataFrame à partir d'un dictionnaire
         ```python
         import pandas as pd
 
-        # Création d'un DataFrame
+        # Création d'un DataFrame à partir d'un dictionnaire
         data = {'Nom': ['Alice', 'Bob', 'Charlie'],
                 'Âge': [25, 30, 35],
                 'Ville': ['Paris', 'Lyon', 'Marseille']}
@@ -77,11 +86,227 @@ import TabItem from '@theme/TabItem';
 
         # Affichage du DataFrame
         print(df)
-        
-        # Filtrage des données
-        df_filtered = df[df['Âge'] > 28]
-        print(df_filtered)
         ```
+        Cela produira le DataFrame suivant :
+        ```
+               Nom  Âge      Ville
+        0    Alice   25      Paris
+        1      Bob   30       Lyon
+        2  Charlie   35  Marseille
+        ```
+        - Les clés du dictionnaire deviennent les noms des colonnes, et chaque liste associée à une clé devient une colonne de données.
+        - La première colonne (0, 1, 2) est l'index par défaut des lignes.
+        - La première ligne représente les en-têtes des colonnes.
+        - Chaque ligne suivante représente un enregistrement (une personne dans cet exemple).
+
+        :::
+
+        ---
+
+        :::info Lire un fichier CSV avec Pandas
+
+        Supposons le fichier `etudes_sommeil.csv` suivant, où la première ligne contient les en-têtes de colonnes :
+        ```csv
+        etudiant,heures_etude,heures_sommeil,niveau_stress,note,jour
+        Amélie,4.0,7.5,5,82,Lundi
+        Mahdi,2.0,8.0,3,78,Lundi
+        Julie,6.5,5.0,8,90,Mardi
+        Sam,7.0,4.5,9,88,Mardi
+        Élodie,3.0,6.5,4,76,Mercredi
+        Marc,5.5,6.0,6,84,Mercredi
+        Zoé,1.5,8.5,2,72,Jeudi
+        Noah,8.0,4.0,9,92,Jeudi
+        Léa,6.0,6.0,7,85,Vendredi
+        Thomas,3.5,7.0,5,80,Vendredi
+        Émile,2.0,9.0,3,75,Lundi
+        Sarah,5.0,5.5,6,83,Mardi
+        Alex,7.5,4.0,9,91,Mercredi
+        Chloé,4.0,7.0,4,79,Jeudi
+        Maxime,5.5,6.5,6,86,Vendredi
+        ```
+        Vous pouvez le lire avec Pandas comme ceci :
+        ```python
+        import pandas as pd
+        # Lire le fichier CSV dans un DataFrame
+        df = pd.read_csv('etudes_sommeil.csv')
+
+        # Afficher le DataFrame
+        print(df)
+        ```
+        Cela produira un DataFrame qui ressemble à ceci :
+        ```
+           etudiant  heures_etude  heures_sommeil  niveau_stress  note      jour
+        0    Amélie           4.0             7.5              5    82     Lundi
+        1     Mahdi           2.0             8.0              3    78     Lundi
+        2     Julie           6.5             5.0              8    90     Mardi
+        3       Sam           7.0             4.5              9    88     Mardi
+        4    Élodie           3.0             6.5              4    76  Mercredi
+        5      Marc           5.5             6.0              6    84  Mercredi
+        6       Zoé           1.5             8.5              2    72     Jeudi
+        7      Noah           8.0             4.0              9    92     Jeudi
+        8       Léa           6.0             6.0              7    85  Vendredi
+        9    Thomas           3.5             7.0              5    80  Vendredi
+        10    Émile           2.0             9.0              3    75     Lundi
+        11    Sarah           5.0             5.5              6    83     Mardi
+        12     Alex           7.5             4.0              9    91  Mercredi
+        13    Chloé           4.0             7.0              4    79     Jeudi
+        14   Maxime           5.5             6.5              6    86  Vendredi
+        ```
+
+        :::
+
+        ---
+
+        :::info Opérations clés avec 🐼 Pandas
+
+        Une fois vos données chargées dans un DataFrame, vous pouvez effectuer une grande variété d’opérations pour les explorer, les transformer et en extraire de l’information utile.
+
+        Voici quelques exemples pratiques avec le DataFrame `df` du fichier **etudes_sommeil.csv** :
+
+        ---
+
+        ### 👀 Afficher et explorer les données
+
+        ```python
+        # Affiche les 5 premières lignes du DataFrame
+        print(df.head())
+
+        # Affiche les informations sur les colonnes et les types de données
+        df.info()
+
+        # Affiche des statistiques descriptives (moyenne, min, max, etc.)
+        print(df.describe())
+        ```
+        Cette dernière commande `df.describe()` permet d’obtenir un résumé statistique rapide des colonnes numériques du DataFrame, incluant des mesures telles que la moyenne, l’écart-type, les valeurs minimales et maximales, ainsi que les quartiles :
+        ```
+               heures_etude  heures_sommeil  niveau_stress       note
+        count     15.000000       15.000000      15.000000  15.000000
+        mean       4.733333        6.333333       5.733333  82.733333
+        std        2.077659        1.554563       2.313521   6.076496
+        min        1.500000        4.000000       2.000000  72.000000
+        25%        3.250000        5.250000       4.000000  78.500000
+        50%        5.000000        6.500000       6.000000  83.000000
+        75%        6.250000        7.250000       7.500000  87.000000
+        max        8.000000        9.000000       9.000000  92.000000
+        ```
+
+        ---
+
+        ### 🎯 Sélectionner des colonnes et des lignes
+
+        ```python
+        # Sélection d'une colonne
+        df["note"]
+
+        # Sélection de plusieurs colonnes
+        df[["etudiant", "note", "jour"]]
+
+        # Sélection d'une ligne par son index
+        df.loc[3]    # quatrième ligne (index = 3)
+        ```
+
+        ---
+
+        ### 🔍 Filtrer les données
+
+        ```python
+        # Étudiants ayant dormi moins de 6 heures
+        df[df["heures_sommeil"] < 6]
+
+        # Étudiants ayant obtenu une note supérieure à 85
+        df[df["note"] > 85]
+
+        # Étudiants stressés (niveau_stress >= 8)
+        df[df["niveau_stress"] >= 8]
+        ```
+
+        ---
+
+        ### 📈 Trier et ordonner les données
+
+        ```python
+        # Trier par note décroissante
+        df.sort_values("note", ascending=False)
+
+        # Trier par nombre d’heures d’étude, puis de sommeil
+        df.sort_values(["heures_etude", "heures_sommeil"])
+        ```
+
+        ---
+
+        ### 🧮 Créer de nouvelles colonnes
+
+        ```python
+        # Ajouter un ratio entre les heures d'étude et de sommeil
+        df["ratio_etude_sommeil"] = df["heures_etude"] / df["heures_sommeil"]
+        print(df.head())
+        ```
+        Cela ajoutera une nouvelle colonne `ratio_etude_sommeil` au DataFrame, calculée en divisant les heures d'étude par les heures de sommeil pour chaque étudiant :
+        ```
+              etudiant  heures_etude  heures_sommeil  niveau_stress  note      jour  ratio_etude_sommeil
+        0       Amélie           4.0             7.5              5    82     Lundi             0.533333
+        1        Mahdi           2.0             8.0              3    78     Lundi             0.250000
+        2        Julie           6.5             5.0              8    90     Mardi             1.300000
+        3          Sam           7.0             4.5              9    88     Mardi             1.555556
+        4       Élodie           3.0             6.5              4    76  Mercredi             0.461538
+        ```
+
+        ---
+
+        ### 🧠 Statistiques et agrégations
+
+        ```python
+        # Moyenne générale des notes
+        df["note"].mean()
+
+        # Moyenne des heures d'étude par jour
+        df.groupby("jour")["heures_etude"].mean()
+
+        # Moyenne des notes selon le niveau de stress
+        df.groupby("niveau_stress")["note"].mean()
+        ```
+
+        ---
+
+        ### 🧹 Nettoyage de données
+
+        ```python
+        # Vérifier la présence de valeurs manquantes
+        df.isna().sum()
+
+        # Remplacer les valeurs manquantes par la moyenne de la colonne
+        df["heures_sommeil"].fillna(df["heures_sommeil"].mean(), inplace=True)
+
+        # Supprimer les lignes incomplètes
+        df.dropna(inplace=True)
+        ```
+
+        ---
+
+        ### 📊 Visualisation rapide (avec Matplotlib intégré)
+
+        ```python
+        import matplotlib.pyplot as plt
+
+        # Diagramme de dispersion : sommeil vs note
+        df.plot.scatter(x="heures_sommeil", y="note", title="Relation entre sommeil et note")
+        plt.show()
+
+        # Moyenne des notes par jour (diagramme en barres)
+        df.groupby("jour")["note"].mean().plot(kind="bar", title="Moyenne des notes par jour")
+        plt.show()
+        ```
+
+        ---
+
+        💡 **En résumé :**
+        - `df.head()` ➜ aperçu rapide
+        - `df[...]` ➜ sélection ou filtrage
+        - `df.sort_values()` ➜ tri
+        - `df.groupby()` ➜ regroupement et statistiques
+        - `df.plot()` ➜ visualisation rapide
+
+        Pandas vous permet de passer **d’un simple fichier CSV à une analyse complète** en quelques lignes seulement. 🎯
 
         :::
 
