@@ -323,7 +323,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ```python
         # Ouvrir un fichier en mode lecture
-        with open("monfichier.txt", "r") as f:
+        with open("monfichier.txt", "r") as f: # "r" pour "read"
             # Lire chaque ligne du fichier
             for ligne in f:
                 print(ligne, end="") # end="" pour éviter d'ajouter des lignes vides supplémentaires
@@ -333,7 +333,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ```python
         # Ouvrir un fichier en mode écriture
-        with open("monfichier.txt", "w") as f:
+        with open("monfichier.txt", "w") as f: # "w" pour "write"
             # Écrire des lignes dans le fichier
             f.write("Bonjour le monde!\n")
             f.write("Ceci est un fichier texte.\n")
