@@ -49,7 +49,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         📅 Cette semaine, nous allons apprendre à utiliser deux nouvelles bibliothèques essentielles pour votre TP2 :
         🐼 **Pandas** et 🤖 **Scikit-learn**.<br />
-        ?? La semaine prochaine, nous aborderons les concepts d’**intelligence artificielle** et d’**apprentissage profond** (*deep learning*).
+        👉 La semaine prochaine, nous aborderons les concepts d’**intelligence artificielle** et d’**apprentissage profond** (*deep learning*).
 
         :::
 
@@ -356,161 +356,265 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### Concepts clés de Scikit-learn
         - **Modèles** : Scikit-learn propose une large gamme d'algorithmes d'apprentissage automatique, tels que les forêts aléatoires, les machines à vecteurs de support (SVM) et les réseaux de neurones.
         - **Prétraitement des données** : La bibliothèque offre des outils pour normaliser, standardiser et encoder les données avant de les utiliser dans des modèles.
-        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic* ??).
+        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic*).
         - **Pipeline** : Permet de chaîner plusieurs étapes de traitement et de modélisation en un seul objet.
+
+        👉 Cette semaine, nous allons nous concentrer sur l'utilisation de Scikit-learn pour des tâches simples de régression, en mettant l'accent sur la visualisation des résultats.
+
+        :::
 
         ---
 
-        ### Exemple d'utilisation de Scikit-learn pour visualiser une régression linéaire
+        :::info 🚗 Démonstration : Consommation d’essence et caractéristiques des voitures
+
+        Nous utiliserons le jeu de données classique **Auto MPG** (*Miles per Gallon*) pour explorer la relation entre la **consommation d’essence** (`mpg`) et des variables comme le **poids** (`weight`) ou le **nombre de cylindres** (`cylinders`).
+        - Ce jeu de données (*dataset*) est très vintage (années 70-80 ) mais reste un excellent exemple pédagogique.
+        - Vous pouvez le téléchargez ici : <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a>
+
+        ---
+
+        ### 🧰 Chargement du jeu de données
+
         ```python
-        import numpy as np
+        import pandas as pd
+
+        # Chargement du jeu de données
+        df = pd.read_csv('mpg_dataset.csv')
+
+        # Aperçu
+        print(df.head())
+        df.info()
+        ```
+        ```
+                    mpg  cylinders  displacement  ...  model_year  origin                       name
+        0  18.0          8         307.0  ...          70     usa  chevrolet chevelle malibu
+        1  15.0          8         350.0  ...          70     usa          buick skylark 320
+        2  18.0          8         318.0  ...          70     usa         plymouth satellite
+        3  16.0          8         304.0  ...          70     usa              amc rebel sst
+        4  17.0          8         302.0  ...          70     usa                ford torino
+
+        [5 rows x 9 columns]
+        <class 'pandas.core.frame.DataFrame'>
+        RangeIndex: 398 entries, 0 to 397
+        Data columns (total 9 columns):
+         #   Column        Non-Null Count  Dtype
+        ---  ------        --------------  -----
+         0   mpg           398 non-null    float64
+         1   cylinders     398 non-null    int64
+         2   displacement  398 non-null    float64
+         3   horsepower    392 non-null    float64
+         4   weight        398 non-null    int64
+         5   acceleration  398 non-null    float64
+         6   model_year    398 non-null    int64
+         7   origin        398 non-null    object
+         8   name          398 non-null    object
+        dtypes: float64(4), int64(3), object(2)
+        memory usage: 28.1+ KB
+        ```
+        Ce jeu de données contient 398 entrées (voitures) avec les 9 colonnes suivantes :
+        1. `mpg` : consommation en miles par gallon
+        2. `cylinders` : nombre de cylindres
+        3. `displacement` : cylindrée en pouces cubes
+        4. `horsepower` : puissance en chevaux
+        5. `weight` : poids en livres
+        6. `acceleration` : temps d’accélération de 0 à 60 mph
+        7. `model_year` : année du modèle
+        8. `origin` : pays d’origine (usa, europe, japan)
+        9. `name` : nom du modèle
+
+        Ce qui nous intéresse ici, c’est de voir comment certaines caractéristiques (ex. poids, cylindres) influencent la consommation (`mpg`, première colonne).
+
+        ---
+
+        ### 🔍 Exploration rapide
+
+            Regroupons les voitures par nombre de cylindres et calculons la moyenne de consommation pour chaque groupe :
+        ```python
+        # Moyenne de la consommation par nombre de cylindres
+        print(df.groupby("cylinders")["mpg"].mean())
+        ```
+        ```
+        cylinders
+        3    20.550000
+        4    29.286765
+        5    27.366667
+        6    19.985714
+        8    14.963107
+        Name: mpg, dtype: float64
+        ```
+        💡 On observe une relation **inverse** : on dirait que plus il y a de cylindres, plus la consommation (mpg) diminue. 😉<br />
+        Mais est-ce vraiment une relation linéaire ?<br />
+            Visualisons cela avec un graphique de dispersion (`scatter plot`) entre le poids (`weight`) et la consommation (`mpg`) :
+        ```python
+        # Visualisation simple
         import matplotlib.pyplot as plt
+        plt.scatter(df["weight"], df["mpg"], alpha=0.6)
+        plt.xlabel("Poids du véhicule")
+        plt.ylabel("Consommation (mpg)")
+        plt.title("Poids vs Consommation")
+        plt.show()
+        ```
+            <img src={require('/img/cours/r11_poids_vs_conso.png').default} width="50%"/>
+
+            💬 On observe une tendance claire : plus le poids augmente, plus la consommation (mpg) diminue.
+
+        ---
+
+        ### 🧮 Régression linéaire simple (Scikit-learn)
+
+        Nous allons modéliser cette relation avec une régression linéaire (`LinearRegression`).
+
+            Préparons d'abord les données :
+        ```python
+        # Suppression des valeurs manquantes (seulement pour les colonnes utilisées : mpg et weight)
+        df = df.dropna(subset=["mpg", "weight"])
+
+        # Préparation des variables
+        X = df[["weight"]]    # variable explicative
+        y = df["mpg"]         # variable cible
+            ```
+        Il est très important de bien comprendre ici la structure de `X` et `y` :
+        - `X` est un DataFrame à 2 dimensions (même si une seule colonne) : il doit toujours être en 2D pour Scikit-learn.
+        - `y` est une Series (1D) contenant les valeurs cibles.
+
+        Ici :
+        - `X` est une matrice 2D de dimensions (n_samples, n_features) où `n_samples` est le nombre de voitures et `n_features` est 1 (le poids).
+        - `y` est un vecteur 1D de longueur `n_samples` contenant les valeurs de consommation (mpg).
+
+            Plus précisément, comme on a 398 voitures, `X` aura une forme (398, 1) et `y` aura une forme (398,) :
+        <Row>
+            <Column>
+                ```python
+                print(X)
+                ```
+                ```
+                     weight
+                0      3504
+                1      3693
+                2      3436
+                3      3433
+                4      3449
+                ..      ...
+                393    2790
+                394    2130
+                395    2295
+                396    2625
+                397    2720
+
+                [398 rows x 1 columns]
+                ```
+            </Column>
+            <Column>
+                ```python
+                print(y)
+                ```
+                ```
+
+                0      18.0
+                1      15.0
+                2      18.0
+                3      16.0
+                4      17.0
+                       ...
+                393    27.0
+                394    44.0
+                395    32.0
+                396    28.0
+                397    31.0
+                Name: mpg, Length: 398, dtype: float64
+
+                ```
+            </Column>
+        </Row>
+
+        Entraînons maintenant le modèle de régression linéaire :
+        ```python
         from sklearn.linear_model import LinearRegression
 
-        # Générer des données synthétiques
-        np.random.seed(0)
-        X = 2 * np.random.rand(100, 1)
-        y = 4 + 3 * X + np.random.randn(100, 1)
+        # Modèle linéaire
+        model = LinearRegression().fit(X, y)
+            ```
+            Voyons s'il existe une relation linéaire entre le poids et la consommation en affichant les coefficients du modèle :
+        ```python
+        print("Coefficient :", model.coef_)
+        print("Intercept :", model.intercept_)
+        ```
+        ```
+        Coefficient : [-0.00764743]
+        Intercept : 46.21651922242803
+        ```
+        💬 Le coefficient négatif confirme que la relation est inverse : **plus le poids augmente
+, plus la consommation (mpg) diminue**.
 
-        # Créer et entraîner le modèle de régression linéaire
-        model = LinearRegression()
-        model.fit(X, y)
-        # Prédire les valeurs
-        X_new = np.array([[0], [2]])
-        y_predict = model.predict(X_new)
+            La formule de la droite de régression est donc :
+            $$
+            \text{mpg} \quad = \quad -0.00765 \times \text{weight} + 46.22
+            $$
 
-        # Visualiser les résultats
-        plt.scatter(X, y, color='blue', label='Données réelles')
-        plt.plot(X_new, y_predict, color='red', linewidth=2, label='Régression linéaire')
-        plt.xlabel('X')
-        plt.ylabel('y')
-        plt.title('Régression Linéaire avec Scikit-learn')
+            Est-ce qie la relation est statistiquement significative?
+        Pour évaluer la qualité de l’ajustement, on peut regarder le score R² :
+        ```python
+        r2_score = model.score(X, y)
+        print("Score R² :", r2_score)
+        ```
+        ```
+        Score R² : 0.7066061919386142
+        ```
+        💬 Un score R² de 0.71 indique que le modèle explique environ
+        71% de la variance observée dans la consommation (mpg) en fonction du poids.
+        Cela suggère une relation linéaire assez forte entre le poids et la consommation.
+
+
+        ---
+
+        ### 📈 Visualisation de la régression
+
+        ```python
+        plt.scatter(X, y, label="Données réelles", alpha=0.6)
+        plt.plot(X, model.predict(X), color="red", label="Régression linéaire")
+        plt.xlabel("Poids du véhicule")
+        plt.ylabel("Consommation (mpg)")
+        plt.title("Régression linéaire : Poids vs Consommation")
         plt.legend()
         plt.show()
         ```
 
+        💬 On obtient une droite de tendance montrant que :
+        > 🔻 Plus le poids augmente, plus la consommation (mpg) diminue.
 
+        ---
+
+        ### ⚙️ Régression multiple (optionnel)
+
+        On peut facilement ajouter d’autres variables (ex. nombre de cylindres, puissance) :
+
+        ```python
+        df = df.dropna(subset=["mpg", "weight", "cylinders", "horsepower"])
+        X_multi = df[["weight", "cylinders", "horsepower"]]
+        y = df["mpg"]
+
+        model_multi = LinearRegression().fit(X_multi, y)
+        print("Coefficients :", model_multi.coef_)
+        print("Score R² :", model_multi.score(X_multi, y))
+        ```
+
+        💡 Cela montre comment Scikit-learn peut servir à **analyser** et **visualiser** des tendances, même sans validation ni prédiction.
+
+        ---
+
+        ### 🧠 À retenir
+
+        | Objectif | Outil |
+        |-----------|-------|
+        | Charger et explorer les données | 🐼 Pandas + Seaborn |
+        | Visualiser les relations | 📊 Matplotlib / Seaborn |
+        | Modéliser une tendance | 🤖 Scikit-learn (LinearRegression) |
+        | Valider un modèle complet | (optionnel) train/test split |
+
+        > Scikit-learn n’est pas réservé au machine learning complexe :
+        > il peut aussi servir à **confirmer visuellement une hypothèse statistique** simple. 🎯
 
         :::
-
-
-        :::info 🚗 Démonstration : Consommation d’essence et caractéristiques des voitures
-
-Dans ce mini-exemple, on utilise le jeu de données classique **Auto MPG** (Miles per Gallon) pour explorer la relation entre la **consommation d’essence** (`mpg`) et des variables comme le **poids** (`weight`) ou le **nombre de cylindres** (`cylinders`).
-
----
-
-### 🧰 Chargement du jeu de données
-
-Le dataset `mpg` est directement disponible dans la bibliothèque **Seaborn** :
-
-```python
-import seaborn as sns
-import pandas as pd
-
-# Chargement du jeu de données
-df = sns.load_dataset("mpg")
-
-# Aperçu
-print(df.head())
-print(df.info())
-```
-
----
-
-### 🔍 Exploration rapide
-
-```python
-# Colonnes principales
-print(df[["mpg", "cylinders", "weight", "horsepower", "acceleration"]].describe())
-
-# Moyenne de la consommation par nombre de cylindres
-print(df.groupby("cylinders")["mpg"].mean())
-
-# Visualisation simple
-import matplotlib.pyplot as plt
-sns.scatterplot(x="weight", y="mpg", data=df)
-plt.title("Relation entre le poids du véhicule et la consommation (mpg)")
-plt.show()
-```
-
-💡 On observe une relation **inverse** : plus le véhicule est lourd, plus la consommation (en mpg) est faible.
-
----
-
-### 🧮 Régression linéaire simple (Scikit-learn)
-
-Nous allons modéliser cette relation avec `LinearRegression` — **sans train/test split**, juste pour visualiser la tendance.
-
-```python
-from sklearn.linear_model import LinearRegression
-import numpy as np
-
-# Suppression des valeurs manquantes
-df = df.dropna(subset=["mpg", "weight"])
-
-# Préparation des variables
-X = df[["weight"]]    # variable explicative
-y = df["mpg"]         # variable cible
-
-# Modèle linéaire
-model = LinearRegression().fit(X, y)
-
-print("Coefficient :", model.coef_[0])
-print("Intercept :", model.intercept_)
-print("Score R² :", model.score(X, y))
-```
-
----
-
-### 📈 Visualisation de la régression
-
-```python
-plt.scatter(X, y, label="Données réelles", alpha=0.6)
-plt.plot(X, model.predict(X), color="red", label="Régression linéaire")
-plt.xlabel("Poids du véhicule")
-plt.ylabel("Consommation (mpg)")
-plt.title("Régression linéaire : Poids vs Consommation")
-plt.legend()
-plt.show()
-```
-
-💬 On obtient une droite de tendance montrant que :
-> 🔻 Plus le poids augmente, plus la consommation (mpg) diminue.
-
----
-
-### ⚙️ Régression multiple (optionnel)
-
-On peut facilement ajouter d’autres variables (ex. nombre de cylindres, puissance) :
-
-```python
-df = df.dropna(subset=["mpg", "weight", "cylinders", "horsepower"])
-X_multi = df[["weight", "cylinders", "horsepower"]]
-y = df["mpg"]
-
-model_multi = LinearRegression().fit(X_multi, y)
-print("Coefficients :", model_multi.coef_)
-print("Score R² :", model_multi.score(X_multi, y))
-```
-
-💡 Cela montre comment Scikit-learn peut servir à **analyser** et **visualiser** des tendances, même sans validation ni prédiction.
-
----
-
-### 🧠 À retenir
-
-| Objectif | Outil |
-|-----------|-------|
-| Charger et explorer les données | 🐼 Pandas + Seaborn |
-| Visualiser les relations | 📊 Matplotlib / Seaborn |
-| Modéliser une tendance | 🤖 Scikit-learn (LinearRegression) |
-| Valider un modèle complet | (optionnel) train/test split |
-
-> Scikit-learn n’est pas réservé au machine learning complexe :
-> il peut aussi servir à **confirmer visuellement une hypothèse statistique** simple. 🎯
-
-:::
 
     </TabItem>
 
