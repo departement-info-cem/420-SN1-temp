@@ -49,7 +49,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         📅 Cette semaine, nous allons apprendre à utiliser deux nouvelles bibliothèques essentielles pour votre TP2 :
         🐼 **Pandas** et 🤖 **Scikit-learn**.<br />
-        👉 La semaine prochaine, nous aborderons les concepts d’**intelligence artificielle** et d’**apprentissage profond** (*deep learning*).
+        ?? La semaine prochaine, nous aborderons les concepts d’**intelligence artificielle** et d’**apprentissage profond** (*deep learning*).
 
         :::
 
@@ -106,7 +106,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Lire un fichier CSV avec Pandas
 
-        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, avec des colonnes telles que le montant total de la facture, le pourboire, le sexe du serveur, etc.
+        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, lees colonnes suivantes : le montant total de la facture, le pourboire, le sexe du serveur, si le client est fumeur, le jour de la semaine, le moment de la journée (dîner/*lunch* ou souper/*dinner*) et la taille du groupe :
 
         ```csv
         total_bill,tip,sex,smoker,day,time,size
@@ -135,12 +135,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         3       23.68  3.31    Male     No  Sun  Dinner     2
         4       24.59  3.61  Female     No  Sun  Dinner     4
         ```
+        Nous utiliserons ces données pour illustrer diverses opérations avec Pandas.
+        - Chargez-les et expérimentez par vous-même ! 🎯
 
         :::
 
         ---
 
-        :::info Opérations clés avec 🐼 Pandas
+        ::::info Opérations clés avec 🐼 Pandas
 
         Une fois vos données chargées dans un DataFrame, vous pouvez effectuer une grande variété d’opérations pour les explorer, les transformer et en extraire de l’information utile.
 
@@ -162,15 +164,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
         Cette dernière commande `df.describe()` permet d’obtenir un résumé statistique rapide des colonnes numériques du DataFrame, incluant des mesures telles que la moyenne, l’écart-type, les valeurs minimales et maximales, ainsi que les quartiles :
         ```
-               heures_etude  heures_sommeil  niveau_stress       note
-        count     15.000000       15.000000      15.000000  15.000000
-        mean       4.733333        6.333333       5.733333  82.733333
-        std        2.077659        1.554563       2.313521   6.076496
-        min        1.500000        4.000000       2.000000  72.000000
-        25%        3.250000        5.250000       4.000000  78.500000
-        50%        5.000000        6.500000       6.000000  83.000000
-        75%        6.250000        7.250000       7.500000  87.000000
-        max        8.000000        9.000000       9.000000  92.000000
+               total_bill         tip        size
+        count  244.000000  244.000000  244.000000
+        mean    19.785943    2.998279    2.569672
+        std      8.902412    1.383638    0.951100
+        min      3.070000    1.000000    1.000000
+        25%     13.347500    2.000000    2.000000
+        50%     17.795000    2.900000    2.000000
+        75%     24.127500    3.562500    3.000000
+        max     50.810000   10.000000    6.000000
         ```
 
         ---
@@ -179,28 +181,36 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ```python
         # Sélection d'une colonne
-        df["note"]
+        df["total_bill"]
 
         # Sélection de plusieurs colonnes
-        df[["etudiant", "note", "jour"]]
+        df[["total_bill", "tip", "day"]]
 
         # Sélection d'une ligne par son index
-        df.loc[3]    # quatrième ligne (index = 3)
+        df.iloc[3]  # 4ème ligne (index 3)
         ```
+
+        :::warning Attention
+        Toutes ces opérations (et celles qui suivent) **ne modifient pas** le DataFrame original `df`. Elles renvoient un **nouveau DataFrame** basé sur les critères spécifiés. Il est cependant possible de stocker le résultat dans une nouvelle variable si besoin :
+        ```python
+        df_filtered = df[df["tip"] > 5]
+        ```
+        `df_filtered` contiendra alors un nouveau DataFrame avec uniquement les lignes où le pourboire est supérieur à 5.
+        :::
 
         ---
 
         ### 🔍 Filtrer les données
 
         ```python
-        # Étudiants ayant dormi moins de 6 heures
-        df[df["heures_sommeil"] < 6]
+        # Filtrer les lignes où le pourboire est supérieur à 5
+        df[df["tip"] > 5]
 
-        # Étudiants ayant obtenu une note supérieure à 85
-        df[df["note"] > 85]
+        # Filtrer les lignes pour le jour "Sun" et le temps "Dinner"
+        df[(df["day"] == "Sun") & (df["time"] == "Dinner")]
 
-        # Étudiants stressés (niveau_stress >= 8)
-        df[df["niveau_stress"] >= 8]
+        # Filtrer les lignes où le serveur est une femme et le pourboire supérieur à 3
+        df[(df["sex"] == "Female") & (df["tip"] > 3)]
         ```
 
         ---
@@ -208,11 +218,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### 📈 Trier et ordonner les données
 
         ```python
-        # Trier par note décroissante
-        df.sort_values("note", ascending=False)
+        # Trier par montant total de la facture (total_bill) en ordre croissant
+        df.sort_values(by="total_bill")
 
-        # Trier par nombre d’heures d’étude, puis de sommeil
-        df.sort_values(["heures_etude", "heures_sommeil"])
+        # Trier par pourboire (tip) en ordre décroissant
+        df.sort_values(by="tip", ascending=False)
+
+        # Trier par jour puis par montant total de la facture
+        df.sort_values(by=["day", "total_bill"])
         ```
 
         ---
@@ -220,18 +233,17 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### 🧮 Créer de nouvelles colonnes
 
         ```python
-        # Ajouter un ratio entre les heures d'étude et de sommeil
-        df["ratio_etude_sommeil"] = df["heures_etude"] / df["heures_sommeil"]
-        print(df.head())
+        # Ajouter une colonne pour le pourcentage de pourboire
+        df["tip_percentage"] = (df["tip"] / df["total_bill"]) * 100
         ```
-        Cela ajoutera une nouvelle colonne `ratio_etude_sommeil` au DataFrame, calculée en divisant les heures d'étude par les heures de sommeil pour chaque étudiant :
+        Cela ajoute une nouvelle colonne `tip_percentage` au DataFrame, calculant le pourcentage de pourboire par rapport au montant total de la facture :
         ```
-              etudiant  heures_etude  heures_sommeil  niveau_stress  note      jour  ratio_etude_sommeil
-        0       Amélie           4.0             7.5              5    82     Lundi             0.533333
-        1        Mahdi           2.0             8.0              3    78     Lundi             0.250000
-        2        Julie           6.5             5.0              8    90     Mardi             1.300000
-        3          Sam           7.0             4.5              9    88     Mardi             1.555556
-        4       Élodie           3.0             6.5              4    76  Mercredi             0.461538
+           total_bill   tip     sex smoker  day    time  size  tip_percentage
+        0       16.99  1.01  Female     No  Sun  Dinner     2        5.944673
+        1       10.34  1.66    Male     No  Sun  Dinner     3       16.054159
+        2       21.01  3.50    Male     No  Sun  Dinner     3       16.658734
+        3       23.68  3.31    Male     No  Sun  Dinner     2       13.978041
+        4       24.59  3.61  Female     No  Sun  Dinner     4       14.680765
         ```
 
         ---
@@ -239,29 +251,32 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### 🧠 Statistiques et agrégations
 
         ```python
-        # Moyenne générale des notes
-        df["note"].mean()
+        # Moyenne du pourboire
+        tip_moyen = df["tip"].mean()
+        print(tip_moyen) # affiche 2.99827868852459
 
-        # Moyenne des heures d'étude par jour
-        df.groupby("jour")["heures_etude"].mean()
-
-        # Moyenne des notes selon le niveau de stress
-        df.groupby("niveau_stress")["note"].mean()
+        # Moyenne du pourboire par jour
+        df_tip_jour = df.groupby("day")["tip"].mean()
+        print(df_tip_jour)
         ```
+        Cela produira une sortie similaire à :
+        ```
+        day
+        Fri     2.734737
+        Sat     2.993103
+        Sun     3.255132
+        Thur    2.771452
+        Name: tip, dtype: float64
+        ```
+        On voit que c'est plus payant le dimanche ! 😉
 
         ---
 
         ### 🧹 Nettoyage de données
 
         ```python
-        # Vérifier la présence de valeurs manquantes
-        df.isna().sum()
-
-        # Remplacer les valeurs manquantes par la moyenne de la colonne
-        df["heures_sommeil"].fillna(df["heures_sommeil"].mean(), inplace=True)
-
-        # Supprimer les lignes incomplètes
-        df.dropna(inplace=True)
+        # Supprimer les lignes avec des valeurs manquantes
+        df_clean = df.dropna()
         ```
 
         ---
@@ -269,16 +284,53 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### 📊 Visualisation rapide (avec Matplotlib intégré)
 
         ```python
+        import pandas as pd
         import matplotlib.pyplot as plt
 
-        # Diagramme de dispersion : sommeil vs note
-        df.plot.scatter(x="heures_sommeil", y="note", title="Relation entre sommeil et note")
+        # Lire le fichier CSV dans un DataFrame
+        df = pd.read_csv('tips_dataset.csv')
+
+        # Ajouter une colonne pour le pourcentage de pourboire
+        df["tip_percentage"] = (df["tip"] / df["total_bill"]) * 100
+
+        # Histogramme du pourcentage de pourboire
+        df["tip_percentage"].plot(kind="hist", bins=20, title="Distribution du pourcentage de pourboire")
+        plt.xlabel("Pourcentage de pourboire")
+        plt.ylabel("Fréquence")
+        plt.grid(which='both', linestyle='--', linewidth=0.5)
         plt.show()
 
-        # Moyenne des notes par jour (diagramme en barres)
-        df.groupby("jour")["note"].mean().plot(kind="bar", title="Moyenne des notes par jour")
+        # Boîte à moustaches du pourcentage de pourboire par jour
+        df.boxplot(column="tip_percentage", by="day", grid=False)
+        plt.title("Pourcentage de pourboire par jour")
+        plt.suptitle("")  # Supprimer le titre par défaut
+        plt.xlabel("Jour")
+        plt.ylabel("Pourcentage de pourboire")
+        plt.grid(which='both', linestyle='--', linewidth=0.5)
         plt.show()
         ```
+
+        <Row>
+          <Column size={6}>
+            <div style={{ textAlign: "left" }}>
+              <img
+                src={require('/img/cours/r11_histogramme_pourcentage_pourboire.png').default}
+                alt="Histogramme des pourboires"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </div>
+          </Column>
+
+          <Column size={6}>
+            <div style={{ textAlign: "right" }}>
+              <img
+                src={require('/img/cours/r11_boxplot_pourcentage_pourboire_par_jour.png').default}
+                alt="Boxplot pourcentage pourboire par jour"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </div>
+          </Column>
+        </Row>
 
         ---
 
@@ -291,7 +343,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         Pandas vous permet de passer **d’un simple fichier CSV à une analyse complète** en quelques lignes seulement. 🎯
 
-        :::
+        ::::
 
     </TabItem>
 
@@ -304,7 +356,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ### Concepts clés de Scikit-learn
         - **Modèles** : Scikit-learn propose une large gamme d'algorithmes d'apprentissage automatique, tels que les forêts aléatoires, les machines à vecteurs de support (SVM) et les réseaux de neurones.
         - **Prétraitement des données** : La bibliothèque offre des outils pour normaliser, standardiser et encoder les données avant de les utiliser dans des modèles.
-        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic* 🤪).
+        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles, telles que la précision, le rappel et la courbe ROC (non, non, pas *Rest of Canada* mais plutôt *Receiver Operating Characteristic* ??).
         - **Pipeline** : Permet de chaîner plusieurs étapes de traitement et de modélisation en un seul objet.
 
         ---
@@ -495,5 +547,3 @@ print("Score R² :", model_multi.score(X_multi, y))
     </TabItem>
 
 </Tabs>
-
-
