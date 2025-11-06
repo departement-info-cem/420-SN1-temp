@@ -106,7 +106,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Lire un fichier CSV avec Pandas
 
-        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, lees colonnes suivantes : le montant total de la facture, le pourboire, le sexe du serveur, si le client est fumeur, le jour de la semaine, le moment de la journée (dîner/*lunch* ou souper/*dinner*) et la taille du groupe :
+        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, les colonnes suivantes : le montant total de la facture, le pourboire, le sexe du serveur, si le client est fumeur, le jour de la semaine, le moment de la journée (dîner/*lunch* ou souper/*dinner*) et la taille du groupe :
 
         ```csv
         total_bill,tip,sex,smoker,day,time,size
@@ -162,7 +162,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         # Affiche des statistiques descriptives (moyenne, min, max, etc.)
         print(df.describe())
         ```
-        Cette dernière commande `df.describe()` permet d’obtenir un résumé statistique rapide des colonnes numériques du DataFrame, incluant des mesures telles que la moyenne, l’écart-type, les valeurs minimales et maximales, ainsi que les quartiles :
+        Cette dernière commande `df.describe()` permet d’obtenir sous forme d'un DataFrame un résumé statistique rapide des colonnes numériques du DataFrame, incluant des mesures telles que la moyenne (mean), l’écart-type (std), les valeurs minimales (min) et maximales (max), ainsi que les quartiles (25%, 75%, 75%) :
         ```
                total_bill         tip        size
         count  244.000000  244.000000  244.000000
@@ -177,21 +177,52 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ---
 
-        ### 🎯 Sélectionner des colonnes et des lignes
+        ### 🔍 Récupérer le contenu d'une ligne et d'une colonne en particulier
+
+        On peut récupérer par programmation le contenu spécifique d'un DataFrame à l'aide de la méthode `loc`. \
+        Cette méthode permet de récupérer le contenu à une ligne et une colonne spécifiée :
 
         ```python
-        # Sélection d'une colonne
-        df["total_bill"]
+        # Résumé statistique
+        desc = df.describe()
 
-        # Sélection de plusieurs colonnes
-        df[["total_bill", "tip", "day"]]
-
-        # Sélection d'une ligne par son index
-        df.iloc[3]  # 4ème ligne (index 3)
+        # Extraire la moyenne de la colonne 'tip'
+        mean_tip = desc.loc['mean', 'tip']
+        print("Moyenne de tip :", mean_tip) #2.998279
         ```
 
+
+        ---
+
+        ### 🎯 Sélectionner des colonnes et des lignes
+
+        Il est possible de créer un nouveau DataFrame à partir d'un DataFrame existant ayant que certaines colonnes ou certaines lignes :
+
+        ```python
+        # Créer un nouveau DataFrame que la colonne "total_bill"
+        df_total_bill = df["total_bill"]
+        print(df)
+
+        # Créer un nouveau DataFrame avec 3 des colonnes
+        df_plusieurs_colonnes = df[["total_bill", "tip", "day"]]
+        print(df_plusieurs_colonnes)
+
+        # Créer un nouveau DataFrame avec la ligne 4 uniquement
+        df_une_seule_ligne = df.iloc[3]  # 4ème ligne (index 3)
+        print(df_une_seule_ligne)
+
+        # Créer un nouveau DataFrame avec les lignes 4 à 9
+        df_plusieurs_lignes = df.iloc[3:10]
+        print(df_plusieurs_lignes)
+        ```
+
+        Prenez le temps d'observer à l'aide de PyCharm le contenu afficher à l'aide des prints :
+        - Si un DataFrame contient qu'une colonne le nom de la colonne est retiré (ex : df_total_bill)
+        - Si un DataFrame contient qu'une seule ligne, l'affichage est différent (ex : df_une_seule_ligne)
+
         :::warning Attention
-        Toutes ces opérations (et celles qui suivent) **ne modifient pas** le DataFrame original `df`. Elles renvoient un **nouveau DataFrame** basé sur les critères spécifiés. Il est cependant possible de stocker le résultat dans une nouvelle variable si besoin :
+        Toutes ces opérations (et celles qui suivent) **ne modifient pas** le DataFrame original `df`. \
+        Elles renvoient un **nouveau DataFrame** basé sur les critères spécifiés. Il est cependant possible de stocker le résultat dans une nouvelle variable si besoin :
         ```python
         df_filtered = df[df["tip"] > 5]
         ```
@@ -202,35 +233,48 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🔍 Filtrer les données
 
+        Il est possible de créer un nouveau DataFrame filtrant (retirant) des lignes :
+
+
         ```python
         # Filtrer les lignes où le pourboire est supérieur à 5
-        df[df["tip"] > 5]
+        df_filtre1 = df[df["tip"] > 5]
+        print(df_filtre1)
 
         # Filtrer les lignes pour le jour "Sun" et le temps "Dinner"
-        df[(df["day"] == "Sun") & (df["time"] == "Dinner")]
+        df_filtre2 = df[(df["day"] == "Sun") & (df["time"] == "Dinner")]
+        print(df_filtre2)
 
         # Filtrer les lignes où le serveur est une femme et le pourboire supérieur à 3
-        df[(df["sex"] == "Female") & (df["tip"] > 3)]
+        df_filtre3 = df[(df["sex"] == "Female") & (df["tip"] > 3)]
+        print(df_filtre3)
         ```
 
         ---
 
         ### 📈 Trier et ordonner les données
 
+        Il est possible de créer un nouveau DataFrame trié sur une ou plusieurs colonnes :
+
         ```python
         # Trier par montant total de la facture (total_bill) en ordre croissant
-        df.sort_values(by="total_bill")
+        df_trie1 = df.sort_values(by="total_bill")
+        print(df_trie1)
 
         # Trier par pourboire (tip) en ordre décroissant
-        df.sort_values(by="tip", ascending=False)
+        df_trie2 = df.sort_values(by="tip", ascending=False)
+        print(df_trie2)
 
         # Trier par jour puis par montant total de la facture
-        df.sort_values(by=["day", "total_bill"])
+        df_trie3 = df.sort_values(by=["day", "total_bill"])
+        print(df_trie3)
         ```
 
         ---
 
         ### 🧮 Créer de nouvelles colonnes
+
+        Parfois, nous souhaitons créer de nouvelles colonnes dans un DataFrame basées sur le contenu de colonnes déjà présentes
 
         ```python
         # Ajouter une colonne pour le pourcentage de pourboire
@@ -249,6 +293,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ---
 
         ### 🧠 Statistiques et agrégations
+
+        Il est possible de calculer des statistiques sur une colonne ou sur une agrégation :
 
         ```python
         # Moyenne du pourboire
@@ -274,6 +320,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🧹 Nettoyage de données
 
+        Il peut arriver que le contenu de lignes ou colonnes soit manquant. \
+        On souhaite généralement retirer ces lignes pour éviter des problèmes avant nos analyses.
+
         ```python
         # Supprimer les lignes avec des valeurs manquantes
         df_clean = df.dropna()
@@ -282,6 +331,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ---
 
         ### 📊 Visualisation rapide (avec Matplotlib intégré)
+
+        Pandas s'intègre avec Matplotlib pour générer rapidement des graphiques basé sur vos DataFrames :
 
         ```python
         import pandas as pd
