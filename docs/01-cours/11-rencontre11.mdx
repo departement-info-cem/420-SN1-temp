@@ -639,7 +639,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
                                              # pour apprendre la relation entre X et y
 
         print("Score R² :", model.score(X, y))
-
         print("Coefficient :", model.coef_[0])
         print("Intercept :", model.intercept_)
         ```
@@ -648,12 +647,24 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         Coefficient : 0.0040789144329788085
         Intercept : -0.9030520509041988
         ```
-        - Un score R² de 0.78 indique que le modèle explique environ 78% de la variance observée dans la consommation (`l_par_100km`) en fonction du poids (c'est une forte relation linéaire).
-        - Le coefficient positif (0.00408) confirme que la relation est directe : **plus le poids augmente, plus la consommation (L/100km) augmente**.
+        - Un score R² de 0.78 indique que le modèle explique environ 78% de la variance observée dans la consommation (`l_par_100km`) en fonction du poids
+            - R² représente une forte relation linéaire (très bon).
+            - Un score **R² = 1** : Le modèle explique parfaitement la variance des données (**Parfait**)
+            - Un score **0.7 ≤ R² < 1** : Le modèle explique bien la variance, mais pas parfaitement (**Très bon**)
+            - Un score **0.5 ≤ R² < 0.7** : Le modèle explique une partie significative de la variance (**Acceptable**)
+            - Un score **0.3 ≤ R² < 0.5** : Le modèle a une faible capacité explicative (**Médiocre**)
+            - Un score **0 ≤ R² < 0.3** : Le modèle explique très peu de la variance (**Faible**)
+            - Un score **R² = 0** : Le modèle n'explique rien du tout (**Inutile**)
+            - Un score **R² < 0** : Le modèle est pire qu'une simple moyenne (régression non pertinente) (**Mauvais**)
+
+        - Le coefficient positif (0.00408) confirme que la relation est directe : **plus le poids augmente, plus la consommation (L/100km) augmente**
         - La relation entre le poids et la consommation peut donc être modélisée par la formule de la droite de régression suivante :
         $$
         \text{l\_par\_100km} \quad = \quad 0.00408 \times \text{weight} - 0.903
         $$
+
+
+        <p align="center">(où 0.00408 est la valeur du coefficient et -0.903 est la valeur intercept)</p>
 
         ---
 
