@@ -480,6 +480,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
         <img src={require('/img/cours/r11_poids_vs_conso_1.png').default} width="50%"/>
 
+        <br /><br />
+
         💬 On observe une tendance claire : plus le poids du véhicule augmente, plus la consommation en litres aux 100 km augmente également. Cela confirme notre intuition que les voitures plus lourdes consomment plus d’essence.
 
         ---
@@ -596,6 +598,8 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
         <img src={require('/img/cours/r11_poids_vs_conso_2.png').default} width="50%"/>
 
+        <br /><br />
+
         💬 On obtient une droite de tendance montrant clairement la relation linéaire entre le poids et la consommation :
         - Les points bleus représentent les données réelles (poids vs consommation).
         - La ligne rouge est la droite de régression linéaire ajustée par le modèle.
@@ -620,6 +624,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         plt.show()
         ```
         <img src={require('/img/cours/r11_poids_vs_conso_3.png').default} width="50%"/>
+
+        <br /><br />
+
         💬 On observe que les voitures avec plus de cylindres (ex. 8 cylindres) ont tendance à être plus lourdes et à consommer plus d’essence, ce qui confirme notre analyse précédente.
 
         ---
@@ -740,6 +747,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             </Column>
         </Row>
 
+        - Quelle(s) variable(s) semble(nt) influencer le plus le montant du pourboire ?
+        - Quelle(s) variable(s) semble(nt) n'avoir aucun impact ?
+
         :::
 
         :::info Exercice - nouvelle colonne et visualisation
@@ -782,11 +792,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             </Column>
         </Row>
 
+        <br />
+
+        Voyez-vous des tendances intéressantes ?
+
         :::
 
         :::info Exercice - Visualisation 2
 
-        Téléchargez le fichier <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a><br />
+        Téléchargez le fichier <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a>.<br />
         Dans un nouveau script :
         1. Chargez les données dans un DataFrame.
         2. Créez une nouvelle colonne `l_par_100km` en convertissant `mpg` en litres aux 100 km.
@@ -811,6 +825,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
                 </div>
             </Column>
         </Row>
+
+        <br />
+
+        Voyez-vous des tendances intéressantes ?
 
         :::
 
