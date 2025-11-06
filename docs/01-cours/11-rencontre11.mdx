@@ -547,12 +547,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
             Préparons d'abord les données :
         ```python
-        # Suppression des valeurs manquantes (seulement pour les colonnes utilisées : l_par_100km et weight)
+        # Suppression les lignes dont des valeurs sont manquantes (on regarde seulement les colonnes utilisées : l_par_100km et weight)
         df = df.dropna(subset=["l_par_100km", "weight"])
 
         # Préparation des variables
-        X = df[["weight"]]    # variable explicative
-        y = df["l_par_100km"]         # variable cible
+        X = df[["weight"]]            # variables explicatives (des variables ayant une influence pour la détermination de la prédiction)
+        y = df["l_par_100km"]         # variable cible (la variable pour laquelle on tente de prédire un résultat)
         ```
 
         Il est très important de bien comprendre ici la structure de `X` et `y` :
