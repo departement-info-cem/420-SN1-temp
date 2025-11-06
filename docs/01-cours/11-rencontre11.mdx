@@ -318,6 +318,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ---
 
+        ### 🔁 Parcourir ligne par ligne
+
+        Tu peux parcourir un DataFrame de pandas de différentes manières. \
+        La manière la plus simple est d'utiliser la méthode `iterrows()` et une boucle for :
+
+        ```python
+        import pandas as pd
+
+        #Création d'un DataFrame
+        df = pd.DataFrame({
+            'Nom': ['Alice', 'Bob', 'Charlie'],
+            'Age': [25, 30, 35]
+        })
+
+        #Boucle sur ce DataFrame
+        for index, row in df.iterrows():
+            print(f"Index: {index}, Nom: {row['Nom']}, Age: {row['Age']}")
+        ```
+
+        ---
+
         ### 🧹 Nettoyage de données
 
         Il peut arriver que le contenu de lignes ou colonnes soit manquant. \
