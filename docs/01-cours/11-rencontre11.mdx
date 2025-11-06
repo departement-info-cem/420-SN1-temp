@@ -784,11 +784,39 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - Visualisation 2
+
+        Téléchargez le fichier <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a><br />
+        Dans un nouveau script :
+        1. Chargez les données dans un DataFrame.
+        2. Créez une nouvelle colonne `l_par_100km` en convertissant `mpg` en litres aux 100 km.
+        3. Générez ces 2 graphiques :
+        <Row>
+          <Column size={6}>
+            <div style={{ textAlign: "left" }}>
+              <img
+                src={require('/img/cours/r11_exercice_3a.png').default}
+                alt="Histogramme tip par person"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </div>
+          </Column>
+            <Column size={6}>
+                <div style={{ textAlign: "right" }}>
+                <img
+                    src={require('/img/cours/r11_exercice_3b.png').default}
+                    alt="Boxplot tip par person par size"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                />
+                </div>
+            </Column>
+        </Row>
 
         :::
 
         :::info Exercice -
+
+        utilisez 🐼 Pandas et 🤖 Scikit-learn pour :
 
         :::
 
