@@ -681,11 +681,106 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ## 🔨 Exercices de création
 
-        :::info Exercice -
+        :::info Exercice - groupby et moyenne
+
+        Téléchargez le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> et utilisez 🐼 Pandas pour :
+        1. Charger les données dans un DataFrame.
+        2. Afficher les 10 premières lignes.
+        3. Calculer et afficher la moyenne du pourboire (`tip`) :
+            1. pour les clients fumeurs et non-fumeurs,
+            2. par jour de la semaine,
+            3. par temps (dîner/lunch),
+            4. par taille de groupe.
+
+        Résultats attendus :
+        <Row>
+            <Column size={3}>
+                ```
+                smoker
+                No     2.991854
+                Yes    3.008710
+
+
+
+
+                ```
+            </Column>
+            <Column size={3}>
+                ```
+                day
+                Fri     2.734737
+                Sat     2.993103
+                Sun     3.255132
+                Thur    2.771452
+
+
+                ```
+            </Column>
+            <Column size={3}>
+                ```
+                time
+                Dinner    3.102670
+                Lunch     2.728088
+
+
+
+
+                ```
+            </Column>
+            <Column size={3}>
+                ```
+                size
+                1    1.437500
+                2    2.582308
+                3    3.393158
+                4    4.135405
+                5    4.028000
+                6    5.225000
+                ```
+            </Column>
+        </Row>
 
         :::
 
-        :::info Exercice -
+        :::info Exercice - nouvelle colonne et visualisation
+
+        Toujours avec le même jeu de données, créez une nouvelle colonne `tip_par_person` qui calcule le pourboire par personne (i.e. `tip` divisé par `size`). Ensuite, affichez les 5 premières lignes du DataFrame modifié.
+
+        Résultat attendu :
+        ```
+           total_bill   tip     sex smoker  day    time  size  tip_par_person
+        0       16.99  1.01  Female     No  Sun  Dinner     2        0.505000
+        1       10.34  1.66    Male     No  Sun  Dinner     3        0.553333
+        2       21.01  3.50    Male     No  Sun  Dinner     3        1.166667
+        3       23.68  3.31    Male     No  Sun  Dinner     2        1.655000
+        4       24.59  3.61  Female     No  Sun  Dinner     4        0.902500
+        ```
+
+        Ensuite, générez ces 2 graphiques :
+        1. un histogramme de cette nouvelle colonne `tip_par_person` pour visualiser la distribution des pourboires par personne.
+        2. un boxplot de `tip_par_person` regroupé par taille de groupe (`size`) pour voir comment le pourboire par personne varie en fonction de la taille du groupe.
+
+        Résultats attendus :
+        <Row>
+          <Column size={6}>
+            <div style={{ textAlign: "left" }}>
+              <img
+                src={require('/img/cours/r11_exercice_2a.png').default}
+                alt="Histogramme tip par person"
+                style={{ maxWidth: '100%', height: 'auto' }}
+              />
+            </div>
+          </Column>
+            <Column size={6}>
+                <div style={{ textAlign: "right" }}>
+                <img
+                    src={require('/img/cours/r11_exercice_2b.png').default}
+                    alt="Boxplot tip par person par size"
+                    style={{ maxWidth: '100%', height: 'auto' }}
+                />
+                </div>
+            </Column>
+        </Row>
 
         :::
 
