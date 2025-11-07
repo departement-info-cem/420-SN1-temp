@@ -106,7 +106,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Lire un fichier CSV avec Pandas
 
-        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, les colonnes suivantes : le montant total de la facture, le pourboire, le sexe du serveur, si le client est fumeur, le jour de la semaine, le moment de la journée (dîner/*lunch* ou souper/*dinner*) et la taille du groupe :
+        Le fichier <a href={useBaseUrl('/ressources/csv/tips_dataset.csv')} download="tips_dataset.csv">tips_dataset.csv</a> contient des données sur les pourboires donnés dans un restaurant, avec les colonnes suivantes : le montant total de la facture, le pourboire, le sexe du serveur, si le client est fumeur, le jour de la semaine, le moment de la journée (dîner/*lunch* ou souper/*dinner*) et la taille du groupe :
 
         ```csv
         total_bill,tip,sex,smoker,day,time,size
@@ -188,7 +188,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         # Extraire la moyenne de la colonne 'tip'
         mean_tip = desc.loc['mean', 'tip']
-        print("Moyenne de tip :", mean_tip) #2.998279
+        print("Moyenne de tip :", mean_tip) # 2.998279
         ```
 
 
@@ -196,14 +196,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🎯 Sélectionner des colonnes et des lignes
 
-        Il est possible de créer un nouveau DataFrame à partir d'un DataFrame existant ayant que certaines colonnes ou certaines lignes :
+        Il est possible de créer un nouveau DataFrame à partir d'un DataFrame existant en ne conservant que certaines colonnes ou certaines lignes :
 
         ```python
-        # Créer un nouveau DataFrame que la colonne "total_bill"
+        # Créer un nouveau DataFrame avec seulement la colonne "total_bill"
         df_total_bill = df["total_bill"]
         print(df)
 
-        # Créer un nouveau DataFrame avec 3 des colonnes
+        # Créer un nouveau DataFrame avec ces 3 colonnes :
         df_plusieurs_colonnes = df[["total_bill", "tip", "day"]]
         print(df_plusieurs_colonnes)
 
@@ -216,13 +216,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         print(df_plusieurs_lignes)
         ```
 
-        Prenez le temps d'observer à l'aide de PyCharm le contenu afficher à l'aide des prints :
-        - Si un DataFrame contient qu'une colonne le nom de la colonne est retiré (ex : df_total_bill)
-        - Si un DataFrame contient qu'une seule ligne, l'affichage est différent (ex : df_une_seule_ligne)
+        Prenez le temps d'observer à l'aide de PyCharm le contenu afficher à l'aide de `print` :
+        - Si un DataFrame ne contient qu'une seule colonne, le nom de la colonne est retiré (ex : df_total_bill).
+        - Si un DataFrame ne contient qu'une seule ligne, l'affichage est différent (ex : df_une_seule_ligne).
 
         :::warning Attention
         Toutes ces opérations (et celles qui suivent) **ne modifient pas** le DataFrame original `df`. \
-        Elles renvoient un **nouveau DataFrame** basé sur les critères spécifiés. Il est cependant possible de stocker le résultat dans une nouvelle variable si besoin :
+        Elles renvoient un **nouveau DataFrame** basé sur les critères spécifiés.<br />
+        Il est cependant possible de stocker le résultat dans une nouvelle variable si besoin :
         ```python
         df_filtered = df[df["tip"] > 5]
         ```
@@ -233,7 +234,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🔍 Filtrer les données
 
-        Il est possible de créer un nouveau DataFrame filtrant (retirant) des lignes :
+        Il est possible de créer un nouveau DataFrame en filtrant (retirant) des lignes :
 
 
         ```python
@@ -274,8 +275,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🧮 Créer de nouvelles colonnes
 
-        Parfois, nous souhaitons créer de nouvelles colonnes dans un DataFrame basées sur le contenu de colonnes déjà présentes
-
+        Parfois, nous souhaitons créer, dans un DataFrame, de nouvelles colonnes basées sur le contenu de colonnes déjà présentes :
         ```python
         # Ajouter une colonne pour le pourcentage de pourboire
         df["tip_percentage"] = (df["tip"] / df["total_bill"]) * 100
@@ -320,19 +320,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🔁 Parcourir ligne par ligne
 
-        Tu peux parcourir un DataFrame de pandas de différentes manières. \
-        La manière la plus simple est d'utiliser la méthode `iterrows()` et une boucle for :
+        On peut parcourir un DataFrame de Pandas de différentes manières. \
+        La manière la plus simple est d'utiliser la méthode `iterrows()` et une boucle `for` :
 
         ```python
         import pandas as pd
 
-        #Création d'un DataFrame
+        # Création d'un DataFrame
         df = pd.DataFrame({
             'Nom': ['Alice', 'Bob', 'Charlie'],
             'Age': [25, 30, 35]
         })
 
-        #Boucle sur ce DataFrame
+        # Boucle sur ce DataFrame
         for index, row in df.iterrows():
             print(f"Index: {index}, Nom: {row['Nom']}, Age: {row['Age']}")
         ```
@@ -341,19 +341,19 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🧹 Nettoyage de données
 
-        Il peut arriver que le contenu de lignes ou colonnes soit manquant. \
-        On souhaite généralement retirer ces lignes pour éviter des problèmes avant nos analyses.
-
+        Il peut arriver que des données soient manquantes dans un DataFrame (valeurs `NaN` ou `None`). \
+        On souhaite généralement retirer les lignes contenant de telles valeurs manquantes avant d'effectuer des analyses :
         ```python
         # Supprimer les lignes avec des valeurs manquantes
         df_clean = df.dropna()
         ```
+        Cela crée un nouveau DataFrame `df_clean` en supprimant toutes les lignes contenant des valeurs manquantes dans n'importe quelle colonne.
 
         ---
 
         ### 📊 Visualisation rapide (avec Matplotlib intégré)
 
-        Pandas s'intègre avec Matplotlib pour générer rapidement des graphiques basé sur vos DataFrames :
+        Pandas s'intègre avec Matplotlib pour générer rapidement des graphiques à partir des données d'un DataFrame :
 
         ```python
         import pandas as pd
@@ -424,16 +424,16 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Introduction à 🤖 Scikit-learn
 
-        Scikit-learn est une bibliothèque Python puissante pour l'apprentissage automatique. Elle fournit des outils simples et efficaces pour la modélisation prédictive, c'est à dire la création de modèle capable d'identifier des schémas dans les données pour être en mesure de réaliser des prédictions de résultat. 3 types d'algorithmes sont utilisé :
-        - de classification, pour classer des éléments <i>(ex : ceci est une photo de chat, ceci est une photo de chien)</i>
-        - de régression, pour prédire des valeurs <i>(ex : combien de Bixi devrait être emprunté demain)</i>
-        - de clustering, pour généré des regroupements <i>(ex : faire des regroupements de clients ayant des habitudes d'achat similaire)</i>
+        Scikit-learn est une bibliothèque Python puissante pour l'apprentissage automatique. Elle fournit des outils simples et efficaces pour la modélisation prédictive, c'est-à-dire la création de modèle capable d'identifier des schémas dans les données pour être en mesure de réaliser des prédictions de résultat. 3 types d'algorithmes sont utilisés couramment :
+        - algorithmes de classification, pour classer des éléments <i>(ex : ceci est une photo de chat, ceci est une photo de chien)</i>
+        - algorithmes de régression, pour prédire des valeurs <i>(ex : combien de Bixi devraient être empruntés demain)</i>
+        - algorithmes de clustering, pour généré des regroupements <i>(ex : faire des regroupements de clients ayant des habitudes d'achat similaire)</i>
 
 
         ### Concepts clés de Scikit-learn
         - **Modèles** : Scikit-learn propose une large gamme d'algorithmes d'apprentissage automatique.
         - **Prétraitement des données** : La bibliothèque offre des outils pour normaliser, standardiser et encoder les données avant de les utiliser dans des modèles.
-        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles et leur niveau fiabilité.
+        - **Évaluation des modèles** : Scikit-learn fournit des métriques pour évaluer la performance des modèles et leur niveau de fiabilité.
         - **Pipeline** : Permet de chaîner plusieurs étapes de traitement et de modélisation en un seul objet.
 
         👉 Cette semaine, nous allons nous concentrer sur l'utilisation de Scikit-learn pour des tâches simples de régression, en mettant l'accent sur la visualisation des résultats.
@@ -569,12 +569,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
             Préparons d'abord les données :
         ```python
-        # Suppression les lignes dont des valeurs sont manquantes (on regarde seulement les colonnes utilisées : l_par_100km et weight)
+        # Suppression des lignes contenant des valeurs manquantes
+        # (on regarde seulement les colonnes utilisées : l_par_100km et weight)
         df = df.dropna(subset=["l_par_100km", "weight"])
 
         # Préparation des variables
-        X = df[["weight"]]            # variables explicatives (des variables ayant une influence pour la détermination de la prédiction)
-        y = df["l_par_100km"]         # variable cible (la variable pour laquelle on tente de prédire un résultat)
+        X = df[["weight"]]            # variables explicatives (celles utilisées pour prédire y)
+        y = df["l_par_100km"]         # variable cible         (celle que l'on veut prédire)
         ```
 
         Il est très important de bien comprendre ici la structure de `X` et `y` :
@@ -932,7 +933,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Exercice -
 
-        utilisez 🐼 Pandas et 🤖 Scikit-learn pour :
+        Utilisez 🤖 Scikit-learn pour :
 
         :::
 
