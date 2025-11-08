@@ -946,6 +946,39 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::
 
+        :::info Exercice - Parcourir ligne par ligne des DataFrame
+
+        Toujours avec le fichier <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a>.<br />
+        Dans un nouveau script :
+
+        1. Charger les données dans un DataFrame.
+        2. Créer des nouveaux DataFrames à partir du DataFrames de départ vous permettant d'obtenir ces informations :
+            1. Les modèles japonais ayant une accélération de 19.4 et plus
+            2. Le nombre ligne dans le fichier par origine du véhicule
+            3. Les noms des modèles apparaissant 5 fois où plus dans le fichier
+        3. Présenter les résultats de ces DataFrame exactement comme ci-dessous :
+
+        #### Résultats attendus
+        ```python
+        Les modèles japonais ayant une accélération de 19.4 et plus :
+            - datsun 210 mpg
+            - mazda glc deluxe
+            - toyota corolla 1200
+
+        Le nombre ligne dans le fichier par origine du véhicule :
+            - europe : 700
+            - japon  : 79
+            - usa    : 249
+
+        Les noms des modèles apparaissant 5 fois où plus dans le fichier :
+            - fort pinto (6 fois)
+            - amc matador (5 fois)
+            - fort maverick (5 fois)
+            - toyota corolla (5 fois)
+        ```
+        :::
+
+
     </TabItem>
 
 </Tabs>
