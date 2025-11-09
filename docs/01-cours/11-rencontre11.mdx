@@ -8,8 +8,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
 # 🐼 Pandas et 🤖 Scikit-learn
 
-# 🏗️ en construction 🏗
-
 <Tabs queryString="onglet">
 
     <TabItem value="data" label="Analyse de données" default>
@@ -783,12 +781,12 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         :::info Exercice - Écrire du code sans PyCharm #1
 
-        Sur papier, sans ordinateur, écrivez le code permettant de connaitre le nombre de valeur supérieur à 50 dans une liste. \
+        Sur papier, sans ordinateur, écrivez le code permettant de connaitre le nombre de valeurs supérieures à 50 dans une liste. \
         Prenez la liste suivante comme référence :
 
 
         ```python
-        liste = [20,60,50,10,70,90]
+        liste = [20, 60, 50, 10, 70, 90]
         ```
 
         Le programme devrait afficher le résultat suivant :
@@ -796,10 +794,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ```python
         Contenu de la liste : [20, 60, 50, 10, 70, 90]
-        Nombre de valeur supérieure à 50 : 3
+        Nombre de valeurs supérieures à 50 : 3
         ```
 
-        Votre programme doit fonctionner peut importe le nombre d'éléments dans la liste et ses nombres.
+        Votre programme doit fonctionner peu importe le nombre d'éléments dans la liste et quels que soient ces nombres.
 
         **Validez** votre réponse à l'aide de **Pycharm**.
 
@@ -810,7 +808,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         Sur papier, sans ordinateur, écrivez un code demandant à l'utilisateur de saisir un nombre. \
         Tant que le nombre saisi est positif, le programme redemande de saisir un nouveau nombre. \
         Lorsqu'un nombre saisi est négatif, le programme affiche tous les nombres saisis ainsi que leur somme. \
-        Le programme prends alors fin.
+        Le programme prend alors fin.
 
         #### Exemple d'exécution
 
@@ -990,14 +988,14 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         :::info Exercice - Parcourir ligne par ligne des DataFrame
 
         Toujours avec le fichier <a href={useBaseUrl('/ressources/csv/mpg_dataset.csv')} download="mpg_dataset.csv">mpg_dataset.csv</a>.<br />
-        Dans un nouveau script :
+        Dans un nouveau script, vous devez :
 
         1. Charger les données dans un DataFrame.
-        2. Créer des nouveaux DataFrames à partir du DataFrames de départ vous permettant d'obtenir ces informations :
-            1. Les modèles japonais ayant une accélération de 19.4 et plus
-            2. Les 5 voitures avec le plus de horsepower
-            3. Le nombre de voiture japonnaise avec un poid supérieur à 2500
-        3. Présenter les résultats de ces DataFrame exactement comme ci-dessous :
+        2. Créer des nouveaux DataFrames à partir du DataFrame de départ vous permettant d'obtenir ces informations :
+            1. Les modèles japonais ayant une accélération de 19.4 et plus.
+            2. Les 5 voitures avec le plus de horsepower.
+            3. Le nombre de voitures japonaises avec un poid supérieur à 2500.
+        3. Présenter les résultats de ces DataFrames exactement comme ci-dessous :
 
         #### Résultats attendus
         ```python
@@ -1007,14 +1005,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             - toyota corolla 1200
 
         Les 5 voitures avec le plus de horsepower :
-            - pontiac grand prix - horsepower : 230.0
-            - buick electra 225 custom - horsepower : 225.0
-            - pontiac catalina - horsepower : 225.0
-            - buick estate wagon (sw) - horsepower : 225.0
-            - chevrolet impala - horsepower : 220.0
+            - horsepower : 230.0 - pontiac grand prix
+            - horsepower : 225.0 - buick electra 225 custom
+            - horsepower : 225.0 - pontiac catalina
+            - horsepower : 225.0 - buick estate wagon (sw)
+            - horsepower : 220.0 - chevrolet impala
 
-        Le nombre de voiture japonnaise avec un poid supérieur à 2500 : 17
+        Le nombre de voitures japonaises avec un poid supérieur à 2500 : 17
         ```
+        
         :::
 
 
