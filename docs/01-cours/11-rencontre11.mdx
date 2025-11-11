@@ -277,6 +277,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```python
         # Ajouter une colonne pour le pourcentage de pourboire
         df["tip_percentage"] = (df["tip"] / df["total_bill"]) * 100
+        print(df.head())
         ```
         Cela ajoute une nouvelle colonne `tip_percentage` au DataFrame, calculant le pourcentage de pourboire par rapport au montant total de la facture :
         ```
