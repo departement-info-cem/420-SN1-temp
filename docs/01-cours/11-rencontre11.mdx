@@ -481,6 +481,41 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         <img src={require('/img/cours/r11_size.png').default} width="50%"/>
         :::
 
+        :::tip Visualisation avec courbes divisées selon une (3e) variable catégorielle
+        Et voici un graphique montrant la relation entre le pourboire (`tip`) et la taille du groupe (`size`), selon qu'on est la semaine ou la fin de semaine, en utilisant la fonction `pivot_table()` de Pandas pour réorganiser les données :
+        ```python
+        import matplotlib.pyplot as plt
+        import pandas as pd
+
+        df = pd.read_csv('tips_dataset.csv')
+
+        # Ajouter une colonne indiquant si la journée fait partie de la fin de semaine (True/False)
+        df["is_weekend"] = df["day"].str.slice(0,1) == "S"
+
+        # Créer un tableau croisé dynamique (pivot table) pour calculer le pourboire (tip) moyen (mean)
+        # par taille de groupe (size) et par type de jour (is_weekend)
+        df_pivot = df.pivot_table(values="tip", index="size", columns="is_weekend", aggfunc='mean')
+        # values : axe des y
+        # index : axe des x
+        # columns : variable catégorielle pour diviser les courbes
+        # aggfunc : fonction d'agrégation à appliquer (ici la moyenne)
+
+        # Tracer les courbes de ce nouveau tableau croisé
+        df_pivot.plot(marker='o') # (marker='o' si on veut ajouter des points sur les lignes)
+
+        plt.xlabel("Taille du groupe")
+        plt.ylabel("Pourboire moyen ($)")
+        plt.title("Pourboire moyen en fonction de la taille du groupe\n(par jour de la semaine)")
+        plt.grid(axis='both', linestyle='--', linewidth=0.5)
+
+        # changer les étiquettes de is_weekend dans la légende
+        plt.legend(title='Jour de la semaine', labels=['Jour de semaine', 'Fin de semaine'])
+
+        plt.show()
+        ```
+        <img src={require('/img/cours/r11_pivot.png').default} width="50%"/>
+        :::
+
     </TabItem>
 
     <TabItem value="learn" label="🤖 Scikit-learn">
