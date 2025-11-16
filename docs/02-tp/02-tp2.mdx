@@ -40,7 +40,7 @@ de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d
 - créer un projet PyCharm dans un nouveau répertoire GitHub (spécifié par votre prof).
 - choisir un des projets proposés (voir onglets plus bas).
 - suivre le lien donné pour chercher, trouver et télécharger le fichier CSV de données approprié pour le projet choisi.
-- écrire un script Python qui lit le fichier CSV, analyse les données et produit des figures en utilisant les bibliothèques Pandas, Numpy et Matplotlib.
+- écrire un script Python qui lit le fichier CSV, analyse les données et produit des figures en utilisant les bibliothèques Pandas et Matplotlib.
 - sauvegarder les figures produites dans des fichiers PDF dans le répertoire du projet.
 - faire au moins 5 commits Git qui décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git).
 :::
@@ -100,6 +100,9 @@ def nom_de_la_fonction_2(df, autres_parametres, ...):
 
 # Lecture du fichier CSV de données
 df = pd.read_csv('C:/Users/VOTRENOMUTILISATEUR/Downloads/NOMDUFICHIERDEDONNEES.csv')
+
+# Nettoyage du DataFrame avant l'analyse
+df = ...
 
 # Appels aux fonctions définies plus haut pour analyser les données et produire les figures
 nom_de_la_fonction_1(df, autres_arguments, ...)
