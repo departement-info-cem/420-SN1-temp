@@ -45,15 +45,20 @@ de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d
 - faire au moins 5 commits Git qui décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git).
 :::
 
-:::warning Fichers de données volumineux
+::::warning Fichers de données volumineux
 Les fichiers CSV de données que vous allez télécharger seront trop volumineux pour être hébergés sur GitHub. Ne les ajoutez donc pas dans votre projet Pycharm. Plutôt, téléchargez-les dans le dossier `Téléchargements` de votre ordinateur, puis lisez-les directement à partir de ce dossier dans votre script Python `analyse.py` :
 ```python
 import pandas as pd
 df = pd.read_csv('C:/Users/VOTRENOMUTILISATEUR/Downloads/NOMDUFICHIERDEDONNEES.csv')
 ```
 Évidemment, remplacez `VOTRENOMUTILISATEUR` par votre matricule étudiant et `NOMDUFICHIERDEDONNEES.csv` par le nom du fichier CSV que vous avez téléchargé.
-Excel permet normalement d'explorer le contenu de fichier CSV, cependant, dans le cas de fichier trop volumineux, Excel ne peut pas afficher tout le contenu.
+
+:::danger Attention
+Excel permet normalement d'explorer le contenu de fichiers CSV.<br />
+Cependant, lorsque les fichiers sont trop volumineux (comme c'est souvent le cas pour les fichiers de données scientifiques), Excel ne peut pas afficher tout le contenu.
+#### ‼️N'essayez donc pas d'ouvrir le fichier CSV avec Excel. Cela pourrait même corrompre le fichier.
 :::
+::::
 
 <Row>
     <Column>
