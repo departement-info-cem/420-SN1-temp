@@ -276,17 +276,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         Parfois, nous souhaitons créer, dans un DataFrame, de nouvelles colonnes basées sur le contenu de colonnes déjà présentes :
         ```python
         # Ajouter une colonne pour le pourcentage de pourboire
-        df["tip_percentage"] = (df["tip"] / df["total_bill"]) * 100
+        df["tip_%"] = (df["tip"] / df["total_bill"]) * 100
+
+        # Ajouter une colonne indiquant si la journée fait partie de la fin de semaine
+        df["is_weekend"] = df["day"].str.slice(0,1) == "S"  #  str permet de récupérer le contenu de "day" en tant que chaine de caractère.
+                                                            #  La méthode slice(start, stop) permet de récupérer qu'une partie d'une chaîne :
+                                                                            #start = 0 → récupérer à partir de l'index 0 (inclus)
+                                                                            #stop = 1 → arrêter la récupération à l'index 1 (exclus)
+                                                            #  Résultat : slice retourne ici la première lettre du jour de la semaine
+
+        # Affiche les 5 premières lignes du DataFrame
         print(df.head())
         ```
-        Cela ajoute une nouvelle colonne `tip_percentage` au DataFrame, calculant le pourcentage de pourboire par rapport au montant total de la facture :
+        Cela ajoute une nouvelle colonne `tip_percentage` et `is_weekend` au DataFrame, \
+        l'une calculant le pourcentage de pourboire par rapport au montant total de la facture et l'autre indiquant si la journée fait partie de la fin de semaine :
         ```
-           total_bill   tip     sex smoker  day    time  size  tip_percentage
-        0       16.99  1.01  Female     No  Sun  Dinner     2        5.944673
-        1       10.34  1.66    Male     No  Sun  Dinner     3       16.054159
-        2       21.01  3.50    Male     No  Sun  Dinner     3       16.658734
-        3       23.68  3.31    Male     No  Sun  Dinner     2       13.978041
-        4       24.59  3.61  Female     No  Sun  Dinner     4       14.680765
+           total_bill   tip     sex smoker  day    time  size      tip_%  is_weekend
+        0       16.99  1.01  Female     No  Sun  Dinner     2   5.944673        True
+        1       10.34  1.66    Male     No  Sun  Dinner     3  16.054159        True
+        2       21.01  3.50    Male     No  Sun  Dinner     3  16.658734        True
+        3       23.68  3.31    Male     No  Sun  Dinner     2  13.978041        True
+        4       24.59  3.61  Female     No  Sun  Dinner     4  14.680765        True
         ```
 
         ---
