@@ -325,12 +325,28 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
         On voit que c'est plus payant le dimanche ! 😉
 
-        <br/>
-        La fonction `groupby` sert à définir des groupes (quelle colonne va servir pour regrouper les lignes du dataframe ensemble). \
-        Quand on ajout `.mean()`, Pendas prend chaque groupe créé et calcule la moyenne des valeurs pour la spécifiée (ici la colonne tip). \
-        Appliquer un calcul sur chaque groupe afin d'obtenir une valeur est nommé une agrégation.  \
+        La fonction `groupby()` sert à définir des groupes (la colonne qui va servir à regrouper les lignes du dataframe ensemble). \
+        Quand on ajoute `.mean()` après les `[]`, Pendas prend chaque groupe créé et calcule la moyenne de la valeur spécifiée dans les `[]` (ici la colonne `tip`).
+        ```python
+        # Moyenne du pourboire par jour
+        df_tip_jour = df.groupby("day")["tip"].mean()
+        ```
+        On peut aussi appliquer plus d'une fonction d'agrégation en même temps, en passant une liste de fonctions à la méthode `agg()` :
+        ```python
+        # Moyenne et somme du pourboire par jour
+        df_tip_jour2 = df.groupby("day")["tip"].agg(['mean', 'sum'])
+        print(df_tip_jour2)
+        ```
+        ```
+                  mean     sum
+        day
+        Fri   2.734737   51.96
+        Sat   2.993103  260.40
+        Sun   3.255132  247.39
+        Thur  2.771452  171.83
+        ```
+        On appelle ça une agrégation.  \
         Il existe plusieurs fonctions d'agrégation :
-
         - mean() → moyenne
         - sum() → somme
         - min() → minimum
@@ -342,19 +358,36 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         - first() → premier élément
         - last() → dernier élément
 
-        Si on souhaite obtenir le résultat de plusieurs fonctions d'agréation en même temps, \
-        il est possible d'utiliser la fonction `agg` en lui passant une liste de noms de fonctions d'agrégation :
-
+        Voyons un exemple d'agrégation avec :
+        - regroupement par combinaison de plusieurs colonnes (`sex` et `day`)
+        - conservation de plusieurs colonnes (`tip` et `total_bill`)
+        - plusieurs fonctions (`min()`, `max()`, `mean()`) appliquées en même temps aux colonnes conservées
         ```python
-        #obtenir par combinaison de sexe et de jour (2 * 7 == 14 groupes)
-        #le minimum, le maximum et la moyenne du total de la facture et du pourboire
-        df.groupby(["sex","day"])["tip", "total_bill"].agg(['min', 'max', 'mean'])
+        # Obtenir par combinaison de sexe et de jour (2 genres * 4 jours == 8 groupes)
+        # le minimum, le maximum et la moyenne du total de la facture et du pourboire
+        df_tip_jour3 = df.groupby(["sex","day"])[["tip", "total_bill"]].agg(['min', 'max', 'mean'])
+        print(df_tip_jour3)
         ```
+        ```
+                      tip                  total_bill
+                      min    max      mean        min    max       mean
+        sex    day
+        Female Fri   1.00   4.30  2.781111       5.75  22.75  14.145556
+               Sat   1.00   6.50  2.801786       3.07  44.30  19.680357
+               Sun   1.01   5.20  3.367222       9.60  35.26  19.872222
+               Thur  1.25   5.17  2.575625       8.35  43.11  16.715312
+        Male   Fri   1.50   4.73  2.693000       8.58  40.17  19.857000
+               Sat   1.00  10.00  3.083898       7.74  50.81  20.802542
+               Sun   1.32   6.50  3.220345       7.25  48.17  21.887241
+               Thur  1.44   6.70  2.980333       7.51  41.19  18.714667
+        ```
+        On obtient donc un DataFrame avec 8 groupes (2 genres * 4 jours) et pour chaque groupe, \
+        les statistiques demandées (`min`, `max`, `mean`) pour les colonnes `tip` et `total_bill`.
 
         La fonction `len()` permet de connaitre le nombre de groupe généré par la fonction `groupby()`
         ```python
         groupe_par_jour = df.groupby("day")
-        print(f"Nombre de groupe : {len(groupe_par_jour)}") #Affiche 7
+        print(f"Nombre de groupe : {len(groupe_par_jour)}") # Affiche 4 (Fri, Sat, Sun, Thur)
         ```
 
 
