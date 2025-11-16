@@ -417,6 +417,27 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ::::
 
+        :::tip 📊 Visualisation avec taille de point proportionnelle à une (3e) variable
+        Voici un graphique montrant la relation entre le montant total de la facture (`total_bill`), le pourboire (`tip`) et la taille du groupe (`size`).
+        Le montant total est sur l'axe X, le pourboire sur l'axe Y, et la taille du groupe est représentée pas la grosseur du point :
+        ```python
+        import matplotlib.pyplot as plt
+        import pandas as pd
+
+        df = pd.read_csv('tips_dataset.csv')
+
+        plt.scatter(df["total_bill"], df["tip"], s=df["size"] * 20, alpha=0.5) # s = taille des points
+
+        plt.xlabel("Montant total de la facture ($)")
+        plt.ylabel("Pourboire ($)")
+        plt.title("Pourboire en fonction du montant total de la facture\n(taille proportionnelle à la taille du groupe)")
+        plt.grid(axis='both', linestyle='--', linewidth=0.5)
+
+        plt.show()
+        ```
+        <img src={require('/img/cours/r11_size.png').default} width="50%"/>
+        :::
+
     </TabItem>
 
     <TabItem value="learn" label="🤖 Scikit-learn">
