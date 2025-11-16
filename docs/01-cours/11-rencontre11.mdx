@@ -340,6 +340,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         df.groupby("day")["tip", "total_bill"].agg(['min', 'max', 'mean'])
         ```
 
+        La fonction `len()` permet de connaitre le nombre de groupe généré par la fonction `groupby()`
+        ```python
+        groupe_par_jour = df.groupby("day")
+        print(f"Nombre de groupe : {len(groupe_par_jour)}") #Affiche 7
+        ```
+
+
         ---
 
         ### 🔁 Parcourir ligne par ligne un DataFrame
