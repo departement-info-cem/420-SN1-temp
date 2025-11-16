@@ -327,9 +327,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         <br/>
         La fonction `groupby` sert à définir des groupes (quelle colonne va servir pour regrouper les lignes du dataframe ensemble). \
-        Quand on ajout `.mean()`, penda prends chaque groupe créé et calcule la moyenne des valeurs pour la colonne spécifiée (ici la colonne tip). \
-        Appliquer un calcul sur chaque groupe obtenir une valeur est nommée une agrégation. \
-        Il existe différente fonction d'agrégation :
+        Quand on ajout `.mean()`, Pendas prend chaque groupe créé et calcule la moyenne des valeurs pour la spécifiée (ici la colonne tip). \
+        Appliquer un calcul sur chaque groupe afin d'obtenir une valeur est nommé une agrégation. \
+        Il existe plusieurs fonctions d'agrégation :
 
         - mean() → moyenne
         - sum() → somme
@@ -342,12 +342,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         - first() → premier élément
         - last() → dernier élément
 
-        Si on souhaite obtenir de résultat de plusieurs fonctions d'aggréation en même temps, \
-        il est possible d'utiliser la fonction `agg` et passer un tableau des noms des fonctions d'aggrégation souhaité
+        Si on souhaite obtenir le résultat de plusieurs fonctions d'agréation en même temps, \
+        il est possible d'utiliser la fonction `agg` en lui passant une liste de noms de fonctions d'agrégation :
 
         ```python
-        #obtenir par jour, pour le total de la facture et pour le montant du tip, le minimum, le maximum et la moyenne
-        df.groupby("day")["tip", "total_bill"].agg(['min', 'max', 'mean'])
+        #obtenir par combinaison de sexe et de jour (2 * 7 == 14 groupes)
+        #le minimum, le maximum et la moyenne du total de la facture et du pourboire
+        df.groupby(["sex","day"])["tip", "total_bill"].agg(['min', 'max', 'mean'])
         ```
 
         La fonction `len()` permet de connaitre le nombre de groupe généré par la fonction `groupby()`
