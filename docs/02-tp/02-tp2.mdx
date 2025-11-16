@@ -8,6 +8,13 @@ hide_table_of_contents: true
 
 <Row>
     <Column>
+        :::info 🧠 Contexte
+        Les données sont partout autour de nous. Savoir les analyser et en tirer des conclusions est une compétence essentielle dans de nombreux domaines, en particulier en science.
+
+        Dans ce TP, vous allez choisir un ensemble de données réelles, les analyser à l'aide de Python et produire des visualisations pour illustrer vos découvertes.
+        :::
+    </Column>
+    <Column>
         :::tip 🎯 Objectifs pédagogiques
         À la fin de ce travail, vous serez capable de :
 
@@ -17,75 +24,301 @@ hide_table_of_contents: true
         - Interpréter des données scientifiques réelles
         :::
     </Column>
+</Row>
+
+:::danger 👀 Plagiat
+# ❗🤖 👀 🚫
+Si votre travail est suspecté de plagiat (code copié d'un(e) autre étudiant(e), code généré par IA, notions non
+abordées en classe, etc.), deux choses peuvent se produire :
+        * Le plagiat est prouvé par nos outils : note de 0, automatiquement.
+        * Le plagiat est plutôt évident, mais une validation est requise : vous serez convoqué(e) au bureau de votre
+enseignant(e). Vous devrez répondre à certaines questions pour prouver que vous comprenez et maîtrisez le code
+qui a été utilisé. Si vous ne réussissez pas à répondre à certaines questions, vous aurez la note
+de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d'une manière ou d'une autre).
+:::
+
+:::info 📝 Pour faire ce TP, vous devez :
+- créer un projet PyCharm dans un nouveau répertoire GitHub (spécifié par votre prof).
+- choisir un des projets proposés (voir onglets plus bas).
+- suivre le lien donné pour chercher, trouver et télécharger le fichier CSV de données approprié pour le projet choisi.
+- écrire un script Python qui lit le fichier CSV, analyse les données et produit des figures en utilisant les bibliothèques Pandas, Numpy et Matplotlib.
+- sauvegarder les figures produites dans des fichiers PDF dans le répertoire du projet.
+- faire au moins 5 commits Git qui décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git).
+:::
+
+:::warning Fichers de données volumineux
+Les fichiers CSV de données que vous allez télécharger seront trop volumineux pour être hébergés sur GitHub. Ne les ajoutez donc pas dans votre projet Pycharm. Plutôt, téléchargez-les dans le dossier `Téléchargements` de votre ordinateur, puis lisez-les directement à partir de ce dossier dans votre script Python `analyse.py` :
+```python
+import pandas as pd
+df = pd.read_csv('C:/Users/VOTRENOMUTILISATEUR/Downloads/NOMDUFICHIERDEDONNEES.csv')
+```
+Évidemment, remplacez `VOTRENOMUTILISATEUR` par votre matricule étudiant et `NOMDUFICHIERDEDONNEES.csv` par le nom du fichier CSV que vous avez téléchargé.
+
+:::
+
+<Row>
     <Column>
-        :::warning <Highlight color="tip"><span style={{color: 'white'}}>2 points</span></Highlight> Répertoire Git
-            - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
-            - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
+        :::note <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> 📂 Fichiers dans le projet
+        Votre projet doit contenir exactement 1 script Python nommé `analyse.py` ainsi que les figures produites en format PDF, et rien d'autre (ne laissez traîner aucun script inutile) :
+        ```
+        tp2/
+        ├── analyse.py
+        ├── figure1.pdf
+        ├── figure2.pdf
+        ├── figure3.pdf
+        └── ...
+        ```
+        :::
+    </Column>
+    <Column>
+        :::info <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> Répertoire Git 🐙 et documentation des fonctions
+        - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
+        - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
+        - Chaque fonction doit être documentée à l'aide d'un  [docstring](/cours/rencontre3?onglet=comments)  dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles.
         :::
     </Column>
 </Row>
 
-:::note 📝 Choix de projet
-    Pour faire ce TP, vous devez créer un projet PyCharm dans le répertoire GitHub Classroom créé pour vous par le prof.\
-    Vous devez choisir un projet parmi ceux proposés ci-dessous.
+:::note <Highlight color="tip"><span style={{color: 'white'}}>1 point</span></Highlight> 🏗️ Structure de votre code
+Votre script `analyse.py` doit être structuré de la manière suivante :
+```python
+import pandas as pd
+import ... # autres importations nécessaires
+
+def nom_de_la_fonction_1(df, autres_parametres, ...):
+    """
+    Docstring
+        (description de ce que fait la fonction,
+        paramètres, valeurs retournées, fichiers produits, etc.)
+    """
+    # Corps de la fonction
+    ...
+
+def nom_de_la_fonction_2(df, autres_parametres, ...):
+    ...
+
+... # Autres fonctions nécessaires
+
+# Lecture du fichier CSV de données
+df = pd.read_csv('C:/Users/VOTRENOMUTILISATEUR/Downloads/NOMDUFICHIERDEDONNEES.csv')
+
+# Appels aux fonctions définies plus haut pour analyser les données et produire les figures
+nom_de_la_fonction_1(df, autres_arguments, ...)
+nom_de_la_fonction_2(df, autres_arguments, ...)
+...
+```
 :::
 
-TODO : les projets présentés sont des exemples et vont probablement changer...
+:::note 🧮 Grille d'évaluation
+| Points | Critère                        |
+|-------:|--------------------------------|
+|    1   | Commits Git et documentation des fonctions dans un français sans faute |
+|    1   | Fichiers dans le projet (aucun fichier de données ou autre fichier non requis n'est présent dans le projet) |
+|    1   | Structure du code (utilisation de fonctions bien définies et appelées) |
+|    3   | Manipulation et analyse statistique des données afin de répondre à des questions |
+|    4   | Visualisations de données par des figures précises |
+|    10  | **Total** |
+:::
+
+:::tip
+- Commencez par explorer les données pour comprendre leur structure et leur contenu, en utilisant des fonctions comme `head()`, `info()` et `describe()` de Pandas.
+- Nettoyez les données si nécessaire (gestion des valeurs manquantes, conversion des types de données, etc.).
+- Utilisez des fonctions Pandas pour effectuer des analyses statistiques de base (moyennes, médianes, écarts-types, etc.).
+- Créez des visualisations claires et informatives avec Matplotlib, en utilisant des graphiques adaptés aux types de données analysées (graphique linéaire, diagramme à barres, histogramme, etc.).
+:::
+
 
 <Tabs>
 
-<TabItem value="Bioinformatique" label="Bioinformatique">
+    <TabItem value="velos" label="📌 Projet vélos 🚲" default>
 
-### Projet :
+        ## Projet : 🚲 Comptages des vélos sur les pistes cyclables de Montréal
 
-**Description** :
+        :::info 📝 Description
+        - La Ville de Montréal a installé des compteurs de vélos sur plusieurs pistes cyclables pour suivre l'utilisation du réseau cyclable. L'objectif de ce projet est d'analyser les données de comptage des vélos pour identifier les tendances saisonnières, hebdomadaires et journalières dans l'utilisation des pistes cyclables.
+        :::
 
-**Source de données** :
+        :::note 🔢 Source de données
+        - Données Québec : [Comptages des vélos sur les pistes cyclables de Montréal](https://www.donneesquebec.ca/recherche/dataset/vmtl-velos-comptage)
+        - On veut analyser les données de l'année 2024 (car celles de 2025 ne sont pas encore complètes), téléchargez le bon fichier CSV.
+        :::
 
-</TabItem>
+        :::info 🔍 Éléments à analyser
+        Écrivez du code pour répondre aux questions suivantes :
+        - Quelles sont les variables présentes dans le jeu de données?
+        - Combien y a-t-il d'enregistrements (lignes) dans le jeu de données?
+        - Quel est le plus grand nombre de vélos comptés en une seule fois? À quel moment cela s'est-il produit (date, heure, emplacement)?
+        - Quel est le total de vélos comptés pour l'année 2024?
+        - Combien y a-t-il de compteurs de vélos différents?
+        - à quelle fréquence les données ont-elles été collectées par chaque compteur (ex : toutes les heures, toutes les 15 minutes, etc.)?
+        :::
 
-<TabItem value="Physique" label="Physique">
+        ## 📊 Figures à produire
+        <Row>
+            <Column>
+                :::info Figure 1
+                <img src={require('/img/tp2/p1/figure1.png').default}/>
+                💡 Astuces :
+                - ...
+                :::
+            </Column>
+            <Column>
+                :::info Figure 2
+                <img src={require('/img/tp2/p1/figure2.png').default}/>
+                💡 Astuces :
+                - ...
+                :::
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                :::info Figure 3
+                <img src={require('/img/tp2/p1/figure3.png').default}/>
+                💡 Astuces :
+                - ...
+                :::
+            </Column>
+            <Column>
+                :::info Figure 4
+                <img src={require('/img/tp2/p1/figure4.png').default}/>
+                💡 Astuces :
+                - ...
+                :::
+            </Column>
+        </Row>
 
-### Projet :
+    </TabItem>
 
-**Description** :
+    <TabItem value="p2" label="📌 Projet 2" default>
 
-**Source de données** : [Données Québec](https://www.donneesquebec.ca/recherche/dataset?groups=environnement-ressources-naturelles-energie&q=&sort=metadata_created+desc&extras_organisation_principale=)
+        ## Projet :
 
-</TabItem>
+        :::info 📝 Description
 
-<TabItem value="Chimie" label="Chimie">
+        :::
 
-### Projet : Analyse de la qualité de l'eau potable
+        :::note 🔢 Source de données
 
-**Description** : Examiner les concentrations de différents contaminants dans l'eau potable de diverses municipalités. Comparer les résultats aux normes établies.
+        :::
 
-**Source de données** : [Données Québec – Qualité de l'eau](https://www.donneesquebec.ca/recherche/dataset?q=qualit%C3%A9+de+l%27eau)
+        :::info 🔍 Éléments à analyser
 
-</TabItem>
+        :::
 
-<TabItem value="Géologie" label="Géologie">
+        ## 📊 Figures à produire
+        <Row>
+            <Column>
+                :::info Figure 1
 
-### Projet : Étude des anomalies géophysiques
+                :::
+            </Column>
+            <Column>
+                :::info Figure 2
 
-**Description** : Analyser les anomalies géophysiques détectées dans différentes régions du Québec pour identifier des zones d'intérêt géologique.
+                :::
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                :::info Figure 3
 
-**Source de données** : [Données Québec – Anomalies géophysiques](https://www.donneesquebec.ca/recherche/dataset?q=anomalies+g%C3%A9ophysiques)
+                :::
+            </Column>
+            <Column>
+                :::info Figure 4
 
-</TabItem>
+                :::
+            </Column>
+        </Row>
+
+    </TabItem>
+
+    <TabItem value="p3" label="📌 Projet 3" default>
+
+        ## Projet :
+
+        :::info 📝 Description
+
+        :::
+
+        :::note 🔢 Source de données
+
+        :::
+
+        :::info 🔍 Éléments à analyser
+
+        :::
+
+        ## 📊 Figures à produire
+        <Row>
+            <Column>
+                :::info Figure 1
+
+                :::
+            </Column>
+            <Column>
+                :::info Figure 2
+
+                :::
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                :::info Figure 3
+
+                :::
+            </Column>
+            <Column>
+                :::info Figure 4
+
+                :::
+            </Column>
+        </Row>
+
+    </TabItem>
+
+    <TabItem value="p4" label="📌 Projet 4" default>
+
+        ## Projet :
+
+        :::info 📝 Description
+
+        :::
+
+        :::note 🔢 Source de données
+
+        :::
+
+        :::info 🔍 Éléments à analyser
+
+        :::
+
+        ## 📊 Figures à produire
+        <Row>
+            <Column>
+                :::info Figure 1
+
+                :::
+            </Column>
+            <Column>
+                :::info Figure 2
+
+                :::
+            </Column>
+        </Row>
+        <Row>
+            <Column>
+                :::info Figure 3
+
+                :::
+            </Column>
+            <Column>
+                :::info Figure 4
+
+                :::
+            </Column>
+        </Row>
+
+    </TabItem>
 
 </Tabs>
-
-:::info 📂 Structure du dépôt Git
-
-```
-tp2/
-├── README.md
-├── analyse.py
-├── visualisation.py
-├── data/
-│   └── donnees.csv
-└── figures/
-    └── graphique.png
-```
-:::
