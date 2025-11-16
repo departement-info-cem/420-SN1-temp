@@ -315,9 +315,41 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
         On voit que c'est plus payant le dimanche ! 😉
 
+        <br/>
+        La fonction `groupby` sert à définir des groupes (quelle colonne va servir pour regrouper les lignes du dataframe ensemble). \
+        Quand on ajout `.mean()`, penda prends chaque groupe créé et calcule la moyenne des valeurs pour la colonne spécifiée (ici la colonne tip). \
+        Appliquer un calcul sur chaque groupe obtenir une valeur est nommée une agrégation. \
+        Il existe différente fonction d'agrégation :
+
+        - mean() → moyenne
+        - sum() → somme
+        - min() → minimum
+        - max() → maximum
+        - count() → nombre d’éléments
+        - std() → écart-type
+        - var() → variance
+        - median() → médiane
+        - first() → premier élément
+        - last() → dernier élément
+
+        Si on souhaite obtenir de résultat de plusieurs fonctions d'aggréation en même temps, \
+        il est possible d'utiliser la fonction `agg` et passer un tableau des noms des fonctions d'aggrégation souhaité
+
+        ```python
+        #obtenir par jour, pour le total de la facture et pour le montant du tip, le minimum, le maximum et la moyenne
+        df.groupby("day")["tip", "total_bill"].agg(['min', 'max', 'mean'])
+        ```
+
+        La fonction `len()` permet de connaitre le nombre de groupe généré par la fonction `groupby()`
+        ```python
+        groupe_par_jour = df.groupby("day")
+        print(f"Nombre de groupe : {len(groupe_par_jour)}") #Affiche 7
+        ```
+
+
         ---
 
-        ### 🔁 Parcourir ligne par ligne
+        ### 🔁 Parcourir ligne par ligne un DataFrame
 
         On peut parcourir un DataFrame de Pandas de différentes manières. \
         La manière la plus simple est d'utiliser la méthode `iterrows()` et une boucle `for` :
