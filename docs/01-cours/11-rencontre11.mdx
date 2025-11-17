@@ -289,17 +289,22 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             # On compare ensuite cette lettre à 'S' pour savoir si c'est le weekend ou pas,
             # ce qui retourne True ou False.
 
-        # Affiche les 5 premières lignes du DataFrame
-        print(df.head())
+        # Afficher uniquement 5 colonnes des 10 premières lignes trié par montant de la facture
+        print(df[["total_bill", "tip", "tip_percentage", "day", "is_weekend"]].sort_values(by="total_bill").head(10))
         ```
         Cela ajoute deux nouvelles colonnes au DataFrame : `tip_percentage` et `is_weekend`, la première calculant le pourcentage de pourboire par rapport au montant total de la facture et l'autre indiquant si la journée fait partie de la fin de semaine ou pas :
         ```
-           total_bill   tip     sex smoker  ...    time size  tip_percentage  is_weekend
-        0       16.99  1.01  Female     No  ...  Dinner    2        5.944673        True
-        1       10.34  1.66    Male     No  ...  Dinner    3       16.054159        True
-        2       21.01  3.50    Male     No  ...  Dinner    3       16.658734        True
-        3       23.68  3.31    Male     No  ...  Dinner    2       13.978041        True
-        4       24.59  3.61  Female     No  ...  Dinner    4       14.680765        True
+             total_bill   tip  tip_percentage   day  is_weekend
+        67         3.07  1.00       32.573290   Sat        True
+        92         5.75  1.00       17.391304   Fri       False
+        111        7.25  1.00       13.793103   Sat        True
+        172        7.25  5.15       71.034483   Sun        True
+        149        7.51  2.00       26.631158  Thur       False
+        195        7.56  1.44       19.047619  Thur       False
+        218        7.74  1.44       18.604651   Sat        True
+        145        8.35  1.50       17.964072  Thur       False
+        135        8.51  1.25       14.688602  Thur       False
+        126        8.52  1.48       17.370892  Thur       False
         ```
 
         ---
