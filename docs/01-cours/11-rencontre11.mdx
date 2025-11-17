@@ -289,7 +289,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
             # On compare ensuite cette lettre à 'S' pour savoir si c'est le weekend ou pas,
             # ce qui retourne True ou False.
 
-        # Afficher uniquement 5 colonnes des 10 premières lignes trié par montant de la facture
+        # Afficher uniquement 5 colonnes des 10 premières lignes triées par montant de la facture
         print(df[["total_bill", "tip", "tip_percentage", "day", "is_weekend"]].sort_values(by="total_bill").head(10))
         ```
         Cela ajoute deux nouvelles colonnes au DataFrame : `tip_percentage` et `is_weekend`, la première calculant le pourcentage de pourboire par rapport au montant total de la facture et l'autre indiquant si la journée fait partie de la fin de semaine ou pas :
