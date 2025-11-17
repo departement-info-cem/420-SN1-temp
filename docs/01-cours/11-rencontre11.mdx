@@ -395,10 +395,9 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ---
 
-        ### 🔁 Mapper une valeur à l'aide d'un dictionnaires
+        ### 🔁 Mapper une valeur à l'aide d'un dictionnaire
 
-        Imaginons que nous avons le DataFrame suivant représentant la valeur du Bitcoin et de certains altcoins.
-
+        Imaginons que nous avons le DataFrame suivant représentant la valeur du Bitcoin et de certains altcoins :
         ```python
         df = pd.DataFrame({
             "symbole": ["BTC", "ETH", "SOL", "ADA", "XRP", "DOT"],
@@ -407,7 +406,6 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         ```
 
         Et le dictionnaire suivant contenant le nom correspondant à chaque symbole :
-
         ```python
         dict_symboles_noms = {
             "BTC": "Bitcoin",
@@ -419,15 +417,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         }
         ```
 
-        Il est possible de créer une nouvelle colonne dans notre DataFrame contenant le nom en utilisant la méthode `map()`.
-
-
+        Il est possible de créer une nouvelle colonne dans notre DataFrame contenant le nom en utilisant la méthode `map()` :
         ```python
         df["nom"] = df["symbole"].map(dict_symboles_noms)
         print(df.head())
         ```
 
-        Ce qui affichera le DataFrame suivant
+        Notre DataFrame contient maintenant une nouvelle colonne `nom` avec le nom complet de chaque crypto-monnaie :
         ```python
           symbole  valeur_courante       nom
         0     BTC       94406.0000   Bitcoin
@@ -437,12 +433,11 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         4     XRP           2.2200    Ripple
         ```
 
-        En résumé la méthode `map()` va dans cette exemple :
-        - regarde chaque valeur de la colonne "symbole"
-        - cherche la clé correspondante dans le dictionnaire dict_symboles_noms
-        - renvoie une colonne avec les valeurs correspondates
-
-
+        En résumé, dans cet exemple, la méthode `map()` :
+        - regarde chaque valeur de la colonne "symbole" ;
+        - cherche la clé correspondante dans le dictionnaire dict_symboles_noms ;
+        - renvoie une colonne avec les valeurs correspondantes.
+        
         ---
 
         ### 🔁 Parcourir ligne par ligne un DataFrame
