@@ -393,6 +393,55 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         print(f"Nombre de groupe : {len(groupe_par_jour)}") # Affiche 4 (Fri, Sat, Sun, Thur)
         ```
 
+        ---
+
+        ### 🔁 Mapper une valeur à l'aide d'un dictionnaires
+
+        Imaginons que nous avons le DataFrame suivant représentant la valeur du Bitcoin et de certains altcoins.
+
+        ```python
+        df = pd.DataFrame({
+            "symbole": ["BTC", "ETH", "SOL", "ADA", "XRP", "DOT"],
+            "valeur_courante" : [94406.0, 3101.57, 137.55,0.4854, 2.22, 2.80]
+        })
+        ```
+
+        Et le dictionnaire suivant contenant le nom correspondant à chaque symbole :
+
+        ```python
+        dict_symboles_noms = {
+            "BTC": "Bitcoin",
+            "ETH": "Ethereum",
+            "SOL": "Solana",
+            "ADA": "Cardano",
+            "XRP": "Ripple",
+            "DOT": "Polkadot"
+        }
+        ```
+
+        Il est possible de créer une nouvelle colonne dans notre DataFrame contenant le nom en utilisant la méthode `map()`.
+
+
+        ```python
+        df["nom"] = df["symbole"].map(dict_symboles_noms)
+        print(df.head())
+        ```
+
+        Ce qui affichera le DataFrame suivant
+        ```python
+          symbole  valeur_courante       nom
+        0     BTC       94406.0000   Bitcoin
+        1     ETH        3101.5700  Ethereum
+        2     SOL         137.5500    Solana
+        3     ADA           0.4854   Cardano
+        4     XRP           2.2200    Ripple
+        ```
+
+        En résumé la méthode `map()` va dans cette exemple :
+        - regarde chaque valeur de la colonne "symbole"
+        - cherche la clé correspondante dans le dictionnaire dict_symboles_noms
+        - renvoie une colonne avec les valeurs correspondates
+
 
         ---
 
