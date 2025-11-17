@@ -136,6 +136,15 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         Nous utiliserons ces données pour illustrer diverses opérations avec Pandas.
         - Chargez-les et expérimentez par vous-même ! 🎯
 
+        :::warning Limitation de la méthode head
+        Si votre DataFrame a trop de colonnes ou du contenu trop long, il se peut que certaines colonnes soient remplacées par des `...` \
+        Dans ce cas, précédez l'appel de la fonction `head()` de ces 2 instructions :
+
+        ```python
+        pd.set_option('display.max_colwidth', None)       # Permet d'afficher entièrement le contenu des colonnes, sans limite de longueur
+        pd.set_option('display.expand_frame_repr', False) # Empêche Pandas d'étendre l'affichage du DataFrame sur plusieurs lignes (si possible)
+        print(df.head())
+        ```
         :::
 
         ---
