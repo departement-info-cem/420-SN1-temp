@@ -4,8 +4,6 @@ hide_table_of_contents: true
 
 # TP2 🧮 Analyse de données
 
-# 🏗️ en construction 🏗
-
 <Row>
     <Column>
         :::info 🧠 Contexte
@@ -246,14 +244,13 @@ Dans le cas contraire, vous perdez des points avec un maximum de 2.
                 ::::note Figure 1
                 <img src={require('/img/tp2/p2/figure1.png').default}/>
                 :::tip Astuces
+                - Pour mettre les étiquettes de l'axe des x à 45$^\circ$, utilisez l'instruction `plt.xticks(rotation=45, ha='right')`
                 :::
                 ::::
             </Column>
             <Column>
                 ::::note Figure 2
                 <img src={require('/img/tp2/p2/figure2.png').default}/>
-                :::tip Astuces
-                :::
                 ::::
             </Column>
         </Row>
@@ -262,6 +259,10 @@ Dans le cas contraire, vous perdez des points avec un maximum de 2.
                 ::::note Figure 3
                 <img src={require('/img/tp2/p2/figure3.png').default}/>
                 :::tip Astuces
+                - Récupérez une liste des types d'arbres.
+                - Pour chacun des types d'arbres de la liste, récupérez les données puis ajoutez-les au graphique à l'aide d'un nuage de points.
+                - Lors de la création des nuages de points, ajoutez le paramètre `s=0.01`.
+                - **Pour l'affichage de la légende, utilisez l'instruction `plt.legend(title="Type d'arbre", markerscale=50)`**
                 :::
                 ::::
             </Column>
@@ -269,6 +270,9 @@ Dans le cas contraire, vous perdez des points avec un maximum de 2.
                 ::::note Figure 4
                 <img src={require('/img/tp2/p2/figure4.png').default}/>
                 :::tip Astuces
+                - Récupérez une liste des espèces pour la région spécifiée.
+                - Pour chacun des espèces de la liste, récupérez les données puis ajoutez-les au graphique à l'aide d'un nuage de points.
+                - **Pour l'affichage de la légende, utilisez l'instruction `plt.legend(title="Type d'arbre", loc='lower left', prop={'size': 6}, title_fontsize=7, markerscale=0.6)`**
                 :::
                 ::::
             </Column>
