@@ -256,6 +256,10 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         # Filtrer les lignes où le serveur est une femme et le pourboire supérieur à 3
         df_filtre3 = df[(df["sex"] == "Female") & (df["tip"] > 3)]
         print(df_filtre3)
+
+        # Filtrer les lignes où la longueur de la chaîne dans la colonne "day" est supérieure à 3
+        df_filtre4 = df[df["day"].str.len() > 3]
+        print(df_filtre4)
         ```
 
         ---
