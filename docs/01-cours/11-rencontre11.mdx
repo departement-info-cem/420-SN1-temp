@@ -320,7 +320,13 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
 
         ### 🧠 Statistiques et agrégations
 
-        Il est possible de calculer des statistiques sur une colonne ou sur une agrégation :
+        Supposons que l'on veuille connaître toutes les valeurs différentes présentes dans la colonne `day` (les jours de la semaine) :
+        ```python
+        jours_uniques = df["day"].unique() # Récupère les valeurs uniques de la colonne "day" dans une liste
+        print(jours_uniques) # affiche la liste ['Sun' 'Sat' 'Thur' 'Fri']
+        ```
+
+        Il aussi est possible de calculer des statistiques sur une colonne ou sur une agrégation :
 
         ```python
         # Moyenne du pourboire
