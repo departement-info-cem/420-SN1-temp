@@ -1,38 +1,110 @@
-# depinfo-modele
+# 420-SN1 - Programmation en sciences 🐍
 
-Modèle de base pour un cours du département d'informatique du CÉGEP Édouard-Montpetit. 
+Site de documentation du cours **420-SN1 Programmation en sciences** au Cégep Édouard-Montpetit.
 
-L'objectif est de générer un site web pour un cours le plus simplement possible. Les pages de contenu sont écrites en Markdown.
+Ce site web est construit avec [Docusaurus 3](https://docusaurus.io/), un générateur de sites de documentation statique moderne.
 
-## Pour bien commencer
+## 🌐 Site en ligne
 
-1. Sur Github, faite un *fork* de ce projet. Le standard de nomenclature au département est `sigle-nom-du-cours` ex : `4N6-Mobile`.
-2. Clonez et ouvrez le projet forké dans votre éditeur de code préféré.
-3. Dans les paramètres de votre repository, dans la section **Pages**, dans la sous section **Build and deployment**, **Branch**, sélectinonez `gh-pages` et `/ (root)`, puis cliquez sur  le bouton **Save**
-4. Le fichier `config.json` doit être modifié pour contenir les informations liées à votre cours. `nomUrl` doit correspondre au nom du repository Github créé.
-5. Voir [Installation](#installation) et [Développement Local](#développement-local) pour voir comment démarrer le serveur
-6. Modifiez les documents Markdown qui sont dans la répertoire `docs` selon vos besoins.
-7. Profit
+Le site est déployé à l'adresse : **https://info.cegepmontpetit.ca/420-SN1/**
 
-## Installation
+## 📚 Contenu
+
+Le site contient :
+
+- **Cours** : Notes de cours pour les 15 rencontres
+- **Travaux pratiques (TP)** : Énoncés des travaux pratiques
+- **Recettes** : Guides pratiques (installation, configuration, etc.)
+- **Aide-mémoire** : Référence rapide des concepts Python
+
+## 🚀 Installation et développement local
+
+### Prérequis
+
+- Node.js version 16.14 ou supérieure
+
+### Installation des dépendances
+
+```bash
+npm install
+```
+
+### Démarrage du serveur de développement
+
+```bash
+npm start
+```
+
+Cette commande démarre un serveur de développement local et ouvre le site dans votre navigateur à l'adresse `http://localhost:3000/420-SN1/`. La plupart des modifications se reflètent en temps réel sans avoir à redémarrer le serveur.
+
+### Compilation pour la production
+
+```bash
+npm run build
+```
+
+Cette commande génère le contenu statique dans le répertoire `build` et peut être servie avec n'importe quel hébergeur de contenu statique.
+
+### Déploiement
+
+```bash
+npm run deploy
+```
+
+Cette commande compile le site et le déploie sur GitHub Pages (branche `gh-pages`).
+
+## 📁 Structure du projet
 
 ```
-$ npm install
+420-SN1/
+├── docs/                      # Contenu du site
+│   ├── 01-cours/             # Notes de cours (rencontres 1-15)
+│   ├── 02-tp/                # Travaux pratiques
+│   ├── 03-recettes/          # Guides pratiques
+│   └── 04-aidememoire/       # Aide-mémoire
+├── src/                       # Code source personnalisé
+│   ├── components/           # Composants React personnalisés
+│   ├── css/                  # Styles CSS personnalisés
+│   └── theme/                # Personnalisation du thème
+├── static/                    # Fichiers statiques (images, ressources)
+│   ├── img/                  # Images
+│   └── ressources/           # Fichiers CSV, notebooks, etc.
+├── docusaurus.config.js      # Configuration Docusaurus
+├── sidebars.js               # Configuration de la barre latérale
+└── package.json              # Dépendances et scripts npm
 ```
 
-## Développement Local
+## 🛠️ Technologies utilisées
 
-```
-$ npm start
-```
+- **Docusaurus 3** : Framework de documentation
+- **React** : Bibliothèque JavaScript pour l'interface
+- **MDX** : Markdown avec support JSX
+- **KaTeX** : Rendu des formules mathématiques (LaTeX)
+- **Prism** : Coloration syntaxique du code
+- **Mermaid** : Diagrammes et graphiques
 
-Cette commande démarre une serveur de développement local sur le port `3000` de votre machine personnelle et ouvre un navigateur avec l'adresse locale du site. Les changements effectués sur la documentation (`/docs`) sont automatiquement appliqués sur le site à la sauvegarde des fichiers. Les changements faits à la configuration (ex: `docusaurus.config.js`) nécessitent un redémarrage du projet.
+## ✏️ Contribuer
 
-## Déploiement
+Pour contribuer au site :
 
-Tout le code poussé sur la branche `main` de ce dépôt est automatiquement déployée sur [https://info.cegepmontpetit.ca/nom-du-repo-github/](https://info.cegepmontpetit.ca/nom-du-repo-github/) à l'aide de Github Pages et Github Actions.
+1. Clonez le dépôt
+2. Créez une branche pour vos modifications
+3. Effectuez vos changements dans le dossier `docs/`
+4. Testez localement avec `npm start`
+5. Créez un commit avec un message descriptif en français
+6. Poussez vos modifications et créez une pull request
 
-## Références
+## 📝 Licence
 
-- [Guide Markdown de base](https://www.markdownguide.org/getting-started/)
-- [Guide Markdown étendu pour Docusaurus](https://docusaurus.io/fr/docs/markdown-features)
+Voir le fichier [LICENSE](LICENSE) pour plus de détails.
+
+## 👥 Auteurs
+
+Département d'informatique - Cégep Édouard-Montpetit
+
+## 🔗 Liens utiles
+
+- [Documentation Docusaurus](https://docusaurus.io/)
+- [Markdown Guide](https://www.markdownguide.org/)
+- [KaTeX Documentation](https://katex.org/)
+
