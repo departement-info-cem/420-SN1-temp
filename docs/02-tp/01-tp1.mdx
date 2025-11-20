@@ -6,19 +6,6 @@ hide_table_of_contents: true
 
 <Row>
     <Column>
-        :::tip 🎯 Objectifs pédagogiques
-        À la fin de ce travail, vous serez capable de :
-
-        - Utiliser des **variables**, **types de base**, **opérateurs** et **fonctions**
-        - Utiliser des **structures conditionnelles** et **expressions logiques**
-        - Utiliser des **structures répétitives**
-        - **Décomposer** un algorithme en **fonctions réutilisables**
-        - Évaluer la **performance** d’un algorithme avec des mesures de temps
-        - Appliquer la logique pour résoudre un problème **numérique complexe** sans bibliothèque
-        - **Valider** le fonctionnement de vos algorithmes à l'aide de **jeux d'essais**
-        :::
-    </Column>
-    <Column>
         :::info 🧠 Contexte
         Un ordinateur, c’est très rapide, mais pas très intelligent. On va en profiter pour lui faire calculer la racine
         carrée… de façon très bête.
@@ -32,6 +19,19 @@ hide_table_of_contents: true
         - Étendre le calcul à une racine n-ième
         :::
     </Column>
+    <Column>
+        :::tip 🎯 Objectifs pédagogiques
+        À la fin de ce travail, vous serez capable de :
+
+        - Utiliser des variables, types de base, opérateurs et fonctions
+        - Utiliser des structures conditionnelles et expressions logiques
+        - Utiliser des structures répétitives
+        - Décomposer un algorithme en fonctions réutilisables
+        - Évaluer la performance d’un algorithme avec des mesures de temps
+        - Appliquer la logique pour résoudre un problème numérique complexe sans bibliothèque
+        - Valider le fonctionnement de vos algorithmes à l'aide de jeux d'essais
+        :::
+    </Column>
 </Row>
 
 :::note Créer le projet
@@ -42,6 +42,7 @@ Pour faire ce TP, vous devez créer un nouveau projet PyCharm et utiliser un ré
 :::
 
 :::danger Plagiat
+# ❗🤖 👀 🚫
 Si votre travail est suspecté de plagiat (code copié d'un(e) autre étudiant(e), code généré par IA, notions non
 abordées en classe, etc.), deux choses peuvent se produire :
         * Le plagiat est prouvé par nos outils : note de 0, automatiquement.
@@ -55,6 +56,13 @@ de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d
 - Au moins 5 commits de tailles comparables (il n'y a pas un commit avec tout dedans et les autres vides)
 - Les commits décrivent l'avancement du projet dans un français sans faute [(voir instructions)](https://info.cegepmontpetit.ca/git)
 - Chaque fonction doit être documentée à l'aide d'un  [docstring](/cours/rencontre3?onglet=comments)  dans un français sans faute : description de la fonction, paramètres, limites et exceptions possibles.
+- Votre projet doit contenir exactement 3 scripts Python et rien d'autre :
+```
+tp1/
+├── racine.py       #sert à contenir vos 2 fonctions pour les 2 méthodes différentes de calcul la racine carrée
+├── performance.py  #sert à contenir vos tests de performance sur les fonctions du module "racine.py"
+└── validation.py   #sert à contenir vos tests validant le bon fonctionnement des fonctions du module "racine.py"
+```
 :::
 
 ::::note <Highlight color="tip"><span style={{color: 'white'}}>6 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
