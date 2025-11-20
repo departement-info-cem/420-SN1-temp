@@ -66,8 +66,8 @@ tp1/
 :::
 
 ::::note <Highlight color="tip"><span style={{color: 'white'}}>6 points</span></Highlight> 🔧 Calculer la racine carrée « à la main »
-Voici 2 méthodes brutes pour calculer la racine carrée d'un nombre.\
-Pour les décrire, supposons que nous cherchons la racine carrée de 8.
+Dans le script `racine.py`, vous devez créer 2 fonctions pour représenter les méthodes pour calculer la racine carrée d'un nombre.\
+Pour décrire ces méthodes de calcul, supposons que nous cherchons la racine carrée de 8.
 
 <Row>
     <Column>
@@ -132,11 +132,15 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
     </Column>
 </Row>
 
-Pour **chacune des deux méthodes**, vous devez créer une fonction dans le module `racine.py` prenant un nombre en paramètre et retournant sa racine carrée en utilisant cette méthode. **Les 2 fonctions doivent recevoir** à ce stade **un seul paramètre** : **le nombre**.
+Les 2 fonctions doivent prendre un seul paramètre, un nombre, et retourner sa racine carrée.
 
 La **précision** doit être **entre 4 et 14 décimales** à votre discrétion. \
 Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner. \
-Mettez la précision de votre choix dans une variable à l'intérieur de vos fonctions <i>(comme une constante, ex : PRECISION = 8)</i>.
+Mettez la précision de votre choix dans une variable à l'intérieur de vos 2 fonctions <i>(comme une constante, ex : PRECISION = 8)</i>.
+
+:::danger GARDER LE MODULE `RACINE` PROPRE
+Votre module `racine` doit contenir uniquement ces 2 fonctions et aucune instruction dans ce module ne doit être placée à l'extérieur de ces 2 fonctions.
+:::
 
 :::tip ✅ Tests attendus
 
