@@ -90,6 +90,27 @@ import TabItem from '@theme/TabItem';
         print(dernier)  # Affiche 6
         print(ma_liste)  # Affiche [10, 2, 3, 4, 5]
         ```
+
+        :::tip Qu'est-ce qu'une méthode?
+        Une méthode est simplement une fonction rattachée à un type de données en particulier. \
+        Pour appeler une méthode, la synthaxe est légèrement différente, il faut toujours précéder l'appel du nom de la variable :
+        ```python
+        maVariable.maMethode()
+        maVariable.maMethode(parametre1)
+        ```
+        Les méthodes disponibles vont varier selon le type de la variable. \
+        Par exemple, sur les chaînes de caractères, il y a des méthodes propres à elles :
+
+        ```python
+        #Exemples de méthodes existantes sur des strings
+        texte = "python est génial   "
+        print(texte.upper())                        # "PYTHON EST GÉNIAL   "
+        print(texte.capitalize())                   # "Python est génial   "
+        print(texte.strip())                        # "python est génial"
+        print(texte.strip().upper())                # "PYTHON EST GÉNIAL"
+        print(texte.replace("génial", "adorable"))  # "python est adorable   "
+        ```
+
         :::
 
         ---
