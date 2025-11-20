@@ -37,22 +37,6 @@ npm start
 
 Cette commande démarre un serveur de développement local et ouvre le site dans votre navigateur à l'adresse `http://localhost:3000/420-SN1/`. La plupart des modifications se reflètent en temps réel sans avoir à redémarrer le serveur.
 
-### Compilation pour la production
-
-```bash
-npm run build
-```
-
-Cette commande génère le contenu statique dans le répertoire `build` et peut être servie avec n'importe quel hébergeur de contenu statique.
-
-### Déploiement
-
-```bash
-npm run deploy
-```
-
-Cette commande compile le site et le déploie sur GitHub Pages (branche `gh-pages`).
-
 ## 📁 Structure du projet
 
 ```
@@ -104,7 +88,12 @@ Département d'informatique - Cégep Édouard-Montpetit
 
 ## 🔗 Liens utiles
 
+- [Guide Markdown étendu pour Docusaurus](https://docusaurus.io/fr/docs/markdown-features)
 - [Documentation Docusaurus](https://docusaurus.io/)
 - [Markdown Guide](https://www.markdownguide.org/)
 - [KaTeX Documentation](https://katex.org/)
+
+## Avancé
+
+Des composantes supplémentaires ont été développées par Pierre-Olivier Brillant. Vous pouvez vous référer à la section [Wiki](https://github.com/departement-info-cem/depinfo-gabarit/wiki) de ce repository, ou vous adresser directement à lui pour en savoir plus.
 
