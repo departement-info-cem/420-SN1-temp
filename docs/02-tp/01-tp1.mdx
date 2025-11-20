@@ -60,8 +60,8 @@ de 0 (si vous ne comprenez pas votre propre code, c'est que vous avez plagié, d
 ```
 tp1/
 ├── racine.py       #sert à contenir vos 2 fonctions pour les 2 méthodes différentes de calcul la racine carrée
-├── performance.py  #sert à contenir vos tests de performance sur les fonctions du module "racine.py"
-└── validation.py   #sert à contenir vos tests validant le bon fonctionnement des fonctions du module "racine.py"
+├── validation.py   #sert à contenir vos tests validant le bon fonctionnement des fonctions du module "racine.py"
+└── performance.py  #sert à contenir vos tests de performance des fonctions du module "racine.py"
 ```
 :::
 
@@ -132,31 +132,56 @@ Pour les décrire, supposons que nous cherchons la racine carrée de 8.
     </Column>
 </Row>
 
-Pour **chacune des deux méthodes**, vous devez créer une fonction qui prend un nombre en paramètre et qui retourne sa racine carrée en utilisant cette méthode.
+Pour **chacune des deux méthodes**, vous devez créer une fonction dans le module `racine.py` prenant un nombre en paramètre et retournant sa racine carrée en utilisant cette méthode. **Les 2 fonctions doivent recevoir** à ce stade **un seul paramètre** : **le nombre**.
 
-La **précision** doit être **entre 4 et 14 décimales** à votre discrétion.<br />
-Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner.
+La **précision** doit être **entre 4 et 14 décimales** à votre discrétion. \
+Supérieur à 14 décimales, le calcul prend trop de temps et le programme peut arrêter de fonctionner. \
+Mettez la précision de votre choix dans une variable à l'intérieur de vos fonctions <i>(comme une constante, ex : PRECISION = 8)</i>.
 
 :::tip ✅ Tests attendus
 
-Tester vos 2 fonctions à l'aide d'appel de fonction similaire à ci-dessous. \
-Lorsque vous obtenez des résultats similaires, retirez ces tests de votre code. \
-\
-**Remarque** : les dernières décimales peuvent varier selon le niveau de précision codée dans vos fonctions. Les résultats affichés sont les résultats de math.sqrt()
+Dans le script `validation.py` importer le module `racine` puis tester vos 2 fonctions à l'aide d'appels de fonction similaire à ceux ci-dessous :
 
 ```python
-
-print(nom_de_la_fonction(0))    # 0.0
-print(nom_de_la_fonction(0.1))  # 0.31622776601683794
-print(nom_de_la_fonction(0.2))  # 0.4472135954999579
-print(nom_de_la_fonction(0.9))  # 0.9486832980505138
-print(nom_de_la_fonction(8))    # 2.8284271247461903
-print(nom_de_la_fonction(9))    # 3.0
-print(nom_de_la_fonction(81))   # 9.0
-print(nom_de_la_fonction(123))  # 11.090536506409418
-print(nom_de_la_fonction(999))  # 31.606961258558215
-print(nom_de_la_fonction(-3))   # Doit lever une exception
+try:
+    print("*** VÉRIFICATION DU BON FONCTIONNEMENT ***")
+    print("attendu : 0.0 ")
+    print(" obtenu :", racine.nom_de_la_fonction(0))
+    print("attendu : 0.31622776601683794")
+    print(" obtenu :", racine.nom_de_la_fonction(0.1))
+    print("attendu : 0.4472135954999579")
+    print(" obtenu :", racine.nom_de_la_fonction(0.2))
+    print("attendu : 0.9486832980505138")
+    print(" obtenu :", racine.nom_de_la_fonction(0.9))
+    print("attendu : 2.8284271247461903")
+    print(" obtenu :", racine.nom_de_la_fonction(8))
+    print("attendu : 3.0")
+    print(" obtenu :", racine.nom_de_la_fonction(9))
+    print("attendu : 9.0")
+    print(" obtenu :", racine.nom_de_la_fonction(81))
+    print("attendu : 11.090536506409418")
+    print(" obtenu :", racine.nom_de_la_fonction(123))
+    print("attendu : 31.606961258558215")
+    print(" obtenu :", racine.nom_de_la_fonction(999))
+    print(nom_de_la_fonction(-3))   # Doit lever une exception
+except e as Exception:
+    print(f"erreur {e}")
 ```
+
+**Remarque** : les résultats attendus affichés sont les résultats de math.sqrt()
+
+
+Assurez-vous pour tous les tests que les décimales obtenues sont les bonnes et les arrondis sont cohérents selon votre niveau de précision.
+
+Voici 2 exemples d'erreurs :
+```python
+    attendu : 2.8284271247461903
+     obtenu : 2.82842               #Mauvaise réponse, car le dernier 2 aurait dû être un 3
+
+    attendu : 2.8284271247461903
+     obtenu : 2.8284265122345312    #Mauvaise réponse, car certaines décimales sont fausses
+```
+
 :::
 
 ::::
