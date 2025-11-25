@@ -29,6 +29,11 @@ const config = {
         locales: ["fr"],
     },
 
+    markdown: {
+        mermaid: true,
+    },
+    themes: ["@docusaurus/theme-mermaid"],
+
     presets: [
         [
             "classic",
@@ -69,6 +74,9 @@ const config = {
     themeConfig:
     /** @type {import('@docusaurus/preset-classic').ThemeConfig} */
         ({
+            mermaid: {
+                theme: {light: 'forest', dark: 'dark'},
+            },
             docs: {
                 sidebar: {
                     hideable: true,
