@@ -353,7 +353,7 @@ import useBaseUrl from '@docusaurus/useBaseUrl';
         On voit que c'est plus payant le dimanche ! 😉
 
         La fonction `groupby()` sert à définir des groupes (la colonne qui va servir à regrouper les lignes du dataframe ensemble). \
-        Quand on ajoute `.mean()` après les `[]`, Pendas prend chaque groupe créé et calcule la moyenne de la valeur spécifiée dans les `[]` (ici la colonne `tip`).
+        Quand on ajoute `.mean()` après les `[]`, Pandas prend chaque groupe créé et calcule la moyenne de la valeur spécifiée dans les `[]` (ici la colonne `tip`).
         ```python
         # Moyenne du pourboire par jour
         df_tip_jour = df.groupby("day")["tip"].mean()
