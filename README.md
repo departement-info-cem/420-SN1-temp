@@ -37,6 +37,34 @@ npm start
 
 Cette commande démarre un serveur de développement local et ouvre le site dans votre navigateur à l'adresse `http://localhost:3000/420-SN1/`. La plupart des modifications se reflètent en temps réel sans avoir à redémarrer le serveur.
 
+## 🔌Créer une version hors-ligne du site
+
+#### Modifier temporairement le fichier config.js
+Modifier la valeur de `nomUrl` dans le fichier `config.js` par la valeur "".
+```javascript
+const config = {
+    nom: "420-SN1 - Programmation en sciences",
+    description: "Site du cours 420-SN1 Programmation en sciences au cégep Édouard-Montpetit.",
+    nomUrl: ""
+};
+
+module.exports = config;
+```
+
+#### Construire une version exécutable du site
+```bash
+npm run build
+```
+Le site Web sera disponible dans le dossier "build"
+
+#### Copier le lanceur dans le répertoire de construction
+```bash
+cp Lanceur_pour_ouvrir_la_documentation.bat ./build
+```
+L’étudiant devra double-cliquer sur ce fichier pour lancer le site Web. \
+Ce lanceur va démarrer un serveur Web localement sur le port 3000. \
+Il ne reste plus qu’à compresser (zipper) le contenu du répertoire.
+
 ## 📁 Structure du projet
 
 ```
