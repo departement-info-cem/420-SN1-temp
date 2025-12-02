@@ -61,7 +61,7 @@ Le site Web sera disponible dans le dossier "build"
 ```bash
 cp Lanceur_pour_ouvrir_la_documentation.bat ./build
 ```
-L’étudiant devra double-cliquer sur ce fichier pour lancer le site Web. \
+L’étudiant.e devra double-cliquer sur ce fichier pour lancer le site Web. \
 Ce lanceur va démarrer un serveur Web localement sur le port 3000. \
 Il ne reste plus qu’à compresser (zipper) le contenu du répertoire.
 
