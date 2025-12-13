@@ -113,6 +113,16 @@ const config = {
                         sidebarId: "aidememoire",
                         label: "Aide-mémoire",
                     },
+                    {
+                        label: "4A3 (Projet d'intégration)",
+                        href: `https://info.cegepmontpetit.ca/360-4A3/`,
+                        position: "right",
+                    },
+                    {
+                        label: "4A4 (Réseaux de neurones)",
+                        href: `https://info.cegepmontpetit.ca/420-4A4/`,
+                        position: "right",
+                    },
                 ],
             },
             footer: {
