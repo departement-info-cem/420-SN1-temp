@@ -14,7 +14,7 @@ const config = {
     title: siteConfig.nom,
     tagline: siteConfig.description,
     url: "https://departement-info-cem.github.io",
-    baseUrl: `/${siteConfig.nomUrl}/`,
+    baseUrl: "/420-SN1-temp/",
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
     favicon: "img/favicon.ico",
