@@ -12,7 +12,7 @@ hide_table_of_contents: true
 
 :::tip Bienvenue au cours de Programmation en sciences!  
 
-Dans ce cours, nous allons programmer en Python. t
+Dans ce cours, nous allons programmer en Python.
 
 :::
 
