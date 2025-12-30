@@ -178,11 +178,11 @@ const config = {
                 },
                 {
                     property: "og:image",
-                    content: "https://info.cegepmontpetit.ca/420-SN1/img/logo.svg"
+                    content: "https://info.cegepmontpetit.ca/420-SN1-temp/img/logo.svg"
                 },
                 {
                     property: "og:url",
-                    content: "https://info.cegepmontpetit.ca/420-SN1/"
+                    content: "https://info.cegepmontpetit.ca/420-SN1-temp/"
                 }
             ],
         }),
