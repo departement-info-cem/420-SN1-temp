@@ -13,7 +13,7 @@ const darkCodeTheme = themes.vsDark
 const config = {
     title: siteConfig.nom,
     tagline: siteConfig.description,
-    url: "https://info.cegepmontpetit.ca/",
+    url: "https://departement-info-cem.github.io",
     baseUrl: `/${siteConfig.nomUrl}/`,
     onBrokenLinks: "throw",
     onBrokenMarkdownLinks: "warn",
